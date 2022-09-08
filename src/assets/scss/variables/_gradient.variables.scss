@@ -1,0 +1,20 @@
+@use "color.variables" as *;
+/**
+ * Gradients
+ */
+$tb-gradient-0: linear-gradient(154.96deg, #0B3F33 9.89%, #369485 54.65%, #900D90 100.15%);
+$tb-gradient-1: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, $tb-secondary-blue 0%, $tb-green 81.37%);
+$tb-gradient-2: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, $tb-secondary-blue 0%, $tb-light-blue 100%);
+$tb-gradient-3: linear-gradient(180deg, $tb-primary-pink 22.51%, $tb-secondary-pink 74.07%);
+$tb-gradient-4: linear-gradient(136.68deg, #24F3D2 11.28%, #0674F0 34.88%, #6961B5 51.04%, #F34660 75.12%, #EE078D 91.58%);
+
+/*
+ * Gradients Map (used for gradient classes)
+ */
+$gradients: (
+  'gradient-0': $tb-gradient-0,
+  'gradient-1': $tb-gradient-1,
+  'gradient-2': $tb-gradient-2,
+  'gradient-3': $tb-gradient-3,
+  'gradient-4': $tb-gradient-4,
+);

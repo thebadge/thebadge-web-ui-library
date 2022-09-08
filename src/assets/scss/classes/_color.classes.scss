@@ -1,0 +1,12 @@
+@use '../variables/color.variables' as *;
+
+$color-class-colors: map-merge($colors, ("inherit": inherit));
+
+@each $name, $value in $color-class-colors {
+  .color--#{$name} {
+    color: $value;
+  }
+  .background-color--#{$name} {
+    background-color: $value;
+  }
+}
