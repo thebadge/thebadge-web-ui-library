@@ -3,6 +3,8 @@ dist/
 
 # testing
 /coverage
+test-report.xml
+junit.xml
 
 # production
 /build
