@@ -4,7 +4,7 @@ module.exports = {
     '^.+.(css|style|less|sass|scss|png|jpg|ttf|woff|woff2)$': '<rootDir>/config/fileStub.js',
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
-    '^.+\\.(css|less)$': '<rootDir>/config/CSSStub.js',
+    '^.+\\.(css|scss|less)$': '<rootDir>/config/CSSStub.js',
   },
   moduleFileExtensions: ['js', 'json', 'ts', 'tsx'],
   transform: {
