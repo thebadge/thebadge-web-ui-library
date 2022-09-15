@@ -14,10 +14,10 @@ export default {
 const Template: Story<IconProps> = (args) => <IconDiscord {...args} />
 
 export const IconDiscordRed = Template.bind({})
-IconDiscordRed.args = { link: 'https://demolink.com', color: '#ce0505'}
+IconDiscordRed.args = { link: 'https://demolink.com', color: '#ce0505' }
 
 export const IconDiscordBlue = Template.bind({})
-IconDiscordBlue.args = { link: 'https://demolink.com', color: '#0563ce'}
+IconDiscordBlue.args = { link: 'https://demolink.com', color: '#0563ce' }
 
 export const IconDiscordGreen = Template.bind({})
-IconDiscordGreen.args = { link: 'https://demolink.com', color: '#55ce05'}
+IconDiscordGreen.args = { link: 'https://demolink.com', color: '#55ce05' }
