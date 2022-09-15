@@ -1,0 +1,25 @@
+/**
+ * Color Palette
+ */
+$tb-primary-blue: #0D0B20;
+$tb-secondary-blue: #284EE8;
+$tb-light-blue: #59BCF7;
+$tb-green: #62CBA5;
+$tb-primary-pink: #AF20AF;
+$tb-secondary-pink: #935995;
+$tb-white: #F5F5F5;
+
+/*
+ * Color Map (used for color classes)
+ */
+$colors: (
+  'primary-blue': $tb-primary-blue,
+  'secondary-blue': $tb-secondary-blue,
+  'light-blue': $tb-light-blue,
+  'green': $tb-green,
+  'primary-pink': $tb-primary-pink,
+  'secondary-pink': $tb-secondary-pink,
+  'white': $tb-white,
+);
+
+

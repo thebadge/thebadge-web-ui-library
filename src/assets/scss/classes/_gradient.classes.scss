@@ -1,0 +1,9 @@
+@use '../variables/gradient.variables' as *;
+
+$gradient-class-gradients: map-merge($gradients, ("inherit": inherit));
+
+@each $name, $value in $gradient-class-gradients {
+  .background--#{$name} {
+    background: $value;
+  }
+}
