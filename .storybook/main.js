@@ -1,12 +1,10 @@
-const custom = require('./webpack.config.js');
-
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/preset-scss'
+    '@storybook/preset-scss',
   ],
   framework: '@storybook/react',
   webpackFinal: (config) => {

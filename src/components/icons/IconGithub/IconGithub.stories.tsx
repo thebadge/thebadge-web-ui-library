@@ -14,4 +14,4 @@ const Template: Story<IconProps> = (args) => <IconGithub {...args} />
 
 // Reuse that template for creating different stories
 export const IconGithub1 = Template.bind({})
-IconGithub1.args = { link: 'https://demolink.com'}
+IconGithub1.args = { link: 'https://demolink.com' }
