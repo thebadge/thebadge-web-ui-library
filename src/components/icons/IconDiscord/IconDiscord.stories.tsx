@@ -20,4 +20,4 @@ export const IconDiscordBlue = Template.bind({})
 IconDiscordBlue.args = { link: 'https://demolink.com', color: '#0563ce' }
 
 export const IconDiscordGreen = Template.bind({})
-IconDiscordGreen.args = { link: 'https://demolink.com', color: '#55ce05' }
+IconDiscordGreen.args = { link: 'https://demolink.com', color: 'green' }

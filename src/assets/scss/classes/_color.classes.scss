@@ -9,4 +9,7 @@ $color-class-colors: map-merge($colors, ("inherit": inherit));
   .background-color--#{$name} {
     background-color: $value;
   }
+  .fill--#{$name} {
+    fill: $value;
+  }
 }
