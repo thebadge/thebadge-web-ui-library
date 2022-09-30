@@ -12,4 +12,9 @@ $color-class-colors: map-merge($colors, ("inherit": inherit));
   .fill--#{$name} {
     fill: $value;
   }
+  .svg-fill--#{$name} {
+    svg {
+      fill: $value;
+    }
+  }
 }

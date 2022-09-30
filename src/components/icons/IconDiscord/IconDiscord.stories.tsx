@@ -3,7 +3,6 @@ import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
 import { IconDiscord } from './IconDiscord'
 import { IconProps } from '../IconProps'
-import '../../../assets/scss/global.scss'
 
 export default {
   title: 'Components/Icons/IconDiscord',
@@ -14,10 +13,10 @@ export default {
 const Template: Story<IconProps> = (args) => <IconDiscord {...args} />
 
 export const IconDiscordRed = Template.bind({})
-IconDiscordRed.args = { link: 'https://demolink.com', color: '#ce0505' }
+IconDiscordRed.args = { link: 'https://demolink.com', color: '#ce0505' } // use custom color
 
 export const IconDiscordBlue = Template.bind({})
-IconDiscordBlue.args = { link: 'https://demolink.com', color: '#0563ce' }
+IconDiscordBlue.args = { link: 'https://demolink.com', color: '#0563ce' } // use custom color
 
 export const IconDiscordGreen = Template.bind({})
-IconDiscordGreen.args = { link: 'https://demolink.com', color: 'green' }
+IconDiscordGreen.args = { link: 'https://demolink.com', color: 'green' } // use color from colors-list

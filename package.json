@@ -13,10 +13,13 @@
     "test:watch": "jest --collectCoverage=false --env=jsdom --watch --silent"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.2",
     "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "styled-components": "^5.3.6",
-    "styled-icons": "^10.46.0"
+    "react-dom": "^17.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",
