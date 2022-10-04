@@ -22,10 +22,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+    }
   },
   "include": [
-    "src"
+    "src",
+    "./declaration.d.ts"
   ],
   "exclude": [
     "node_modules",

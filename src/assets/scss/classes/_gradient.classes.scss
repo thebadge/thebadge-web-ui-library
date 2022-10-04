@@ -1,4 +1,4 @@
-@use '../variables/gradient.variables' as *;
+@use 'src/assets/scss/variables/gradient.variables.module' as *;
 
 $gradient-class-gradients: map-merge($gradients, ("inherit": inherit));
 

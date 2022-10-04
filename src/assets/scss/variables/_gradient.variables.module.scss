@@ -1,4 +1,5 @@
-@use "color.variables" as *;
+@use "color.variables.module" as *;
+
 /**
  * Gradients
  */
@@ -12,9 +13,15 @@ $tb-gradient-4: linear-gradient(136.68deg, #24F3D2 11.28%, #0674F0 34.88%, #6961
  * Gradients Map (used for gradient classes)
  */
 $gradients: (
-  'gradient-0': $tb-gradient-0,
-  'gradient-1': $tb-gradient-1,
-  'gradient-2': $tb-gradient-2,
-  'gradient-3': $tb-gradient-3,
-  'gradient-4': $tb-gradient-4,
+  'gradient0': $tb-gradient-0,
+  'gradient1': $tb-gradient-1,
+  'gradient2': $tb-gradient-2,
+  'gradient3': $tb-gradient-3,
+  'gradient4': $tb-gradient-4,
 );
+
+:export {
+  @each $name, $value in $gradients {
+    #{unquote($name)}: $value;
+  }
+}

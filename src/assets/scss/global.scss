@@ -1,8 +1,7 @@
-@forward 'functions/base.functions';
-@forward 'variables/color.variables';
-@forward 'variables/gradient.variables';
-@forward 'classes/color.classes';
-@forward 'classes/gradient.classes';
+@forward './functions/base.functions';
+@forward './variables/variables.module';
+@forward './classes/color.classes';
+@forward './classes/gradient.classes';
 
 html,
 body {

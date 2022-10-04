@@ -13,13 +13,17 @@ $tb-white: #F5F5F5;
  * Color Map (used for color classes)
  */
 $colors: (
-  'primary-blue': $tb-primary-blue,
-  'secondary-blue': $tb-secondary-blue,
-  'light-blue': $tb-light-blue,
+  'primaryBlue': $tb-primary-blue,
+  'secondaryBlue': $tb-secondary-blue,
+  'lightBlue': $tb-light-blue,
   'green': $tb-green,
-  'primary-pink': $tb-primary-pink,
-  'secondary-pink': $tb-secondary-pink,
+  'primaryPink': $tb-primary-pink,
+  'secondaryPink': $tb-secondary-pink,
   'white': $tb-white,
 );
 
-
+:export {
+  @each $name, $value in $colors {
+    #{unquote($name)}: $value;
+  }
+}
