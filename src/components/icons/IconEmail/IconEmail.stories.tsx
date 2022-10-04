@@ -9,7 +9,6 @@ export default {
   component: IconEmail,
 } as Meta
 
-// Create a master template for mapping args to render the Button component
 const Template: Story<IconProps> = (args) => <IconEmail {...args} />
 
 // Reuse that template for creating different stories
