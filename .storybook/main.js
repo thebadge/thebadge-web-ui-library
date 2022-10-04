@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   stories: ['../src/**/*.stories.tsx'],
@@ -12,10 +12,10 @@ module.exports = {
   webpackFinal: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@components': path.resolve(__dirname, "../src/components"),
-      '@assets': path.resolve(__dirname, "../src/assets"),
-    };
+      '@components': path.resolve(__dirname, '../src/components'),
+      '@assets': path.resolve(__dirname, '../src/assets'),
+    }
 
-    return config;
+    return config
   },
 }
