@@ -23,19 +23,21 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
       "@components/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "@assets/*": [
-        "src/assets/*"
+        "./src/assets/*"
       ],
     }
   },
   "include": [
-    "src",
-    "./declaration.d.ts"
+    "src/**/*",
+    "assets/**/*",
+    "declaration.d.ts",
+    "next-env.d.ts"
   ],
   "exclude": [
     "node_modules",

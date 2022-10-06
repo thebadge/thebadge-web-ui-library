@@ -4,22 +4,30 @@
 $tb-primary-blue: #0D0B20;
 $tb-secondary-blue: #284EE8;
 $tb-light-blue: #59BCF7;
+
 $tb-green: #62CBA5;
+$tb-border-green: #58BBAD;
+
 $tb-primary-pink: #AF20AF;
 $tb-secondary-pink: #935995;
+
 $tb-white: #F5F5F5;
+$tb-background-black: #121212;
+
 
 /*
- * Color Map (used for color classes)
+ * Color Map (used for color classes and direct usage in components)
  */
 $colors: (
   'primaryBlue': $tb-primary-blue,
   'secondaryBlue': $tb-secondary-blue,
   'lightBlue': $tb-light-blue,
   'green': $tb-green,
+  'borderGreen': $tb-border-green,
   'primaryPink': $tb-primary-pink,
   'secondaryPink': $tb-secondary-pink,
   'white': $tb-white,
+  'backgroundBlack': $tb-background-black,
 );
 
 :export {

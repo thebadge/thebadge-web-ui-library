@@ -1,0 +1,70 @@
+@use "@assets/scss/variables/variables.module";
+
+.badge {
+  width: 393px;
+  height: 634px;
+  background: white;
+  padding: 16px;
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    border: 2px solid variables.$tb-border-green;
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  &__header {
+    position: relative;
+
+    &--background-image {
+      width: 100%;
+    }
+
+    &--tb-logo {
+      position: absolute;
+      left: -5%;
+      top: -5%;
+    }
+
+    &--image {
+      position: absolute;
+      left: 20%;
+      top: 25%;
+    }
+
+    &--qr-code {
+      width: 30%;
+      position: absolute;
+      right: 5%;
+      bottom: -15%;
+    }
+  }
+
+  &__content {
+    margin-top: 40px;
+
+    &--subline {
+      font-family: 'Mulish';
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      margin-bottom: 8px;
+    }
+
+    &--title {
+      font-family: 'Mulish';
+      font-weight: 900;
+      font-size: 28px;
+      line-height: 34px;
+      margin-bottom: 12px;
+    }
+
+    &--description {
+      font-family: 'Mulish';
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+}

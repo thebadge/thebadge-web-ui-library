@@ -21,6 +21,17 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        include: path.resolve(__dirname, './src/assets'),
+        loader: 'file-loader?name=assets/[name].[ext]',
+      },
     ],
+  },
+  resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, './src/components/*'),
+      '@assets': path.resolve(__dirname, './src/assets/*'),
+    },
   },
 }

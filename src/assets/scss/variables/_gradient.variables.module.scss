@@ -10,7 +10,7 @@ $tb-gradient-3: linear-gradient(180deg, $tb-primary-pink 22.51%, $tb-secondary-p
 $tb-gradient-4: linear-gradient(136.68deg, #24F3D2 11.28%, #0674F0 34.88%, #6961B5 51.04%, #F34660 75.12%, #EE078D 91.58%);
 
 /*
- * Gradients Map (used for gradient classes)
+ * Gradients Map (used for gradient classes and direct usage in components)
  */
 $gradients: (
   'gradient0': $tb-gradient-0,

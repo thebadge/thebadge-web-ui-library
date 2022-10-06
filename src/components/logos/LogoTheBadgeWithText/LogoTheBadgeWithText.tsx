@@ -1,8 +1,15 @@
 import React from 'react'
+import { LogoProps } from '../LogoProps'
 
-export const LogoTheBadgeWithText = () => {
+export const LogoTheBadgeWithText = (props: LogoProps) => {
   return (
-    <svg width="665" height="226" viewBox="0 0 665 226" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width={props.width || 665}
+      height={props.width || 226}
+      viewBox="0 0 665 226"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path d="M272.012 81.3943V25.6899H254.568V12.4719H303.601V25.6899H286.157V81.3943H272.012Z" fill="white" />
       <path
         d="M313.559 81.3943V12.4719H327.704V38.9079H343.545V12.4719H357.689V81.3943H343.545V52.1259H327.704V81.3943H313.559Z"
