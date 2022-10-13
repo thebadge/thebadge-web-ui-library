@@ -1,9 +1,9 @@
 import React from 'react'
 import './badge.scss'
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
-import badgeQR from '@assets/svgs/badgeQR.svg'
 import { LogoTheBadge } from '../../logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '../../logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
+import QRCode from "react-qr-code";
 
 enum BadgeType {
   ONCHAIN,
@@ -14,6 +14,7 @@ enum BadgeType {
 export interface BadgeProps {
   type: BadgeType
   title: string
+  badgeUrl: string
   subline: string
   description: string
   iconUrl?: string
@@ -30,7 +31,14 @@ export const Badge = (badgeProps: BadgeProps) => {
           <span className={'badge__header--tb-logo'}>
             <LogoTheBadge size={50} />
           </span>
-          <img className={'badge__header--qr-code'} src={badgeQR} alt="badge QR code" />
+          <div className={'badge__header--qr-code'}>
+            <QRCode
+              size={256}
+              style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+              value={badgeProps.badgeUrl}
+              viewBox={`0 0 256 256`}
+            />
+          </div>
           <span className={'badge__header--image'}>
             {badgeProps.imageUrl ? (
               <img src={badgeProps.imageUrl} alt="badge image" />
