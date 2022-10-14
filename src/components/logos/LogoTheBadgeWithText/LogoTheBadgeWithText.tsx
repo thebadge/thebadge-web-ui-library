@@ -4,9 +4,9 @@ import { LogoProps } from '../LogoProps'
 export const LogoTheBadgeWithText = (props: LogoProps) => {
   return (
     <svg
-      width={props.width || 665}
-      height={props.width || 226}
-      viewBox="0 0 665 226"
+      width={props.size || 666}
+      height={props.size ? props.size/3 : 222}
+      viewBox="0 0 666 222"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

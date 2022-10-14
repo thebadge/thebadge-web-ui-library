@@ -1,0 +1,18 @@
+@use './../functions/base.functions' as *;
+
+// Fonts
+$font-fallback: -apple-system, -apple-system-body, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+$font-the-badge-web: 'Mulish', $font-fallback;
+
+$font-weight-thin: 100;
+$font-weight-normal: 400;
+$font-weight-bold: 900;
+
+$space: 0.5rem;
+
+:export {
+  fontTheBadgeWeb: $font-the-badge-web;
+  fontWeightThin: $font-weight-thin;
+  fontWeightNormal: $font-weight-normal;
+  fontWeightBold: $font-weight-bold;
+}

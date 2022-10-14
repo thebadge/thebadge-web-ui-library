@@ -1,9 +1,10 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography'
 import { Palette, ThemeOptions } from '@mui/material'
-import variables from './scss/variables/_breakpoint.variables.module.scss'
+import breakpoints from './scss/variables/_breakpoint.variables.module.scss'
+import fonts from './scss/variables/_fonts.variables.module.scss'
 
 const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) = {
-  fontFamily: 'Mulish',
+  fontFamily: fonts.fontTheBadgeWeb,
   h1: {
     fontSize: 96,
     fontStyle: 'normal',
@@ -79,10 +80,10 @@ export const defaultTheme: ThemeOptions = {
   breakpoints: {
     values: {
       xs: 0,
-      sm: variables.sm,
-      md: 900,
-      lg: 1200,
-      xl: 1536,
+      sm: breakpoints.sm,
+      md: breakpoints.md,
+      lg: breakpoints.lg,
+      xl: breakpoints.xl,
     },
   },
   palette: {

@@ -1,26 +1,27 @@
 import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
-import { Badge, BadgeProps } from './Badge'
+import { BadgePreview, BadgeProps } from './BadgePreview'
 
 export default {
-  title: 'Components/Molecules/Badge',
-  component: Badge,
+  title: 'Components/Molecules/BadgePreview',
+  component: BadgePreview,
 } as Meta
 
 const Template: Story<BadgeProps> = (args) => {
   return (
     <div style={{ background: 'gray', padding: '8px' }}>
-      <Badge {...args} />
+      <BadgePreview {...args} />
     </div>
   )
 }
 
 // Reuse that template for creating different stories
-export const Badge1 = Template.bind({})
-Badge1.args = {
+export const BadgePreview1 = Template.bind({})
+BadgePreview1.args = {
+  size: 320,
   title: 'TITLE xxx',
-  subline: 'SUBTITLE',
+  subline: 'Subline',
   description:
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   badgeUrl: 'https://www.thebadge.xyz'

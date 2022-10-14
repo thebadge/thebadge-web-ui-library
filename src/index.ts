@@ -1,6 +1,6 @@
 import { Button } from '@components/atoms/Button/Button'
 import { defaultTheme } from '@assets/theme'
-import { Badge } from '@components/molecules/Badge/Badge'
+import { BadgePreview } from '@components/molecules/BadgePreview/BadgePreview'
 import { IconEmail } from '@components/icons/IconEmail/IconEmail'
 import { IconTwitter } from '@components/icons/IconTwitter/IconTwitter'
 import { IconGithub } from '@components/icons/IconGithub/IconGithub'
@@ -13,7 +13,7 @@ import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/Log
 export {
   defaultTheme,
   Button,
-  Badge,
+  BadgePreview,
   IconTwitter,
   IconMedium,
   IconGithub,

@@ -1,9 +1,10 @@
-import React from 'react'
-import './badge.scss'
+import React, { useRef } from 'react'
+import './badgePreview.scss'
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
 import { LogoTheBadge } from '../../logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '../../logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import QRCode from "react-qr-code";
+import { Box, styled } from '@mui/material'
 
 enum BadgeType {
   ONCHAIN,
@@ -12,9 +13,10 @@ enum BadgeType {
 }
 
 export interface BadgeProps {
+  size: number
   type: BadgeType
-  title: string
   badgeUrl: string
+  title: string
   subline: string
   description: string
   iconUrl?: string
@@ -22,9 +24,40 @@ export interface BadgeProps {
   onClick?: () => void
 }
 
-export const Badge = (badgeProps: BadgeProps) => {
+const BadgePreviewBox = styled(Box)<{ size: number }>(({ theme, size = 320}) => ({
+  width: size,
+  height: size*1.6,
+  margin: theme.spacing(2),
+}));
+
+const defaultValuesForBadgeProps = {
+  size: 320,
+  type: BadgeType.OFFCHAIN,
+  badgeUrl: 'https://www.thebadge.xyz/',
+  title: '',
+  subline: '',
+  description: '',
+}
+
+export const BadgePreview = (badgeProps: BadgeProps = defaultValuesForBadgeProps) => {
+
+  const badgeSize = () => {
+    const badgePropsSize = badgeProps.size
+    if(!badgePropsSize || badgePropsSize < 200) {
+      return 200 // min value
+    }
+    if (badgePropsSize > 900) {
+      return 900 // max value
+    }
+    return badgePropsSize
+  }
+
+  const badgeImageSize = () => {
+    return badgeSize() / 2
+  }
+
   return (
-    <div className={'badge'} onClick={badgeProps.onClick}>
+    <BadgePreviewBox size={badgeSize()} className={'badge'} onClick={badgeProps.onClick}>
       <div className={'badge__container'}>
         <div className={'badge__header'}>
           <img className={'badge__header--background-image'} src={badgeBackground} alt="badge background" />
@@ -43,7 +76,7 @@ export const Badge = (badgeProps: BadgeProps) => {
             {badgeProps.imageUrl ? (
               <img src={badgeProps.imageUrl} alt="badge image" />
             ) : (
-              <LogoTheBadgeWithText width={182} height={62} />
+              <LogoTheBadgeWithText size={badgeImageSize()} />
             )}
           </span>
         </div>
@@ -53,6 +86,6 @@ export const Badge = (badgeProps: BadgeProps) => {
           <div className={'badge__content--description'}>{badgeProps.description}</div>
         </div>
       </div>
-    </div>
+    </BadgePreviewBox>
   )
 }

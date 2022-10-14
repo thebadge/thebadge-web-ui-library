@@ -1,0 +1,31 @@
+@use 'variables/fonts.variables.module' as *;
+
+@font-face {
+  font-family: $font-the-badge-web;
+  font-style: normal;
+  font-weight: $font-weight-normal;
+  src: url('../../assets/fonts/Mulish-Regular.ttf') format('ttf');
+  font-display: optional; // see https://web.dev/font-display/
+}
+
+@font-face {
+  font-family: $font-the-badge-web;
+  font-style: normal;
+  font-weight: $font-weight-bold;
+  src: url('../../assets/fonts/Mulish-Bold.ttf') format('ttf');
+  font-display: optional;
+}
+
+@font-face {
+  font-family: $font-the-badge-web;
+  font-style: normal;
+  font-weight: $font-weight-thin;
+  src: url('../../assets/fonts/Mulish-Light.ttf') format('ttf');
+  font-display: optional;
+}
+//
+// TODO Initialize fonts with:
+//<link
+//href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+//rel="stylesheet"
+///>
