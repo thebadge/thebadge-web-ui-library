@@ -30,8 +30,9 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@components': path.resolve(__dirname, './src/components/*'),
       '@assets': path.resolve(__dirname, './src/assets/*'),
+      '@components': path.resolve(__dirname, './src/components/*'),
+      '@businessLogic': path.resolve(__dirname, './src/business-logic/*'),
     },
   },
 }

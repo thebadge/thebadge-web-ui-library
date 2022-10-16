@@ -5,7 +5,7 @@ export const LogoTheBadgeWithText = (props: LogoProps) => {
   return (
     <svg
       width={props.size || 666}
-      height={props.size ? props.size/3 : 222}
+      height={props.size ? props.size / 3 : 222}
       viewBox="0 0 666 222"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
