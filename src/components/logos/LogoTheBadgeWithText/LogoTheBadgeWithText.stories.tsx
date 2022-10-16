@@ -20,11 +20,11 @@ const Template: Story<{ color: string }> = (args) => {
 export const WithBlackBackground = Template.bind({})
 WithBlackBackground.args = { color: 'black' }
 
-export const WithSecondaryBlueBackground = Template.bind({})
-WithSecondaryBlueBackground.args = { color: colors.secondaryBlue }
+export const WithBlueBackground = Template.bind({})
+WithBlueBackground.args = { color: colors.blue }
 
-export const WithLightBlueBackground = Template.bind({})
-WithLightBlueBackground.args = { color: colors.lightBlue }
+export const WithBlueLightBackground = Template.bind({})
+WithBlueLightBackground.args = { color: colors.blueLight }
 
-export const WithPrimaryPinkBackground = Template.bind({})
-WithPrimaryPinkBackground.args = { color: colors.primaryPink }
+export const WithPinkBackground = Template.bind({})
+WithPinkBackground.args = { color: colors.pink }

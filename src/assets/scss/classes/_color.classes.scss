@@ -1,4 +1,4 @@
-@use 'src/assets/scss/variables/color.variables.module' as *;
+@use '../variables/color.variables.module' as *;
 
 $color-class-colors: map-merge($colors, ("inherit": inherit));
 

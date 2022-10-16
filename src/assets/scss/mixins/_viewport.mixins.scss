@@ -1,4 +1,4 @@
-@use 'src/assets/scss/variables/viewport.variables' as *;
+@use '../variables/viewport.variables' as *;
 @use 'breakpoint.mixins' as *;
 
 /* stylelint-disable scss/dollar-variable-pattern */

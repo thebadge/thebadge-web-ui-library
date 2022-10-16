@@ -1,7 +1,8 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography'
 import { Palette, ThemeOptions } from '@mui/material'
-import breakpoints from './scss/variables/_breakpoint.variables.module.scss'
-import fonts from './scss/variables/_fonts.variables.module.scss'
+import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
+import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
+import colors from '@assets/scss/variables/_color.variables.module.scss'
 
 const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) = {
   fontFamily: fonts.fontTheBadgeWeb,
@@ -88,31 +89,32 @@ export const defaultTheme: ThemeOptions = {
   },
   palette: {
     primary: {
-      main: '#2D64F1',
-      light: '#7491FF',
-      dark: '#003BBD',
-      contrastText: '#ffffff',
+      main: colors.primary,
+      light: colors.primaryLight,
+      dark: colors.primaryDark,
+      contrastText: colors.white,
     },
     secondary: {
-      main: '#252C3C',
-      light: '#4e5566',
-      dark: '#000016',
-      contrastText: '#ffffff',
+      main: colors.secondary,
+      light: colors.secondaryLight,
+      dark: colors.secondaryDark,
+      contrastText: colors.white,
     },
     error: {
-      main: '#ED5956',
-      contrastText: '#ffffff',
+      main: colors.redError,
+      contrastText: colors.white,
     },
     warning: {
-      main: '#ED9829',
-      contrastText: '#ffffff',
+      main: colors.orangeWarning,
+      contrastText: colors.white,
     },
     info: {
-      main: '#0094FF',
+      main: colors.blueInfo,
+      contrastText: colors.white,
     },
     success: {
-      main: '#00C083',
-      contrastText: '#ffffff',
+      main: colors.greenSuccess,
+      contrastText: colors.white,
     },
   },
 }

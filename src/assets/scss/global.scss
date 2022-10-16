@@ -2,6 +2,8 @@
 @forward './variables/variables.module';
 @forward './classes/color.classes';
 @forward './classes/gradient.classes';
+@forward "fonts";
+@forward "defaults";
 
 html,
 body {

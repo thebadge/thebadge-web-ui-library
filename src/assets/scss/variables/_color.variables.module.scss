@@ -1,33 +1,65 @@
 /**
  * Color Palette
  */
-$tb-primary-blue: #0D0B20;
-$tb-secondary-blue: #284EE8;
-$tb-light-blue: #59BCF7;
+// primary
+$tb-primary: #2D64F1;
+$tb-primary-light: #7491FF;
+$tb-primary-dark: #003BBD;
 
+// secondary
+$tb-secondary: #252C3C;
+$tb-secondary-light: #4e5566;
+$tb-secondary-dark: #000016;
+
+// blue
+$tb-blue: #284EE8;
+$tb-blue-dark: #0D0B20;
+$tb-blue-light: #59BCF7;
+
+// green
 $tb-green: #62CBA5;
-$tb-border-green: #58BBAD;
+$tb-green-border: #58BBAD;
 
-$tb-primary-pink: #AF20AF;
-$tb-secondary-pink: #935995;
+// pink
+$tb-pink: #AF20AF;
+$tb-pink-light: #935995;
 
+// white
 $tb-white: #F5F5F5;
-$tb-background-black: #121212;
+
+// background
+$tb-black-background: #121212;
+
+// messages
+$tb-red-error: #ED5956;
+$tb-orange-warning: #ED9829;
+$tb-blue-info: #0094FF;
+$tb-green-success: #00C083;
 
 
 /*
  * Color Map (used for color classes and direct usage in components)
  */
 $colors: (
-  'primaryBlue': $tb-primary-blue,
-  'secondaryBlue': $tb-secondary-blue,
-  'lightBlue': $tb-light-blue,
+  'primary': $tb-primary,
+  'primaryLight': $tb-primary-light,
+  'primaryDark': $tb-primary-dark,
+  'secondary': $tb-secondary,
+  'secondaryLight': $tb-secondary-light,
+  'secondaryDark': $tb-secondary-dark,
+  'blue': $tb-blue,
+  'blueDark': $tb-blue-dark,
+  'blueLight': $tb-blue-light,
   'green': $tb-green,
-  'borderGreen': $tb-border-green,
-  'primaryPink': $tb-primary-pink,
-  'secondaryPink': $tb-secondary-pink,
+  'greenBorder': $tb-green-border,
+  'pink': $tb-pink,
+  'pinkLight': $tb-pink-light,
   'white': $tb-white,
-  'backgroundBlack': $tb-background-black,
+  'blackBackground': $tb-black-background,
+  'redError': $tb-red-error,
+  'orangeWarning': $tb-orange-warning,
+  'blueInfo': $tb-blue-info,
+  'greenSuccess': $tb-green-success,
 );
 
 :export {

@@ -1,10 +1,8 @@
 @use '../variables/breakpoint.variables.module' as *;
 
-/* stylelint-disable scss/dollar-variable-pattern */
-
 @mixin below-breakpoint($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-    $_maxWidth: #{map-get($breakpoints, $breakpoint) - 0.1 }; // there is a bug, with Scaled Screens, for further Infos goto: https://stackoverflow.com/questions/63637584/bug-with-browsers-interpretation-of-media-queries
+    $_maxWidth: #{map-get($breakpoints, $breakpoint) - 0.1 };
     @media (max-width: $_maxWidth) {
       @content;
     }

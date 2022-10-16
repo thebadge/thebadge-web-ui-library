@@ -14,10 +14,10 @@ const Template: Story<IconProps> = (args) => <IconTwitter {...args} />
 
 // Reuse that template for creating different stories
 export const IconTwitter1 = Template.bind({})
-IconTwitter1.args = { link: 'https://demolink.com', color: colors.lightBlue } // use color from colors-list
+IconTwitter1.args = { link: 'https://demolink.com', color: colors.blueLight } // use color from colors-list
 
 export const IconTwitter2 = Template.bind({})
-IconTwitter2.args = { link: 'https://demolink.com', color: 'secondaryBlue' } // use color from colors-list
+IconTwitter2.args = { link: 'https://demolink.com', color: 'blue' } // use color from colors-list
 
 export const IconTwitter3 = Template.bind({})
 IconTwitter3.args = { link: 'https://demolink.com', color: '#100090' } // use custom color
