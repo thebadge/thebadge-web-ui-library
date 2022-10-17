@@ -1,0 +1,9 @@
+// Allow max amount of lines for a text
+@for $i from 0 through 100 {
+  .width-pc--#{$i} {
+    width: $i * 1%;
+  }
+  .height-pc--#{$i} {
+    height: $i * 1%;
+  }
+}

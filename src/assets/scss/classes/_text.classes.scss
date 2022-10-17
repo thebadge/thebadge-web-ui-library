@@ -1,0 +1,11 @@
+// Allow max amount of lines for a text
+@for $i from 1 through 100 {
+  .text-max-lines--#{$i} {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $i;
+    line-clamp: $i;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

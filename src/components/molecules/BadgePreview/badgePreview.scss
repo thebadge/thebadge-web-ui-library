@@ -1,12 +1,14 @@
 @use "@assets/scss/functions/_base.functions.scss" as *;
 @use "@assets/scss/variables/variables.module";
 
-.badge {
+.badge-preview {
   background: white;
   padding: 16px;
   cursor: pointer;
 
   &__container {
+    display: flex;
+    flex-flow: column;
     width: 100%;
     height: 100%;
     border: 2px solid variables.$tb-green-border;
@@ -16,6 +18,7 @@
 
   &__header {
     position: relative;
+    flex: 0 1 auto;
 
     &--background-image {
       width: 100%;
@@ -39,28 +42,30 @@
       width: 40%;
       position: absolute;
       right: 5%;
-      bottom: -20%;
+      bottom: -15%;
     }
   }
 
   &__content {
-    margin-top: 10%;
 
     &--title {
+      flex: 0 1 auto;
       font-weight: variables.$font-weight-bold;
       font-size: convert-to-rem(28px);
       line-height: convert-to-rem(34px);
-      margin-bottom: 5%;
-      white-space: nowrap;
+      margin-bottom: 3%;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     &--subline {
+      flex: 0 1 auto;
+      width: 50%;
       font-weight: variables.$font-weight-normal;
       font-size: convert-to-rem(14px);
       line-height: convert-to-rem(15px);
-      margin-bottom: 3%;
+      padding-top: 10%;
+      padding-bottom: 1%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -70,16 +75,16 @@
       font-weight: variables.$font-weight-normal;
       font-size: convert-to-rem(15px);
       line-height: convert-to-rem(18px);
-
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-
-      /* number of lines to show */
-      -webkit-line-clamp: 3;
-      line-clamp: 3;
-
       overflow: hidden;
       text-overflow: ellipsis;
     }
   }
+
+  &--grow {
+    transition: all .3s ease-in-out;
+    &:hover {
+      transform: scale(1.075);
+    }
+  }
 }
+
