@@ -81,9 +81,9 @@ export const defaultTheme: ThemeOptions = {
   breakpoints: {
     values: {
       xs: 0,
-      sm: breakpoints.sm,
-      md: breakpoints.md,
-      lg: breakpoints.lg,
+      sm: breakpoints.s,
+      md: breakpoints.m,
+      lg: breakpoints.l,
       xl: breakpoints.xl,
     },
   },

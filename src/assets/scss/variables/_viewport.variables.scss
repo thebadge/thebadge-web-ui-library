@@ -1,8 +1,0 @@
-@use 'breakpoint.variables.module' as *;
-
-$viewports: (
-  s: (min: 0, max: map-get($breakpoints, "md")), // mobile
-  m: (min: map-get($breakpoints, "md"), max: map-get($breakpoints, "lg")), // tablet
-  l: (min: map-get($breakpoints, "lg"), max: map-get($breakpoints, "xl")), // desktop
-  xl: (min: map-get($breakpoints, "xl"), max: map-get($breakpoints, "xxl")), // large desktop
-);

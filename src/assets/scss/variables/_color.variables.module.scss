@@ -19,6 +19,7 @@ $tb-blue-light: #59BCF7;
 // green
 $tb-green: #62CBA5;
 $tb-green-border: #58BBAD;
+$tb-green-hover: #58BBAD29;
 
 // pink
 $tb-pink: #AF20AF;
@@ -52,6 +53,7 @@ $colors: (
   'blueLight': $tb-blue-light,
   'green': $tb-green,
   'greenBorder': $tb-green-border,
+  'greenHover': $tb-green-hover,
   'pink': $tb-pink,
   'pinkLight': $tb-pink-light,
   'white': $tb-white,

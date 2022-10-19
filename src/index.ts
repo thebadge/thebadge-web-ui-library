@@ -1,5 +1,5 @@
 import { Button } from '@components/atoms/Button/Button'
-import { defaultTheme } from '@assets/theme'
+import { defaultTheme } from '@assets/defaultTheme'
 import { BadgePreview } from '@components/molecules/BadgePreview/BadgePreview'
 import { IconEmail } from '@components/icons/IconEmail/IconEmail'
 import { IconTwitter } from '@components/icons/IconTwitter/IconTwitter'

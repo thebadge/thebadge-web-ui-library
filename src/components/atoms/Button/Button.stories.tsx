@@ -2,6 +2,7 @@ import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
 import { Button, ButtonProps } from './Button'
+import badgeBackground from '@assets/svgs/badgeBackground.svg'
 
 export default {
   title: 'Components/Atoms/Button',
@@ -12,8 +13,11 @@ export default {
 const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 // Reuse that template for creating different stories
-export const Primary = Template.bind({})
-Primary.args = { label: 'Primary', size: 'large' }
+export const SampleActiveButtonFitContent = Template.bind({})
+SampleActiveButtonFitContent.args = { label: 'Text for button', icon: badgeBackground }
 
-export const Secondary = Template.bind({})
-Secondary.args = { ...Primary.args, primary: false, label: 'Secondary' }
+export const SampleActiveButtonSetWidth = Template.bind({})
+SampleActiveButtonSetWidth.args = { label: 'Sample text', width: '400px'  }
+
+export const SampleButtonDisabled = Template.bind({})
+SampleButtonDisabled.args = { label: 'Sample text', disabled: true  }
