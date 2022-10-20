@@ -27,13 +27,13 @@ const defaultValuesForBadgePreviewProps = {
   title: '',
   subline: '',
   description: '',
-  animationOnHover: false
+  animationOnHover: false,
 }
 
 const BadgePreviewBox = styled(Box)<{ size: number }>(({ theme, size = 320 }) => ({
   width: size,
   height: size * 1.6,
-  margin: theme.spacing(2)
+  margin: theme.spacing(2),
 }))
 
 export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
@@ -63,18 +63,18 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
 
   const badgeTitleMaxLines = () => {
     const size = badgeSize()
-    return (size > 500) ? 2 : 1
+    return size > 500 ? 2 : 1
   }
 
   return (
-    <BadgePreviewBox 
-      size={badgeSize()} 
+    <BadgePreviewBox
+      size={badgeSize()}
       className={'badge-preview ' + (props.animationOnHover ? 'badge-preview--grow' : '')}
       onClick={props.onClick}
     >
       <div className={'badge-preview__container'}>
         <div className={'badge-preview__header'}>
-          <img className={'badge-preview__header--background-image'} src={badgeBackground} alt='badge background' />
+          <img className={'badge-preview__header--background-image'} src={badgeBackground} alt="badge background" />
           <span className={'badge-preview__header--tb-logo'}>
             <LogoTheBadge size={50} />
           </span>
@@ -88,16 +88,19 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
           </div>
           <span className={'badge-preview__header--image'}>
             {props.imageUrl ? (
-              <img src={props.imageUrl} alt='Badge image' />
+              <img src={props.imageUrl} alt="Badge image" />
             ) : (
               <LogoTheBadgeWithText size={badgeImageSize()} />
             )}
           </span>
         </div>
-        <div className={'badge-preview__content--subline'}>
-          {props.subline}
-        </div>
-        <div className={`badge-preview__content--title text-max-lines--${badgeTitleMaxLines()} ` + (badgeSize()>500 ? 'width-pc--55' : '')}>
+        <div className={'badge-preview__content--subline'}>{props.subline}</div>
+        <div
+          className={
+            `badge-preview__content--title text-max-lines--${badgeTitleMaxLines()} ` +
+            (badgeSize() > 500 ? 'width-pc--55' : '')
+          }
+        >
           {props.title}
         </div>
         <div className={`badge-preview__content--description text-max-lines--${badgeDescriptionMaxLines()}`}>

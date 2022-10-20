@@ -1,18 +1,90 @@
 @use './../functions/base.functions' as *;
 
-// Fonts
+/**
+ Fonts
+*/
 $font-fallback: -apple-system, -apple-system-body, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
 $font-the-badge-web: 'Mulish', $font-fallback;
 
 $font-weight-thin: 100;
 $font-weight-normal: 400;
+$font-weight-large: 500;
 $font-weight-bold: 700;
 
-$space: 0.5rem;
+// headlines
+// h1
+$font-size-h1: 96;
+$line-height-h1: 106px;
+// h2
+$font-size-h2: 60;
+$line-height-h2: 78px;
+// h3
+$font-size-h3: 34;
+$line-height-h3: 40px;
+// h4
+$font-size-h4: 21;
+$line-height-h4: 24px;
+// h5
+$font-size-h5: 20;
+$line-height-h5: 24px;
+// h6
+$font-size-h6: 18;
+$line-height-h6: 21px;
+
+// bodies
+$font-size-body1: 16;
+$line-height-body1: 22px;
+$font-size-body2: 14;
+$line-height-body2: 20px;
+
+// subtitles
+$font-size-subtitle1: 16;
+$line-height-subtitle1: 24px;
+$font-size-subtitle2: 14;
+$line-height-subtitle2: 16px;
+
+// button
+$font-size-button: 14;
+$line-height-button: 16px;
+
+// caption
+$font-size-caption: 12;
+$line-height-caption: 14px;
+
+// overline
+$font-size-overline: 10;
+$line-height-overline: 12px;
 
 :export {
   fontTheBadgeWeb: $font-the-badge-web;
   fontWeightThin: $font-weight-thin;
   fontWeightNormal: $font-weight-normal;
+  fontWeightLarge: $font-weight-large;
   fontWeightBold: $font-weight-bold;
+  fontSizeH1: $font-size-h1;
+  lineHeightH1: $line-height-h1;
+  fontSizeH2: $font-size-h2;
+  lineHeightH2: $line-height-h2;
+  fontSizeH3: $font-size-h3;
+  lineHeightH3: $line-height-h3;
+  fontSizeH4: $font-size-h4;
+  lineHeightH4: $line-height-h4;
+  fontSizeH5: $font-size-h5;
+  lineHeightH5: $line-height-h5;
+  fontSizeH6: $font-size-h6;
+  lineHeightH6: $line-height-h6;
+  fontSizeBody1: $font-size-body1;
+  lineHeightBody1: $line-height-body1;
+  fontSizeBody2: $font-size-body2;
+  lineHeightBody2: $line-height-body2;
+  fontSizeSubtitle1: $font-size-subtitle1;
+  lineHeightSubtitle1: $line-height-subtitle1;
+  fontSizeSubtitle2: $font-size-subtitle2;
+  lineHeightSubtitle2: $line-height-subtitle2;
+  fontSizeButton: $font-size-button;
+  lineHeightButton: $line-height-button;
+  fontSizeCaption: $font-size-caption;
+  lineHeightCaption: $line-height-caption;
+  fontSizeOverline: $font-size-overline;
+  lineHeightOverline: $line-height-overline;
 }

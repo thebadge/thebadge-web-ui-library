@@ -17,7 +17,7 @@ export const SampleActiveButtonFitContent = Template.bind({})
 SampleActiveButtonFitContent.args = { label: 'Text for button', icon: badgeBackground }
 
 export const SampleActiveButtonSetWidth = Template.bind({})
-SampleActiveButtonSetWidth.args = { label: 'Sample text', width: '400px'  }
+SampleActiveButtonSetWidth.args = { label: 'Sample text', width: '400px' }
 
 export const SampleButtonDisabled = Template.bind({})
-SampleButtonDisabled.args = { label: 'Sample text', disabled: true  }
+SampleButtonDisabled.args = { label: 'Sample text', disabled: true }
