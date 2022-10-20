@@ -2,15 +2,11 @@
   "compilerOptions": {
     "target": "es2018",
     "outDir": "lib",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "esnext.asynciterable"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext", "esnext.asynciterable"],
     "declaration": true,
-    "declarationDir": "lib",
+    "declarationDir": "types",
     "allowJs": true,
+    "sourceMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -21,29 +17,15 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react",
+    "emitDeclarationOnly": true,
     "baseUrl": "./",
     "paths": {
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@businessLogic/*": [
-        "./src/business-logic/*"
-      ]
-    },
+      "@assets/*": ["/src/assets/*"],
+      "@components/*": ["/src/components/*"],
+      "@businessLogic/*": ["/src/business-logic/*"]
+    }
   },
-  "include": [
-    "src/**/*",
-    "assets/**/*",
-    "declaration.d.ts",
-    "next-env.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib"
-  ],
+  "include": ["src/**/*", "assets/**/*", "declaration.d.ts", "next-env.d.ts"],
+  "exclude": ["node_modules", "lib", "dist", "src/**/*.test.tsx", "src/**/*.stories.tsx"]
 }
