@@ -5,11 +5,12 @@ import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import QRCode from 'react-qr-code'
 import { Box, styled } from '@mui/material'
-import { BadgeType } from '@businessLogic/badgeType'
+import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
 
 export interface BadgePreviewProps {
   size: number
-  type: BadgeType
+  badgeCategory: BadgeCategories
+  badgeType: BadgeTypesSupported
   badgeUrl: string
   title: string
   subline: string
@@ -22,7 +23,8 @@ export interface BadgePreviewProps {
 
 const defaultValuesForBadgePreviewProps = {
   size: 320,
-  type: BadgeType.OFFCHAIN,
+  badgeCategory: BadgeCategories.OFFCHAIN,
+  badgeType: BadgeTypesSupported.CUSTOM,
   badgeUrl: 'https://www.thebadge.xyz/',
   title: '',
   subline: '',
