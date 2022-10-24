@@ -2,7 +2,7 @@ import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
 import { BadgePreview, BadgePreviewProps } from './BadgePreview'
-import { BadgeType } from '@businessLogic/badgeType'
+import { BadgeCategories } from '@businessLogic/badge'
 
 export default {
   title: 'Components/Molecules/BadgePreview',
@@ -21,7 +21,7 @@ const Template: Story<BadgePreviewProps> = (args) => {
 export const BadgePreviewLongTexts = Template.bind({})
 BadgePreviewLongTexts.args = {
   size: 450,
-  type: BadgeType.OFFCHAIN,
+  badgeCategory: BadgeCategories.OFFCHAIN,
   title:
     'TITLE xxx Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   subline:
@@ -46,7 +46,7 @@ BadgePreviewLongTexts.args = {
 export const BadgePreviewWithAnimationOnHover = Template.bind({})
 BadgePreviewWithAnimationOnHover.args = {
   size: 400,
-  type: BadgeType.OFFCHAIN,
+  badgeCategory: BadgeCategories.OFFCHAIN,
   title: 'TITLE xxx',
   subline: 'Subline #category',
   description:
