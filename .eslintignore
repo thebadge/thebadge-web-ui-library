@@ -4,3 +4,4 @@ coverage
 storybook-static
 !.storybook
 .storybook/mocks/vendor
+lib

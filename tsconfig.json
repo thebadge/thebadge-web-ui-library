@@ -21,11 +21,11 @@
     "emitDeclarationOnly": true,
     "baseUrl": "./",
     "paths": {
-      "@assets/*": ["/src/assets/*"],
-      "@components/*": ["/src/components/*"],
-      "@businessLogic/*": ["/src/business-logic/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@businessLogic/*": ["./src/business-logic/*"]
     }
   },
   "include": ["src/**/*", "assets/**/*", "declaration.d.ts", "next-env.d.ts"],
-  "exclude": ["node_modules", "lib", "dist", "src/**/*.test.tsx", "src/**/*.stories.tsx"]
+  "exclude": ["node_modules", "lib", "dist"]
 }

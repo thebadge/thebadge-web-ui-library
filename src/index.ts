@@ -9,6 +9,7 @@ import { IconDiscord } from '@components/icons/IconDiscord/IconDiscord'
 import { BackgroundGradient } from '@components/layout/BackgroundGradient/BackgroundGradient'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
+import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
 
 export {
   defaultTheme,
@@ -22,4 +23,6 @@ export {
   BackgroundGradient,
   LogoTheBadge,
   LogoTheBadgeWithText,
+  BadgeCategories,
+  BadgeTypesSupported,
 }
