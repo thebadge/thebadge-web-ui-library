@@ -3,7 +3,8 @@
 /**
  Fonts
 */
-$font-fallback: -apple-system, -apple-system-body, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+$font-fallback: -apple-system, -apple-system-body, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial',
+  sans-serif;
 $font-the-badge-web: 'Mulish', $font-fallback;
 
 $font-weight-thin: 100;
@@ -54,6 +55,8 @@ $line-height-caption: 14px;
 // overline
 $font-size-overline: 10;
 $line-height-overline: 12px;
+
+$default: 1;
 
 :export {
   fontTheBadgeWeb: $font-the-badge-web;

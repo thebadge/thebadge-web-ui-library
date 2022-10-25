@@ -1,15 +1,16 @@
-import { Button } from '@components/atoms/Button/Button'
 import { defaultTheme } from '@assets/defaultTheme'
-import { BadgePreview } from '@components/molecules/BadgePreview/BadgePreview'
+import '@assets/scss/global.scss'
+import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
+import { Button } from '@components/atoms/Button/Button'
+import { IconDiscord } from '@components/icons/IconDiscord/IconDiscord'
 import { IconEmail } from '@components/icons/IconEmail/IconEmail'
-import { IconTwitter } from '@components/icons/IconTwitter/IconTwitter'
 import { IconGithub } from '@components/icons/IconGithub/IconGithub'
 import { IconMedium } from '@components/icons/IconMedium/IconMedium'
-import { IconDiscord } from '@components/icons/IconDiscord/IconDiscord'
+import { IconTwitter } from '@components/icons/IconTwitter/IconTwitter'
 import { BackgroundGradient } from '@components/layout/BackgroundGradient/BackgroundGradient'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
-import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
+import { BadgePreview } from '@components/molecules/BadgePreview/BadgePreview'
 
 export {
   defaultTheme,

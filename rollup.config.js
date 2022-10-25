@@ -1,46 +1,35 @@
-import commonjs from '@rollup/plugin-commonjs'
+import alias from '@rollup/plugin-alias'
+import { babel } from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
-import fs from 'fs'
+import { extractICSS } from 'icss-utils'
 import path from 'path'
-import dts from 'rollup-plugin-dts'
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import { terser } from 'rollup-plugin-terser'
-import { typescriptPaths } from 'rollup-plugin-typescript-paths'
-import alias from '@rollup/plugin-alias'
-import scss from 'rollup-plugin-scss'
+import postcss from 'postcss'
+import external from 'rollup-plugin-peer-deps-external'
+import sass from 'rollup-plugin-sass'
 import svg from 'rollup-plugin-svg'
+import { terser } from 'rollup-plugin-terser'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
-
-
-function emitModulePackageFile() {
-  return {
-    name: 'emit-module-package-file',
-    generateBundle() {
-      this.emitFile({
-        type: 'asset',
-        fileName: 'package.json',
-        source: `{ "name": "${packageJson.name}", "version": "${packageJson.version}", "type": "module"}`
-      });
-    }
-  };
-}
 
 export default [
   {
-    input: 'src/index.ts',
+    input: './src/index.ts',
     output: [
       {
-        file: packageJson.main,
+        file: 'dist/index.js',
         format: 'cjs',
-        sourcemap: true,
+      },
+      {
+        file: 'dist/index.es.js',
+        format: 'es',
+        exports: 'named',
       },
     ],
     plugins: [
+      // Resolve all teh alias as bundle time
       alias({
         entries: [
           {
@@ -57,20 +46,39 @@ export default [
           },
         ],
       }),
-      typescript({ tsconfig: './tsconfig.json' }),
-      typescriptPaths(),
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      terser(),
-      scss({
-        insert: true,
+      // TS
+      typescript({
+        sourceMap: true,
       }),
+      // Loader for .scss files
+      sass({
+        processor: (css) =>
+          new Promise((resolve, reject) => {
+            const pcssRootNodeRslt = postcss.parse(css),
+              extractedIcss = extractICSS(pcssRootNodeRslt, true),
+              cleanedCss = pcssRootNodeRslt.toString(),
+              out = Object.assign({}, extractedIcss.icssExports, {
+                css: cleanedCss,
+              })
+            // console.table(extractedIcss);
+            //console.log(out)
+            resolve(out)
+          }),
+        /* options: {
+          outputStyle: 'compressed',
+        }, */
+        output: 'dist/styles.css',
+      }),
+      // Loader for .svg
       svg(),
-      dts,
-      emitModulePackageFile()
+      resolve(),
+      external(),
+      terser(),
+      babel({
+        exclude: 'node_modules/**',
+        presets: ['@babel/preset-react'],
+      }),
     ],
-    // Mark package dependencies as "external".
-    external: Object.keys(packageJson.dependencies),
+    external: [/node_modules/],
   },
 ]

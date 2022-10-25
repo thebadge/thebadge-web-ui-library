@@ -4,7 +4,7 @@
   font-family: $font-the-badge-web;
   font-style: normal;
   font-weight: $font-weight-normal;
-  src: url('../../assets/fonts/Mulish-Regular.ttf') format('ttf');
+  src: url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
   font-display: optional; // see https://web.dev/font-display/
 }
 
@@ -12,7 +12,7 @@
   font-family: $font-the-badge-web;
   font-style: normal;
   font-weight: $font-weight-bold;
-  src: url('../../assets/fonts/Mulish-Bold.ttf') format('ttf');
+  src: url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
   font-display: optional;
 }
 
@@ -20,6 +20,6 @@
   font-family: $font-the-badge-web;
   font-style: normal;
   font-weight: $font-weight-thin;
-  src: url('../../assets/fonts/Mulish-Light.ttf') format('ttf');
+  src: url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
   font-display: optional;
 }
