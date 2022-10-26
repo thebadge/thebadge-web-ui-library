@@ -6,7 +6,7 @@ import typescript from '@rollup/plugin-typescript'
 import external from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
 import { fileURLToPath } from 'url'
-import image from '@rollup/plugin-image';
+import image from '@rollup/plugin-image'
 import postcss from 'rollup-plugin-postcss'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -48,9 +48,12 @@ export default [
         extract: true,
         modules: false,
         use: [
-          ['sass', {
-            includePaths: [path.join(__dirname, 'src')]
-          }]
+          [
+            'sass',
+            {
+              includePaths: [path.join(__dirname, 'src')],
+            },
+          ],
         ],
         extensions: ['.scss'],
       }),
@@ -68,7 +71,7 @@ export default [
       babel({
         exclude: 'node_modules/**',
         presets: ['@babel/preset-react'],
-      })
+      }),
     ],
     external: [/node_modules/],
   },
