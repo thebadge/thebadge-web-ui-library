@@ -2,14 +2,13 @@ import alias from '@rollup/plugin-alias'
 import { babel } from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
-import { extractICSS } from 'icss-utils'
 import path from 'path'
-import postcss from 'postcss'
 import external from 'rollup-plugin-peer-deps-external'
-import sass from 'rollup-plugin-sass'
-import svg from 'rollup-plugin-svg'
+import svg from 'rollup-plugin-svg-import';
 import { terser } from 'rollup-plugin-terser'
 import { fileURLToPath } from 'url'
+import image from 'rollup-plugin-img';
+import postcss from 'rollup-plugin-postcss'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -46,38 +45,35 @@ export default [
           },
         ],
       }),
+      postcss({
+        extract: true,
+        modules: false,
+        use: [
+          ['sass', {
+            includePaths: [path.join(__dirname, 'src')]
+          }]
+        ],
+        extensions: ['.scss'],
+      }),
+      image({
+        output: 'dist/assets',
+        extensions: /\.(png|jpg|jpeg|gif|svg)$/,
+        limit: 10000
+      }),
+      svg({
+        stringify: false
+      }),
       // TS
       typescript({
         sourceMap: true,
       }),
-      // Loader for .scss files
-      sass({
-        processor: (css) =>
-          new Promise((resolve, reject) => {
-            const pcssRootNodeRslt = postcss.parse(css),
-              extractedIcss = extractICSS(pcssRootNodeRslt, true),
-              cleanedCss = pcssRootNodeRslt.toString(),
-              out = Object.assign({}, extractedIcss.icssExports, {
-                css: cleanedCss,
-              })
-            // console.table(extractedIcss);
-            //console.log(out)
-            resolve(out)
-          }),
-        /* options: {
-          outputStyle: 'compressed',
-        }, */
-        output: 'dist/styles.css',
-      }),
-      // Loader for .svg
-      svg(),
       resolve(),
       external(),
       terser(),
       babel({
         exclude: 'node_modules/**',
         presets: ['@babel/preset-react'],
-      }),
+      })
     ],
     external: [/node_modules/],
   },

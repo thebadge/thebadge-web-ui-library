@@ -37,6 +37,9 @@ $tb-orange-warning: #ED9829;
 $tb-blue-info: #0094FF;
 $tb-green-success: #00C083;
 
+// text
+$tb-black-text: #000000;
+
 
 /*
  * Color Map (used for color classes and direct usage in components)
@@ -62,6 +65,7 @@ $colors: (
   'orangeWarning': $tb-orange-warning,
   'blueInfo': $tb-blue-info,
   'greenSuccess': $tb-green-success,
+  'blackText': $tb-black-text,
 );
 
 :export {
