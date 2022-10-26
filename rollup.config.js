@@ -1,13 +1,12 @@
+import path from 'path'
 import alias from '@rollup/plugin-alias'
 import { babel } from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
-import path from 'path'
 import external from 'rollup-plugin-peer-deps-external'
-import svg from 'rollup-plugin-svg-import';
 import { terser } from 'rollup-plugin-terser'
 import { fileURLToPath } from 'url'
-import image from 'rollup-plugin-img';
+import image from '@rollup/plugin-image';
 import postcss from 'rollup-plugin-postcss'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -56,12 +55,8 @@ export default [
         extensions: ['.scss'],
       }),
       image({
-        output: 'dist/assets',
-        extensions: /\.(png|jpg|jpeg|gif|svg)$/,
-        limit: 10000
-      }),
-      svg({
-        stringify: false
+        include: 'src/**',
+        exclude: 'node_modules/**',
       }),
       // TS
       typescript({
