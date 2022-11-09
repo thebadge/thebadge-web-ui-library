@@ -1,12 +1,13 @@
-import React from 'react'
-import './badgePreview.scss'
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
+import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
-import QRCode from 'react-qr-code'
 import { Box, styled } from '@mui/material'
-import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
+import React from 'react'
+import QRCode from 'react-qr-code'
+import './badgePreview.scss'
 
+type Effects = 'wobble' | 'grow'
 export interface BadgePreviewProps {
   size: number
   badgeCategory: BadgeCategories
@@ -19,6 +20,7 @@ export interface BadgePreviewProps {
   imageUrl?: string
   onClick?: () => void
   animationOnHover?: boolean
+  animationEffects: Effects[]
 }
 
 const defaultValuesForBadgePreviewProps = {
@@ -30,6 +32,7 @@ const defaultValuesForBadgePreviewProps = {
   subline: '',
   description: '',
   animationOnHover: false,
+  animationEffects: ['wobble', 'grow'] as Effects[],
 }
 
 const BadgePreviewBox = styled(Box)<{ size: number }>(({ theme, size = 320 }) => ({
@@ -68,10 +71,14 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
     return size > 500 ? 2 : 1
   }
 
+  const animationEffectClasses = () => {
+    return props.animationEffects && props.animationEffects.map((effect) => `badge-preview--${effect}`).join(' ')
+  }
+
   return (
     <BadgePreviewBox
       size={badgeSize()}
-      className={'badge-preview ' + (props.animationOnHover ? 'badge-preview--grow' : '')}
+      className={'badge-preview ' + (props.animationOnHover ? animationEffectClasses() : '')}
       onClick={props.onClick}
     >
       <div className={'badge-preview__container'}>
