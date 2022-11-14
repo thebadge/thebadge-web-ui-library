@@ -1,8 +1,7 @@
-@use "../../../assets/scss/functions/_base.functions.scss" as *;
-@use "../../../assets/scss/variables/variables.module";
+@use '../../../assets/scss/functions/_base.functions.scss' as *;
+@use '../../../assets/scss/variables/variables.module';
 
 .badge-preview {
-  background: white;
   color: variables.$tb-black-text;
   padding: 16px;
   cursor: pointer;
@@ -15,6 +14,7 @@
     border: 2px solid variables.$tb-green-border;
     border-radius: 8px;
     padding: 16px;
+    background: white;
   }
 
   &__header {
@@ -48,7 +48,6 @@
   }
 
   &__content {
-
     &--title {
       flex: 0 1 auto;
       font-weight: variables.$font-weight-bold;
@@ -82,10 +81,31 @@
   }
 
   &--grow {
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &:hover {
-      transform: scale(1.075);
+      scale: 1.075;
+    }
+  }
+
+  &--wobble {
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      animation: move 5s infinite;
+    }
+  }
+
+  @keyframes move {
+    0% {
+      transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
+    }
+    33% {
+      transform: perspective(1500px) rotateY(10deg) rotateX(-5deg);
+    }
+    66% {
+      transform: perspective(1500px) rotateY(-10deg) rotateX(5deg);
+    }
+    100% {
+      transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
     }
   }
 }
-

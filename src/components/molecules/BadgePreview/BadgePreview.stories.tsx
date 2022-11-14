@@ -1,8 +1,8 @@
-import React from 'react'
-import { Meta } from '@storybook/react/types-6-0'
-import { Story } from '@storybook/react'
-import { BadgePreview, BadgePreviewProps } from './BadgePreview'
 import { BadgeCategories } from '@businessLogic/badge'
+import { Story } from '@storybook/react'
+import { Meta } from '@storybook/react/types-6-0'
+import React from 'react'
+import { BadgePreview, BadgePreviewProps } from './BadgePreview'
 
 export default {
   title: 'Components/Molecules/BadgePreview',
@@ -54,4 +54,5 @@ BadgePreviewWithAnimationOnHover.args = {
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   badgeUrl: 'https://www.thebadge.xyz',
   animationOnHover: true,
+  animationEffects: ['wobble', 'grow'],
 }
