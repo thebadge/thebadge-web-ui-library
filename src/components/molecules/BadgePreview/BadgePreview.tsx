@@ -38,7 +38,6 @@ const defaultValuesForBadgePreviewProps = {
 const BadgePreviewBox = styled(Box)<{ size: number }>(({ theme, size = 320 }) => ({
   width: size,
   height: size * 1.6,
-  margin: theme.spacing(2),
 }))
 
 export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
