@@ -73,7 +73,7 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
     if (props.selfRotate) {
       intervalId = setInterval(() => {
         setSelectedCell((prev) => prev + 1)
-      }, 10000)
+      }, 3000)
     }
 
     return () => {

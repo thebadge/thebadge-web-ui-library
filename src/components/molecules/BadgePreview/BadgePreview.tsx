@@ -7,7 +7,7 @@ import React from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
 
-type Effects = 'wobble' | 'grow'
+export type BadgePreviewEffects = 'wobble' | 'grow'
 export interface BadgePreviewProps {
   size: number
   badgeCategory: BadgeCategories
@@ -20,7 +20,7 @@ export interface BadgePreviewProps {
   imageUrl?: string
   onClick?: () => void
   animationOnHover?: boolean
-  animationEffects: Effects[]
+  animationEffects: BadgePreviewEffects[]
 }
 
 const defaultValuesForBadgePreviewProps = {
@@ -32,7 +32,7 @@ const defaultValuesForBadgePreviewProps = {
   subline: '',
   description: '',
   animationOnHover: false,
-  animationEffects: ['wobble', 'grow'] as Effects[],
+  animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
 const BadgePreviewBox = styled(Box)<{ size: number }>(({ theme, size = 320 }) => ({

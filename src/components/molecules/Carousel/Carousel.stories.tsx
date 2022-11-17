@@ -1,7 +1,7 @@
 import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
-import { BadgePreview } from '../BadgePreview/BadgePreview'
+import { BadgePreview, BadgePreviewEffects } from '../BadgePreview/BadgePreview'
 import { Carousel, CarouselProps } from './Carousel'
 
 export default {
@@ -27,7 +27,7 @@ const defaultBadgeCarouselExampleProps = {
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   badgeUrl: 'https://www.thebadge.xyz',
   animationOnHover: true,
-  animationEffects: ['wobble', 'grow'],
+  animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
 export const CarouselPreview = Template.bind({})
@@ -36,6 +36,7 @@ CarouselPreview.args = {
   elementHeight: 400 * 1.6,
   selfRotate: true,
   elements: [
+    <BadgePreview {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
