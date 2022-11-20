@@ -2,6 +2,7 @@
 @use '../../../assets/scss/variables/variables.module';
 
 .badge-preview {
+  position: relative;
   color: variables.$tb-black-text;
   cursor: pointer;
 
@@ -136,6 +137,16 @@
     }
   }
 
+  &--glare {
+    .glare {
+      &:hover {
+        animation: glare 5s infinite;
+        mix-blend-mode: overlay;
+        opacity: 0.5;
+      }
+    }
+  }
+
   @keyframes move {
     0% {
       transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
@@ -150,4 +161,40 @@
       transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
     }
   }
+
+  @keyframes glare {
+    0% {
+      background: none;
+    }
+    33% {
+      // at X Y
+      // First value moves over X axis
+      // Second value vmoves over Y axis
+      background: radial-gradient(
+        farthest-corner circle at 20% 20%,
+        rgba(255, 255, 255, 0.8) 10%,
+        rgba(255, 255, 255, 0.65) 20%,
+        rgba(0, 0, 0, 0.5) 90%
+      );
+    }
+    66% {
+      background: radial-gradient(
+        farthest-corner circle at 70% 40%,
+        rgba(255, 255, 255, 0.8) 10%,
+        rgba(255, 255, 255, 0.65) 20%,
+        rgba(0, 0, 0, 0.5) 90%
+      );
+    }
+    100% {
+      background: none;
+    }
+  }
+}
+
+.glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }

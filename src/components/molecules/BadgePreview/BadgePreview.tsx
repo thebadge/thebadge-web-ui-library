@@ -7,7 +7,7 @@ import React from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
 
-export type BadgePreviewEffects = 'wobble' | 'grow'
+export type BadgePreviewEffects = 'wobble' | 'grow' | 'glare'
 
 export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
 export interface BadgePreviewProps {
@@ -148,6 +148,7 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         >
           {props.description}
         </div>
+        <div className="glare" />
       </div>
     </BadgePreviewBox>
   )
