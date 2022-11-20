@@ -42,5 +42,10 @@ CarouselPreview.args = {
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview {...defaultBadgeCarouselExampleProps} />,
   ],
 }

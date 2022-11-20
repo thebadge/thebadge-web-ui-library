@@ -21,7 +21,7 @@
   left: 0px;
   top: 0px;
   // Si saco este borde, tengo un bug con el border de la badge -- raaaro
-  border: 1px solid black;
+  border: 1px solid transparent;
   transition: transform 1s, opacity 1s;
   backface-visibility: hidden;
 }
