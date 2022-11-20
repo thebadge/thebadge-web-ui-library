@@ -13,6 +13,10 @@
     border-radius: 8px;
     padding: 16px;
     background: white;
+
+    &--small {
+      padding: 12px;
+    }
   }
 
   &__header {
@@ -54,11 +58,25 @@
       margin-bottom: 3%;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      &--small {
+        font-weight: variables.$font-weight-xlarge;
+        font-size: convert-to-rem(12px);
+        line-height: convert-to-rem(18px);
+      }
+      &--medium {
+        font-size: convert-to-rem(20px);
+        line-height: convert-to-rem(26px);
+      }
+      &--large {
+        font-size: convert-to-rem(28px);
+        line-height: convert-to-rem(34px);
+      }
     }
 
     &--subline {
       flex: 0 1 auto;
-      width: 50%;
+      width: 70%;
       font-weight: variables.$font-weight-normal;
       font-size: convert-to-rem(14px);
       line-height: convert-to-rem(15px);
@@ -67,6 +85,19 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      &--small {
+        font-size: convert-to-rem(8px);
+        line-height: convert-to-rem(9px);
+      }
+      &--medium {
+        font-size: convert-to-rem(12px);
+        line-height: convert-to-rem(13px);
+      }
+      &--large {
+        font-size: convert-to-rem(14px);
+        line-height: convert-to-rem(15px);
+      }
     }
 
     &--description {
@@ -75,6 +106,19 @@
       line-height: convert-to-rem(18px);
       overflow: hidden;
       text-overflow: ellipsis;
+
+      &--small {
+        font-size: convert-to-rem(8px);
+        line-height: convert-to-rem(9px);
+      }
+      &--medium {
+        font-size: convert-to-rem(11px);
+        line-height: convert-to-rem(14px);
+      }
+      &--large {
+        font-size: convert-to-rem(15px);
+        line-height: convert-to-rem(18px);
+      }
     }
   }
 

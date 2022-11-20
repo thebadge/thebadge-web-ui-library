@@ -1,7 +1,7 @@
 import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
-import { BadgePreview, BadgePreviewEffects } from '../BadgePreview/BadgePreview'
+import { BadgePreview, BadgePreviewEffects, BadgeSize } from '../BadgePreview/BadgePreview'
 import { Carousel, CarouselProps } from './Carousel'
 
 export default {
@@ -17,7 +17,7 @@ const Template: Story<CarouselProps> = (args) => {
   )
 }
 const defaultBadgeCarouselExampleProps = {
-  size: 400,
+  size: 'medium' as BadgeSize,
   badgeCategory: BadgeCategories.OFFCHAIN,
   badgeType: BadgeTypesSupported.CUSTOM,
   title: 'TITLE xxx',

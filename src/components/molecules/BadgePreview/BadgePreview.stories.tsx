@@ -20,7 +20,7 @@ const Template: Story<BadgePreviewProps> = (args) => {
 // Reuse that template for creating different stories
 export const BadgePreviewLongTexts = Template.bind({})
 BadgePreviewLongTexts.args = {
-  size: 450,
+  size: 'large',
   badgeCategory: BadgeCategories.OFFCHAIN,
   title:
     'TITLE xxx Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -45,7 +45,7 @@ BadgePreviewLongTexts.args = {
 
 export const BadgePreviewWithAnimationOnHover = Template.bind({})
 BadgePreviewWithAnimationOnHover.args = {
-  size: 400,
+  size: 'medium',
   badgeCategory: BadgeCategories.OFFCHAIN,
   title: 'TITLE xxx',
   subline: 'Subline #category',

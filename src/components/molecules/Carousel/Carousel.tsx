@@ -18,6 +18,7 @@ const defaultCarouselProps = {
 
 export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
   const [selectedCell, setSelectedCell] = useState(0)
+  const [intervalId, setIntervalId] = useState<NodeJS.Timer | null>(null)
 
   const carouselRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>()
   // Refs to move the elemenets
@@ -59,6 +60,23 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
     }
   }
 
+  function onHoverHandler() {
+    if (intervalId) {
+      clearInterval(intervalId)
+      setIntervalId(null)
+    }
+  }
+
+  function onHoverEndHandler() {
+    if (props.selfRotate && !intervalId) {
+      let intervalId: NodeJS.Timer
+      intervalId = setInterval(() => {
+        setSelectedCell((prev) => prev + 1)
+      }, 3000)
+      setIntervalId(intervalId)
+    }
+  }
+
   useEffect(() => {
     // When the array of elements change, we re generate the transform
     changeCarousel()
@@ -69,11 +87,12 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
   }, [selectedCell])
 
   useEffect(() => {
-    let intervalId: NodeJS.Timer
     if (props.selfRotate) {
+      let intervalId: NodeJS.Timer
       intervalId = setInterval(() => {
         setSelectedCell((prev) => prev + 1)
       }, 3000)
+      setIntervalId(intervalId)
     }
 
     return () => {
@@ -88,6 +107,8 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
           return (
             <Box
               className="carousel__element"
+              onMouseEnter={onHoverHandler}
+              onMouseLeave={onHoverEndHandler}
               ref={elementRefs[i]}
               width={props.elementWidth}
               height={props.elementHeight}
