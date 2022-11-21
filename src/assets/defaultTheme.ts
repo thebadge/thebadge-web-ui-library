@@ -1,8 +1,8 @@
-import { TypographyOptions } from '@mui/material/styles/createTypography'
-import { Palette, ThemeOptions } from '@mui/material'
 import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
-import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
+import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
+import { Palette, ThemeOptions } from '@mui/material'
+import { TypographyOptions } from '@mui/material/styles/createTypography'
 
 const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) = {
   fontFamily: fonts.fontTheBadgeWeb,
@@ -81,10 +81,10 @@ export const defaultTheme: ThemeOptions = {
   breakpoints: {
     values: {
       xs: 0,
-      sm: breakpoints.s,
-      md: breakpoints.m,
-      lg: breakpoints.l,
-      xl: breakpoints.xl,
+      sm: Number(breakpoints.s),
+      md: Number(breakpoints.m),
+      lg: Number(breakpoints.l),
+      xl: Number(breakpoints.xl),
     },
   },
   palette: {
@@ -118,3 +118,5 @@ export const defaultTheme: ThemeOptions = {
     },
   },
 }
+
+export type Colors = keyof typeof colors

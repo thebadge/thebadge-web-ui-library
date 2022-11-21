@@ -12,7 +12,6 @@
 
   &__title {
     font-family: variables.$font-the-badge-web;
-    color: variables.$tb-purple;
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -36,12 +35,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: variables.$tb-grey-background;
     cursor: pointer;
-
-    &--selected {
-      background-color: variables.$tb-purple;
-    }
 
     &__container {
       display: flex;
@@ -52,7 +46,6 @@
   }
 
   &__arrow {
-    color: variables.$tb-purple;
     height: 32px;
     width: 32px;
 

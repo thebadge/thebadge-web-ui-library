@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
-import { Steper, SteperProps, SteperTitle } from './Steper'
+import { Steper, SteperProps } from './Steper'
 
 export default {
   title: 'Components/Molecules/Steper',
@@ -19,7 +19,8 @@ const Template: Story<SteperProps> = (args) => {
 export const SteperPreview = Template.bind({})
 SteperPreview.args = {
   minHeight: 300,
-  title: <SteperTitle color="purple">off-chain HOW IT WORKS</SteperTitle>,
+  color: 'green',
+  title: 'off-chain HOW IT WORKS',
   elements: [
     <Typography fontWeight={500} fontSize={18} fontFamily="Mulish">
       Select the type of badge you are interested in. Each badge will require the submission of proof or evidence to
