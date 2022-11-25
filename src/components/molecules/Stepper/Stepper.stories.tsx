@@ -1,23 +1,23 @@
 import { Box, Typography } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
-import { Steper, SteperProps } from './Steper'
+import { Stepper, StepperProps } from './Stepper'
 
 export default {
-  title: 'Components/Molecules/Steper',
-  component: Steper,
+  title: 'Components/Molecules/Stepper',
+  component: Stepper,
 } as Meta
 
-const Template: Story<SteperProps> = (args) => {
+const Template: Story<StepperProps> = (args) => {
   return (
     <div style={{ background: 'gray', padding: '16px', display: 'flex', justifyContent: 'center', height: '100vh' }}>
-      <Steper {...args} />
+      <Stepper {...args} />
     </div>
   )
 }
 
-export const SteperPreview = Template.bind({})
-SteperPreview.args = {
+export const StepperPreview = Template.bind({})
+StepperPreview.args = {
   minHeight: 300,
   color: 'green',
   title: 'off-chain HOW IT WORKS',
