@@ -2,44 +2,48 @@
  * Color Palette
  */
 // primary
-$tb-primary: #2D64F1;
-$tb-primary-light: #7491FF;
-$tb-primary-dark: #003BBD;
+$tb-primary: #2d64f1;
+$tb-primary-light: #7491ff;
+$tb-primary-dark: #003bbd;
 
 // secondary
-$tb-secondary: #252C3C;
+$tb-secondary: #252c3c;
 $tb-secondary-light: #4e5566;
 $tb-secondary-dark: #000016;
 
 // blue
-$tb-blue: #284EE8;
-$tb-blue-dark: #0D0B20;
-$tb-blue-light: #59BCF7;
+$tb-blue: #284ee8;
+$tb-blue-dark: #0d0b20;
+$tb-blue-light: #59bcf7;
+
+//purple
+
+$tb-purple: #b74ad6;
 
 // green
-$tb-green: #62CBA5;
-$tb-green-border: #58BBAD;
-$tb-green-hover: #58BBAD29;
+$tb-green: #62cba5;
+$tb-green-border: #58bbad;
+$tb-green-hover: #58bbad29;
 
 // pink
-$tb-pink: #AF20AF;
+$tb-pink: #af20af;
 $tb-pink-light: #935995;
 
 // white
-$tb-white: #F5F5F5;
+$tb-white: #f5f5f5;
 
 // background
-$tb-black-background: #121212;
+$tb-black-background: #2d2d2d;
+$tb-grey-background: #7e7e7e;
 
 // messages
-$tb-red-error: #ED5956;
-$tb-orange-warning: #ED9829;
-$tb-blue-info: #0094FF;
-$tb-green-success: #00C083;
+$tb-red-error: #ed5956;
+$tb-orange-warning: #ed9829;
+$tb-blue-info: #0094ff;
+$tb-green-success: #00c083;
 
 // text
 $tb-black-text: #000000;
-
 
 /*
  * Color Map (used for color classes and direct usage in components)
@@ -54,6 +58,7 @@ $colors: (
   'blue': $tb-blue,
   'blueDark': $tb-blue-dark,
   'blueLight': $tb-blue-light,
+  'purple': $tb-purple,
   'green': $tb-green,
   'greenBorder': $tb-green-border,
   'greenHover': $tb-green-hover,
@@ -61,6 +66,7 @@ $colors: (
   'pinkLight': $tb-pink-light,
   'white': $tb-white,
   'blackBackground': $tb-black-background,
+  'greyBackground': $tb-grey-background,
   'redError': $tb-red-error,
   'orangeWarning': $tb-orange-warning,
   'blueInfo': $tb-blue-info,

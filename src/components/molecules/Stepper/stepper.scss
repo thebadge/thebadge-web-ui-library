@@ -1,0 +1,55 @@
+@use '../../../assets/scss/functions/_base.functions.scss' as *;
+@use '../../../assets/scss/variables/variables.module';
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: variables.$tb-white;
+  border-radius: 16px;
+  padding: 16px 16px 32px 16px;
+  height: max-content;
+
+  &__title {
+    font-family: variables.$font-the-badge-web;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+
+    span {
+      opacity: 0.5;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      column-gap: 8px;
+      align-self: center;
+    }
+  }
+
+  &__arrow {
+    height: 32px;
+    width: 32px;
+
+    align-self: center;
+    cursor: pointer;
+  }
+}

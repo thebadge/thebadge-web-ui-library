@@ -7,9 +7,11 @@ import React from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
 
-type Effects = 'wobble' | 'grow'
+export type BadgePreviewEffects = 'wobble' | 'grow' | 'glare'
+
+export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
 export interface BadgePreviewProps {
-  size: number
+  size: BadgeSize
   badgeCategory: BadgeCategories
   badgeType: BadgeTypesSupported
   badgeUrl: string
@@ -20,11 +22,11 @@ export interface BadgePreviewProps {
   imageUrl?: string
   onClick?: () => void
   animationOnHover?: boolean
-  animationEffects: Effects[]
+  animationEffects: BadgePreviewEffects[]
 }
 
 const defaultValuesForBadgePreviewProps = {
-  size: 320,
+  size: 'medium' as BadgeSize,
   badgeCategory: BadgeCategories.OFFCHAIN,
   badgeType: BadgeTypesSupported.CUSTOM,
   badgeUrl: 'https://www.thebadge.xyz/',
@@ -32,40 +34,60 @@ const defaultValuesForBadgePreviewProps = {
   subline: '',
   description: '',
   animationOnHover: false,
-  animationEffects: ['wobble', 'grow'] as Effects[],
+  animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
 const BadgePreviewBox = styled(Box)<{ size: number }>(({ theme, size = 320 }) => ({
   width: size,
   height: size * 1.6,
-  margin: theme.spacing(2),
 }))
 
 export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
   const badgeSize = () => {
     const badgePreviewPropsSize = props.size
-    if (!badgePreviewPropsSize || badgePreviewPropsSize < 200) {
-      return 200 // min value
+    switch (badgePreviewPropsSize) {
+      case 'small':
+        return 200
+      case 'medium':
+        return 300
+      case 'large':
+        return 400
+      case 'x-large':
+        return 500
     }
-    if (badgePreviewPropsSize > 900) {
-      return 900 // max value
-    }
-    return badgePreviewPropsSize
   }
 
   const badgeImageSize = () => {
     return badgeSize() / 2
   }
 
-  const badgeDescriptionMaxLines = () => {
-    const size = badgeSize()
-    const badgeHeight = size * 1.6
-    const badgeTextContentHeight = badgeHeight / 2
-    const badgeTextContentSections = 3
-    const badgeDescriptionLineHeight = 20
-    return Math.floor(badgeTextContentHeight / badgeTextContentSections / badgeDescriptionLineHeight)
+  const badgeLogoSize = () => {
+    const badgePreviewPropsSize = props.size
+    switch (badgePreviewPropsSize) {
+      case 'small':
+        return 30
+      case 'medium':
+        return 40
+      case 'large':
+        return 50
+      case 'x-large':
+        return 60
+    }
   }
 
+  const badgeDescriptionMaxLines = () => {
+    const badgePreviewPropsSize = props.size
+    switch (badgePreviewPropsSize) {
+      case 'small':
+        return 5
+      case 'medium':
+        return 5
+      case 'large':
+        return 5
+      case 'x-large':
+        return 7
+    }
+  }
   const badgeTitleMaxLines = () => {
     const size = badgeSize()
     return size > 500 ? 2 : 1
@@ -81,11 +103,11 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
       className={'badge-preview ' + (props.animationOnHover ? animationEffectClasses() : '')}
       onClick={props.onClick}
     >
-      <div className={'badge-preview__container'}>
+      <div className={['badge-preview__container', `badge-preview__container--${props.size}`].join(' ')}>
         <div className={'badge-preview__header'}>
           <img className={'badge-preview__header--background-image'} src={badgeBackground} alt="badge background" />
           <span className={'badge-preview__header--tb-logo'}>
-            <LogoTheBadge size={50} />
+            <LogoTheBadge size={badgeLogoSize()} />
           </span>
           <div className={'badge-preview__header--qr-code'}>
             <QRCode
@@ -103,18 +125,30 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
             )}
           </span>
         </div>
-        <div className={'badge-preview__content--subline'}>{props.subline}</div>
         <div
-          className={
-            `badge-preview__content--title text-max-lines--${badgeTitleMaxLines()} ` +
-            (badgeSize() > 500 ? 'width-pc--55' : '')
-          }
+          className={[`badge-preview__content--subline`, `badge-preview__content--subline--${props.size}`].join(' ')}
+        >
+          {props.subline}
+        </div>
+        <div
+          className={[
+            `badge-preview__content--title`,
+            `text-max-lines--${badgeTitleMaxLines()}`,
+            `badge-preview__content--title--${props.size}`,
+          ].join(' ')}
         >
           {props.title}
         </div>
-        <div className={`badge-preview__content--description text-max-lines--${badgeDescriptionMaxLines()}`}>
+        <div
+          className={[
+            `badge-preview__content--description`,
+            `text-max-lines--${badgeDescriptionMaxLines()}`,
+            `badge-preview__content--description--${props.size}`,
+          ].join(' ')}
+        >
           {props.description}
         </div>
+        <div className="glare" />
       </div>
     </BadgePreviewBox>
   )
