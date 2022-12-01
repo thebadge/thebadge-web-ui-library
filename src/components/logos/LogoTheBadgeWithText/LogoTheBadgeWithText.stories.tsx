@@ -1,8 +1,8 @@
-import React from 'react'
-import { Meta } from '@storybook/react/types-6-0'
-import { Story } from '@storybook/react'
-import { LogoTheBadgeWithText } from './LogoTheBadgeWithText'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
+import { Story } from '@storybook/react'
+import { Meta } from '@storybook/react/types-6-0'
+import React from 'react'
+import { LogoTheBadgeWithText } from './LogoTheBadgeWithText'
 
 export default {
   title: 'Components/Logos/LogoTheBadgeWithText',
@@ -12,7 +12,7 @@ export default {
 const Template: Story<{ color: string }> = (args) => {
   return (
     <div style={{ background: args.color }}>
-      <LogoTheBadgeWithText />
+      <LogoTheBadgeWithText {...args} />
     </div>
   )
 }
