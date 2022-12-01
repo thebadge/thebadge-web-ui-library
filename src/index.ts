@@ -29,5 +29,5 @@ export {
   BadgeCategories,
   BadgeTypesSupported,
   Carousel,
-  Stepper
+  Stepper,
 }
