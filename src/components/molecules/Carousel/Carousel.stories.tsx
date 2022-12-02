@@ -2,6 +2,7 @@ import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
 import { BadgePreview, BadgePreviewEffects, BadgeSize } from '../BadgePreview/BadgePreview'
+import { BadgePreviewV2 } from '../BadgePreviewV2/BadgePreview'
 import { Carousel, CarouselProps } from './Carousel'
 
 export default {
@@ -47,5 +48,25 @@ CarouselPreview.args = {
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview {...defaultBadgeCarouselExampleProps} />,
+  ],
+}
+
+export const CarouselPreviewWithV2Badges = Template.bind({})
+CarouselPreviewWithV2Badges.args = {
+  elementWidth: 400,
+  elementHeight: 400 * 1.6,
+  selfRotate: true,
+  elements: [
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
   ],
 }

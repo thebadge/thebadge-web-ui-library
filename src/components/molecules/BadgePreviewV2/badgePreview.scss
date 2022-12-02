@@ -208,7 +208,7 @@ $--badgeBackgroundUrl: '';
   &--wobble {
     transition: all 0.3s ease-in-out;
     &:hover {
-      animation: move 5s infinite;
+      animation: move-v2 5s infinite;
     }
   }
 
@@ -217,14 +217,14 @@ $--badgeBackgroundUrl: '';
       border-radius: 8px;
 
       &:hover {
-        animation: glare 5s infinite;
+        animation: glare-v2 5s infinite;
         mix-blend-mode: overlay;
         opacity: 0.5;
       }
     }
   }
 
-  @keyframes move {
+  @keyframes move-v2 {
     0% {
       transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
     }
@@ -239,7 +239,7 @@ $--badgeBackgroundUrl: '';
     }
   }
 
-  @keyframes glare {
+  @keyframes glare-v2 {
     0% {
       background: none;
     }
