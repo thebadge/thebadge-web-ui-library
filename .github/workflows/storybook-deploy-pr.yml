@@ -17,6 +17,15 @@ jobs:
     # Job steps
     steps:
       - uses: actions/checkout@v1
+      - name: Add comment to PR
+        id: loading_comment_to_pr
+        uses: marocchino/sticky-pull-request-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.issue.number }}
+          header: Storybook Chromatic Deploy
+          message: |
+            Building & Deploying Storybook... 🚧
       - run: yarn
         #👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
@@ -26,12 +35,14 @@ jobs:
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      - name: Comment PR with deployment url
-        uses: mshick/add-pr-comment@v1
-        with:
-          message: |
-            * [PR Version](${{ env.REVIEW_FEATURE_URL }})
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
-        env:
-          REVIEW_FEATURE_URL: ${{ steps.publish.outputs.storybookUrl }}
+       - name: Add comment to PR
+          id: comment_to_pr
+          uses: marocchino/sticky-pull-request-comment@v1
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            number: ${{ github.event.issue.number }}
+            header: Storybook Chromatic Deploy
+            message: |
+              * [PR Preview](${{ env.REVIEW_FEATURE_URL }}) 💯🖼️
+            env:
+              REVIEW_FEATURE_URL: ${{ steps.publish.outputs.storybookUrl }}
