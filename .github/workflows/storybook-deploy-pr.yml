@@ -34,4 +34,4 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
         env:
-          REVIEW_FEATURE_URL: ${{ publish.outputs.storybookUrl }}
+          REVIEW_FEATURE_URL: ${{ steps.publish.outputs.storybookUrl }}
