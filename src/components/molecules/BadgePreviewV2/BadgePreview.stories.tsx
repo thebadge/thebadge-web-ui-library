@@ -14,6 +14,8 @@ const EXAMPLE_URLS = {
     'https://images.unsplash.com/photo-1549317336-206569e8475c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
   backgroundFive:
     'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+  backgroundSix:
+    'https://images.unsplash.com/photo-1567359781514-3b964e2b04d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=536&q=80',
 }
 
 export default {
@@ -32,6 +34,7 @@ export default {
           backgroundThree: 'Three',
           backgroundFour: 'Four',
           backgroundFive: 'Five',
+          backgroundSix: 'Six',
         },
       },
     },

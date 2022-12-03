@@ -12,7 +12,7 @@ export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
 export type BadgeTextContrast = 'light' | 'dark' | 'light-withTextBackground' | 'dark-withTextBackground'
 
 const defaultBackgroundUrl =
-  'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'
+  'https://images.unsplash.com/photo-1566041510639-8d95a2490bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80'
 
 export interface BadgePreviewProps {
   size: BadgeSize
@@ -95,6 +95,8 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
       case 'dark':
       case 'dark-withTextBackground':
         return 'white'
+      default:
+        return 'black'
     }
   }
 
