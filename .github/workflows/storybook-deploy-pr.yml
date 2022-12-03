@@ -35,14 +35,14 @@ jobs:
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-       - name: Add comment to PR
-          id: comment_to_pr
-          uses: marocchino/sticky-pull-request-comment@v1
-          with:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            number: ${{ github.event.issue.number }}
-            header: Storybook Chromatic Deploy
-            message: |
-              * [PR Preview](${{ env.REVIEW_FEATURE_URL }}) 💯🖼️
-            env:
-              REVIEW_FEATURE_URL: ${{ steps.publish.outputs.storybookUrl }}
+      - name: Add comment to PR
+        id: comment_to_pr
+        uses: marocchino/sticky-pull-request-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.issue.number }}
+          header: Storybook Chromatic Deploy
+          message: |
+            * [PR Preview](${{ env.REVIEW_FEATURE_URL }}) 💯🖼️
+          env:
+            REVIEW_FEATURE_URL: ${{ steps.publish.outputs.storybookUrl }}
