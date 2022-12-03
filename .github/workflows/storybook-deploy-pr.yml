@@ -27,11 +27,11 @@ jobs:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
       - name: Comment PR with deployment url
-          uses: mshick/add-pr-comment@v1
-          with:
-            message: |
-              * [PR Version](${{ env.REVIEW_FEATURE_URL }})
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
-            repo-token-user-login: 'github-actions[bot]'
-          env:
-            REVIEW_FEATURE_URL: ${{ publish.outputs.storybookUrl }}
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            * [PR Version](${{ env.REVIEW_FEATURE_URL }})
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+        env:
+          REVIEW_FEATURE_URL: ${{ publish.outputs.storybookUrl }}
