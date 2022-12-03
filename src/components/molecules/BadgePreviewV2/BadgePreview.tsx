@@ -8,7 +8,11 @@ import './badgePreview.scss'
 export type BadgePreviewEffects = 'wobble' | 'grow' | 'glare'
 
 export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
-export type BadgeTextContrast = 'light' | 'dark'
+
+export type BadgeTextContrast = 'light' | 'dark' | 'light-withTextBackground' | 'dark-withTextBackground'
+
+const defaultBackgroundUrl =
+  'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'
 
 export interface BadgePreviewProps {
   size: BadgeSize
@@ -18,14 +22,11 @@ export interface BadgePreviewProps {
   title: string
   subline: string
   description: string
-  iconUrl?: string
   imageUrl?: string
   onClick?: () => void
   animationOnHover?: boolean
   animationEffects: BadgePreviewEffects[]
 }
-const defaultBackgroundUrl =
-  'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80'
 
 const defaultValuesForBadgePreviewProps = {
   size: 'medium' as BadgeSize,
@@ -85,6 +86,18 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
     }
   }
 
+  const getLogoFillColor = () => {
+    const { textContrast } = props
+    switch (textContrast) {
+      case 'light':
+      case 'light-withTextBackground':
+        return 'black'
+      case 'dark':
+      case 'dark-withTextBackground':
+        return 'white'
+    }
+  }
+
   const badgeQRSize = (): number => {
     const badgePreviewPropsSize = props.size
     switch (badgePreviewPropsSize) {
@@ -138,7 +151,7 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
         <div className={'badge-previewV2__header'}>
           <div className={'badge-previewV2__header--logo-qr-container'}>
             <span className={'badge-previewV2__header--tb-logo'}>
-              <LogoTheBadgeWithText fill={props.textContrast === 'light' ? 'black' : 'white'} size={badgeLogoSize()} />
+              <LogoTheBadgeWithText fill={getLogoFillColor()} size={badgeLogoSize()} />
             </span>
             <div className={`badge-previewV2__header--qr-code badge-previewV2__header--qr-code--${props.size}`}>
               <QRCode size={badgeQRSize()} value={props.badgeUrl} viewBox={`0 0 ${badgeQRSize()} ${badgeQRSize()}`} />
