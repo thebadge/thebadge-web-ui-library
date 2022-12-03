@@ -64,7 +64,7 @@ BadgePreviewLongTexts.args = {
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   badgeUrl: 'https://www.thebadge.xyz',
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
-  textContrast: 'dark',
+  textContrast: 'dark-withTextBackground',
 }
 
 export const BadgePreviewWithAnimationOnHover = Template.bind({})
@@ -79,5 +79,5 @@ BadgePreviewWithAnimationOnHover.args = {
   animationOnHover: true,
   animationEffects: ['wobble', 'grow', 'glare'],
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
-  textContrast: 'dark',
+  textContrast: 'dark-withTextBackground',
 }
