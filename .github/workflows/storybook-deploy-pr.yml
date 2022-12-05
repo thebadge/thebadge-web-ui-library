@@ -35,6 +35,7 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          autoAcceptChanges: true
 
       - name: Add comment to PR
         id: comment_to_pr
