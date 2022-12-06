@@ -56,12 +56,12 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
     // We need to go on each element and put it over the circumference of our virtual circle
     // To do that, we need to rotate each element to the corresponding angle.
     for (let i = 0; i < elementRefs.length; i++) {
-      let cell = elementRefs[i].current
+      const cell = elementRefs[i].current
       if (!cell) return
       if (i < cellCount) {
         // visible cell
         cell.style.opacity = '1'
-        let cellAngle = theta * i
+        const cellAngle = theta * i
         cell.style.transform = `rotateY(${cellAngle}deg) translateZ(${radius}px)`
       } else {
         // hidden cell
@@ -80,8 +80,7 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
 
   function onHoverEndHandler() {
     if (props.selfRotate && !intervalId) {
-      let intervalId: NodeJS.Timer
-      intervalId = setInterval(() => {
+      const intervalId: NodeJS.Timer = setInterval(() => {
         setSelectedCell((prev) => prev + 1)
       }, 3000)
       setIntervalId(intervalId)
@@ -99,8 +98,7 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
 
   useEffect(() => {
     if (props.selfRotate) {
-      let intervalId: NodeJS.Timer
-      intervalId = setInterval(() => {
+      const intervalId: NodeJS.Timer = setInterval(() => {
         setSelectedCell((prev) => prev + 1)
       }, 3000)
       setIntervalId(intervalId)
@@ -114,13 +112,14 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
   return (
     <Box className="scene" width={props.elementWidth} height={props.elementHeight}>
       <Box className="carousel" ref={carouselRef}>
-        {props.elements.map((element, i) => {
+        {props.elements.map((element, index) => {
           return (
             <Box
+              key={'carousel__element--' + index}
               className="carousel__element"
               onMouseEnter={onHoverHandler}
               onMouseLeave={onHoverEndHandler}
-              ref={elementRefs[i]}
+              ref={elementRefs[index]}
               width={props.elementWidth}
               height={props.elementHeight}
             >
