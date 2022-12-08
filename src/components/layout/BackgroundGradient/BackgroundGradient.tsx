@@ -1,12 +1,12 @@
 import { Box, styled } from '@mui/material'
 import React from 'react'
 
-export interface BackgroundGradientProps {
+export type BackgroundGradientProps = {
   gradient: string
 }
 
-export const Background = styled(Box)<{ background: string }>(({ background }) => ({
-  background: `${background}`,
+export const Background = styled(Box)<BackgroundGradientProps>(({ gradient }) => ({
+  background: `${gradient}`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   height: '100%',
@@ -14,6 +14,7 @@ export const Background = styled(Box)<{ background: string }>(({ background }) =
   position: 'fixed',
   zIndex: -1, // this is optional
 }))
+
 export const BackgroundGradient = (props: BackgroundGradientProps) => {
-  return <Background background={props.gradient} />
+  return <Background gradient={props.gradient} />
 }
