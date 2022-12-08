@@ -147,7 +147,7 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
         className={[
           `badge-previewV2__container`,
           `badge-previewV2__container--${props.size}`,
-          `badge-previewV2__container--${props.textContrast ?? 'dark'}`,
+          `badge-previewV2__container--${props.textContrast ?? 'light'}`,
         ].join(' ')}
       >
         <div className={'badge-previewV2__header'}>

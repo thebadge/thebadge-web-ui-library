@@ -2,7 +2,7 @@ import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
 import { BadgePreview, BadgePreviewEffects, BadgeSize } from '../BadgePreview/BadgePreview'
-import { BadgePreviewV2 } from '../BadgePreviewV2/BadgePreview'
+import { BadgePreviewV2, BadgeTextContrast } from '../BadgePreviewV2/BadgePreview'
 import { Carousel, CarouselProps } from './Carousel'
 
 export default {
@@ -29,6 +29,9 @@ const defaultBadgeCarouselExampleProps = {
   badgeUrl: 'https://www.thebadge.xyz',
   animationOnHover: true,
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
+  badgeBackgroundUrl:
+    'https://images.unsplash.com/photo-1620421680010-0766ff230392?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80',
+  textContrast: 'dark-withTextBackground' as BadgeTextContrast,
 }
 
 export const CarouselPreview = Template.bind({})
