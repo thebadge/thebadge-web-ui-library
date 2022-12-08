@@ -1,3 +1,4 @@
+export const black: string
 export const blackBackground: string
 export const blackText: string
 export const blue: string
@@ -59,6 +60,7 @@ export const s: string
 export const secondary: string
 export const secondaryDark: string
 export const secondaryLight: string
+export const transparent: string
 export const white: string
 export const xl: string
 export const xxl: string

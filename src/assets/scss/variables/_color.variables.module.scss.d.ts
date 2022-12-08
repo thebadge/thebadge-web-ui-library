@@ -1,3 +1,4 @@
+export const black: string
 export const blackBackground: string
 export const blackText: string
 export const blue: string
@@ -20,4 +21,5 @@ export const redError: string
 export const secondary: string
 export const secondaryDark: string
 export const secondaryLight: string
+export const transparent: string
 export const white: string

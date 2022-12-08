@@ -31,6 +31,8 @@ $tb-pink-light: #935995;
 
 // white
 $tb-white: #f5f5f5;
+$tb-black: #212121;
+$tb-transparent: transparent;
 
 // background
 $tb-black-background: #2d2d2d;
@@ -65,6 +67,8 @@ $colors: (
   'pink': $tb-pink,
   'pinkLight': $tb-pink-light,
   'white': $tb-white,
+  'black': $tb-black,
+  'transparent': $tb-transparent,
   'blackBackground': $tb-black-background,
   'greyBackground': $tb-grey-background,
   'redError': $tb-red-error,

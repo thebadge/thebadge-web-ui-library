@@ -1,3 +1,4 @@
+export const black: string
 export const blackBackground: string
 export const blackText: string
 export const blue: string
@@ -54,4 +55,5 @@ export const secondaryLight: string
 export const srOnly: string
 export const textUnderline: string
 export const textUnderlineWhite: string
+export const transparent: string
 export const white: string
