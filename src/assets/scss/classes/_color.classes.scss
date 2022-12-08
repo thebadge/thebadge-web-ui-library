@@ -23,6 +23,7 @@ $color-class-colors: map-merge(
   .fill--#{$name} {
     fill: $value;
   }
+
   .svg-fill--#{$name} {
     svg {
       fill: $value;

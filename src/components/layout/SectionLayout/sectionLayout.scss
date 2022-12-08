@@ -1,0 +1,31 @@
+@use '../../../assets/scss/functions/_base.functions.scss' as *;
+@use '../../../assets/scss/variables/variables.module';
+
+.section-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+
+  border-radius: 20px;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 1px;
+
+  &__top {
+    display: flex;
+    flex: 1;
+  }
+
+  &__middle {
+    display: flex;
+    padding: 16px;
+    flex: 1;
+  }
+
+  &__bottom {
+    display: flex;
+    flex: 1;
+    padding: 16px;
+  }
+}
