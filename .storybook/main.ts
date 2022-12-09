@@ -1,7 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path')
+import path from 'path'
+// Imports the Storybook's configuration API
+import type { StorybookConfig } from '@storybook/core-common'
 
-module.exports = {
+const config: StorybookConfig = {
   stories: ['../src/**/*.stories.tsx'],
   addons: [
     '@storybook/addon-links',
@@ -11,13 +13,21 @@ module.exports = {
   ],
   framework: '@storybook/react',
   webpackFinal: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
+    const alias = {
+      ...config?.resolve?.alias,
       '@assets': path.resolve(__dirname, '../src/assets'),
       '@components': path.resolve(__dirname, '../src/components'),
       '@businessLogic': path.resolve(__dirname, '../src/business-logic'),
     }
 
-    return config
+    return {
+      ...config,
+      resolve: {
+        ...config.resolve,
+        alias,
+      },
+    }
   },
 }
+
+module.exports = config
