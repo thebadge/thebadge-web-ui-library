@@ -118,6 +118,8 @@ export const fillTransparent: string
 export const fillWhite: string
 export const fontSizeBody1: string
 export const fontSizeBody2: string
+export const fontSizeBody3: string
+export const fontSizeBody4: string
 export const fontSizeButton: string
 export const fontSizeCaption: string
 export const fontSizeH1: string
@@ -129,8 +131,16 @@ export const fontSizeH6: string
 export const fontSizeOverline: string
 export const fontSizeSubtitle1: string
 export const fontSizeSubtitle2: string
+export const fontSizeTitle1: string
+export const fontSizeTitle2: string
+export const fontSizeTitle3: string
+export const fontSizeTitle4: string
+export const fontSizeTitle5: string
 export const fontTheBadgeWeb: string
+export const fontWeightBlack: string
 export const fontWeightBold: string
+export const fontWeightExtraBold: string
+export const fontWeightExtraLarge: string
 export const fontWeightLarge: string
 export const fontWeightNormal: string
 export const fontWeightThin: string
@@ -249,6 +259,8 @@ export const heightPc_99: string
 export const l: string
 export const lineHeightBody1: string
 export const lineHeightBody2: string
+export const lineHeightBody3: string
+export const lineHeightBody4: string
 export const lineHeightButton: string
 export const lineHeightCaption: string
 export const lineHeightH1: string
@@ -260,6 +272,11 @@ export const lineHeightH6: string
 export const lineHeightOverline: string
 export const lineHeightSubtitle1: string
 export const lineHeightSubtitle2: string
+export const lineHeightTitle1: string
+export const lineHeightTitle2: string
+export const lineHeightTitle3: string
+export const lineHeightTitle4: string
+export const lineHeightTitle5: string
 export const m: string
 export const orangeWarning: string
 export const pink: string

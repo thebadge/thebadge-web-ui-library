@@ -9,14 +9,14 @@ const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) 
   h1: {
     fontSize: fonts.fontSizeH1,
     fontStyle: 'normal',
-    fontWeight: fonts.fontWeightNormal,
+    fontWeight: fonts.fontWeightBold,
     lineHeight: `${fonts.lineHeightH1}`,
     letterSpacing: '-1.5px',
   },
   h2: {
     fontSize: fonts.fontSizeH2,
     fontStyle: 'normal',
-    fontWeight: fonts.fontWeightNormal,
+    fontWeight: fonts.fontWeightExtraBold,
     lineHeight: `${fonts.lineHeightH2}`,
   },
   h3: {
@@ -39,6 +39,36 @@ const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) 
     fontWeight: fonts.fontWeightNormal,
     lineHeight: `${fonts.lineHeightH6}`,
   },
+  title1: {
+    fontSize: fonts.fontSizeTitle1,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightExtraBold,
+    lineHeight: `${fonts.lineHeightTitle1}`,
+  },
+  title2: {
+    fontSize: fonts.fontSizeTitle2,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightExtraBold,
+    lineHeight: `${fonts.lineHeightTitle2}`,
+  },
+  title3: {
+    fontSize: fonts.fontSizeTitle3,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightBold,
+    lineHeight: `${fonts.lineHeightTitle3}`,
+  },
+  title4: {
+    fontSize: fonts.fontSizeTitle4,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightExtraBold,
+    lineHeight: `${fonts.lineHeightTitle4}`,
+  },
+  title5: {
+    fontSize: fonts.fontSizeTitle5,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightExtraBold,
+    lineHeight: `${fonts.lineHeightTitle5}`,
+  },
   subtitle1: {
     fontSize: fonts.fontSizeSubtitle1,
     fontStyle: 'normal',
@@ -52,10 +82,26 @@ const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) 
   },
   body1: {
     fontSize: fonts.fontSizeBody1,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightLarge,
     lineHeight: `${fonts.lineHeightBody1}`,
   },
   body2: {
     fontSize: fonts.fontSizeBody2,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightNormal,
+    lineHeight: `${fonts.lineHeightBody2}`,
+  },
+  body3: {
+    fontSize: fonts.fontSizeBody2,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightExtraLarge,
+    lineHeight: `${fonts.lineHeightBody2}`,
+  },
+  body4: {
+    fontSize: fonts.fontSizeBody2,
+    fontStyle: 'normal',
+    fontWeight: fonts.fontWeightNormal,
     lineHeight: `${fonts.lineHeightBody2}`,
   },
   button: {

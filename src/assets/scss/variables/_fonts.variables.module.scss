@@ -12,17 +12,19 @@ $font-weight-normal: 400;
 $font-weight-large: 500;
 $font-weight-xlarge: 600;
 $font-weight-bold: 700;
+$font-weight-xbold: 800;
+$font-weight-black: 900;
 
 // headlines
 // h1
-$font-size-h1: 96;
-$line-height-h1: 106px;
+$font-size-h1: 60;
+$line-height-h1: 68px;
 // h2
-$font-size-h2: 60;
-$line-height-h2: 78px;
+$font-size-h2: 50;
+$line-height-h2: 60px;
 // h3
-$font-size-h3: 34;
-$line-height-h3: 40px;
+$font-size-h3: 44;
+$line-height-h3: 32px;
 // h4
 $font-size-h4: 21;
 $line-height-h4: 24px;
@@ -34,10 +36,38 @@ $font-size-h6: 18;
 $line-height-h6: 21px;
 
 // bodies
-$font-size-body1: 16;
-$line-height-body1: 22px;
-$font-size-body2: 14;
-$line-height-body2: 20px;
+// Body 1
+$font-size-body1: 19;
+$line-height-body1: 28px;
+// Body 2
+$font-size-body2: 18;
+$line-height-body2: 24px;
+// Body 3
+$font-size-body3: 20;
+$line-height-body3: 26px;
+// Body 3
+$font-size-body3: 18;
+$line-height-body3: 24px;
+// Body 4
+$font-size-body4: 12;
+$line-height-body4: 16px;
+
+// titles
+// Title 1
+$font-size-title1: 23;
+$line-height-title1: 28px;
+// Title 2
+$font-size-title2: 28;
+$line-height-title2: 30px;
+// Title 3
+$font-size-title3: 35;
+$line-height-title3: 24px;
+// Title 4
+$font-size-title4: 22;
+$line-height-title4: 24px;
+// Title 5
+$font-size-title5: 21;
+$line-height-title5: 24px;
 
 // subtitles
 $font-size-subtitle1: 16;
@@ -46,8 +76,8 @@ $font-size-subtitle2: 14;
 $line-height-subtitle2: 16px;
 
 // button
-$font-size-button: 14;
-$line-height-button: 16px;
+$font-size-button: 18;
+$line-height-button: 20px;
 
 // caption
 $font-size-caption: 12;
@@ -64,7 +94,11 @@ $default: 1;
   fontWeightThin: $font-weight-thin;
   fontWeightNormal: $font-weight-normal;
   fontWeightLarge: $font-weight-large;
+  fontWeightExtraLarge: $font-weight-xlarge;
   fontWeightBold: $font-weight-bold;
+  fontWeightExtraBold: $font-weight-xbold;
+  fontWeightBlack: $font-weight-black;
+  // Headers
   fontSizeH1: $font-size-h1;
   lineHeightH1: $line-height-h1;
   fontSizeH2: $font-size-h2;
@@ -77,18 +111,38 @@ $default: 1;
   lineHeightH5: $line-height-h5;
   fontSizeH6: $font-size-h6;
   lineHeightH6: $line-height-h6;
+  // Bodies
   fontSizeBody1: $font-size-body1;
   lineHeightBody1: $line-height-body1;
   fontSizeBody2: $font-size-body2;
   lineHeightBody2: $line-height-body2;
+  fontSizeBody3: $font-size-body3;
+  lineHeightBody3: $line-height-body3;
+  fontSizeBody4: $font-size-body4;
+  lineHeightBody4: $line-height-body4;
+  // Titles
+  fontSizeTitle1: $font-size-title1;
+  lineHeightTitle1: $line-height-title1;
+  fontSizeTitle2: $font-size-title2;
+  lineHeightTitle2: $line-height-title2;
+  fontSizeTitle3: $font-size-title3;
+  lineHeightTitle3: $line-height-title3;
+  fontSizeTitle4: $font-size-title4;
+  lineHeightTitle4: $line-height-title4;
+  fontSizeTitle5: $font-size-title5;
+  lineHeightTitle5: $line-height-title5;
+  // Sub-Titles
   fontSizeSubtitle1: $font-size-subtitle1;
   lineHeightSubtitle1: $line-height-subtitle1;
   fontSizeSubtitle2: $font-size-subtitle2;
   lineHeightSubtitle2: $line-height-subtitle2;
+  // Bottons
   fontSizeButton: $font-size-button;
   lineHeightButton: $line-height-button;
+  // Caption
   fontSizeCaption: $font-size-caption;
   lineHeightCaption: $line-height-caption;
+  // Overline
   fontSizeOverline: $font-size-overline;
   lineHeightOverline: $line-height-overline;
 }
