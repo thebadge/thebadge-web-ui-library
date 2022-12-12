@@ -1,4 +1,5 @@
 import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
+import { Alert } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
 import { BadgePreview, BadgePreviewEffects, BadgeSize } from '../BadgePreview/BadgePreview'
@@ -12,7 +13,21 @@ export default {
 
 const Template: Story<CarouselProps> = (args) => {
   return (
-    <div style={{ background: 'gray', padding: '16px', display: 'flex', justifyContent: 'center', height: '100vh' }}>
+    <div
+      style={{
+        background: 'gray',
+        padding: '16px',
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
+      <Alert severity="warning">
+        Self rotates stops each time you hover one element on the carousel so that you can read it correctly and at your
+        time.
+      </Alert>
       <Carousel {...args} />
     </div>
   )

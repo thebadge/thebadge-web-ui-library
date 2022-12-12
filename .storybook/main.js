@@ -14,6 +14,7 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@assets': path.resolve(__dirname, '../src/assets'),
+      '@hooks': path.resolve(__dirname, '../src/hooks/index'),
       '@components': path.resolve(__dirname, '../src/components'),
       '@businessLogic': path.resolve(__dirname, '../src/business-logic'),
     }
