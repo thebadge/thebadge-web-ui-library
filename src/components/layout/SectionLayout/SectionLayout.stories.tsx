@@ -1,14 +1,40 @@
 import { Colors } from '@assets/defaultTheme'
 import { Stepper } from '@components/molecules/Stepper/Stepper'
 import { Box, Typography } from '@mui/material'
-import { Story } from '@storybook/react'
-import { Meta } from '@storybook/react/types-6-0'
+import { Meta, Story } from '@storybook/react'
 import React from 'react'
 import { SectionLayout, SectionLayoutProps } from './SectionLayout'
 
 export default {
   title: 'Components/Layout/SectionLayout',
   component: SectionLayout,
+  argTypes: {
+    topComponent: {
+      name: 'Top component',
+      description: 'Its a react component, that will be rendered at the top of the layout.',
+      control: {
+        type: null,
+      },
+    },
+    middleComponent: {
+      name: 'Middle component',
+      description: 'Its a react component, that will be rendered on the middle of the layout.',
+      control: {
+        type: null,
+      },
+    },
+    bottomComponent: {
+      name: 'Bottom component',
+      description: 'Its a react component, that will be rendered at the bottom of the layout.',
+      control: {
+        type: null,
+      },
+    },
+    borderColor: {
+      name: 'Border Color',
+      description: 'The border color around the entire layout element.',
+    },
+  },
 } as Meta
 
 const Template: Story<SectionLayoutProps> = (args) => (
@@ -62,7 +88,18 @@ const stepperArgs = {
       days to analyze the evidence you have submitted.
     </Typography>,
     <Box key={3} display="flex" flexDirection="row" alignContent="center">
-      <Box width={90} height={120} bgcolor="black" borderRadius={1} marginRight={2} />
+      <Box
+        width={90}
+        height={120}
+        sx={{
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundImage:
+            'url(https://images.unsplash.com/photo-1668894787737-58a109e73c9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80)',
+        }}
+        borderRadius={1}
+        marginRight={2}
+      />
       <Typography fontWeight={500} fontSize={18} fontFamily="Mulish">
         Your submission will have to pass through Kleros`&apos;`s curation process. Where the community will have a few
         days to analyze the evidence you have submitted.
@@ -77,6 +114,7 @@ const topComponent = () => (
       display: 'flex',
       flex: 1,
       placeContent: 'center',
+      alignItems: 'center',
       background:
         'url(https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80)',
     }}

@@ -25,7 +25,8 @@
     "next": "12.2.4",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "react-qr-code": "^2.0.8"
+    "react-qr-code": "^2.0.8",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",

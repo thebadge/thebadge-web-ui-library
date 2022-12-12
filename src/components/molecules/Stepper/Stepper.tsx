@@ -2,7 +2,8 @@ import { Colors } from '@assets/defaultTheme'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { Box } from '@mui/material'
-import React, { useState } from 'react'
+import React, { createRef, RefObject, useMemo, useState } from 'react'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 import './stepper.scss'
 
@@ -32,6 +33,12 @@ export const Stepper = ({
   border,
 }: StepperProps = defaultStepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
+
+  // Refs to move the elemenets
+  const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
+    () => elements.map(() => createRef<HTMLDivElement>()),
+    [elements]
+  )
 
   if (!elements || !(elements.length > 0)) {
     return null
@@ -80,7 +87,21 @@ export const Stepper = ({
           ].join(' ')}
           onClick={onArrowBackClickHandler}
         />
-        <Box className="stepper__step">{elements[selectedElement]}</Box>
+        <Box className="stepper__step">
+          <SwitchTransition>
+            <CSSTransition
+              key={selectedElement}
+              nodeRef={elementRefs[selectedElement]}
+              addEndListener={(done) => {
+                elementRefs[selectedElement].current?.addEventListener('transitionend', done, false)
+              }}
+              timeout={300}
+              classNames="stepper__step-fade"
+            >
+              <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
+            </CSSTransition>
+          </SwitchTransition>
+        </Box>
         <ArrowForwardIosIcon className={`stepper__arrow color--${color ?? ''}`} onClick={onArrowForwardClickHandler} />
       </Box>
       <Box className="stepper__dot__container">
