@@ -11,6 +11,7 @@ import { BackgroundGradient } from '@components/layout/BackgroundGradient/Backgr
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { BadgePreview } from '@components/molecules/BadgePreview/BadgePreview'
+import { BadgePreviewV2 } from '@components/molecules/BadgePreviewV2/BadgePreview'
 import { Carousel } from '@components/molecules/Carousel/Carousel'
 import { Stepper } from '@components/molecules/Stepper/Stepper'
 
@@ -18,6 +19,7 @@ export {
   defaultTheme,
   Button,
   BadgePreview,
+  BadgePreviewV2,
   IconTwitter,
   IconMedium,
   IconGithub,

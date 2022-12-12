@@ -1,0 +1,50 @@
+# Workflow name
+name: 'Chromatic Deployment - PR'
+
+# Event for the workflow
+# Triggers the workflow on push or pull request events but only for the development branch
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review, synchronize]
+    branches:
+      - main
+
+# List of jobs
+jobs:
+  test:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Add comment to PR
+        id: loading_comment_to_pr
+        uses: marocchino/sticky-pull-request-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.issue.number }}
+          header: Storybook Chromatic Deploy
+          message: |
+            Building & Deploying Storybook... 🚧
+
+      - run: yarn
+
+      - name: Publish to Chromatic
+        id: publish
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          autoAcceptChanges: true
+
+      - name: Add comment to PR
+        id: comment_to_pr
+        uses: marocchino/sticky-pull-request-comment@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.issue.number }}
+          header: Storybook Chromatic Deploy
+          message: |
+            * [PR Preview](${{ env.REVIEW_FEATURE_URL }}) 🏅💯
+        env:
+          REVIEW_FEATURE_URL: ${{ steps.publish.outputs.storybookUrl }}
