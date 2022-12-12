@@ -21,7 +21,7 @@ const Template: Story<CarouselProps> = (args) => {
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-        height: '100vh',
+        height: '70vh',
       }}
     >
       <Alert severity="warning">

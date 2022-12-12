@@ -25,7 +25,7 @@ export default {
 
 const Template: Story<StepperProps> = (args) => {
   return (
-    <div style={{ background: 'gray', padding: '16px', display: 'flex', justifyContent: 'center', height: '100vh' }}>
+    <div style={{ background: 'gray', padding: '16px', display: 'flex', justifyContent: 'center', height: '50vh' }}>
       <Stepper {...args} />
     </div>
   )
