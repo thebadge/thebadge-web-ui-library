@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import { BadgePreviewProps, BadgePreviewV2 } from './BadgePreview'
+import { BadgePreviewEffects, BadgePreviewProps, BadgePreviewV2 } from './BadgePreview'
 
 const EXAMPLE_URLS = {
   backgroundOne:
@@ -67,6 +67,7 @@ BadgePreviewLongTexts.args = {
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   badgeUrl: 'https://www.thebadge.xyz',
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
+  animationEffects: [] as BadgePreviewEffects[],
   textContrast: 'dark-withTextBackground',
 }
 

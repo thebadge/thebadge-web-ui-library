@@ -1,3 +1,4 @@
+import { useWindowFocus } from '@hooks'
 import { Box } from '@mui/material'
 import React, { createRef, RefObject, useEffect, useState } from 'react'
 import './carousel.scss'
@@ -19,6 +20,7 @@ const defaultCarouselProps = {
 export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
   const [selectedCell, setSelectedCell] = useState(0)
   const [intervalId, setIntervalId] = useState<NodeJS.Timer | null>(null)
+  const windowsFocused = useWindowFocus()
 
   const carouselRef: RefObject<HTMLDivElement> = createRef<HTMLDivElement>()
   // Refs to move the elemenets
@@ -95,6 +97,26 @@ export const Carousel = (props: CarouselProps = defaultCarouselProps) => {
   useEffect(() => {
     rotateCarousel()
   }, [selectedCell])
+
+  useEffect(() => {
+    // If self-rotate is deactivated, and it is rotating, stop it.
+    if (!props.selfRotate && intervalId) clearInterval(intervalId)
+  }, [props.selfRotate])
+
+  useEffect(() => {
+    if (!windowsFocused) {
+      // If self-rotate is active, and window loss the focus, we stop it.
+      if (intervalId) clearInterval(intervalId)
+    } else {
+      if (props.selfRotate) {
+        // If self-rotate is active, and window get the focus back to the window, we start it.
+        const intervalId: NodeJS.Timer = setInterval(() => {
+          setSelectedCell((prev) => prev + 1)
+        }, 3000)
+        setIntervalId(intervalId)
+      }
+    }
+  }, [windowsFocused])
 
   useEffect(() => {
     if (props.selfRotate) {
