@@ -45,6 +45,6 @@ jobs:
           number: ${{ github.event.issue.number }}
           header: Storybook Chromatic Deploy
           message: |
-            * [PR Preview](${{ env.REVIEW_FEATURE_URL }}) 🏅💯
+            * [PR Preview](${{ env.REVIEW_FEATURE_URL }}?path=/docs/) 🏅💯
         env:
-          REVIEW_FEATURE_URL: ${{ steps.publish.outputs.storybookUrl }}
+          REVIEW_FEATURE_URL: ${{steps.publish.outputs.storybookUrl}}

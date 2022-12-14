@@ -1,8 +1,9 @@
-import React from 'react'
-import { Meta } from '@storybook/react/types-6-0'
-import { Story } from '@storybook/react'
-import { BackgroundGradient, BackgroundGradientProps } from './BackgroundGradient'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
+import { Box } from '@mui/material'
+import { Story } from '@storybook/react'
+import { Meta } from '@storybook/react/types-6-0'
+import React from 'react'
+import { BackgroundGradient, BackgroundGradientProps } from './BackgroundGradient'
 
 export default {
   title: 'Components/Layout/BackgroundGradient',
@@ -26,3 +27,6 @@ BackgroundGradient3.args = { gradient: gradients.gradient3 }
 
 export const BackgroundGradient4 = Template.bind({})
 BackgroundGradient4.args = { gradient: gradients.gradient4 }
+
+export const BackgroundGradient5 = Template.bind({})
+BackgroundGradient5.args = { gradient: gradients.gradient5 }

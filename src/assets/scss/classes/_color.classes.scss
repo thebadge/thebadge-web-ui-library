@@ -1,20 +1,36 @@
 @use '../variables/color.variables.module' as *;
 
-$color-class-colors: map-merge($colors, ("inherit": inherit));
+$color-class-colors: map-merge(
+  $colors,
+  (
+    'inherit': inherit,
+  )
+);
+
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
 
 @each $name, $value in $color-class-colors {
   .color--#{$name} {
     color: $value;
   }
+
   .background-color--#{$name} {
     background-color: $value;
   }
+
   .fill--#{$name} {
     fill: $value;
   }
+
   .svg-fill--#{$name} {
     svg {
       fill: $value;
     }
+  }
+
+  .border-color--#{$name} {
+    border-color: $value;
   }
 }
