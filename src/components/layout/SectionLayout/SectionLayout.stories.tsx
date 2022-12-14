@@ -84,8 +84,8 @@ const stepperArgs = {
       tweet containing your wallet address.
     </Typography>,
     <Typography key={2} fontWeight={500} fontSize={18} fontFamily="Mulish">
-      Your submission will have to pass through Kleros`&apos;`s curation process. Where the community will have a few
-      days to analyze the evidence you have submitted.
+      Your submission will have to pass through Kleros&apos;s curation process. Where the community will have a few days
+      to analyze the evidence you have submitted.
     </Typography>,
     <Box key={3} display="flex" flexDirection="row" alignContent="center">
       <Box
@@ -101,7 +101,7 @@ const stepperArgs = {
         marginRight={2}
       />
       <Typography fontWeight={500} fontSize={18} fontFamily="Mulish">
-        Your submission will have to pass through Kleros`&apos;`s curation process. Where the community will have a few
+        Your submission will have to pass through Kleros&apos;s curation process. Where the community will have a few
         days to analyze the evidence you have submitted.
       </Typography>
     </Box>,
