@@ -19,20 +19,42 @@
     margin-bottom: 24px;
 
     &::before {
-        content: "";
-        width: 0px;
-        height: 0px;
-        position: absolute;
-        border-left: 16px solid transparent;
-        border-right: 16px solid transparent;
-        border-top: 24px solid salmon;
-        margin-top: 84px;
+      content: '';
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 24px solid salmon;
+      margin-top: 84px;
     }
 
     p {
-      font-size:xx-large;
+      font-size: xx-large;
       font-weight: 700;
       color: rgb(175, 175, 175);
+    }
+  }
+  &__year {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    p {
+      color: white;
+      font-weight: 700;
+    }
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    p {
+      color: rgb(41, 41, 41);
+      font-weight: 700;
+      font-size: small;
+      text-transform: uppercase;
     }
   }
 }
