@@ -14,7 +14,7 @@ export interface NavigationHeaderProps {
 }
 
 const defaultValuesForNavigationHeaderProps = {
-  items: []
+  items: [],
 }
 
 export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesForNavigationHeaderProps) => {
@@ -30,25 +30,25 @@ export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesFor
       <Toolbar>
         <Box sx={{ display: { xs: 'block' } }}>
           {props.items.map((item, index) => (
-              <Button
-                key={item.label}
-                onClick={() => onItemClick(item, index)}
-                sx={{ color: 'white',
-                  padding: '6px 0',
-                  margin: '2px 8px',
-                  ...(selectedElement === index ?
-                    {
+            <Button
+              key={item.label}
+              onClick={() => onItemClick(item, index)}
+              sx={{
+                color: 'white',
+                padding: '6px 0',
+                margin: '2px 8px',
+                ...(selectedElement === index
+                  ? {
                       background: `${gradients.gradientHeader}`,
                       backgroundSize: '100% 3px',
                       backgroundPosition: 'bottom 0 left 0,bottom 6px left 0',
                       backgroundRepeat: 'no-repeat',
-                    } :
-                    {
-                      background: 'transparent'
                     }
-                  )
-                }}
-              >
+                  : {
+                      background: 'transparent',
+                    }),
+              }}
+            >
               {item.label}
             </Button>
           ))}
