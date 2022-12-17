@@ -1,5 +1,4 @@
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
-import { Box } from '@mui/material'
 import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'

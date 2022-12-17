@@ -34,7 +34,7 @@ export const Stepper = ({
 }: StepperProps = defaultStepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
 
-  // Refs to move the elemenets
+  // Refs to move the elements
   const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
     () => elements.map(() => createRef<HTMLDivElement>()),
     [elements]
