@@ -39,7 +39,7 @@ const defaultValuesForBadgePreviewProps = {
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
-const BadgePreviewBox = styled(Box)<{ size: number }>(({ theme, size = 320 }) => ({
+const BadgePreviewBox = styled(Box)<{ size: number }>(({ size = 320 }) => ({
   width: size,
   height: size * 1.6,
 }))
