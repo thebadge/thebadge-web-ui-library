@@ -25,15 +25,15 @@ const HeaderItemImage = styled(Box)(({ theme }) => ({
     width: 25,
     height: 25,
   },
-  padding: '0 ' + theme.spacing(0.5),
+  padding: theme.spacing(0, 0.5),
   display: 'flex',
   alignItems: 'center',
 }))
 
 const HeaderItem = styled(Button)<{ selected: boolean }>(({ theme, selected }) => ({
   color: colors.white,
-  padding: theme.spacing(1.5) + ' 0',
-  margin: theme.spacing(0.5) + ' ' + theme.spacing(2),
+  padding: theme.spacing(1.5, 0),
+  margin: theme.spacing(0.5, 2),
   '&:disabled': {
     color: colors.white,
     opacity: 0.5,
