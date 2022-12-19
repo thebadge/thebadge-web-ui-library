@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { AppBar, Box, Button, Toolbar } from '@mui/material'
+import React, { useState } from 'react'
+import { AppBar, Box, Button, styled, Toolbar } from '@mui/material'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
+import colors from '@assets/scss/variables/_color.variables.module.scss'
 
 interface NavigationHeaderItem {
   label: string
   icon?: string
-  onClick: () => void
+  onClick?: () => void
   disabled?: boolean
 }
 
@@ -17,12 +18,46 @@ const defaultValuesForNavigationHeaderProps = {
   items: [],
 }
 
+const HeaderItemImage = styled(Box)(({ theme }) => ({
+  width: 35,
+  height: 35,
+  [theme.breakpoints.down('sm')]: {
+    width: 25,
+    height: 25,
+  },
+  padding: '0 ' + theme.spacing(0.5),
+  display: 'flex',
+  alignItems: 'center',
+}))
+
+const HeaderItem = styled(Button)<{ selected: boolean }>(({ theme, selected }) => ({
+  color: colors.white,
+  padding: theme.spacing(1.5) + ' 0',
+  margin: theme.spacing(0.5) + ' ' + theme.spacing(2),
+  '&:disabled': {
+    color: colors.white,
+    opacity: 0.5,
+  },
+  ...(selected
+    ? {
+        background: `${gradients.gradientHeader}`,
+        backgroundSize: '100% 3px',
+        backgroundPosition: 'bottom 0 left 0,bottom 6px left 0',
+        backgroundRepeat: 'no-repeat',
+      }
+    : {
+        background: 'transparent',
+      }),
+}))
+
 export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesForNavigationHeaderProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
 
   const onItemClick = (item: NavigationHeaderItem, index: number) => {
     setSelectedElement(index)
-    item.onClick()
+    if (item.onClick) {
+      item.onClick()
+    }
   }
 
   return (
@@ -30,27 +65,19 @@ export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesFor
       <Toolbar>
         <Box sx={{ display: { xs: 'block' } }}>
           {props.items.map((item, index) => (
-            <Button
+            <HeaderItem
               key={item.label}
               onClick={() => onItemClick(item, index)}
-              sx={{
-                color: 'white',
-                padding: '6px 0',
-                margin: '2px 8px',
-                ...(selectedElement === index
-                  ? {
-                      background: `${gradients.gradientHeader}`,
-                      backgroundSize: '100% 3px',
-                      backgroundPosition: 'bottom 0 left 0,bottom 6px left 0',
-                      backgroundRepeat: 'no-repeat',
-                    }
-                  : {
-                      background: 'transparent',
-                    }),
-              }}
+              disabled={item.disabled}
+              selected={selectedElement === index}
             >
+              {item.icon ? (
+                <HeaderItemImage>
+                  <img src={item.icon} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />
+                </HeaderItemImage>
+              ) : null}
               {item.label}
-            </Button>
+            </HeaderItem>
           ))}
         </Box>
       </Toolbar>

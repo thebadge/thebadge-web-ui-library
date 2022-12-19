@@ -2,6 +2,7 @@ import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
 import { NavigationHeader, NavigationHeaderProps } from './NavigationHeader'
+import badgeBackground from '@assets/svgs/badgeBackground.svg'
 
 export default {
   title: 'Components/Atoms/NavigationHeader',
@@ -20,24 +21,34 @@ export const SampleNavigationHeader = Template.bind({})
 SampleNavigationHeader.args = {
   items: [
     {
-      label: 'sample',
-      onClick: () => {},
+      label: 'sample-icon',
+      onClick: () => {
+        console.log('sample click')
+      },
+      icon: badgeBackground,
     },
     {
       label: 'sample2',
-      onClick: () => {},
+      onClick: () => {
+        console.log('sample click')
+      },
     },
     {
       label: 'sample3',
-      onClick: () => {},
+      onClick: () => {
+        console.log('sample click')
+      },
+      icon: badgeBackground,
     },
     {
-      label: 'sample4',
-      onClick: () => {},
+      label: 'sample-disabled',
+      disabled: true,
     },
     {
-      label: 'sample5',
-      onClick: () => {},
+      label: 'sample',
+      onClick: () => {
+        console.log('sample click')
+      },
     },
   ],
 }
