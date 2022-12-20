@@ -1,10 +1,6 @@
 // We need to import all the types that we want to do Module Augmentation
 // https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation
 import '@mui/material/styles/createPalette'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Palette, PaletteOptions, TypeText } from '@mui/material'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { ChatBubbleType } from '@mui/material/styles/createPalette'
 
 declare module '@mui/material/styles/createPalette' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
