@@ -2,10 +2,11 @@ import { BadgeCategories } from '@businessLogic/badge'
 import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import { BadgePreview, BadgePreviewProps } from './BadgePreview'
+import { BadgePreview } from './BadgePreview'
+import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 
 export default {
-  title: 'Components/Molecules/BadgePreview',
+  title: 'Components/Atoms/BadgePreview/v1',
   component: BadgePreview,
 } as Meta
 

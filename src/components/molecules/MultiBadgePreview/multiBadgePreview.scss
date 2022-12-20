@@ -1,0 +1,43 @@
+@use '../../../assets/scss/functions/_base.functions.scss' as *;
+@use '../../../assets/scss/variables/variables.module';
+
+.multiBadgePreview {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    scale: 1.075;
+    .badge-preview,
+    .badge-previewV2 {
+      transition: none;
+      scale: 1;
+      animation: none;
+    }
+  }
+
+}
+
+.multiBadgePreview__badge {
+  border: 1px solid transparent;
+  backface-visibility: hidden;
+}
+
+.multiBadgePreview__badge:nth-child(1) {
+  scale: 0.9;
+  margin-right: -60px;
+  z-index: 1;
+}
+.multiBadgePreview__badge:nth-child(2) {
+  z-index: 2;
+}
+.multiBadgePreview__badge:nth-child(3) {
+  scale: 0.9;
+  margin-left: -60px;
+  z-index: 1;
+}
+
+.multiBadgePreview__badge {
+  background: transparent;
+}
