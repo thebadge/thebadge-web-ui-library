@@ -138,8 +138,8 @@ const middleComponent = () => (
     </Typography>
 
     <Typography color="white">
-      Also known as "Blockchain certifications as a service". They are badges generated and backed by a public or
-      private entity. Entities that are willing to generate these badge have to be registered on the platform before
+      Also known as &quot;Blockchain certifications as a service&quot;. They are badges generated and backed by a public
+      or private entity. Entities that are willing to generate these badge have to be registered on the platform before
       they can start emitting them.
     </Typography>
   </Box>

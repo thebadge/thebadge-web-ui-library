@@ -3,9 +3,11 @@
 import '@mui/material/styles/createPalette'
 
 declare module '@mui/material/styles/createPalette' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface Palette {}
 
   // allow configuration using `createTheme`
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface PaletteOptions {}
 }
 
@@ -36,6 +38,7 @@ declare module '@mui/material/styles/createTypography' {
 
 declare module '@mui/material/styles' {
   // Allow to use it in useMediaQuery
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface BreakpointOverrides {
     //  mobile: true
     //  tablet: true
