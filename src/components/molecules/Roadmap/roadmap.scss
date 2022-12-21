@@ -50,11 +50,14 @@
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
+    flex-direction: column;
+    :first-child {
+      text-transform: uppercase;
+    }
     p {
       color: white;
       font-weight: 700;
       font-size: small;
-      text-transform: uppercase;
       text-align: center;
     }
   }
