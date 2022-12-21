@@ -13,7 +13,7 @@ export const Roadmap = () => {
       <Typography component="h3" variant="h3" align="center" mb={3} color="white">
         ROADMAP
       </Typography>
-      <Grid container gap={2} justifyContent="space-around">
+      <Grid container gap={4} justifyContent="space-around">
         <Grid item className="roadmap__circle">
           <p>01</p>
         </Grid>
@@ -35,7 +35,7 @@ export const Roadmap = () => {
         gradient="linear-gradient(90deg, #008362 0%, #5BBCAD 21.48%, #002CBF 50.63%, #B74AD6 74.67%, #891CFB 98.2%);"
         shadowColor=""
       >
-        <Grid container gap={2} justifyContent="space-around" flexWrap="nowrap">
+        <Grid container gap={0} justifyContent="space-around" flexWrap="nowrap">
           <Grid item className="roadmap__year">
             <p>2022 (C)</p>
           </Grid>
@@ -53,8 +53,9 @@ export const Roadmap = () => {
           </Grid>
         </Grid>
       </BoxGradient>
-      <Grid container gap={2} justifyContent="space-around" flexWrap="nowrap" spacing={4} columns={5}>
+      <Grid container gap={0} justifyContent="space-around" flexWrap="nowrap" spacing={4} columns={5}>
         <Grid item className="roadmap__text" md={1}>
+          <div className="line"></div>
           <Typography component="h5" variant="h5" align="center" mb={2} color="white">
             The Badge fundamentals
           </Typography>
@@ -64,6 +65,7 @@ export const Roadmap = () => {
           </Typography>
         </Grid>
         <Grid item className="roadmap__text" md={1}>
+          <div className="line"></div>
           <Typography component="h5" variant="h5" align="center" mb={2} color="white">
             The Badge Labs foundation
           </Typography>
@@ -73,12 +75,14 @@ export const Roadmap = () => {
           </Typography>
         </Grid>
         <Grid item className="roadmap__text" md={1}>
+          <div className="line"></div>
           <Typography component="h5" variant="h5" align="center" mb={2} color="white">
             Certification platform DEVELOPMENT
           </Typography>
           <Typography variant="body2">This period will be used to build the v1 of our platform.</Typography>
         </Grid>
         <Grid item className="roadmap__text" md={1}>
+          <div className="line"></div>
           <Typography component="h5" variant="h5" align="center" mb={2} color="white">
             Courts & curator platform development
           </Typography>
@@ -88,6 +92,7 @@ export const Roadmap = () => {
           </Typography>
         </Grid>
         <Grid item className="roadmap__text" md={1}>
+          <div className="line"></div>
           <Typography component="h5" variant="h5" align="center" mb={2} color="white">
             Going live
           </Typography>
