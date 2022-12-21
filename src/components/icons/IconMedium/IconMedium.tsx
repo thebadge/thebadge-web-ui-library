@@ -5,7 +5,7 @@ export const IconMedium = (props: IconProps) => {
   return (
     <a href={props.link} target={'_blank'} rel="noreferrer">
       <svg
-        className={`fill--${props.color}`}
+        className={`icon svg-fill--${props.color}` + (!props.link ? 'icon--disabled' : '')}
         width={24}
         height={24}
         xmlns="http://www.w3.org/2000/svg"
