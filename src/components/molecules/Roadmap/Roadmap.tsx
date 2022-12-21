@@ -55,19 +55,43 @@ export const Roadmap = () => {
       </BoxGradient>
       <Grid container gap={2} justifyContent="space-around" flexWrap="nowrap">
         <Grid item className="roadmap__text">
-          <p>The Badge fundamentals</p>
+          <Typography component="h5" variant="h5" align="center" mb={3} color="white">
+            The Badge fundamentals
+          </Typography>
+          <Typography variant="body2">
+            Defining the fundamentals of the project and finding real necessities where this platform could be used and
+            how.
+          </Typography>
         </Grid>
         <Grid item className="roadmap__text">
-          <p>The Badge Labs foundation</p>
+          <Typography component="h5" variant="h5" align="center" mb={3} color="white">
+            The Badge Labs foundation
+          </Typography>
+          <Typography variant="body2">
+            Creating the first badges that will help us to better understand the best way to make our platform adaptable
+            to different scenarios.
+          </Typography>
         </Grid>
         <Grid item className="roadmap__text">
-          <p>Certification platform DEVELOPMENT</p>
+          <Typography component="h5" variant="h5" align="center" mb={3} color="white">
+            Certification platform DEVELOPMENT
+          </Typography>
+          <Typography variant="body2">This period will be used to build the v1 of our platform.</Typography>
         </Grid>
         <Grid item className="roadmap__text">
-          <p>Courts & curator platform development</p>
+          <Typography component="h5" variant="h5" align="center" mb={3} color="white">
+            Courts & curator platform development
+          </Typography>
+          <Typography variant="body2">
+            Develop the functionality that will allow our community to create different types of badges and to validate
+            the veracity our our certifications.
+          </Typography>
         </Grid>
         <Grid item className="roadmap__text">
-          <p>Going live</p>
+          <Typography component="h5" variant="h5" align="center" mb={3} color="white">
+            Going live
+          </Typography>
+          <Typography variant="body2">We will be releasing our platform.</Typography>
         </Grid>
       </Grid>
     </Box>
