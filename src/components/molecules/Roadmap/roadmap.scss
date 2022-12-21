@@ -49,7 +49,7 @@
       border: 2px dashed white;
       margin: 0 50% 8px;
     }
-    :first-child {
+    :nth-child(2) {
       text-transform: uppercase;
     }
 
