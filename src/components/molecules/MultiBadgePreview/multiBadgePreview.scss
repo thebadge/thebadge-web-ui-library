@@ -7,8 +7,6 @@
   flex-direction: row;
 
   &:hover {
-    transition: all 0.3s ease-in-out;
-    scale: 1.075;
     .badge-preview,
     .badge-previewV2 {
       transition: none;
@@ -17,6 +15,12 @@
     }
   }
 
+  &--animated {
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      scale: 1.075;
+    }
+  }
 }
 
 .multiBadgePreview__badge {

@@ -15,7 +15,7 @@ const Template: Story<MultiBadgePreviewProps> = (args) => {
   return (<MultiBadgePreview {...args} />)
 }
 const defaultBadgeCarouselExampleProps = {
-  size: 'medium' as BadgeSize,
+  size: 'small' as BadgeSize,
   badgeCategory: BadgeCategories.OFFCHAIN,
   badgeType: BadgeTypes.CUSTOM,
   title: 'TITLE xxx',
@@ -40,11 +40,53 @@ MultiBadgePreviewTemplate.args = {
   ]
 }
 
-export const MultiBadgePreviewTemplateWithV2Badges = Template.bind({})
-MultiBadgePreviewTemplateWithV2Badges.args = {
+export const MultiBadgePreviewScaledToHalf = Template.bind({})
+MultiBadgePreviewScaledToHalf.args = {
   badges: [
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />
+    <BadgePreview key={0} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview key={1} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />
+  ],
+  sizeScale: 0.5
+}
+
+export const MultiBadgePreviewAnimatedWithLink = Template.bind({})
+MultiBadgePreviewAnimatedWithLink.args = {
+  badges: [
+    <BadgePreview key={0} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview key={1} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />
+  ],
+  animated: true,
+  onGroupClick: () => { window.open('https://www.thebadge.xyz/')}
+}
+
+export const MultiBadgePreviewWithV2Badges = Template.bind({})
+MultiBadgePreviewWithV2Badges.args = {
+  badges: [
+    <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={1} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />
   ]
+}
+
+export const MultiBadgePreviewWithV2BadgesScaledToHalf = Template.bind({})
+MultiBadgePreviewWithV2BadgesScaledToHalf.args = {
+  badges: [
+    <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={1}{...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />
+  ],
+  sizeScale: 0.5
+}
+
+export const MultiBadgePreviewWithV2BadgesAnimatedWithLink = Template.bind({})
+MultiBadgePreviewWithV2BadgesAnimatedWithLink.args = {
+  badges: [
+    <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={1}{...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />
+  ],
+  animated: true,
+  onGroupClick: () => { window.open('https://www.thebadge.xyz/')}
 }
