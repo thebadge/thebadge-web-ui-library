@@ -6,6 +6,7 @@
     height: 58px;
     width: 100%;
     border-radius: 24px;
+    margin: 24px 0;
   }
   &__circle {
     height: 78px;
@@ -36,21 +37,12 @@
     }
   }
   &__year {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
     p {
       color: white;
       font-weight: 700;
     }
   }
   &__text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: column;
     :first-child {
       text-transform: uppercase;
     }
