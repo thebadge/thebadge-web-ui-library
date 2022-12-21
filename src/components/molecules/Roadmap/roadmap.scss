@@ -43,9 +43,16 @@
     }
   }
   &__text {
+    .line {
+      width: 2px;
+      height: 50px;
+      border: 2px dashed white;
+      margin: 0 50% 8px;
+    }
     :first-child {
       text-transform: uppercase;
     }
+
     p {
       color: white;
       font-weight: 700;
