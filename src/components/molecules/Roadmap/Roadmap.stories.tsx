@@ -9,6 +9,10 @@ export default {
   component: Roadmap,
 } as Meta
 
-const Template: Story<RoadmapProps> = () => <Roadmap />
+const Template: Story<RoadmapProps> = () => (
+  <div style={{ background: 'black', padding: '24px' }}>
+    <Roadmap />
+  </div>
+)
 
 export const Roadmap1 = Template.bind({})

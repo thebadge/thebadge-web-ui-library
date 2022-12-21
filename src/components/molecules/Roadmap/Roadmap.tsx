@@ -10,25 +10,25 @@ import './roadmap.scss'
 export const Roadmap = () => {
   return (
     <Box className="roadmap">
-      <Typography component="h3" variant="h3" align="center" mb={3}>
+      <Typography component="h3" variant="h3" align="center" mb={3} color="white">
         ROADMAP
       </Typography>
       <Grid container gap={2} justifyContent="space-around">
-        <div className="roadmap__circle">
+        <Grid item className="roadmap__circle">
           <p>01</p>
-        </div>
-        <div className="roadmap__circle">
+        </Grid>
+        <Grid item className="roadmap__circle">
           <p>02</p>
-        </div>
-        <div className="roadmap__circle">
+        </Grid>
+        <Grid item className="roadmap__circle">
           <p>03</p>
-        </div>
-        <div className="roadmap__circle">
+        </Grid>
+        <Grid item className="roadmap__circle">
           <p>04</p>
-        </div>
-        <div className="roadmap__circle">
+        </Grid>
+        <Grid item className="roadmap__circle">
           <p>05</p>
-        </div>
+        </Grid>
       </Grid>
       <BoxGradient
         className="roadmap__timeline"
@@ -36,39 +36,39 @@ export const Roadmap = () => {
         shadowColor=""
       >
         <Grid container gap={2} justifyContent="space-around">
-          <div className="roadmap__year">
+          <Grid item className="roadmap__year">
             <p>2022 (C)</p>
-          </div>
-          <div className="roadmap__year">
+          </Grid>
+          <Grid item className="roadmap__year">
             <p>2023 Q1</p>
-          </div>
-          <div className="roadmap__year">
+          </Grid>
+          <Grid item className="roadmap__year">
             <p>2023 Q2 & Q3</p>
-          </div>
-          <div className="roadmap__year">
+          </Grid>
+          <Grid item className="roadmap__year">
             <p>2023 Q4</p>
-          </div>
-          <div className="roadmap__year">
+          </Grid>
+          <Grid item className="roadmap__year">
             <p>2024 Q1</p>
-          </div>
+          </Grid>
         </Grid>
       </BoxGradient>
       <Grid container gap={2} justifyContent="space-around" flexWrap="nowrap">
-        <div className="roadmap__text">
+        <Grid item className="roadmap__text">
           <p>The Badge fundamentals</p>
-        </div>
-        <div className="roadmap__text">
+        </Grid>
+        <Grid item className="roadmap__text">
           <p>The Badge Labs foundation</p>
-        </div>
-        <div className="roadmap__text">
+        </Grid>
+        <Grid item className="roadmap__text">
           <p>Certification platform DEVELOPMENT</p>
-        </div>
-        <div className="roadmap__text">
+        </Grid>
+        <Grid item className="roadmap__text">
           <p>Courts & curator platform development</p>
-        </div>
-        <div className="roadmap__text">
+        </Grid>
+        <Grid item className="roadmap__text">
           <p>Going live</p>
-        </div>
+        </Grid>
       </Grid>
     </Box>
   )
