@@ -17,13 +17,19 @@ $tb-blue-dark: #0d0b20;
 $tb-blue-light: #59bcf7;
 
 //purple
-
 $tb-purple: #b74ad6;
+
+// violet
+$tb-violet: #3919bb;
 
 // green
 $tb-green: #62cba5;
 $tb-green-border: #58bbad;
 $tb-green-hover: #58bbad29;
+
+// darker green
+
+$tb-dark-green: #337a61;
 
 // pink
 $tb-pink: #af20af;
@@ -68,6 +74,8 @@ $colors: (
   'pinkLight': $tb-pink-light,
   'white': $tb-white,
   'black': $tb-black,
+  'violet': $tb-violet,
+  'darkGreen': $tb-dark-green,
   'transparent': $tb-transparent,
   'blackBackground': $tb-black-background,
   'greyBackground': $tb-grey-background,

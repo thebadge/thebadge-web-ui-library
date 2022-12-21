@@ -25,7 +25,7 @@ export const LogoTheBadge = (props: LogoProps) => {
       />
       <g opacity="0.7">
         <circle cx="122.749" cy="108.587" r="46.9497" fill="url(#paint0_linear_1248_6419)" />
-        <circle cx="122.749" cy="108.587" r="46.9497" fill="black" fill-opacity="0.2" />
+        <circle cx="122.749" cy="108.587" r="46.9497" fill="black" fillOpacity="0.2" />
       </g>
       <defs>
         <linearGradient
@@ -36,8 +36,8 @@ export const LogoTheBadge = (props: LogoProps) => {
           y2="155.536"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#284EE8" />
-          <stop offset="0.813663" stop-color="#62CBA5" />
+          <stop stopColor="#284EE8" />
+          <stop offset="0.813663" stopColor="#62CBA5" />
         </linearGradient>
       </defs>
     </svg>

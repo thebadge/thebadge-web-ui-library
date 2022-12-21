@@ -5,6 +5,7 @@ export const backgroundColorBlue: string
 export const backgroundColorBlueDark: string
 export const backgroundColorBlueInfo: string
 export const backgroundColorBlueLight: string
+export const backgroundColorDarkGreen: string
 export const backgroundColorGreen: string
 export const backgroundColorGreenBorder: string
 export const backgroundColorGreenHover: string
@@ -23,6 +24,7 @@ export const backgroundColorSecondary: string
 export const backgroundColorSecondaryDark: string
 export const backgroundColorSecondaryLight: string
 export const backgroundColorTransparent: string
+export const backgroundColorViolet: string
 export const backgroundColorWhite: string
 export const black: string
 export const blackBackground: string
@@ -38,6 +40,7 @@ export const borderColorBlue: string
 export const borderColorBlueDark: string
 export const borderColorBlueInfo: string
 export const borderColorBlueLight: string
+export const borderColorDarkGreen: string
 export const borderColorGreen: string
 export const borderColorGreenBorder: string
 export const borderColorGreenHover: string
@@ -56,6 +59,7 @@ export const borderColorSecondary: string
 export const borderColorSecondaryDark: string
 export const borderColorSecondaryLight: string
 export const borderColorTransparent: string
+export const borderColorViolet: string
 export const borderColorWhite: string
 export const colorBlack: string
 export const colorBlackBackground: string
@@ -64,6 +68,7 @@ export const colorBlue: string
 export const colorBlueDark: string
 export const colorBlueInfo: string
 export const colorBlueLight: string
+export const colorDarkGreen: string
 export const colorGreen: string
 export const colorGreenBorder: string
 export const colorGreenHover: string
@@ -82,7 +87,9 @@ export const colorSecondary: string
 export const colorSecondaryDark: string
 export const colorSecondaryLight: string
 export const colorTransparent: string
+export const colorViolet: string
 export const colorWhite: string
+export const darkGreen: string
 export const fillBlack: string
 export const fillBlackBackground: string
 export const fillBlackText: string
@@ -90,6 +97,7 @@ export const fillBlue: string
 export const fillBlueDark: string
 export const fillBlueInfo: string
 export const fillBlueLight: string
+export const fillDarkGreen: string
 export const fillGreen: string
 export const fillGreenBorder: string
 export const fillGreenHover: string
@@ -108,6 +116,7 @@ export const fillSecondary: string
 export const fillSecondaryDark: string
 export const fillSecondaryLight: string
 export const fillTransparent: string
+export const fillViolet: string
 export const fillWhite: string
 export const green: string
 export const greenBorder: string
@@ -132,6 +141,7 @@ export const svgFillBlue: string
 export const svgFillBlueDark: string
 export const svgFillBlueInfo: string
 export const svgFillBlueLight: string
+export const svgFillDarkGreen: string
 export const svgFillGreen: string
 export const svgFillGreenBorder: string
 export const svgFillGreenHover: string
@@ -150,6 +160,8 @@ export const svgFillSecondary: string
 export const svgFillSecondaryDark: string
 export const svgFillSecondaryLight: string
 export const svgFillTransparent: string
+export const svgFillViolet: string
 export const svgFillWhite: string
 export const transparent: string
+export const violet: string
 export const white: string

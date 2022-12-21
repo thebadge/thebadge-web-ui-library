@@ -5,6 +5,7 @@ export const blue: string
 export const blueDark: string
 export const blueInfo: string
 export const blueLight: string
+export const darkGreen: string
 export const green: string
 export const greenBorder: string
 export const greenHover: string
@@ -22,4 +23,5 @@ export const secondary: string
 export const secondaryDark: string
 export const secondaryLight: string
 export const transparent: string
+export const violet: string
 export const white: string

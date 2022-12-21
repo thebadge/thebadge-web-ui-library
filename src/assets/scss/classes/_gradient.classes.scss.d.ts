@@ -12,6 +12,7 @@ export const blue: string
 export const blueDark: string
 export const blueInfo: string
 export const blueLight: string
+export const darkGreen: string
 export const gradient0: string
 export const gradient1: string
 export const gradient2: string
@@ -35,4 +36,5 @@ export const secondary: string
 export const secondaryDark: string
 export const secondaryLight: string
 export const transparent: string
+export const violet: string
 export const white: string

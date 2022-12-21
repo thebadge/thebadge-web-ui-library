@@ -2,13 +2,40 @@
 // https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation
 import '@mui/material/styles/createPalette'
 
-declare module '@mui/material/styles/createPalette' {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  export interface Palette {}
+interface TheBadgeColors {
+  blue: true
+  purple: true
+  green: true
+  pink: true
+  white: true
+  violet: true
+  darkGreen: true
+}
 
-  // allow configuration using `createTheme`
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  export interface PaletteOptions {}
+declare module '@mui/material' {
+  export interface ButtonPropsColorOverrides extends TheBadgeColors {}
+  export interface AlertPropsColorOverrides extends TheBadgeColors {}
+  export interface AppBarPropsColorOverrides extends TheBadgeColors {}
+  export interface PaginationItemPropsColorOverrides extends TheBadgeColors {}
+  export interface BadgePropsColorOverrides extends TheBadgeColors {}
+  export interface ButtonGroupPropsColorOverrides extends TheBadgeColors {}
+  export interface CardPropsColorOverrides extends TheBadgeColors {}
+  export interface CheckboxPropsColorOverrides extends TheBadgeColors {}
+  export interface ChipPropsColorOverrides extends TheBadgeColors {}
+  export interface CircularProgressPropsColorOverrides extends TheBadgeColors {}
+  export interface FabPropsColorOverrides extends TheBadgeColors {}
+  export interface FormLabelPropsColorOverrides extends TheBadgeColors {}
+  export interface IconPropsColorOverrides extends TheBadgeColors {}
+  export interface IconButtonPropsColorOverrides extends TheBadgeColors {}
+  export interface InputBasePropsColorOverrides extends TheBadgeColors {}
+  export interface LinearProgressPropsColorOverrides extends TheBadgeColors {}
+  export interface PaginationPropsColorOverrides extends TheBadgeColors {}
+  export interface RadioPropsColorOverrides extends TheBadgeColors {}
+  export interface SliderPropsColorOverrides extends TheBadgeColors {}
+  export interface SvgIconPropsColorOverrides extends TheBadgeColors {}
+  export interface SwitchPropsColorOverrides extends TheBadgeColors {}
+  export interface TextFieldPropsColorOverrides extends TheBadgeColors {}
+  export interface ToggleButtonPropsColorOverrides extends TheBadgeColors {}
 }
 
 declare module '@mui/material/Typography' {
@@ -37,8 +64,28 @@ declare module '@mui/material/styles/createTypography' {
 }
 
 declare module '@mui/material/styles' {
+  export interface Palette {
+    blue: Palette
+    purple: Palette
+    green: Palette
+    darkGreen: Palette
+    pink: Palette
+    white: Palette
+    violet: Palette
+  }
+
+  // allow configuration using `createTheme`
+  export interface PaletteOptions {
+    blue: PaletteColorOptions
+    purple: PaletteColorOptions
+    green: PaletteColorOptions
+    darkGreen: PaletteColorOptions
+    pink: PaletteColorOptions
+    white: PaletteColorOptions
+    violet: PaletteColorOptions
+  }
+
   // Allow to use it in useMediaQuery
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   export interface BreakpointOverrides {
     //  mobile: true
     //  tablet: true
