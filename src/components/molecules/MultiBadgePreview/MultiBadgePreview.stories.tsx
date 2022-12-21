@@ -8,11 +8,11 @@ import { MultiBadgePreview, MultiBadgePreviewProps } from '@components/molecules
 
 export default {
   title: 'Components/Molecules/MultiBadgePreview',
-  component: MultiBadgePreview
+  component: MultiBadgePreview,
 } as Meta
 
 const Template: Story<MultiBadgePreviewProps> = (args) => {
-  return (<MultiBadgePreview {...args} />)
+  return <MultiBadgePreview {...args} />
 }
 const defaultBadgeCarouselExampleProps = {
   size: 'small' as BadgeSize,
@@ -28,7 +28,7 @@ const defaultBadgeCarouselExampleProps = {
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
   badgeBackgroundUrl:
     'https://images.unsplash.com/photo-1620421680010-0766ff230392?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80',
-  textContrast: 'dark-withTextBackground' as BadgeTextContrast
+  textContrast: 'dark-withTextBackground' as BadgeTextContrast,
 }
 
 export const MultiBadgePreviewTemplate = Template.bind({})
@@ -36,8 +36,8 @@ MultiBadgePreviewTemplate.args = {
   badges: [
     <BadgePreview key={0} {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />
-  ]
+    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />,
+  ],
 }
 
 export const MultiBadgePreviewScaledToHalf = Template.bind({})
@@ -45,9 +45,9 @@ MultiBadgePreviewScaledToHalf.args = {
   badges: [
     <BadgePreview key={0} {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />
+    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />,
   ],
-  sizeScale: 0.5
+  sizeScale: 0.5,
 }
 
 export const MultiBadgePreviewAnimatedWithLink = Template.bind({})
@@ -55,10 +55,12 @@ MultiBadgePreviewAnimatedWithLink.args = {
   badges: [
     <BadgePreview key={0} {...defaultBadgeCarouselExampleProps} />,
     <BadgePreview key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />
+    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />,
   ],
   animated: true,
-  onGroupClick: () => { window.open('https://www.thebadge.xyz/')}
+  onGroupClick: () => {
+    window.open('https://www.thebadge.xyz/')
+  },
 }
 
 export const MultiBadgePreviewWithV2Badges = Template.bind({})
@@ -66,27 +68,29 @@ MultiBadgePreviewWithV2Badges.args = {
   badges: [
     <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
     <BadgePreviewV2 key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />
-  ]
+    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />,
+  ],
 }
 
 export const MultiBadgePreviewWithV2BadgesScaledToHalf = Template.bind({})
 MultiBadgePreviewWithV2BadgesScaledToHalf.args = {
   badges: [
     <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={1}{...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />
+    <BadgePreviewV2 key={1} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />,
   ],
-  sizeScale: 0.5
+  sizeScale: 0.5,
 }
 
 export const MultiBadgePreviewWithV2BadgesAnimatedWithLink = Template.bind({})
 MultiBadgePreviewWithV2BadgesAnimatedWithLink.args = {
   badges: [
     <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={1}{...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />
+    <BadgePreviewV2 key={1} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />,
   ],
   animated: true,
-  onGroupClick: () => { window.open('https://www.thebadge.xyz/')}
+  onGroupClick: () => {
+    window.open('https://www.thebadge.xyz/')
+  },
 }

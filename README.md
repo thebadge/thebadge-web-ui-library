@@ -1,25 +1,33 @@
-# thebadge-ui-library
+# The Badge ui-library
+
 UI Library with Web components and styling for The Badge project.
 
+## Preview / Examles
+
+[Chromatic](https://main--638b62c10e52ebb22bd55c21.chromatic.com/?path=/docs/)
 
 ## Develope the library
 
 ### Run storybook
+
 ```
 yarn storybook
 ```
 
 ### Run tests
+
 ```
 yarn test
 ```
 
 ### Check lint
+
 ```
 yarn lint
 ```
 
 ### Fix lint errors
+
 ```
 yarn lint:fix
 ```
@@ -30,8 +38,14 @@ yarn lint:fix
 yarn add thebadge-ui-library
 ```
 
-Import CSS files with styles in your _app.tx file
+Import CSS files with styles in your \_app.tx file
 
 ```
 import 'node_modules/thebadge-ui-library/dist/index.css'
+```
+
+## Build it
+
+```
+yarn build
 ```

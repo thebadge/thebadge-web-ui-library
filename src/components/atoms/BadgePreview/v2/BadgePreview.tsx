@@ -1,11 +1,11 @@
 import badgeBackground from '@assets/svgs/badgeBlankBackground.svg'
+import { BadgeCategories, BadgeTypes } from '@businessLogic/badge'
+import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Box, styled } from '@mui/material'
 import React, { useEffect } from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
-import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
-import { BadgeCategories, BadgeTypes } from '@businessLogic/badge'
 
 const defaultBackgroundUrl =
   'https://images.unsplash.com/photo-1566041510639-8d95a2490bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80'

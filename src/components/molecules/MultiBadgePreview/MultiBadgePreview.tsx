@@ -3,8 +3,8 @@ import { Box, styled } from '@mui/material'
 import './multiBadgePreview.scss'
 
 export interface MultiBadgePreviewProps {
-  badges: React.ReactNode[],
-  onGroupClick?: () => void,
+  badges: React.ReactNode[]
+  onGroupClick?: () => void
   sizeScale?: number
   animated?: boolean
 }
@@ -14,7 +14,7 @@ const defaultValuesForMultiBadgePreviewProps = {
   sizeScale: 1,
 }
 
-const MultiBadgePreviewBox = styled(Box)<{scale?: number}>(({theme, scale}) => ({
+const MultiBadgePreviewBox = styled(Box)<{ scale?: number }>(({ theme, scale }) => ({
   padding: theme.spacing(2),
   scale: `${scale || 1}`,
 }))
@@ -29,10 +29,7 @@ export const MultiBadgePreview = (props: MultiBadgePreviewProps = defaultValuesF
       {/* show only the first 3 elements */}
       {props.badges.slice(0, 3).map((badge, index) => {
         return (
-          <Box
-            key={'multiBadgePreview__badge--' + index}
-            className="multiBadgePreview__badge"
-          >
+          <Box key={'multiBadgePreview__badge--' + index} className="multiBadgePreview__badge">
             {badge}
           </Box>
         )
