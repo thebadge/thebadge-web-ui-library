@@ -7,6 +7,7 @@ export const MUIColors = [
   'info',
   'success',
   'blue',
+  'darkBlue',
   'purple',
   'green',
   'darkGreen',

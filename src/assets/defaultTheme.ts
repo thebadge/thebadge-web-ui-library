@@ -171,6 +171,7 @@ export const defaultTheme: ThemeOptions = {
         main: colors.blue,
         dark: colors.blueDark,
         light: colors.blueLight,
+        contrastText: colors.white,
       },
     }),
     darkBlue: augmentColor({
@@ -189,6 +190,7 @@ export const defaultTheme: ThemeOptions = {
         main: colors.green,
         light: colors.greenLight,
         dark: colors.greenDark,
+        contrastText: colors.white,
       },
     }),
     darkGreen: augmentColor({
@@ -201,6 +203,7 @@ export const defaultTheme: ThemeOptions = {
         main: colors.pink,
         light: colors.pinkLight,
         dark: colors.pinkDark,
+        contrastText: colors.white,
       },
     }),
     white: augmentColor({
