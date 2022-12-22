@@ -3,7 +3,12 @@ import TwitterMUIIcon from '@mui/icons-material/Twitter'
 import { IconProps } from '../IconProps'
 
 export const IconTwitter = (props: IconProps) => (
-  <a className={`icon svg-fill--${props.color}` + (!props.link ? 'icon--disabled' : '')} href={props.link} target={'_blank'} rel="noreferrer">
+  <a
+    className={`icon svg-fill--${props.color}` + (!props.link ? 'icon--disabled' : '')}
+    href={props.link}
+    target={'_blank'}
+    rel="noreferrer"
+  >
     <TwitterMUIIcon
       sx={{
         width: 28,
