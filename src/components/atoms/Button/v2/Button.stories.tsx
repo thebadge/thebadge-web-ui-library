@@ -4,6 +4,8 @@ import { Story } from '@storybook/react'
 import { ButtonV2, ButtonProps } from './Button'
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
+import { ButtonProps as MUIButtonProps } from '@mui/material/Button/Button'
+import { IconDiscord } from '@components/icons/IconDiscord/IconDiscord'
 
 export default {
   title: 'Components/Atoms/Button/v2',
@@ -11,13 +13,21 @@ export default {
 } as Meta
 
 // Create a master template for mapping args to render the Button component
-const Template: Story<ButtonProps> = (args) => <ButtonV2 {...args} />
+type ButtonPropsWithLabel = MUIButtonProps & ButtonProps & { label: string }
+const Template: Story<ButtonPropsWithLabel> = ({ label, ...args }) => <ButtonV2 {...args}> {label} </ButtonV2>
 
 // Reuse that template for creating different stories
 export const SampleActiveButtonWithImage = Template.bind({})
 SampleActiveButtonWithImage.args = {
-  label: 'Text for button',
-  icon: <img src={badgeBackground} alt={'Button Icon'} className={'width-pc-100 height-pc-100'} />,
+  label: 'Sample text',
+  endIcon: <img width={25} height={25} src={badgeBackground} alt={'Button Icon'} className={'width-pc-100 height-pc-100'} />,
+}
+
+export const JoinOurCommunity = Template.bind({})
+JoinOurCommunity.args = {
+  label: 'Join our community',
+  backgroundColor: colors.green,
+  endIcon: <IconDiscord color={colors.white}></IconDiscord>,
 }
 
 export const SampleButtonPink = Template.bind({})
