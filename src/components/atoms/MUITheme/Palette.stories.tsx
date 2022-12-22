@@ -1,6 +1,7 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
+import { MUIColors } from './types'
 
 export default {
   title: 'Components/Theming/Palette',
@@ -13,32 +14,18 @@ export default {
     },
   },
 } as Meta
-// Axiliary set of keys, to just show the ones relevant for us
-const MUI_THEME_COLOR_KEYS = [
-  'primary',
-  'secondary',
-  'error',
-  'warning',
-  'info',
-  'success',
-  'blue',
-  'purple',
-  'green',
-  'darkGreen',
-  'pink',
-  'white',
-  'violet',
-]
 
 const Template: Story = () => {
   const theme = useTheme()
   // Its needs to be any to be able to acces the values with the [key] notation.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const palette = theme.palette as any
+  console.log(palette)
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2} p={2}>
-        {MUI_THEME_COLOR_KEYS.map((colorKey) => {
+        {MUIColors.map((colorKey) => {
+          if (!palette[colorKey]) return null
           return (
             <Grid item key={colorKey} flexDirection="row" display="grid" rowGap={2} sm={3}>
               <Typography variant="title1" component="h3">
