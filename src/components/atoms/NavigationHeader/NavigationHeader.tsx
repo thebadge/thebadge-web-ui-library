@@ -5,7 +5,7 @@ import colors from '@assets/scss/variables/_color.variables.module.scss'
 
 interface NavigationHeaderItem {
   label: string
-  icon?: string
+  icon?: React.ReactNode
   onClick?: () => void
   disabled?: boolean
 }
@@ -73,7 +73,7 @@ export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesFor
             >
               {item.icon ? (
                 <HeaderItemImage>
-                  <img src={item.icon} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />
+                  {item.icon}
                 </HeaderItemImage>
               ) : null}
               {item.label}

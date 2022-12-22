@@ -42,7 +42,7 @@ const ButtonImageBox = styled(Box)(() => ({
 export interface ButtonProps {
   width?: string
   label: string
-  icon?: string
+  icon?: React.ReactNode
   onClick?: () => void
   disabled?: boolean
   fontColor?: string
@@ -65,7 +65,7 @@ export const ButtonV2 = (props: ButtonProps = defaultValuesForButtonProps) => {
       <ButtonLabel>{props.label}</ButtonLabel>
       {props.icon ? (
         <ButtonImageBox>
-          <img src={props.icon} alt={'Button Icon'} className={'width-pc-100 height-pc-100'} />
+          {props.icon}
         </ButtonImageBox>
       ) : null}
     </ButtonBox>

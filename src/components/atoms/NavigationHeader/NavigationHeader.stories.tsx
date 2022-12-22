@@ -25,7 +25,7 @@ SampleNavigationHeader.args = {
       onClick: () => {
         console.log('sample click')
       },
-      icon: badgeBackground,
+      icon: <img src={badgeBackground} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />,
     },
     {
       label: 'sample2',
@@ -38,7 +38,7 @@ SampleNavigationHeader.args = {
       onClick: () => {
         console.log('sample click')
       },
-      icon: badgeBackground,
+      icon: <img src={badgeBackground} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />,
     },
     {
       label: 'sample-disabled',

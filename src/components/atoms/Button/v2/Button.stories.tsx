@@ -14,8 +14,11 @@ export default {
 const Template: Story<ButtonProps> = (args) => <ButtonV2 {...args} />
 
 // Reuse that template for creating different stories
-export const SampleActiveButtonFitContent = Template.bind({})
-SampleActiveButtonFitContent.args = { label: 'Text for button', icon: badgeBackground }
+export const SampleActiveButtonWithImage = Template.bind({})
+SampleActiveButtonWithImage.args = {
+  label: 'Text for button',
+  icon: <img src={badgeBackground} alt={'Button Icon'} className={'width-pc-100 height-pc-100'} />
+}
 
 export const SampleButtonPink = Template.bind({})
 SampleButtonPink.args = { label: 'Sample text', backgroundColor: colors.pink }
