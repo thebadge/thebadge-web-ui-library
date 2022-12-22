@@ -13,8 +13,11 @@ $tb-secondary-dark: #000016;
 
 // blue
 $tb-blue: #284ee8;
-$tb-blue-dark: #0d0b20;
-$tb-blue-light: #59bcf7;
+$tb-blue-dark: #59bcf7;
+$tb-blue-light: #59bcf733;
+
+// Dark blue
+$tb-dark-blue: #0d0b20;
 
 //purple
 $tb-purple: #b74ad6;
@@ -24,16 +27,17 @@ $tb-violet: #3919bb;
 
 // green
 $tb-green: #62cba5;
+$tb-green-light: #62cba54d;
 $tb-green-border: #58bbad;
-$tb-green-hover: #58bbad29;
+$tb-green-hover: #337a61;
 
 // darker green
-
 $tb-dark-green: #337a61;
 
 // pink
 $tb-pink: #af20af;
-$tb-pink-light: #935995;
+$tb-pink-dark: #935995;
+$tb-pink-light: #af20af4d;
 
 // white
 $tb-white: #f5f5f5;
@@ -66,12 +70,16 @@ $colors: (
   'blue': $tb-blue,
   'blueDark': $tb-blue-dark,
   'blueLight': $tb-blue-light,
+  'darkBlue': $tb-dark-blue,
   'purple': $tb-purple,
   'green': $tb-green,
+  'greenLight': $tb-green-light,
+  'greenDark': $tb-green-hover,
   'greenBorder': $tb-green-border,
   'greenHover': $tb-green-hover,
   'pink': $tb-pink,
   'pinkLight': $tb-pink-light,
+  'pinkDark': $tb-pink-dark,
   'white': $tb-white,
   'black': $tb-black,
   'violet': $tb-violet,

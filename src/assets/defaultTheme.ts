@@ -173,6 +173,11 @@ export const defaultTheme: ThemeOptions = {
         light: colors.blueLight,
       },
     }),
+    darkBlue: augmentColor({
+      color: {
+        main: colors.darkBlue,
+      },
+    }),
     // this will tell MUI to calculate the main, dark, light and contrastText variants based on the given main
     purple: augmentColor({
       color: {
@@ -182,6 +187,8 @@ export const defaultTheme: ThemeOptions = {
     green: augmentColor({
       color: {
         main: colors.green,
+        light: colors.greenLight,
+        dark: colors.greenDark,
       },
     }),
     darkGreen: augmentColor({
@@ -193,6 +200,7 @@ export const defaultTheme: ThemeOptions = {
       color: {
         main: colors.pink,
         light: colors.pinkLight,
+        dark: colors.pinkDark,
       },
     }),
     white: augmentColor({

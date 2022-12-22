@@ -10,6 +10,7 @@ interface TheBadgeColors {
   white: true
   violet: true
   darkGreen: true
+  darkBlue: true
 }
 
 declare module '@mui/material' {
@@ -72,6 +73,7 @@ declare module '@mui/material/styles' {
     pink: Palette
     white: Palette
     violet: Palette
+    darkBlue: Palette
   }
 
   // allow configuration using `createTheme`
@@ -83,6 +85,7 @@ declare module '@mui/material/styles' {
     pink: PaletteColorOptions
     white: PaletteColorOptions
     violet: PaletteColorOptions
+    darkBlue: PaletteColorOptions
   }
 
   // Allow to use it in useMediaQuery
