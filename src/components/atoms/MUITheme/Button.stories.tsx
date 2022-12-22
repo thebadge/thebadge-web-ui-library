@@ -47,7 +47,7 @@ const ThreeVariantsTemplate: Story<ButtonProps> = (args) => (
       padding: '32px',
       display: 'flex',
       justifyContent: 'center',
-      height: '80vh',
+      height: '30vh',
     }}
   >
     <Box display="flex" justifyContent="space-evenly" height="fit-content" width="80%">

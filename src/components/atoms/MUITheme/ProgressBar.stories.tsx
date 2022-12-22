@@ -5,13 +5,13 @@ import React from 'react'
 import { MUIColors } from './types'
 
 export default {
-  title: 'Components/Theming/MUICheckbox',
+  title: 'Components/Theming/Progress',
   component: Checkbox,
   parameters: {
     docs: {
       description: {
         component:
-          'A catalog with MUI Progress bar examples. You can see more on: https://mui.com/material-ui/react-progress',
+          'A catalog with MUI Progress examples. You can see more on: https://mui.com/material-ui/react-progress',
       },
     },
   },
