@@ -1,5 +1,4 @@
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
-import { BadgeCategories, BadgeTypes } from '@businessLogic/badge'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Box, styled } from '@mui/material'
@@ -10,8 +9,6 @@ import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/a
 
 const defaultValuesForBadgePreviewProps = {
   size: 'medium' as BadgeSize,
-  badgeCategory: BadgeCategories.OFFCHAIN,
-  badgeType: BadgeTypes.CUSTOM,
   badgeUrl: 'https://www.thebadge.xyz/',
   title: '',
   subline: '',

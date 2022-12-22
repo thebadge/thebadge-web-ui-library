@@ -1,4 +1,4 @@
-import { Colors } from '@assets/defaultTheme'
+import { TBColor } from '@assets/defaultTheme'
 import { Stepper } from '@components/molecules/Stepper/Stepper'
 import { Box, Typography } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
@@ -72,7 +72,7 @@ export const TwoSectionsExample = TemplateWithTwo.bind({})
 
 const stepperArgs = {
   minHeight: 250,
-  color: 'green' as Colors,
+  color: 'green' as TBColor,
   title: 'off-chain HOW IT WORKS',
   elements: [
     <Typography key={0} fontWeight={500} fontSize={18} fontFamily="Mulish">

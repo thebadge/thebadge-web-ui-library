@@ -1,4 +1,4 @@
-import { Colors } from '@assets/defaultTheme'
+import { TBColor } from '@assets/defaultTheme'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { Box } from '@mui/material'
@@ -11,8 +11,8 @@ export type StepperProps = {
   title: React.ReactNode
   elements: React.ReactNode[]
   minHeight: number
-  color?: Colors
-  backgroundColor?: Colors
+  color?: TBColor
+  backgroundColor?: TBColor
   glowTitle?: boolean
   border?: boolean
 }
@@ -122,7 +122,7 @@ export const Stepper = ({
 }
 
 type StepperTitleProps = {
-  color?: Colors
+  color?: TBColor
   glow?: boolean
 }
 

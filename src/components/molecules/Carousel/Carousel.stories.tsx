@@ -1,4 +1,3 @@
-import { BadgeCategories, BadgeTypes } from '@businessLogic/badge'
 import { Alert } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
@@ -35,8 +34,6 @@ const Template: Story<CarouselProps> = (args) => {
 }
 const defaultBadgeCarouselExampleProps = {
   size: 'medium' as BadgeSize,
-  badgeCategory: BadgeCategories.OFFCHAIN,
-  badgeType: BadgeTypes.CUSTOM,
   title: 'TITLE xxx',
   subline: 'Subline #category',
   description:

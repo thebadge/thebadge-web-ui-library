@@ -1,6 +1,14 @@
-import { defaultTheme } from '@assets/defaultTheme'
+// assets
+import { defaultTheme, TBColor } from '@assets/defaultTheme'
 
-import { BadgeCategories, BadgeTypes } from '@businessLogic/badge'
+// scss
+import colors from '@assets/scss/variables/_color.variables.module.scss'
+import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
+import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
+import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
+import '@assets/scss/global.scss'
+
+// components
 import { Button } from '@components/atoms/Button/v1/Button'
 import { ButtonV2 } from '@components/atoms/Button/v2/Button'
 import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
@@ -23,12 +31,13 @@ import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/Log
 import { Carousel } from '@components/molecules/Carousel/Carousel'
 import { MultiBadgePreview } from '@components/molecules/MultiBadgePreview/MultiBadgePreview'
 import { Stepper } from '@components/molecules/Stepper/Stepper'
-import '@assets/scss/global.scss'
 
 export {
   defaultTheme,
-  BadgeCategories,
-  BadgeTypes,
+  colors,
+  gradients,
+  breakpoints,
+  fonts,
   Button,
   ButtonV2,
   BadgePreview,
@@ -51,4 +60,8 @@ export {
   Carousel,
   MultiBadgePreview,
   Stepper,
+}
+
+export type {
+  TBColor
 }
