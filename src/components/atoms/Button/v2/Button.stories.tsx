@@ -13,14 +13,17 @@ export default {
 } as Meta
 
 // Create a master template for mapping args to render the Button component
-type ButtonPropsWithLabel = MUIButtonProps & ButtonProps & { label: string }
-const Template: Story<ButtonPropsWithLabel> = ({ label, ...args }) => <ButtonV2 {...args}> {label} </ButtonV2>
+type ButtonPropsWithLabel = MUIButtonProps & ButtonProps & { label?: string }
+// eslint-disable-next-line react/prop-types
+const Template: Story<ButtonPropsWithLabel> = ({ label, ...args }) => <ButtonV2 {...args}>{label}</ButtonV2>
 
 // Reuse that template for creating different stories
 export const SampleActiveButtonWithImage = Template.bind({})
 SampleActiveButtonWithImage.args = {
   label: 'Sample text',
-  endIcon: <img width={25} height={25} src={badgeBackground} alt={'Button Icon'} className={'width-pc-100 height-pc-100'} />,
+  endIcon: (
+    <img width={25} height={25} src={badgeBackground} alt={'Button Icon'} className={'width-pc-100 height-pc-100'} />
+  ),
 }
 
 export const JoinOurCommunity = Template.bind({})

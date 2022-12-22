@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button, styled } from '@mui/material'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 
@@ -8,7 +7,7 @@ export interface ButtonProps {
   backgroundColor?: string
 }
 
-export const ButtonV2 = styled(Button)<ButtonProps>(({theme, width, fontColor, backgroundColor}) => ({
+export const ButtonV2 = styled(Button)<ButtonProps>(({ theme, width, fontColor, backgroundColor }) => ({
   width: width ? `${width}` : 'fit-content',
   color: fontColor || colors.white,
   backgroundColor: backgroundColor || colors.blue,
