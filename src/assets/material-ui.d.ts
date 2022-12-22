@@ -8,7 +8,7 @@ interface TheBadgeColors {
   green: true
   pink: true
   white: true
-  violet: true
+  deepPurple: true
   darkGreen: true
   darkBlue: true
 }
@@ -72,7 +72,7 @@ declare module '@mui/material/styles' {
     darkGreen: Palette
     pink: Palette
     white: Palette
-    violet: Palette
+    deepPurple: Palette
     darkBlue: Palette
   }
 
@@ -84,7 +84,7 @@ declare module '@mui/material/styles' {
     darkGreen: PaletteColorOptions
     pink: PaletteColorOptions
     white: PaletteColorOptions
-    violet: PaletteColorOptions
+    deepPurple: PaletteColorOptions
     darkBlue: PaletteColorOptions
   }
 

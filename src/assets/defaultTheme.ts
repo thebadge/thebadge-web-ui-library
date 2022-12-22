@@ -214,9 +214,9 @@ export const defaultTheme: ThemeOptions = {
         main: colors.white,
       },
     }),
-    violet: augmentColor({
+    deepPurple: augmentColor({
       color: {
-        main: colors.violet,
+        main: colors.deepPurple,
         contrastText: colors.white,
       },
     }),

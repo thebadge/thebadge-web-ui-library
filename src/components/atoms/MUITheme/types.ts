@@ -9,11 +9,11 @@ export const MUIColors = [
   'blue',
   'darkBlue',
   'purple',
+  'deepPurple',
+  'pink',
   'green',
   'darkGreen',
-  'pink',
   'white',
-  'violet',
   'inherit',
 ]
 

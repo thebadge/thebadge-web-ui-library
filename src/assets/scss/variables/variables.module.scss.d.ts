@@ -7,6 +7,7 @@ export const blueInfo: string
 export const blueLight: string
 export const darkBlue: string
 export const darkGreen: string
+export const deepPurple: string
 export const fontSizeBody1: string
 export const fontSizeBody2: string
 export const fontSizeBody3: string
@@ -84,7 +85,6 @@ export const secondary: string
 export const secondaryDark: string
 export const secondaryLight: string
 export const transparent: string
-export const violet: string
 export const white: string
 export const xl: string
 export const xxl: string
