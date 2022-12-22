@@ -63,11 +63,7 @@ export const ButtonV2 = (props: ButtonProps = defaultValuesForButtonProps) => {
       backgroundColor={props.backgroundColor}
     >
       <ButtonLabel>{props.label}</ButtonLabel>
-      {props.icon ? (
-        <ButtonImageBox>
-          {props.icon}
-        </ButtonImageBox>
-      ) : null}
+      {props.icon ? <ButtonImageBox>{props.icon}</ButtonImageBox> : null}
     </ButtonBox>
   )
 }

@@ -17,7 +17,7 @@ const Template: Story<ButtonProps> = (args) => <ButtonV2 {...args} />
 export const SampleActiveButtonWithImage = Template.bind({})
 SampleActiveButtonWithImage.args = {
   label: 'Text for button',
-  icon: <img src={badgeBackground} alt={'Button Icon'} className={'width-pc-100 height-pc-100'} />
+  icon: <img src={badgeBackground} alt={'Button Icon'} className={'width-pc-100 height-pc-100'} />,
 }
 
 export const SampleButtonPink = Template.bind({})

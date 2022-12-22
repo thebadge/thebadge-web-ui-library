@@ -62,6 +62,4 @@ export {
   Stepper,
 }
 
-export type {
-  TBColor
-}
+export type { TBColor }

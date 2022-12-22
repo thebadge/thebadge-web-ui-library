@@ -71,11 +71,7 @@ export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesFor
               disabled={item.disabled}
               selected={selectedElement === index}
             >
-              {item.icon ? (
-                <HeaderItemImage>
-                  {item.icon}
-                </HeaderItemImage>
-              ) : null}
+              {item.icon ? <HeaderItemImage>{item.icon}</HeaderItemImage> : null}
               {item.label}
             </HeaderItem>
           ))}
