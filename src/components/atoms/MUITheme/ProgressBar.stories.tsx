@@ -2,7 +2,7 @@ import { Checkbox, CircularProgress, CircularProgressProps, LinearProgress, Line
 import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import { MUISize, MUIColors } from './types'
+import { MUIColors } from './types'
 
 export default {
   title: 'Components/Theming/MUICheckbox',
