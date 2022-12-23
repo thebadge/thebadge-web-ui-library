@@ -1,4 +1,4 @@
-import { Colors } from '@assets/defaultTheme'
+import { TBColor } from '@assets/defaultTheme'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { Box } from '@mui/material'
@@ -11,8 +11,8 @@ export type StepperProps = {
   title: React.ReactNode
   elements: React.ReactNode[]
   minHeight: number
-  color?: Colors
-  backgroundColor?: Colors
+  color?: TBColor
+  backgroundColor?: TBColor
   glowTitle?: boolean
   border?: boolean
 }
@@ -34,7 +34,7 @@ export const Stepper = ({
 }: StepperProps = defaultStepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
 
-  // Refs to move the elemenets
+  // Refs to move the elements
   const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
     () => elements.map(() => createRef<HTMLDivElement>()),
     [elements]
@@ -122,7 +122,7 @@ export const Stepper = ({
 }
 
 type StepperTitleProps = {
-  color?: Colors
+  color?: TBColor
   glow?: boolean
 }
 

@@ -5,7 +5,7 @@ import { Button, ButtonProps } from './Button'
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
 
 export default {
-  title: 'Components/Atoms/Button',
+  title: 'Components/Atoms/Button/v1',
   component: Button,
 } as Meta
 

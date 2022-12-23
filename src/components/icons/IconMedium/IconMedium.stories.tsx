@@ -13,6 +13,9 @@ export default {
 const Template: Story<IconProps> = (args) => <IconMedium {...args} />
 
 // Reuse that template for creating different stories
+export const IconMediumBlackWithoutLink = Template.bind({})
+IconMediumBlackWithoutLink.args = { color: colors.black }
+
 export const IconMedium1 = Template.bind({})
 IconMedium1.args = { link: 'https://demolink.com', color: 'pink' } // use color from colors-list
 

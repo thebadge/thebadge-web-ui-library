@@ -1,7 +1,9 @@
-@use '../../../assets/scss/functions/_base.functions.scss' as *;
-@use '../../../assets/scss/variables/variables.module';
+@use '@assets/scss/functions/_base.functions' as *;
+@use '@assets/scss/variables/variables.module';
 
-.badge-preview {
+$--badgeBackgroundUrl: '';
+
+.badge-previewV2 {
   position: relative;
   color: variables.$tb-black-text;
   cursor: pointer;
@@ -13,7 +15,48 @@
     height: 100%;
     border-radius: 8px;
     padding: 16px;
-    background: white;
+
+    &--dark {
+      color: white;
+      background: var(--badgeBackgroundUrl) center;
+      background-size: cover;
+      background-repeat: repeat-x;
+    }
+
+    &--dark-withTextBackground {
+      color: white;
+      background: linear-gradient(
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 2%,
+            rgba(0, 0, 0, 0.7) 25%,
+            rgba(0, 0, 0, 0.9) 100%
+          )
+          bottom,
+        var(--badgeBackgroundUrl) center;
+      background-size: auto 30%, cover;
+      background-repeat: repeat-x;
+    }
+
+    &--light {
+      color: black;
+      background: var(--badgeBackgroundUrl) center;
+      background-size: cover;
+      background-repeat: repeat-x;
+    }
+
+    &--light-withTextBackground {
+      color: black;
+      background: linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 2%,
+            rgba(255, 255, 255, 0.7) 25%,
+            rgba(255, 255, 255, 0.9) 75%
+          )
+          bottom,
+        var(--badgeBackgroundUrl) center;
+      background-size: auto 30%, cover;
+      background-repeat: repeat-x;
+    }
 
     &--small {
       padding: 12px;
@@ -22,35 +65,71 @@
 
   &__header {
     position: relative;
-    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 12px;
+    flex: 5;
 
-    &--background-image {
-      width: 100%;
+    &--image-container {
+      display: flex;
+      position: relative;
+
+      &--x-large {
+        padding-bottom: 16px;
+        padding-top: 16px;
+      }
     }
 
-    &--tb-logo {
-      position: absolute;
-      left: -8px;
-      top: -8px;
+    &--background-image {
+      width: 85%;
+      height: fit-content;
+      border-radius: 16px;
+      margin: auto;
     }
 
     &--image {
       position: absolute;
       top: 50%;
       left: 50%;
+      z-index: 1;
       transform: translate(-50%, -50%);
+    }
+
+    &--logo-qr-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--tb-logo {
+      padding-left: 8px;
     }
 
     &--qr-code {
       border: 8px solid white;
-      width: 40%;
-      position: absolute;
-      right: 5%;
-      bottom: -15%;
+      margin-right: 8px;
+      height: fit-content;
+
+      &--small {
+        border: 2px solid white;
+      }
+
+      &--medium {
+        border: 4px solid white;
+      }
+
+      &--large {
+        border: 6px solid white;
+      }
     }
   }
 
   &__content {
+    position: relative;
+    flex: 2;
+    padding: 16px 8px 0px 8px;
+
     &--title {
       flex: 0 1 auto;
       font-weight: variables.$font-weight-bold;
@@ -77,11 +156,9 @@
 
     &--subline {
       flex: 0 1 auto;
-      width: 70%;
       font-weight: variables.$font-weight-normal;
       font-size: convert-to-rem(14px);
       line-height: convert-to-rem(15px);
-      padding-top: 10%;
       padding-bottom: 1%;
       white-space: nowrap;
       overflow: hidden;
@@ -133,21 +210,23 @@
   &--wobble {
     transition: all 0.3s ease-in-out;
     &:hover {
-      animation: move 5s infinite;
+      animation: move-v2 5s infinite;
     }
   }
 
   &--glare {
     .glare {
+      border-radius: 8px;
+
       &:hover {
-        animation: glare 5s infinite;
+        animation: glare-v2 5s infinite;
         mix-blend-mode: overlay;
         opacity: 0.5;
       }
     }
   }
 
-  @keyframes move {
+  @keyframes move-v2 {
     0% {
       transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
     }
@@ -162,7 +241,7 @@
     }
   }
 
-  @keyframes glare {
+  @keyframes glare-v2 {
     0% {
       background: none;
     }
@@ -179,7 +258,7 @@
     }
     66% {
       background: radial-gradient(
-        farthest-corner circle at 70% 40%,
+        farthest-corner circle at 80% 80%,
         rgba(255, 255, 255, 0.8) 10%,
         rgba(255, 255, 255, 0.65) 20%,
         rgba(0, 0, 0, 0.5) 90%
