@@ -5,6 +5,9 @@ export const blue: string
 export const blueDark: string
 export const blueInfo: string
 export const blueLight: string
+export const darkBlue: string
+export const darkGreen: string
+export const deepPurple: string
 export const fontSizeBody1: string
 export const fontSizeBody2: string
 export const fontSizeBody3: string
@@ -35,7 +38,9 @@ export const fontWeightNormal: string
 export const fontWeightThin: string
 export const green: string
 export const greenBorder: string
+export const greenDark: string
 export const greenHover: string
+export const greenLight: string
 export const greenSuccess: string
 export const greyBackground: string
 export const lineHeightBody1: string
@@ -60,6 +65,7 @@ export const lineHeightTitle4: string
 export const lineHeightTitle5: string
 export const orangeWarning: string
 export const pink: string
+export const pinkDark: string
 export const pinkLight: string
 export const primary: string
 export const primaryDark: string

@@ -1,7 +1,7 @@
 import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
-import { Palette, ThemeOptions } from '@mui/material'
+import { createTheme, Palette, ThemeOptions } from '@mui/material'
 import { TypographyOptions } from '@mui/material/styles/createTypography'
 
 const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) = {
@@ -122,6 +122,10 @@ const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) 
   },
 }
 
+// Workaourd to have augmentColor fn
+const { palette } = createTheme()
+const { augmentColor } = palette
+
 export const defaultTheme: ThemeOptions = {
   typography,
   breakpoints: {
@@ -162,6 +166,60 @@ export const defaultTheme: ThemeOptions = {
       main: colors.greenSuccess,
       contrastText: colors.white,
     },
+    blue: augmentColor({
+      color: {
+        main: colors.blue,
+        dark: colors.blueDark,
+        light: colors.blueLight,
+        contrastText: colors.white,
+      },
+    }),
+    darkBlue: augmentColor({
+      color: {
+        main: colors.darkBlue,
+        contrastText: colors.white,
+      },
+    }),
+    // this will tell MUI to calculate the main, dark, light and contrastText variants based on the given main
+    purple: augmentColor({
+      color: {
+        main: colors.purple,
+        contrastText: colors.white,
+      },
+    }),
+    green: augmentColor({
+      color: {
+        main: colors.green,
+        light: colors.greenLight,
+        dark: colors.greenDark,
+        contrastText: colors.white,
+      },
+    }),
+    darkGreen: augmentColor({
+      color: {
+        main: colors.darkGreen,
+        contrastText: colors.white,
+      },
+    }),
+    pink: augmentColor({
+      color: {
+        main: colors.pink,
+        light: colors.pinkLight,
+        dark: colors.pinkDark,
+        contrastText: colors.white,
+      },
+    }),
+    white: augmentColor({
+      color: {
+        main: colors.white,
+      },
+    }),
+    deepPurple: augmentColor({
+      color: {
+        main: colors.deepPurple,
+        contrastText: colors.white,
+      },
+    }),
   },
 }
 
