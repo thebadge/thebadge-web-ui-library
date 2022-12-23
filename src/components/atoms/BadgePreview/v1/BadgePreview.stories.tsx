@@ -1,11 +1,11 @@
-import { BadgeCategories } from '@businessLogic/badge'
 import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import { BadgePreview, BadgePreviewProps } from './BadgePreview'
+import { BadgePreview } from './BadgePreview'
+import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 
 export default {
-  title: 'Components/Molecules/BadgePreview',
+  title: 'Components/Atoms/BadgePreview/v1',
   component: BadgePreview,
 } as Meta
 
@@ -21,7 +21,6 @@ const Template: Story<BadgePreviewProps> = (args) => {
 export const BadgePreviewLongTexts = Template.bind({})
 BadgePreviewLongTexts.args = {
   size: 'large',
-  badgeCategory: BadgeCategories.OFFCHAIN,
   title:
     'TITLE xxx Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   subline:
@@ -46,7 +45,6 @@ BadgePreviewLongTexts.args = {
 export const BadgePreviewWithAnimationOnHover = Template.bind({})
 BadgePreviewWithAnimationOnHover.args = {
   size: 'medium',
-  badgeCategory: BadgeCategories.OFFCHAIN,
   title: 'TITLE xxx',
   subline: 'Subline #category',
   description:

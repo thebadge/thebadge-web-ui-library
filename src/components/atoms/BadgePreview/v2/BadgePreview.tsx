@@ -1,32 +1,13 @@
 import badgeBackground from '@assets/svgs/badgeBlankBackground.svg'
+import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Box, styled } from '@mui/material'
 import React, { useEffect } from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
 
-export type BadgePreviewEffects = 'wobble' | 'grow' | 'glare'
-
-export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
-
-export type BadgeTextContrast = 'light' | 'dark' | 'light-withTextBackground' | 'dark-withTextBackground'
-
 const defaultBackgroundUrl =
   'https://images.unsplash.com/photo-1566041510639-8d95a2490bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80'
-
-export interface BadgePreviewProps {
-  size: BadgeSize
-  badgeUrl: string
-  badgeBackgroundUrl?: string
-  textContrast?: BadgeTextContrast
-  title: string
-  subline: string
-  description: string
-  imageUrl?: string
-  onClick?: () => void
-  animationOnHover?: boolean
-  animationEffects: BadgePreviewEffects[]
-}
 
 const defaultValuesForBadgePreviewProps = {
   size: 'medium' as BadgeSize,
@@ -39,7 +20,7 @@ const defaultValuesForBadgePreviewProps = {
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
-const BadgePreviewBox = styled(Box)<{ size: number }>(({ size = 320 }) => ({
+const BadgePreviewBox = styled(Box)<{ size?: number }>(({ size = 320 }) => ({
   width: size,
   height: size * 1.6,
 }))
@@ -65,6 +46,8 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
         return 400
       case 'x-large':
         return 500
+      default:
+        return 300
     }
   }
 
@@ -111,6 +94,8 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
         return 70
       case 'x-large':
         return 85
+      default:
+        return 45
     }
   }
 

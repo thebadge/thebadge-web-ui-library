@@ -165,4 +165,4 @@ export const defaultTheme: ThemeOptions = {
   },
 }
 
-export type Colors = keyof typeof colors
+export type TBColor = keyof typeof colors
