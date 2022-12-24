@@ -1,5 +1,5 @@
 # Workflow name
-name: 'EsLint Checks - PR'
+name: 'EsLint & Build Checks - PR'
 
 # Event for the workflow
 # Triggers the workflow on push or pull request events but only for the development branch
@@ -11,7 +11,7 @@ on:
 
 # List of jobs
 jobs:
-  build:
+  es-lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -22,3 +22,15 @@ jobs:
         run: yarn
       - name: Run ESLint
         run: yarn lint
+build:
+  runs-on: ubuntu-latest
+  needs: [es-lint]
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16.15.1
+    - name: Install modules
+      run: yarn
+    - name: Run Rollup build
+      run: yarn build
