@@ -1,8 +1,8 @@
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
-import MenuIcon from '@mui/icons-material/Menu'
 import { AppBar, Box, Button, Drawer, styled, Tab, Tabs, Toolbar, useMediaQuery, useTheme } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import { NavIcon } from './NavIcon'
 interface NavigationHeaderItem {
   label: string
   icon?: React.ReactNode
@@ -144,7 +144,7 @@ export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition 
   )
   return (
     <AppBar component="nav" sx={{ background: 'transparent', boxShadow: 'none', position: 'inherit', width: 'auto' }}>
-      {isMobileView && <MenuIcon onClick={onNavIconClick} />}
+      {isMobileView && <NavIcon onClick={onNavIconClick} isOpen={showToolBar} />}
       {!isMobileView && toolBarElement}
       <Drawer
         anchor={anchorPosition}

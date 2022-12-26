@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './navIcon.scss'
 
-export const NavIcon = ({ onClick }: { onClick: () => void }) => {
+export const NavIcon = ({ onClick, isOpen }: { onClick: () => void; isOpen: boolean }) => {
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    setOpen(isOpen)
+  }, [isOpen])
+
   function onClickHandler() {
     setOpen((prev) => !prev)
     if (onClick) {
