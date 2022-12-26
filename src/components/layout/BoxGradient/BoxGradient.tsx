@@ -7,7 +7,9 @@ export type BoxGradientProps = {
   sx?: SxProps<Theme>
 }
 
-export const Background = styled(Box)<BoxGradientProps>(({ gradient, shadowColor }) => ({
+const BackgroundBox = styled(Box, {
+  shouldForwardProp: (propName) => propName !== 'gradient' && propName !== 'shadowColor',
+})<BoxGradientProps>(({ gradient, shadowColor }) => ({
   display: 'flex',
   flex: 1,
   background: `${gradient}`,
@@ -17,5 +19,5 @@ export const Background = styled(Box)<BoxGradientProps>(({ gradient, shadowColor
 }))
 
 export const BoxGradient = (props: BoxGradientProps) => {
-  return <Background {...props} gradient={props.gradient} shadowColor={props.shadowColor} />
+  return <BackgroundBox {...props} gradient={props.gradient} shadowColor={props.shadowColor} />
 }

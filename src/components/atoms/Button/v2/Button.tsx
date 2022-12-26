@@ -1,13 +1,14 @@
-import { Button, styled } from '@mui/material'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
+import { Button, ButtonProps as MUIButtonProps, styled } from '@mui/material'
+import React from 'react'
 
-export interface ButtonProps {
+export type ButtonProps = MUIButtonProps & {
   width?: string
   fontColor?: string
   backgroundColor?: string
 }
 
-export const ButtonV2 = styled(Button)<ButtonProps>(({ theme, width, fontColor, backgroundColor }) => ({
+const StyledButton = styled(Button)<ButtonProps>(({ theme, width, fontColor, backgroundColor }) => ({
   width: width ? `${width}` : 'fit-content',
   color: fontColor || colors.white,
   backgroundColor: backgroundColor || colors.blue,
@@ -30,3 +31,7 @@ export const ButtonV2 = styled(Button)<ButtonProps>(({ theme, width, fontColor, 
     backgroundColor: (backgroundColor || colors.blue) + 'A6',
   },
 }))
+
+export const ButtonV2 = (props: ButtonProps) => {
+  return <StyledButton {...props} />
+}
