@@ -16,11 +16,6 @@ export interface NavigationHeaderProps {
   anchorPosition: 'right' | 'left'
 }
 
-const defaultValuesForNavigationHeaderProps = {
-  items: [],
-  anchorPosition: 'right',
-}
-
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   '& .MuiTabs-scroller': {
     height: 'fit-content',
