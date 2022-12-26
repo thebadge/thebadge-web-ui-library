@@ -13,10 +13,12 @@ interface NavigationHeaderItem {
 export interface NavigationHeaderProps {
   items: Array<NavigationHeaderItem>
   callToActionItem?: NavigationHeaderItem
+  anchorPosition: 'right' | 'left'
 }
 
 const defaultValuesForNavigationHeaderProps = {
   items: [],
+  anchorPosition: 'right',
 }
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -33,6 +35,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     },
     '& .MuiTabs-flexContainerVertical': {
       alignItems: 'flex-start',
+      rowGap: theme.spacing(1),
     },
     '& .MuiTab-root': {
       justifyContent: 'flex-start',
@@ -87,7 +90,7 @@ const CallToActionContainer = styled(Box)(({ theme }) => ({
   },
 }))
 
-export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesForNavigationHeaderProps) => {
+export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition = 'right' }: NavigationHeaderProps) => {
   const theme = useTheme()
   const isMobileView = useMediaQuery(theme.breakpoints.down('md'))
   const [selectedElement, setSelectedElement] = useState(0)
@@ -111,7 +114,7 @@ export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesFor
   const toolBarElement = (
     <StyledToolbar>
       <Header value={selectedElement} orientation={isMobileView ? 'vertical' : 'horizontal'}>
-        {props.items.map((item, index) => (
+        {items.map((item, index) => (
           <HeaderItem
             key={item.label}
             onClick={() => onItemClick(item, index)}
@@ -123,16 +126,16 @@ export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesFor
             disableRipple={true}
           />
         ))}
-        {props.callToActionItem && (
+        {callToActionItem && (
           <CallToActionContainer>
             <Button
               color="blue"
               variant="contained"
               size="small"
               sx={{ textTransform: 'none' }}
-              onClick={props.callToActionItem.onClick}
+              onClick={callToActionItem.onClick}
             >
-              {props.callToActionItem.label}
+              {callToActionItem.label}
             </Button>
           </CallToActionContainer>
         )}
@@ -144,7 +147,7 @@ export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesFor
       {isMobileView && <MenuIcon onClick={onNavIconClick} />}
       {!isMobileView && toolBarElement}
       <Drawer
-        anchor={'right'}
+        anchor={anchorPosition}
         open={isMobileView && showToolBar}
         onClose={onNavIconClick}
         PaperProps={{

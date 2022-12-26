@@ -19,6 +19,7 @@ const Template: Story<NavigationHeaderProps> = (args) => (
 // Reuse that template for creating different stories
 export const SampleNavigationHeader = Template.bind({})
 SampleNavigationHeader.args = {
+  anchorPosition: 'right',
   items: [
     {
       label: 'sample-icon',
