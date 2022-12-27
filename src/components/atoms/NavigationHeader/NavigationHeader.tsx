@@ -15,13 +15,14 @@ export interface NavigationHeaderProps {
   items: Array<NavigationHeaderItem>
   callToActionItem?: NavigationHeaderItem
   anchorPosition: 'right' | 'left'
+  mobileViewMaxWidth?: number
 }
 
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+const StyledToolbar = styled(Toolbar)<{mobileViewBreakpoint: string}>(({ theme, mobileViewBreakpoint}) => ({
   '& .MuiTabs-scroller': {
     height: 'fit-content',
   },
-  [theme.breakpoints.down('md')]: {
+  [mobileViewBreakpoint]: {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -79,17 +80,18 @@ const HeaderItem = styled(Tab)<{ selected: boolean }>(({ theme }) => ({
   },
 }))
 
-const CallToActionContainer = styled(Box)(({ theme }) => ({
+const CallToActionContainer = styled(Box)<{mobileViewBreakpoint: string}>(({ theme, mobileViewBreakpoint }) => ({
   margin: 'auto',
   marginLeft: theme.spacing(1),
-  [theme.breakpoints.down('md')]: {
+  [mobileViewBreakpoint]: {
     margin: theme.spacing(1, 0, 0, 0),
   },
 }))
 
-export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition = 'right' }: NavigationHeaderProps) => {
+export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition = 'right', mobileViewMaxWidth }: NavigationHeaderProps) => {
   const theme = useTheme()
-  const isMobileView = useMediaQuery(theme.breakpoints.down('md'))
+  const mobileViewBreakpoint = mobileViewMaxWidth ? `@media (max-width: ${mobileViewMaxWidth}px)` : theme.breakpoints.down('md')
+  const isMobileView = useMediaQuery(mobileViewBreakpoint)
   const [selectedElement, setSelectedElement] = useState(0)
   const [showToolBar, setShowToolBar] = useState(true)
 
@@ -109,7 +111,7 @@ export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition 
   }
 
   const toolBarElement = (
-    <StyledToolbar>
+    <StyledToolbar mobileViewBreakpoint={mobileViewBreakpoint}>
       <Header value={selectedElement} orientation={isMobileView ? 'vertical' : 'horizontal'}>
         {items.map((item, index) => (
           <HeaderItem
@@ -124,7 +126,7 @@ export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition 
           />
         ))}
         {callToActionItem && (
-          <CallToActionContainer>
+          <CallToActionContainer mobileViewBreakpoint={mobileViewBreakpoint}>
             <ButtonV2
               fontColor={colors.white}
               backgroundColor={colors.blue}

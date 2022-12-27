@@ -16,11 +16,7 @@ const Template: Story<NavigationHeaderProps> = (args) => (
   </div>
 )
 
-// Reuse that template for creating different stories
-export const SampleNavigationHeader = Template.bind({})
-SampleNavigationHeader.args = {
-  anchorPosition: 'right',
-  items: [
+const sampleItems = [
     {
       label: 'sample-icon',
       onClick: () => {
@@ -51,7 +47,27 @@ SampleNavigationHeader.args = {
         console.log('sample click')
       },
     },
-  ],
+  ]
+
+// Reuse that template for creating different stories
+export const SampleNavigationHeader = Template.bind({})
+SampleNavigationHeader.args = {
+  anchorPosition: 'right',
+  items: sampleItems,
+  callToActionItem: {
+    label: 'Open app',
+    onClick: () => {
+      console.log('sample click')
+    },
+  },
+}
+
+
+export const SampleNavigationHeaderWithCustomMaxWidthMobileView = Template.bind({})
+SampleNavigationHeaderWithCustomMaxWidthMobileView.args = {
+  anchorPosition: 'left',
+  mobileViewMaxWidth: 1200,
+  items: sampleItems,
   callToActionItem: {
     label: 'Open app',
     onClick: () => {
