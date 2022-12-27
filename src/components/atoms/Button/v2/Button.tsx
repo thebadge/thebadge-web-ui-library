@@ -17,7 +17,7 @@ const StyledButton = styled(Button)<ButtonProps>(({ theme, width, fontColor, bac
   fontSize: '2ßpx',
   lineHeight: '28px',
   borderRadius: '8px',
-  padding: theme.spacing(1, 4),
+  padding: theme.spacing(0.5, 2.6),
   gap: theme.spacing(0.5),
   textTransform: 'none',
 

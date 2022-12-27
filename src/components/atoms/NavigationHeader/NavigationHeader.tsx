@@ -1,7 +1,8 @@
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
-import { AppBar, Box, Button, Drawer, styled, Tab, Tabs, Toolbar, useMediaQuery, useTheme } from '@mui/material'
+import { AppBar, Box, Drawer, styled, Tab, Tabs, Toolbar, useMediaQuery, useTheme } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import { ButtonV2 } from '../Button/v2/Button'
 import { NavIcon } from './NavIcon'
 interface NavigationHeaderItem {
   label: string
@@ -124,15 +125,17 @@ export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition 
         ))}
         {callToActionItem && (
           <CallToActionContainer>
-            <Button
-              color="blue"
+            <ButtonV2
+              fontColor={colors.white}
+              backgroundColor={colors.blue}
+              sx={{ textTransform: 'none' }}
               variant="contained"
               size="small"
-              sx={{ textTransform: 'none' }}
               onClick={callToActionItem.onClick}
+              disabled={callToActionItem.disabled}
             >
               {callToActionItem.label}
-            </Button>
+            </ButtonV2>
           </CallToActionContainer>
         )}
       </Header>
