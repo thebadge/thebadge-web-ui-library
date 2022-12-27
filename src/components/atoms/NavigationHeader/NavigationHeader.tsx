@@ -31,6 +31,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     '& .MuiTabs-flexContainerVertical': {
       alignItems: 'flex-start',
       rowGap: theme.spacing(1),
+      paddingTop: theme.spacing(4),
     },
     '& .MuiTab-root': {
       justifyContent: 'flex-start',
