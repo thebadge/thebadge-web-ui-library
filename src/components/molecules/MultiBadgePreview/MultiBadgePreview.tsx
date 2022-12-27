@@ -1,5 +1,5 @@
-import React from 'react'
 import { Box, styled } from '@mui/material'
+import React from 'react'
 import './multiBadgePreview.scss'
 
 export interface MultiBadgePreviewProps {
@@ -21,15 +21,14 @@ const MultiBadgePreviewBox = styled(Box)<{ scale?: number }>(({ theme, scale }) 
 
 export const MultiBadgePreview = (props: MultiBadgePreviewProps = defaultValuesForMultiBadgePreviewProps) => {
   return (
-    <MultiBadgePreviewBox
-      className={'multiBadgePreview ' + (props.animated ? 'multiBadgePreview--animated' : '')}
-      scale={props.sizeScale}
-      onClick={props.onGroupClick}
-    >
+    <MultiBadgePreviewBox className={'multiBadgePreview'} scale={props.sizeScale} onClick={props.onGroupClick}>
       {/* show only the first 3 elements */}
       {props.badges.slice(0, 3).map((badge, index) => {
         return (
-          <Box key={'multiBadgePreview__badge--' + index} className="multiBadgePreview__badge">
+          <Box
+            key={'multiBadgePreview__badge--' + index}
+            className={'multiBadgePreview__badge ' + (props.animated ? 'multiBadgePreview__badge--animated' : '')}
+          >
             {badge}
           </Box>
         )
