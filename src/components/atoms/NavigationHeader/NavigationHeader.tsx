@@ -95,9 +95,7 @@ export const NavigationHeader = ({
   mobileViewMaxWidth,
 }: NavigationHeaderProps) => {
   const theme = useTheme()
-  const mobileViewBreakpoint = mobileViewMaxWidth
-    ? `@media (max-width: ${mobileViewMaxWidth}px)`
-    : theme.breakpoints.down('md')
+  const mobileViewBreakpoint = theme.breakpoints.down(mobileViewMaxWidth ? mobileViewMaxWidth : 'md')
   const isMobileView = useMediaQuery(mobileViewBreakpoint)
   const [selectedElement, setSelectedElement] = useState(0)
   const [showToolBar, setShowToolBar] = useState(true)
