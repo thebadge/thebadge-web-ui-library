@@ -2,17 +2,17 @@
 import { defaultTheme, TBColor } from '@assets/defaultTheme'
 
 // scss
-import colors from '@assets/scss/variables/_color.variables.module.scss'
-import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
-import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
-import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
 import '@assets/scss/global.scss'
+import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
+import colors from '@assets/scss/variables/_color.variables.module.scss'
+import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
+import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
 
 // components
-import { Button } from '@components/atoms/Button/v1/Button'
-import { ButtonV2 } from '@components/atoms/Button/v2/Button'
 import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
 import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
+import { Button } from '@components/atoms/Button/v1/Button'
+import { ButtonV2 } from '@components/atoms/Button/v2/Button'
 import { NavigationHeader } from '@components/atoms/NavigationHeader/NavigationHeader'
 import { IconBadge } from '@components/icons/IconBadge/IconBadge'
 import { IconCurator } from '@components/icons/IconCurator/IconCurator'
@@ -61,5 +61,4 @@ export {
   MultiBadgePreview,
   Stepper,
 }
-
 export type { TBColor }

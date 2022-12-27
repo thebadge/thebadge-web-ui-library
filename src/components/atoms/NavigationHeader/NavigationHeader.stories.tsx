@@ -1,8 +1,8 @@
-import React from 'react'
-import { Meta } from '@storybook/react/types-6-0'
-import { Story } from '@storybook/react'
-import { NavigationHeader, NavigationHeaderProps } from './NavigationHeader'
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
+import { Story } from '@storybook/react'
+import { Meta } from '@storybook/react/types-6-0'
+import React from 'react'
+import { NavigationHeader, NavigationHeaderProps } from './NavigationHeader'
 
 export default {
   title: 'Components/Atoms/NavigationHeader',
@@ -19,6 +19,7 @@ const Template: Story<NavigationHeaderProps> = (args) => (
 // Reuse that template for creating different stories
 export const SampleNavigationHeader = Template.bind({})
 SampleNavigationHeader.args = {
+  anchorPosition: 'right',
   items: [
     {
       label: 'sample-icon',
@@ -51,4 +52,10 @@ SampleNavigationHeader.args = {
       },
     },
   ],
+  callToActionItem: {
+    label: 'Open app',
+    onClick: () => {
+      console.log('sample click')
+    },
+  },
 }

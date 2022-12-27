@@ -27,6 +27,14 @@
   border: 1px solid transparent;
   backface-visibility: hidden;
   background: transparent;
+
+  &--animated {
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      scale: 1.5 !important;
+      z-index: 5 !important;
+    }
+  }
 }
 
 .multiBadgePreview__badge:nth-child(1) {

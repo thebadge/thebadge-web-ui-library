@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
-import { AppBar, Box, Button, styled, Toolbar } from '@mui/material'
-import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
-
+import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
+import { AppBar, Box, Drawer, styled, Tab, Tabs, Toolbar, useMediaQuery, useTheme } from '@mui/material'
+import React, { useEffect, useState } from 'react'
+import { ButtonV2 } from '../Button/v2/Button'
+import { NavIcon } from './NavIcon'
 interface NavigationHeaderItem {
   label: string
   icon?: React.ReactNode
@@ -12,11 +13,32 @@ interface NavigationHeaderItem {
 
 export interface NavigationHeaderProps {
   items: Array<NavigationHeaderItem>
+  callToActionItem?: NavigationHeaderItem
+  anchorPosition: 'right' | 'left'
 }
 
-const defaultValuesForNavigationHeaderProps = {
-  items: [],
-}
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  '& .MuiTabs-scroller': {
+    height: 'fit-content',
+  },
+  [theme.breakpoints.down('md')]: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    '& 	.MuiTabs-indicator': {
+      backgroundColor: `transparent`,
+      background: 'none !important',
+    },
+    '& .MuiTabs-flexContainerVertical': {
+      alignItems: 'flex-start',
+      rowGap: theme.spacing(1),
+      paddingTop: theme.spacing(4),
+    },
+    '& .MuiTab-root': {
+      justifyContent: 'flex-start',
+    },
+  },
+}))
 
 const HeaderItemImage = styled(Box)(({ theme }) => ({
   width: 35,
@@ -30,28 +52,54 @@ const HeaderItemImage = styled(Box)(({ theme }) => ({
   alignItems: 'center',
 }))
 
-const HeaderItem = styled(Button)<{ selected: boolean }>(({ theme, selected }) => ({
+const Header = styled(Tabs)(() => ({
+  display: 'flex',
+  position: 'relative',
+  '& 	.MuiTabs-indicator': {
+    background: `${gradients.gradientHeader}`,
+  },
+}))
+
+const HeaderItem = styled(Tab)<{ selected: boolean }>(({ theme }) => ({
   color: colors.white,
-  padding: theme.spacing(1.5, 0),
-  margin: theme.spacing(0.5, 2),
+  minHeight: 0,
+  minWidth: 0,
+  padding: theme.spacing(0.5, 0),
+  margin: theme.spacing(0, 1),
+  borderRadius: theme.spacing(0.5),
   '&:disabled': {
     color: colors.white,
     opacity: 0.5,
   },
-  ...(selected
-    ? {
-        background: `${gradients.gradientHeader}`,
-        backgroundSize: '100% 3px',
-        backgroundPosition: 'bottom 0 left 0,bottom 6px left 0',
-        backgroundRepeat: 'no-repeat',
-      }
-    : {
-        background: 'transparent',
-      }),
+  '&.Mui-selected': {
+    color: colors.white,
+  },
+  '&:hover': {
+    color: colors.primary,
+  },
 }))
 
-export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesForNavigationHeaderProps) => {
+const CallToActionContainer = styled(Box)(({ theme }) => ({
+  margin: 'auto',
+  marginLeft: theme.spacing(1),
+  [theme.breakpoints.down('md')]: {
+    margin: theme.spacing(1, 0, 0, 0),
+  },
+}))
+
+export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition = 'right' }: NavigationHeaderProps) => {
+  const theme = useTheme()
+  const isMobileView = useMediaQuery(theme.breakpoints.down('md'))
   const [selectedElement, setSelectedElement] = useState(0)
+  const [showToolBar, setShowToolBar] = useState(true)
+
+  useEffect(() => {
+    setShowToolBar(!isMobileView)
+  }, [isMobileView])
+
+  const onNavIconClick = () => {
+    setShowToolBar((prev) => !prev)
+  }
 
   const onItemClick = (item: NavigationHeaderItem, index: number) => {
     setSelectedElement(index)
@@ -60,23 +108,53 @@ export const NavigationHeader = (props: NavigationHeaderProps = defaultValuesFor
     }
   }
 
-  return (
-    <AppBar component="nav" sx={{ background: 'transparent', boxShadow: 'none', position: 'inherit' }}>
-      <Toolbar>
-        <Box sx={{ display: { xs: 'block' } }}>
-          {props.items.map((item, index) => (
-            <HeaderItem
-              key={item.label}
-              onClick={() => onItemClick(item, index)}
-              disabled={item.disabled}
-              selected={selectedElement === index}
+  const toolBarElement = (
+    <StyledToolbar>
+      <Header value={selectedElement} orientation={isMobileView ? 'vertical' : 'horizontal'}>
+        {items.map((item, index) => (
+          <HeaderItem
+            key={item.label}
+            onClick={() => onItemClick(item, index)}
+            disabled={item.disabled}
+            selected={selectedElement === index}
+            label={item.label}
+            icon={item.icon ? <HeaderItemImage>{item.icon}</HeaderItemImage> : undefined}
+            iconPosition="end"
+            disableRipple={true}
+          />
+        ))}
+        {callToActionItem && (
+          <CallToActionContainer>
+            <ButtonV2
+              fontColor={colors.white}
+              backgroundColor={colors.blue}
+              sx={{ textTransform: 'none' }}
+              variant="contained"
+              size="small"
+              onClick={callToActionItem.onClick}
+              disabled={callToActionItem.disabled}
             >
-              {item.icon ? <HeaderItemImage>{item.icon}</HeaderItemImage> : null}
-              {item.label}
-            </HeaderItem>
-          ))}
-        </Box>
-      </Toolbar>
+              {callToActionItem.label}
+            </ButtonV2>
+          </CallToActionContainer>
+        )}
+      </Header>
+    </StyledToolbar>
+  )
+  return (
+    <AppBar component="nav" sx={{ background: 'transparent', boxShadow: 'none', position: 'inherit', width: 'auto' }}>
+      {isMobileView && <NavIcon onClick={onNavIconClick} isOpen={showToolBar} />}
+      {!isMobileView && toolBarElement}
+      <Drawer
+        anchor={anchorPosition}
+        open={isMobileView && showToolBar}
+        onClose={onNavIconClick}
+        PaperProps={{
+          sx: { backgroundColor: colors.black },
+        }}
+      >
+        {toolBarElement}
+      </Drawer>
     </AppBar>
   )
 }

@@ -2,7 +2,7 @@
 // https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation
 import '@mui/material/styles/createPalette'
 
-interface TheBadgeColors {
+export interface TheBadgeColors {
   blue: true
   purple: true
   green: true
