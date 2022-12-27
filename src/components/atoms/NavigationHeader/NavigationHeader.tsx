@@ -18,7 +18,7 @@ export interface NavigationHeaderProps {
   mobileViewMaxWidth?: number
 }
 
-const StyledToolbar = styled(Toolbar)<{mobileViewBreakpoint: string}>(({ theme, mobileViewBreakpoint}) => ({
+const StyledToolbar = styled(Toolbar)<{ mobileViewBreakpoint: string }>(({ theme, mobileViewBreakpoint }) => ({
   '& .MuiTabs-scroller': {
     height: 'fit-content',
   },
@@ -80,7 +80,7 @@ const HeaderItem = styled(Tab)<{ selected: boolean }>(({ theme }) => ({
   },
 }))
 
-const CallToActionContainer = styled(Box)<{mobileViewBreakpoint: string}>(({ theme, mobileViewBreakpoint }) => ({
+const CallToActionContainer = styled(Box)<{ mobileViewBreakpoint: string }>(({ theme, mobileViewBreakpoint }) => ({
   margin: 'auto',
   marginLeft: theme.spacing(1),
   [mobileViewBreakpoint]: {
@@ -88,9 +88,16 @@ const CallToActionContainer = styled(Box)<{mobileViewBreakpoint: string}>(({ the
   },
 }))
 
-export const NavigationHeader = ({ items = [], callToActionItem, anchorPosition = 'right', mobileViewMaxWidth }: NavigationHeaderProps) => {
+export const NavigationHeader = ({
+  items = [],
+  callToActionItem,
+  anchorPosition = 'right',
+  mobileViewMaxWidth,
+}: NavigationHeaderProps) => {
   const theme = useTheme()
-  const mobileViewBreakpoint = mobileViewMaxWidth ? `@media (max-width: ${mobileViewMaxWidth}px)` : theme.breakpoints.down('md')
+  const mobileViewBreakpoint = mobileViewMaxWidth
+    ? `@media (max-width: ${mobileViewMaxWidth}px)`
+    : theme.breakpoints.down('md')
   const isMobileView = useMediaQuery(mobileViewBreakpoint)
   const [selectedElement, setSelectedElement] = useState(0)
   const [showToolBar, setShowToolBar] = useState(true)
