@@ -16,42 +16,57 @@ const Template: Story<NavigationHeaderProps> = (args) => (
   </div>
 )
 
+const sampleItems = [
+  {
+    label: 'sample-icon',
+    onClick: () => {
+      console.log('sample click')
+    },
+    icon: <img src={badgeBackground} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />,
+  },
+  {
+    label: 'sample2',
+    onClick: () => {
+      console.log('sample click')
+    },
+  },
+  {
+    label: 'sample3',
+    onClick: () => {
+      console.log('sample click')
+    },
+    icon: <img src={badgeBackground} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />,
+  },
+  {
+    label: 'sample-disabled',
+    disabled: true,
+  },
+  {
+    label: 'sample',
+    onClick: () => {
+      console.log('sample click')
+    },
+  },
+]
+
 // Reuse that template for creating different stories
 export const SampleNavigationHeader = Template.bind({})
 SampleNavigationHeader.args = {
   anchorPosition: 'right',
-  items: [
-    {
-      label: 'sample-icon',
-      onClick: () => {
-        console.log('sample click')
-      },
-      icon: <img src={badgeBackground} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />,
+  items: sampleItems,
+  callToActionItem: {
+    label: 'Open app',
+    onClick: () => {
+      console.log('sample click')
     },
-    {
-      label: 'sample2',
-      onClick: () => {
-        console.log('sample click')
-      },
-    },
-    {
-      label: 'sample3',
-      onClick: () => {
-        console.log('sample click')
-      },
-      icon: <img src={badgeBackground} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />,
-    },
-    {
-      label: 'sample-disabled',
-      disabled: true,
-    },
-    {
-      label: 'sample',
-      onClick: () => {
-        console.log('sample click')
-      },
-    },
-  ],
+  },
+}
+
+export const SampleNavigationHeaderWithCustomMaxWidthMobileView = Template.bind({})
+SampleNavigationHeaderWithCustomMaxWidthMobileView.args = {
+  anchorPosition: 'left',
+  mobileViewMaxWidth: 1200,
+  items: sampleItems,
   callToActionItem: {
     label: 'Open app',
     onClick: () => {
