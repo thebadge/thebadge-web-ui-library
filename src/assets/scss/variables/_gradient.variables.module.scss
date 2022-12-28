@@ -24,7 +24,21 @@ $tb-gradient-5: linear-gradient(
   rgba(0, 0, 0, 0) 100.83%
 );
 
-$tb-gradient-header: linear-gradient(90deg, #008362 0%, #5BBCAD 21.48%, #002CBF 50.63%, $tb-purple 74.67%, #891CFB 98.2%);
+$tb-gradient-header: linear-gradient(
+  90deg,
+  #008362 0%,
+  #5bbcad 21.48%,
+  #002cbf 50.63%,
+  $tb-purple 74.67%,
+  #891cfb 98.2%
+);
+$tb-gradient-background: radial-gradient(
+  94.86% 21.92% at 3.16% 1.15%,
+  #420756 0%,
+  #190321 61.46%,
+  #000000 100%,
+  #000000 100%
+);
 
 /*
  * Gradients Map (used for gradient classes and direct usage in components)
@@ -37,6 +51,7 @@ $gradients: (
   'gradient4': $tb-gradient-4,
   'gradient5': $tb-gradient-5,
   'gradientHeader': $tb-gradient-header,
+  'gradientBackground': $tb-gradient-background,
 );
 
 :export {
