@@ -1,9 +1,8 @@
 import { TBColor } from '@assets/defaultTheme'
-import { useTraceableState } from '@hooks'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { Box } from '@mui/material'
-import React, { createRef, RefObject, useMemo } from 'react'
+import React, { createRef, RefObject, useMemo, useState } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 import './stepper.scss'
@@ -33,7 +32,7 @@ export const Stepper = ({
   glowTitle,
   border,
 }: StepperProps = defaultStepperProps) => {
-  const [prevSelectedElement, selectedElement, setSelectedElement] = useTraceableState(0)
+  const [selectedElement, setSelectedElement] = useState(0)
 
   // Refs to move the elements
   const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
