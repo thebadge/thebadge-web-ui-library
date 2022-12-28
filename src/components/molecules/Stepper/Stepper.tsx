@@ -89,15 +89,7 @@ export const Stepper = ({
         />
         <Box className="stepper__step">
           <SwitchTransition>
-            <CSSTransition
-              key={selectedElement}
-              nodeRef={elementRefs[selectedElement]}
-              addEndListener={(done) => {
-                elementRefs[selectedElement].current?.addEventListener('transitionend', done, false)
-              }}
-              timeout={300}
-              classNames="stepper__step-fade"
-            >
+            <CSSTransition key={selectedElement} timeout={500} classNames={`stepper__step-fade`}>
               <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
             </CSSTransition>
           </SwitchTransition>
