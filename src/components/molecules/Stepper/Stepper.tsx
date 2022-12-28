@@ -1,8 +1,9 @@
 import { TBColor } from '@assets/defaultTheme'
+import { useTraceableState } from '@hooks'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { Box } from '@mui/material'
-import React, { createRef, RefObject, useMemo, useState } from 'react'
+import React, { createRef, RefObject, useMemo } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 import './stepper.scss'
@@ -32,7 +33,7 @@ export const Stepper = ({
   glowTitle,
   border,
 }: StepperProps = defaultStepperProps) => {
-  const [selectedElement, setSelectedElement] = useState(0)
+  const [prevSelectedElement, selectedElement, setSelectedElement] = useTraceableState(0)
 
   // Refs to move the elements
   const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
@@ -63,7 +64,7 @@ export const Stepper = ({
       setSelectedElement(index)
     }
   }
-
+  console.log(prevSelectedElement, selectedElement)
   return (
     <Box
       className={[
@@ -91,12 +92,12 @@ export const Stepper = ({
           <SwitchTransition>
             <CSSTransition
               key={selectedElement}
-              nodeRef={elementRefs[selectedElement]}
-              addEndListener={(done) => {
-                elementRefs[selectedElement].current?.addEventListener('transitionend', done, false)
-              }}
-              timeout={300}
-              classNames="stepper__step-fade"
+              /* nodeRef={elementRefs[selectedElement]}
+            addEndListener={(done) => {
+              elementRefs[selectedElement].current?.addEventListener('transitionend', done, false)
+            }} */
+              timeout={500}
+              classNames={`stepper__step-fade`}
             >
               <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
             </CSSTransition>
