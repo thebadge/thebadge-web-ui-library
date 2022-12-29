@@ -20,10 +20,12 @@ const defaultValuesForBadgePreviewProps = {
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
-const BadgePreviewBox = styled(Box)<{ size?: number }>(({ size = 320 }) => ({
-  width: size,
-  height: size * 1.6,
-}))
+const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName !== 'size' })<{ size?: number }>(
+  ({ size = 320 }) => ({
+    width: size,
+    height: size * 1.6,
+  })
+)
 
 export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
   useEffect(() => {

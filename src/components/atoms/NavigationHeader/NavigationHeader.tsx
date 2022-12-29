@@ -18,7 +18,9 @@ export interface NavigationHeaderProps {
   mobileViewMaxWidth?: number
 }
 
-const StyledToolbar = styled(Toolbar)<{ mobileViewBreakpoint: string }>(({ theme, mobileViewBreakpoint }) => ({
+const StyledToolbar = styled(Toolbar, { shouldForwardProp: (propName) => propName !== 'mobileViewBreakpoint' })<{
+  mobileViewBreakpoint: string
+}>(({ theme, mobileViewBreakpoint }) => ({
   '& .MuiTabs-scroller': {
     height: 'fit-content',
   },
@@ -80,7 +82,9 @@ const HeaderItem = styled(Tab)<{ selected: boolean }>(({ theme }) => ({
   },
 }))
 
-const CallToActionContainer = styled(Box)<{ mobileViewBreakpoint: string }>(({ theme, mobileViewBreakpoint }) => ({
+const CallToActionContainer = styled(Box, { shouldForwardProp: (propName) => propName !== 'mobileViewBreakpoint' })<{
+  mobileViewBreakpoint: string
+}>(({ theme, mobileViewBreakpoint }) => ({
   margin: 'auto',
   marginLeft: theme.spacing(1),
   [mobileViewBreakpoint]: {
