@@ -1,14 +1,16 @@
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
-import { AppBar, Box, Drawer, styled, Tab, Tabs, Toolbar, useMediaQuery, useTheme } from '@mui/material'
+import { AppBar, Box, Drawer, styled, Tab, Tabs, Toolbar, Tooltip, useMediaQuery, useTheme } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { ButtonV2 } from '../Button/v2/Button'
 import { NavIcon } from './NavIcon'
+
 interface NavigationHeaderItem {
   label: string
   icon?: React.ReactNode
   onClick?: () => void
   disabled?: boolean
+  tooltip?: string
 }
 
 export interface NavigationHeaderProps {
@@ -119,31 +121,35 @@ export const NavigationHeader = ({
     <StyledToolbar mobileViewBreakpoint={mobileViewBreakpoint}>
       <Header value={selectedElement} orientation={isMobileView ? 'vertical' : 'horizontal'}>
         {items.map((item, index) => (
-          <HeaderItem
-            key={item.label}
-            onClick={() => onItemClick(item, index)}
-            disabled={item.disabled}
-            selected={selectedElement === index}
-            label={item.label}
-            icon={item.icon ? <HeaderItemImage>{item.icon}</HeaderItemImage> : undefined}
-            iconPosition="end"
-            disableRipple={true}
-          />
+          <Tooltip key={item.label} title={item.tooltip}>
+            <HeaderItem
+              onClick={() => onItemClick(item, index)}
+              disabled={item.disabled}
+              selected={selectedElement === index}
+              label={item.label}
+              icon={item.icon ? <HeaderItemImage>{item.icon}</HeaderItemImage> : undefined}
+              iconPosition="end"
+              disableRipple={true}
+            />
+          </Tooltip>
         ))}
         {callToActionItem && (
-          <CallToActionContainer mobileViewBreakpoint={mobileViewBreakpoint}>
-            <ButtonV2
-              fontColor={colors.white}
-              backgroundColor={colors.blue}
-              sx={{ textTransform: 'none' }}
-              variant="contained"
-              size="small"
-              onClick={callToActionItem.onClick}
-              disabled={callToActionItem.disabled}
-            >
-              {callToActionItem.label}
-            </ButtonV2>
-          </CallToActionContainer>
+          <Tooltip title={callToActionItem.tooltip}>
+            <CallToActionContainer mobileViewBreakpoint={mobileViewBreakpoint}>
+              <ButtonV2
+                fontColor={colors.white}
+                backgroundColor={colors.blue}
+                sx={{ textTransform: 'none' }}
+                variant="contained"
+                size="small"
+                onClick={callToActionItem.onClick}
+                disabled={callToActionItem.disabled}
+                endIcon={callToActionItem.icon}
+              >
+                {callToActionItem.label}
+              </ButtonV2>
+            </CallToActionContainer>
+          </Tooltip>
         )}
       </Header>
     </StyledToolbar>
