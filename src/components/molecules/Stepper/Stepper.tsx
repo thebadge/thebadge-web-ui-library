@@ -66,7 +66,10 @@ export const Stepper = ({
     }
   }
 
-  console.log(selectedElementHeight)
+  function onEnteringSwitchTransition() {
+    if (elementRefs[selectedElement]?.current)
+      setSelectedElementHeight(elementRefs[selectedElement]?.current?.clientHeight || 'auto')
+  }
 
   return (
     <Box
@@ -97,11 +100,7 @@ export const Stepper = ({
               key={selectedElement}
               timeout={500}
               classNames={`stepper__step-fade`}
-              onEntering={() => {
-                console.log('ENTERING')
-                if (elementRefs[selectedElement]?.current)
-                  setSelectedElementHeight(elementRefs[selectedElement]?.current?.clientHeight || 'auto')
-              }}
+              onEntering={onEnteringSwitchTransition}
             >
               <AnimateHeight duration={400} height={selectedElementHeight}>
                 <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
