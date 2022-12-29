@@ -1,10 +1,10 @@
 import { BadgeCategories, BadgeTypes } from '@businessLogic/badge'
-import { Meta, Story } from '@storybook/react'
-import React from 'react'
+import { BadgePreviewEffects, BadgeSize, BadgeTextContrast } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
 import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
-import { BadgePreviewEffects, BadgeSize, BadgeTextContrast } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { MultiBadgePreview, MultiBadgePreviewProps } from '@components/molecules/MultiBadgePreview/MultiBadgePreview'
+import { Meta, Story } from '@storybook/react'
+import React from 'react'
 
 export default {
   title: 'Components/Molecules/MultiBadgePreview',
@@ -12,7 +12,11 @@ export default {
 } as Meta
 
 const Template: Story<MultiBadgePreviewProps> = (args) => {
-  return <MultiBadgePreview {...args} />
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '10%' }}>
+      <MultiBadgePreview {...args} />
+    </div>
+  )
 }
 const defaultBadgeCarouselExampleProps = {
   size: 'small' as BadgeSize,
