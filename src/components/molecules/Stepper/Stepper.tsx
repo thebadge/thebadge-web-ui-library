@@ -94,7 +94,13 @@ export const Stepper = ({
             </CSSTransition>
           </SwitchTransition>
         </Box>
-        <ArrowForwardIosIcon className={`stepper__arrow color--${color ?? ''}`} onClick={onArrowForwardClickHandler} />
+        <ArrowForwardIosIcon
+          className={[
+            `stepper__arrow`,
+            `color--${color ?? ''}`,
+            selectedElement === elements.length - 1 ? 'stepper__arrow--disable' : '',
+          ].join(' ')}
+          onClick={onArrowForwardClickHandler} />
       </Box>
       <Box className="stepper__dot__container">
         {elements.map((_, i) => {
