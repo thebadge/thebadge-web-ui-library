@@ -100,7 +100,8 @@ export const Stepper = ({
             `color--${color ?? ''}`,
             selectedElement === elements.length - 1 ? 'stepper__arrow--disable' : '',
           ].join(' ')}
-          onClick={onArrowForwardClickHandler} />
+          onClick={onArrowForwardClickHandler}
+        />
       </Box>
       <Box className="stepper__dot__container">
         {elements.map((_, i) => {
