@@ -36,6 +36,7 @@
   &__step {
     width: 100%;
     overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
     // Swith Transitions
     // https://youtu.be/sfZZA8n07FA?t=752
 
@@ -65,6 +66,10 @@
     height: 100%;
     flex-direction: row;
     margin: 8px;
+
+    @media screen and (max-width: 500px) {
+      margin: 8px 0 8px 0;
+    }
   }
 
   &__dot {

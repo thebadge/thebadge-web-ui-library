@@ -3,6 +3,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import { Box } from '@mui/material'
 import React, { createRef, RefObject, useMemo, useState } from 'react'
+import AnimateHeight from 'react-animate-height'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 import './stepper.scss'
@@ -33,6 +34,7 @@ export const Stepper = ({
   border,
 }: StepperProps = defaultStepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
+  const [selectedElementHeight, setSelectedElementHeight] = useState<'auto' | number>('auto')
 
   // Refs to move the elements
   const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
@@ -64,6 +66,8 @@ export const Stepper = ({
     }
   }
 
+  console.log(selectedElementHeight)
+
   return (
     <Box
       className={[
@@ -89,8 +93,19 @@ export const Stepper = ({
         />
         <Box className="stepper__step">
           <SwitchTransition>
-            <CSSTransition key={selectedElement} timeout={500} classNames={`stepper__step-fade`}>
-              <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
+            <CSSTransition
+              key={selectedElement}
+              timeout={500}
+              classNames={`stepper__step-fade`}
+              onEntering={() => {
+                console.log('ENTERING')
+                if (elementRefs[selectedElement]?.current)
+                  setSelectedElementHeight(elementRefs[selectedElement]?.current?.clientHeight || 'auto')
+              }}
+            >
+              <AnimateHeight duration={400} height={selectedElementHeight}>
+                <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
+              </AnimateHeight>
             </CSSTransition>
           </SwitchTransition>
         </Box>
