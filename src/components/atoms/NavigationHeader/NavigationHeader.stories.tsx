@@ -3,6 +3,7 @@ import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
 import { NavigationHeader, NavigationHeaderProps } from './NavigationHeader'
+import { ConstructionOutlined } from '@mui/icons-material'
 
 export default {
   title: 'Components/Atoms/NavigationHeader',
@@ -25,7 +26,8 @@ const sampleItems = [
     icon: <img src={badgeBackground} alt={'Menu item icon'} className={'width-pc-100 height-pc-100'} />,
   },
   {
-    label: 'sample2',
+    label: 'sample tooltip',
+    tooltip: 'tooltip text',
     onClick: () => {
       console.log('sample click')
     },
@@ -49,17 +51,22 @@ const sampleItems = [
   },
 ]
 
+const callToActionSample = {
+  label: 'Open app',
+  onClick: () => {
+    console.log('sample click')
+  },
+  disabled: true,
+  icon: <ConstructionOutlined></ConstructionOutlined>,
+  tooltip: 'Under construction',
+}
+
 // Reuse that template for creating different stories
 export const SampleNavigationHeader = Template.bind({})
 SampleNavigationHeader.args = {
   anchorPosition: 'right',
   items: sampleItems,
-  callToActionItem: {
-    label: 'Open app',
-    onClick: () => {
-      console.log('sample click')
-    },
-  },
+  callToActionItem: callToActionSample,
 }
 
 export const SampleNavigationHeaderWithCustomMaxWidthMobileView = Template.bind({})
@@ -67,10 +74,5 @@ SampleNavigationHeaderWithCustomMaxWidthMobileView.args = {
   anchorPosition: 'left',
   mobileViewMaxWidth: 1200,
   items: sampleItems,
-  callToActionItem: {
-    label: 'Open app',
-    onClick: () => {
-      console.log('sample click')
-    },
-  },
+  callToActionItem: callToActionSample,
 }
