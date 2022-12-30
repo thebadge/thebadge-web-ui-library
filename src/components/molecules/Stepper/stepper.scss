@@ -3,6 +3,7 @@
 
 .stepper {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 16px;
@@ -95,6 +96,7 @@
 
     &--disable {
       opacity: 0.5;
+      cursor: auto;
     }
   }
 }
