@@ -43,7 +43,7 @@ export const Stepper = ({
   )
 
   if (!elements || !(elements.length > 0)) {
-    return null
+    return <></>
   }
 
   function onArrowForwardClickHandler() {
