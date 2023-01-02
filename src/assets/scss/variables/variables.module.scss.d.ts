@@ -42,6 +42,7 @@ export const gradient2: string
 export const gradient3: string
 export const gradient4: string
 export const gradient5: string
+export const gradientBackground: string
 export const gradientHeader: string
 export const green: string
 export const greenBorder: string
@@ -71,6 +72,7 @@ export const lineHeightTitle2: string
 export const lineHeightTitle3: string
 export const lineHeightTitle4: string
 export const lineHeightTitle5: string
+export const logo1: string
 export const m: string
 export const orangeWarning: string
 export const pink: string

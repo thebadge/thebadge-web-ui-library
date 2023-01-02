@@ -16,6 +16,7 @@ export const backgroundColorGreenLight: string
 export const backgroundColorGreenSuccess: string
 export const backgroundColorGreyBackground: string
 export const backgroundColorInherit: string
+export const backgroundColorLogo1: string
 export const backgroundColorOrangeWarning: string
 export const backgroundColorPink: string
 export const backgroundColorPinkDark: string
@@ -36,6 +37,7 @@ export const backgroundGradient2: string
 export const backgroundGradient3: string
 export const backgroundGradient4: string
 export const backgroundGradient5: string
+export const backgroundGradientBackground: string
 export const backgroundGradientHeader: string
 export const backgroundInherit: string
 export const black: string
@@ -63,6 +65,7 @@ export const borderColorGreenLight: string
 export const borderColorGreenSuccess: string
 export const borderColorGreyBackground: string
 export const borderColorInherit: string
+export const borderColorLogo1: string
 export const borderColorOrangeWarning: string
 export const borderColorPink: string
 export const borderColorPinkDark: string
@@ -95,6 +98,7 @@ export const colorGreenLight: string
 export const colorGreenSuccess: string
 export const colorGreyBackground: string
 export const colorInherit: string
+export const colorLogo1: string
 export const colorOrangeWarning: string
 export const colorPink: string
 export const colorPinkDark: string
@@ -130,6 +134,7 @@ export const fillGreenLight: string
 export const fillGreenSuccess: string
 export const fillGreyBackground: string
 export const fillInherit: string
+export const fillLogo1: string
 export const fillOrangeWarning: string
 export const fillPink: string
 export const fillPinkDark: string
@@ -178,6 +183,7 @@ export const gradient2: string
 export const gradient3: string
 export const gradient4: string
 export const gradient5: string
+export const gradientBackground: string
 export const gradientHeader: string
 export const green: string
 export const greenBorder: string
@@ -308,6 +314,7 @@ export const lineHeightTitle2: string
 export const lineHeightTitle3: string
 export const lineHeightTitle4: string
 export const lineHeightTitle5: string
+export const logo1: string
 export const m: string
 export const orangeWarning: string
 export const pink: string
@@ -341,6 +348,7 @@ export const svgFillGreenLight: string
 export const svgFillGreenSuccess: string
 export const svgFillGreyBackground: string
 export const svgFillInherit: string
+export const svgFillLogo1: string
 export const svgFillOrangeWarning: string
 export const svgFillPink: string
 export const svgFillPinkDark: string

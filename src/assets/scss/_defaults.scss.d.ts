@@ -63,6 +63,7 @@ export const lineHeightTitle2: string
 export const lineHeightTitle3: string
 export const lineHeightTitle4: string
 export const lineHeightTitle5: string
+export const logo1: string
 export const orangeWarning: string
 export const pink: string
 export const pinkDark: string
