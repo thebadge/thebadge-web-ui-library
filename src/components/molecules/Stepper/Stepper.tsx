@@ -127,7 +127,7 @@ type StepperTitleProps = {
 }
 
 const StepperTitle = ({ children, color, glow }: React.PropsWithChildren<StepperTitleProps>) => {
-  function getElement(children: React.ReactNode) {
+  function getElement(children: React.ReactNode | string) {
     if (typeof children === 'string') {
       const [firstWord, ...rest] = children.split(' ')
       return (
@@ -135,12 +135,13 @@ const StepperTitle = ({ children, color, glow }: React.PropsWithChildren<Stepper
           <span>{firstWord}</span> {rest.join(' ')}
         </>
       )
-    } else return children
+    }
+    return children
   }
 
   return (
-    <p className={[`stepper__title`, `color--${color ?? ''}`, glow ? 'stepper__title--glow' : ''].join(' ')}>
+    <div className={[`stepper__title`, `color--${color ?? ''}`, glow ? 'stepper__title--glow' : ''].join(' ')}>
       {getElement(children)}
-    </p>
+    </div>
   )
 }
