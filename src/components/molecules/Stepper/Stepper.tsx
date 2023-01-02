@@ -43,7 +43,7 @@ export const Stepper = ({
   )
 
   if (!elements || !(elements.length > 0)) {
-    return null
+    return <></>
   }
 
   function onArrowForwardClickHandler() {
@@ -103,7 +103,7 @@ export const Stepper = ({
               onEntering={onEnteringSwitchTransition}
             >
               <AnimateHeight duration={400} height={selectedElementHeight}>
-                <Box ref={elementRefs[selectedElement]}>{elements ? elements[selectedElement] : null}</Box>
+                <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
               </AnimateHeight>
             </CSSTransition>
           </SwitchTransition>
