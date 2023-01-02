@@ -9,7 +9,8 @@ export type ButtonProps = MUIButtonProps & {
 }
 
 const StyledButton = styled(Button, {
-  shouldForwardProp: (propName) => propName !== 'fontColor' && propName !== 'backgroundColor',
+  shouldForwardProp: (propName) =>
+    propName !== 'fontColor' && propName !== 'backgroundColor' && propName !== 'textColor',
 })<ButtonProps>(({ theme, width, fontColor, backgroundColor }) => ({
   width: width ? `${width}` : 'fit-content',
   color: fontColor || colors.white,

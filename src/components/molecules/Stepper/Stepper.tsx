@@ -103,7 +103,7 @@ export const Stepper = ({
               onEntering={onEnteringSwitchTransition}
             >
               <AnimateHeight duration={400} height={selectedElementHeight}>
-                <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
+                <Box ref={elementRefs[selectedElement]}>{elements ? elements[selectedElement] : null}</Box>
               </AnimateHeight>
             </CSSTransition>
           </SwitchTransition>

@@ -1,6 +1,18 @@
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
-import { AppBar, Box, Drawer, styled, Tab, Tabs, Toolbar, Tooltip, useMediaQuery, useTheme } from '@mui/material'
+import {
+  AppBar,
+  Box,
+  Breakpoint,
+  Drawer,
+  styled,
+  Tab,
+  Tabs,
+  Toolbar,
+  Tooltip,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { ButtonV2 } from '../Button/v2/Button'
 import { NavIcon } from './NavIcon'
@@ -20,13 +32,19 @@ export interface NavigationHeaderProps {
   mobileViewMaxWidth?: number
 }
 
-const StyledToolbar = styled(Toolbar, { shouldForwardProp: (propName) => propName !== 'mobileViewBreakpoint' })<{
-  mobileViewBreakpoint: string
-}>(({ theme, mobileViewBreakpoint }) => ({
+const ToolbarDesktopContainer = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: {
+    display: 'none',
+  },
+}))
+
+const StyledToolbar = styled(Toolbar, { shouldForwardProp: (propName) => propName !== 'mobileViewMaxWidth' })<{
+  mobileViewMaxWidth: Breakpoint | number
+}>(({ theme, mobileViewMaxWidth }) => ({
   '& .MuiTabs-scroller': {
     height: 'fit-content',
   },
-  [mobileViewBreakpoint]: {
+  [theme.breakpoints.down(mobileViewMaxWidth)]: {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -122,7 +140,7 @@ export const NavigationHeader = ({
   }
 
   const toolBarElement = (
-    <StyledToolbar mobileViewBreakpoint={mobileViewBreakpoint}>
+    <StyledToolbar mobileViewMaxWidth={mobileViewMaxWidth || 'md'}>
       <Header value={selectedElement} orientation={isMobileView ? 'vertical' : 'horizontal'}>
         {items.map((item, index) => (
           <Tooltip key={item.label} title={item.tooltip}>
@@ -158,10 +176,11 @@ export const NavigationHeader = ({
       </Header>
     </StyledToolbar>
   )
+
   return (
     <AppBar component="nav" sx={{ background: 'transparent', boxShadow: 'none', position: 'inherit', width: 'auto' }}>
       {isMobileView && <NavIcon onClick={onNavIconClick} isOpen={showToolBar} />}
-      {!isMobileView && toolBarElement}
+      {!isMobileView && <ToolbarDesktopContainer>{toolBarElement}</ToolbarDesktopContainer>}
       <Drawer
         anchor={anchorPosition}
         open={isMobileView && showToolBar}
