@@ -30,9 +30,9 @@ export const greenBorder: string
 export const greenDark: string
 export const greenHover: string
 export const greenLight: string
+export const greenLogo: string
 export const greenSuccess: string
 export const greyBackground: string
-export const logo1: string
 export const orangeWarning: string
 export const pink: string
 export const pinkDark: string

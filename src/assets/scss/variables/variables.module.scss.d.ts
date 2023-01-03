@@ -49,6 +49,7 @@ export const greenBorder: string
 export const greenDark: string
 export const greenHover: string
 export const greenLight: string
+export const greenLogo: string
 export const greenSuccess: string
 export const greyBackground: string
 export const l: string
@@ -72,7 +73,6 @@ export const lineHeightTitle2: string
 export const lineHeightTitle3: string
 export const lineHeightTitle4: string
 export const lineHeightTitle5: string
-export const logo1: string
 export const m: string
 export const orangeWarning: string
 export const pink: string

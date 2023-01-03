@@ -58,7 +58,7 @@ $tb-green-success: #00c083;
 $tb-black-text: #000000;
 
 // logo
-$tb-logo-1: #24F3D2;
+$tb-green-logo: #24F3D2;
 
 /*
  * Color Map (used for color classes and direct usage in components)
@@ -95,7 +95,7 @@ $colors: (
   'blueInfo': $tb-blue-info,
   'greenSuccess': $tb-green-success,
   'blackText': $tb-black-text,
-  'logo1': $tb-logo-1,
+  'greenLogo': $tb-green-logo,
 );
 
 :export {
