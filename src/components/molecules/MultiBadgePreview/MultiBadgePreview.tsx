@@ -17,7 +17,6 @@ const defaultValuesForMultiBadgePreviewProps = {
 const MultiBadgePreviewBox = styled(Box)<{ scale?: number }>(({ theme, scale }) => ({
   padding: theme.spacing(2),
   scale: `${scale || 1}`,
-  '-webkit-tap-highlight-color': 'rgba(0, 0, 0, 0)',
   '& :focus': {
     outline: 'none !important',
     boxShadow: 'none',

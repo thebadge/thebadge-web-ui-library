@@ -43,7 +43,6 @@ export default {
 } as Meta
 
 const Template: Story<BadgePreviewProps> = (args) => {
-  console.log(args)
   return (
     <div style={{ background: 'gray', padding: '32px', display: 'flex', justifyContent: 'center', height: '80vh' }}>
       <BadgePreviewV2 {...args} />

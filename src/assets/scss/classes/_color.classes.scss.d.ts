@@ -13,6 +13,7 @@ export const backgroundColorGreenBorder: string
 export const backgroundColorGreenDark: string
 export const backgroundColorGreenHover: string
 export const backgroundColorGreenLight: string
+export const backgroundColorGreenLogo: string
 export const backgroundColorGreenSuccess: string
 export const backgroundColorGreyBackground: string
 export const backgroundColorInherit: string
@@ -52,6 +53,7 @@ export const borderColorGreenBorder: string
 export const borderColorGreenDark: string
 export const borderColorGreenHover: string
 export const borderColorGreenLight: string
+export const borderColorGreenLogo: string
 export const borderColorGreenSuccess: string
 export const borderColorGreyBackground: string
 export const borderColorInherit: string
@@ -84,6 +86,7 @@ export const colorGreenBorder: string
 export const colorGreenDark: string
 export const colorGreenHover: string
 export const colorGreenLight: string
+export const colorGreenLogo: string
 export const colorGreenSuccess: string
 export const colorGreyBackground: string
 export const colorInherit: string
@@ -119,6 +122,7 @@ export const fillGreenBorder: string
 export const fillGreenDark: string
 export const fillGreenHover: string
 export const fillGreenLight: string
+export const fillGreenLogo: string
 export const fillGreenSuccess: string
 export const fillGreyBackground: string
 export const fillInherit: string
@@ -141,6 +145,7 @@ export const greenBorder: string
 export const greenDark: string
 export const greenHover: string
 export const greenLight: string
+export const greenLogo: string
 export const greenSuccess: string
 export const greyBackground: string
 export const orangeWarning: string
@@ -170,6 +175,7 @@ export const svgFillGreenBorder: string
 export const svgFillGreenDark: string
 export const svgFillGreenHover: string
 export const svgFillGreenLight: string
+export const svgFillGreenLogo: string
 export const svgFillGreenSuccess: string
 export const svgFillGreyBackground: string
 export const svgFillInherit: string
