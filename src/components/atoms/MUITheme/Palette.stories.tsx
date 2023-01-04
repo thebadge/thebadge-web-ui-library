@@ -20,7 +20,6 @@ const Template: Story = () => {
   // Its needs to be any to be able to acces the values with the [key] notation.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const palette = theme.palette as any
-  console.log(palette)
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2} p={2}>
