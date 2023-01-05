@@ -74,7 +74,7 @@ const stepperArgs = {
   minHeight: 250,
   color: 'green' as TBColor,
   title: 'off-chain HOW IT WORKS',
-  elements: [
+  children: [
     <Typography key={0} fontWeight={500} fontSize={18} fontFamily="Mulish">
       Select the type of badge you are interested in. Each badge will require the submission of proof or evidence to
       certify you have the right to claim it. An example of this type of badge could be to claim a Twitter account.

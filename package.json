@@ -1,6 +1,6 @@
 {
   "name": "thebadge-ui-library",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -85,9 +85,10 @@
     "webpack": "^4.46.0"
   },
   "peerDependencies": {
-    "next": "^12.2.4",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "next": ">=12.2.4",
+    "react": ">=17.0.0",
+    "@emotion/react": ">=11.10.5",
+    "react-dom": ">=17.0.0"
   },
   "readme": "ERROR: No README data found!",
   "_id": "thebadge-ui-library@1.0.0"
