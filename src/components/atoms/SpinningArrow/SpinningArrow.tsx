@@ -1,9 +1,9 @@
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { styled } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import './spinninArrow.scss'
+import './spinningArrow.scss'
 
-export type SpinninArrowProps = {
+export type SpinningArrowProps = {
   direction: 'left' | 'right'
   className?: string
   animated?: boolean
@@ -16,7 +16,7 @@ export type SpinninArrowProps = {
 
 const StyledSpan = styled('span', {
   shouldForwardProp: (propName) => propName !== 'direction' && propName !== 'color',
-})<Pick<SpinninArrowProps, 'direction' | 'color'>>(({ direction, color }) => ({
+})<Pick<SpinningArrowProps, 'direction' | 'color'>>(({ direction, color }) => ({
   '&:before': {
     borderBottomColor: direction === 'left' ? color || colors.white : colors.transparent,
     borderLeftColor: direction === 'left' ? color || colors.white : colors.transparent,
@@ -30,7 +30,7 @@ const StyledSpan = styled('span', {
     borderRightColor: direction === 'right' ? color || colors.white : colors.transparent,
   },
 }))
-export const SpinninArrow = ({
+export const SpinningArrow = ({
   direction,
   className,
   color,
@@ -40,7 +40,7 @@ export const SpinninArrow = ({
   spinninTime = 500,
   //Spin is a flag used to determine when you want to start the animation and ends it
   spin = false,
-}: SpinninArrowProps) => {
+}: SpinningArrowProps) => {
   const [active, setActive] = useState(spin)
 
   useEffect(() => {

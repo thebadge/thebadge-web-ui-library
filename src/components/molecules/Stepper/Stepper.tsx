@@ -1,6 +1,6 @@
 import { TBColor } from '@assets/defaultTheme'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
-import { SpinninArrow } from '@components/atoms/SpinninArrow/SpinninArrow'
+import { SpinningArrow } from '@components/atoms/SpinningArrow/SpinningArrow'
 import colorStringIsTBColor from '@helpers/IsTBColor'
 import { Box } from '@mui/material'
 import React, { createRef, RefObject, useMemo, useState } from 'react'
@@ -83,7 +83,7 @@ export const Stepper = ({
         </StepperTitle>
       </Box>
       <Box className="stepper__content">
-        <SpinninArrow
+        <SpinningArrow
           direction="left"
           animated={false}
           disabled={selectedElement === 0}
@@ -105,7 +105,7 @@ export const Stepper = ({
             </CSSTransition>
           </SwitchTransition>
         </Box>
-        <SpinninArrow
+        <SpinningArrow
           direction="right"
           animated={false}
           color={arrowColor}

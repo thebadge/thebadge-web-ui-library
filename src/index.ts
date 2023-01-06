@@ -14,7 +14,7 @@ import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
 import { Button } from '@components/atoms/Button/v1/Button'
 import { ButtonV2 } from '@components/atoms/Button/v2/Button'
 import { NavigationHeader } from '@components/atoms/NavigationHeader/NavigationHeader'
-import { SpinninArrow } from '@components/atoms/SpinninArrow/SpinninArrow'
+import { SpinningArrow } from '@components/atoms/SpinningArrow/SpinningArrow'
 import { IconBadge } from '@components/icons/IconBadge/IconBadge'
 import { IconCurator } from '@components/icons/IconCurator/IconCurator'
 import { IconDecentralized } from '@components/icons/IconDecentralized/IconDecentralized'
@@ -61,6 +61,6 @@ export {
   Carousel,
   MultiBadgePreview,
   Stepper,
-  SpinninArrow,
+  SpinningArrow,
 }
 export type { TBColor }
