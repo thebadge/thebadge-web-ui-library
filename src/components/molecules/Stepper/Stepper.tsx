@@ -1,6 +1,7 @@
 import { TBColor } from '@assets/defaultTheme'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import colors from '@assets/scss/variables/_color.variables.module.scss'
+import { SpinningArrow } from '@components/atoms/SpinningArrow/SpinningArrow'
+import colorStringIsTBColor from '@helpers/IsTBColor'
 import { Box } from '@mui/material'
 import React, { createRef, RefObject, useMemo, useState } from 'react'
 import AnimateHeight from 'react-animate-height'
@@ -10,7 +11,7 @@ import './stepper.scss'
 
 export type StepperProps = {
   title: React.ReactNode
-  elements: React.ReactNode[]
+  children: React.ReactNode[]
   minHeight: number
   color?: TBColor
   backgroundColor?: TBColor
@@ -18,37 +19,31 @@ export type StepperProps = {
   border?: boolean
 }
 
-const defaultStepperProps = {
-  title: null,
-  elements: [],
-  minHeight: 0,
-}
-
 export const Stepper = ({
-  elements,
+  children,
   title,
   minHeight,
-  color,
+  color = 'black',
   backgroundColor,
   glowTitle,
   border,
-}: StepperProps = defaultStepperProps) => {
+}: StepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
   const [selectedElementHeight, setSelectedElementHeight] = useState<'auto' | number>('auto')
 
   // Refs to move the elements
   const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
-    () => elements.map(() => createRef<HTMLDivElement>()),
-    [elements]
+    () => children.map(() => createRef<HTMLDivElement>()),
+    [children]
   )
 
-  if (!elements || !(elements.length > 0)) {
+  if (!children || !(children.length > 0)) {
     return <></>
   }
 
   function onArrowForwardClickHandler() {
     setSelectedElement((prev) => {
-      if (prev === elements.length - 1) return prev
+      if (prev === children.length - 1) return prev
       else return prev + 1
     })
   }
@@ -71,6 +66,8 @@ export const Stepper = ({
       setSelectedElementHeight(elementRefs[selectedElement]?.current?.clientHeight || 'auto')
   }
 
+  const arrowColor = colorStringIsTBColor(color) ? colors[color] : color
+
   return (
     <Box
       className={[
@@ -86,12 +83,12 @@ export const Stepper = ({
         </StepperTitle>
       </Box>
       <Box className="stepper__content">
-        <ArrowBackIosIcon
-          className={[
-            `stepper__arrow`,
-            `color--${color ?? ''}`,
-            selectedElement === 0 ? 'stepper__arrow--disable' : '',
-          ].join(' ')}
+        <SpinningArrow
+          direction="left"
+          animated={false}
+          disabled={selectedElement === 0}
+          color={arrowColor}
+          className={[`stepper__arrow`, selectedElement === 0 ? 'stepper__arrow--disable' : ''].join(' ')}
           onClick={onArrowBackClickHandler}
         />
         <Box className="stepper__step">
@@ -103,22 +100,24 @@ export const Stepper = ({
               onEntering={onEnteringSwitchTransition}
             >
               <AnimateHeight duration={400} height={selectedElementHeight}>
-                <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
+                <Box ref={elementRefs[selectedElement]}>{children[selectedElement]}</Box>
               </AnimateHeight>
             </CSSTransition>
           </SwitchTransition>
         </Box>
-        <ArrowForwardIosIcon
-          className={[
-            `stepper__arrow`,
-            `color--${color ?? ''}`,
-            selectedElement === elements.length - 1 ? 'stepper__arrow--disable' : '',
-          ].join(' ')}
+        <SpinningArrow
+          direction="right"
+          animated={false}
+          color={arrowColor}
+          disabled={selectedElement === children.length - 1}
+          className={[`stepper__arrow`, selectedElement === children.length - 1 ? 'stepper__arrow--disable' : ''].join(
+            ' '
+          )}
           onClick={onArrowForwardClickHandler}
         />
       </Box>
       <Box className="stepper__dot__container">
-        {elements.map((_, i) => {
+        {children.map((_, i) => {
           return (
             <Box
               key={`dot-${i}`}

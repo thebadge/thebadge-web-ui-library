@@ -70,7 +70,7 @@ StepperPreview.args = {
   minHeight: 300,
   color: 'green' as TBColor,
   title: 'off-chain HOW IT WORKS',
-  elements: STEPPER_EXAMPLE_ELEMENTS,
+  children: STEPPER_EXAMPLE_ELEMENTS,
 }
 
 export const StepperPreviewMoreConfigs = Template.bind({})
@@ -81,5 +81,5 @@ StepperPreviewMoreConfigs.args = {
   glowTitle: false,
   border: false,
   title: 'off-chain HOW IT WORKS',
-  elements: STEPPER_EXAMPLE_ELEMENTS,
+  children: STEPPER_EXAMPLE_ELEMENTS,
 }

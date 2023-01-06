@@ -28,7 +28,7 @@ export default [
       },
     ],
     plugins: [
-      // Resolve all teh alias as bundle time
+      // Resolve all the alias on bundle time
       alias({
         entries: [
           {
@@ -42,6 +42,10 @@ export default [
           {
             find: '@businessLogic',
             replacement: path.resolve(__dirname, './src/business-logic'),
+          },
+          {
+            find: '@helpers',
+            replacement: path.resolve(__dirname, './src/helpers'),
           },
         ],
       }),
