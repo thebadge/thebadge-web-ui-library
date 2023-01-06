@@ -9,7 +9,7 @@ export type SpinningArrowProps = {
   animated?: boolean
   disabled?: boolean
   color?: string
-  spinninTime?: number
+  spinningTime?: number
   spin?: boolean
   onClick?: () => void
 }
@@ -37,7 +37,7 @@ export const SpinningArrow = ({
   onClick,
   animated,
   disabled,
-  spinninTime = 500,
+  spinningTime = 500,
   //Spin is a flag used to determine when you want to start the animation and ends it
   spin = false,
 }: SpinningArrowProps) => {
@@ -55,13 +55,13 @@ export const SpinningArrow = ({
       setActive(true)
       setTimeout(() => {
         setActive(false)
-      }, spinninTime)
+      }, spinningTime)
     }
   }
   return (
     <StyledSpan
       className={
-        `spinnin-arrow ${active && 'spinnin-arrow--active'} ${disabled && 'spinnin-arrow--disabled'}` + className
+        `spinning-arrow ${active && 'spinning-arrow--active'} ${disabled && 'spinning-arrow--disabled'}` + className
       }
       direction={direction}
       color={color}
