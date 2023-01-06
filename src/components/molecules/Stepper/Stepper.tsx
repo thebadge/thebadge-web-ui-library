@@ -1,11 +1,11 @@
 import { TBColor } from '@assets/defaultTheme'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { SpinninArrow } from '@components/atoms/SpinninArrow/SpinninArrow'
+import colorStringIsTBColor from '@helpers/IsTBColor'
 import { Box } from '@mui/material'
 import React, { createRef, RefObject, useMemo, useState } from 'react'
 import AnimateHeight from 'react-animate-height'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
-import colorStringIsTBColor from 'src/helpers/IsTBColor'
 
 import './stepper.scss'
 

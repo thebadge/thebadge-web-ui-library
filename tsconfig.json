@@ -23,6 +23,7 @@
     "paths": {
       "@assets/*": ["./src/assets/*"],
       "@hooks": ["./src/hooks/index"],
+      "@helpers/*": ["./src/helpers/*"],
       "@components/*": ["./src/components/*"],
       "@businessLogic/*": ["./src/business-logic/*"]
     }
