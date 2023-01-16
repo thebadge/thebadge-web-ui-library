@@ -7,7 +7,7 @@
  * @constraint {{import('next').NextConfig}}
  */
 function defineNextConfig(config) {
-  return config;
+  return config
 }
 
 export default defineNextConfig({
@@ -16,4 +16,4 @@ export default defineNextConfig({
   compiler: {
     styledComponents: true,
   },
-});
+})

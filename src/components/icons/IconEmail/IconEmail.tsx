@@ -1,5 +1,5 @@
 import * as React from 'react'
-import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import { MailOutline as MailOutlineIcon } from '@mui/icons-material'
 import { IconProps } from '../IconProps'
 
 export const IconEmail = (props: IconProps) => (

@@ -4,7 +4,6 @@ import { SpinningArrow } from '@components/atoms/SpinningArrow/SpinningArrow'
 import colorStringIsTBColor from '@helpers/IsTBColor'
 import { Box } from '@mui/material'
 import React, { createRef, RefObject, useMemo, useState } from 'react'
-import AnimateHeight from 'react-animate-height'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
 import './stepper.scss'
@@ -83,38 +82,39 @@ export const Stepper = ({
         </StepperTitle>
       </Box>
       <Box className="stepper__content">
-        <SpinningArrow
-          direction="left"
-          animated={false}
-          disabled={selectedElement === 0}
-          color={arrowColor}
-          className={[`stepper__arrow`, selectedElement === 0 ? 'stepper__arrow--disable' : ''].join(' ')}
-          onClick={onArrowBackClickHandler}
-        />
-        <Box className="stepper__step">
-          <SwitchTransition>
-            <CSSTransition
-              key={selectedElement}
-              timeout={500}
-              classNames={`stepper__step-fade`}
-              onEntering={onEnteringSwitchTransition}
-            >
-              <AnimateHeight duration={400} height={selectedElementHeight}>
+        <>
+          <SpinningArrow
+            direction="left"
+            animated={false}
+            disabled={selectedElement === 0}
+            color={arrowColor}
+            className={[`stepper__arrow`, selectedElement === 0 ? 'stepper__arrow--disable' : ''].join(' ')}
+            onClick={onArrowBackClickHandler}
+          />
+          <Box className="stepper__step">
+            <SwitchTransition>
+              <CSSTransition
+                key={selectedElement}
+                timeout={500}
+                classNames={`stepper__step-fade`}
+                onEntering={onEnteringSwitchTransition}
+              >
                 <Box ref={elementRefs[selectedElement]}>{children[selectedElement]}</Box>
-              </AnimateHeight>
-            </CSSTransition>
-          </SwitchTransition>
-        </Box>
-        <SpinningArrow
-          direction="right"
-          animated={false}
-          color={arrowColor}
-          disabled={selectedElement === children.length - 1}
-          className={[`stepper__arrow`, selectedElement === children.length - 1 ? 'stepper__arrow--disable' : ''].join(
-            ' '
-          )}
-          onClick={onArrowForwardClickHandler}
-        />
+              </CSSTransition>
+            </SwitchTransition>
+          </Box>
+          <SpinningArrow
+            direction="right"
+            animated={false}
+            color={arrowColor}
+            disabled={selectedElement === children.length - 1}
+            className={[
+              `stepper__arrow`,
+              selectedElement === children.length - 1 ? 'stepper__arrow--disable' : '',
+            ].join(' ')}
+            onClick={onArrowForwardClickHandler}
+          />
+        </>
       </Box>
       <Box className="stepper__dot__container">
         {children.map((_, i) => {

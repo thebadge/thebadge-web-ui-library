@@ -1,5 +1,5 @@
 import * as React from 'react'
-import TwitterMUIIcon from '@mui/icons-material/Twitter'
+import { Twitter as TwitterMUIIcon } from '@mui/icons-material'
 import { IconProps } from '../IconProps'
 
 export const IconTwitter = (props: IconProps) => (
