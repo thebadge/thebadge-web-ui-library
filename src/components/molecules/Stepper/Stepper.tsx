@@ -28,7 +28,6 @@ export const Stepper = ({
   border,
 }: StepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
-  const [selectedElementHeight, setSelectedElementHeight] = useState<'auto' | number>('auto')
 
   // Refs to move the elements
   const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
