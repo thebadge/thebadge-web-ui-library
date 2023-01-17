@@ -1,6 +1,6 @@
 {
   "name": "thebadge-ui-library",
-  "version": "1.2.3-beta2",
+  "version": "1.2.3-beta3",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
