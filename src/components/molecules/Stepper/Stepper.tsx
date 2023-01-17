@@ -10,7 +10,7 @@ import './stepper.scss'
 
 export type StepperProps = {
   title: React.ReactNode
-  children: React.ReactNode[]
+  children?: React.ReactNode[]
   minHeight: number
   color?: TBColor
   backgroundColor?: TBColor
@@ -30,7 +30,7 @@ export const Stepper = ({
   const [selectedElement, setSelectedElement] = useState(0)
 
   if (!children || !(children.length > 0)) {
-    return <></>
+    return null
   }
 
   // Refs to move the elements
@@ -39,7 +39,7 @@ export const Stepper = ({
     [children]
   )
 
-  function onArrowForwardClickHandler() {
+  const onArrowForwardClickHandler = () => {
     setSelectedElement((prev) => {
       if (prev === children.length - 1) return prev
       else return prev + 1
@@ -57,11 +57,6 @@ export const Stepper = ({
     return () => {
       setSelectedElement(index)
     }
-  }
-
-  function onEnteringSwitchTransition() {
-    if (elementRefs[selectedElement]?.current)
-      setSelectedElementHeight(elementRefs[selectedElement]?.current?.clientHeight || 'auto')
   }
 
   const arrowColor = colorStringIsTBColor(color) ? colors[color] : color
@@ -92,12 +87,7 @@ export const Stepper = ({
           />
           <Box className="stepper__step">
             <SwitchTransition>
-              <CSSTransition
-                key={selectedElement}
-                timeout={500}
-                classNames={`stepper__step-fade`}
-                onEntering={onEnteringSwitchTransition}
-              >
+              <CSSTransition key={selectedElement} timeout={500} classNames={`stepper__step-fade`}>
                 <Box ref={elementRefs[selectedElement]}>{children[selectedElement]}</Box>
               </CSSTransition>
             </SwitchTransition>
