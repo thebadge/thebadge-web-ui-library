@@ -29,15 +29,15 @@ export const Stepper = ({
 }: StepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
 
+  if (!children || !(children.length > 0)) {
+    return <></>
+  }
+
   // Refs to move the elements
   const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
     () => children.map(() => createRef<HTMLDivElement>()),
     [children]
   )
-
-  if (!children || !(children.length > 0)) {
-    return <></>
-  }
 
   function onArrowForwardClickHandler() {
     setSelectedElement((prev) => {
