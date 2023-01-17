@@ -1,6 +1,6 @@
 {
   "name": "thebadge-ui-library",
-  "version": "1.2.3-beta",
+  "version": "1.2.3-beta2",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -14,7 +14,10 @@
     "test": "jest --verbose --debug",
     "test:quick": "jest --collectCoverage=false --env=jsdom --silent",
     "test:watch": "jest --collectCoverage=false --env=jsdom --watch --silent",
-    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
+    "release-patch": "npm version patch && git push",
+    "release-minor": "npm version minor && git push",
+    "release-major": "npm version major && git push"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.10.5",
