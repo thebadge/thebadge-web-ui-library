@@ -10,7 +10,7 @@ import './stepper.scss'
 
 export type StepperProps = {
   title: React.ReactNode
-  children?: React.ReactNode[]
+  steps?: React.ReactNode[]
   minHeight: number
   color?: TBColor
   backgroundColor?: TBColor
@@ -19,7 +19,7 @@ export type StepperProps = {
 }
 
 export const Stepper = ({
-  children,
+  steps,
   title,
   minHeight,
   color = 'black',
@@ -29,19 +29,16 @@ export const Stepper = ({
 }: StepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
 
-  if (!children || !(children.length > 0)) {
+  if (!steps || !(steps.length > 0)) {
     return null
   }
 
   // Refs to move the elements
-  const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
-    () => children.map(() => createRef<HTMLDivElement>()),
-    [children]
-  )
+  const elementRefs: RefObject<HTMLDivElement>[] = useMemo(() => steps.map(() => createRef<HTMLDivElement>()), [steps])
 
   const onArrowForwardClickHandler = () => {
     setSelectedElement((prev) => {
-      if (prev === children.length - 1) return prev
+      if (prev === steps.length - 1) return prev
       else return prev + 1
     })
   }
@@ -88,7 +85,7 @@ export const Stepper = ({
           <Box className="stepper__step">
             <SwitchTransition>
               <CSSTransition key={selectedElement} timeout={500} classNames={`stepper__step-fade`}>
-                <Box ref={elementRefs[selectedElement]}>{children[selectedElement]}</Box>
+                <Box ref={elementRefs[selectedElement]}>{steps[selectedElement]}</Box>
               </CSSTransition>
             </SwitchTransition>
           </Box>
@@ -96,17 +93,16 @@ export const Stepper = ({
             direction="right"
             animated={false}
             color={arrowColor}
-            disabled={selectedElement === children.length - 1}
-            className={[
-              `stepper__arrow`,
-              selectedElement === children.length - 1 ? 'stepper__arrow--disable' : '',
-            ].join(' ')}
+            disabled={selectedElement === steps.length - 1}
+            className={[`stepper__arrow`, selectedElement === steps.length - 1 ? 'stepper__arrow--disable' : ''].join(
+              ' '
+            )}
             onClick={onArrowForwardClickHandler}
           />
         </>
       </Box>
       <Box className="stepper__dot__container">
-        {children.map((_, i) => {
+        {steps.map((_, i) => {
           return (
             <Box
               key={`dot-${i}`}
