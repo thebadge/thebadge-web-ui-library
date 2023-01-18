@@ -1,8 +1,8 @@
+import { TBColor } from '@assets/defaultTheme'
 import { Box, Typography } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
 import { Stepper, StepperProps } from './Stepper'
-import { TBColor } from '@assets/defaultTheme'
 
 export default {
   title: 'Components/Molecules/Stepper',
@@ -70,7 +70,7 @@ StepperPreview.args = {
   minHeight: 300,
   color: 'green' as TBColor,
   title: 'off-chain HOW IT WORKS',
-  children: STEPPER_EXAMPLE_ELEMENTS,
+  steps: STEPPER_EXAMPLE_ELEMENTS,
 }
 
 export const StepperPreviewMoreConfigs = Template.bind({})
@@ -81,5 +81,5 @@ StepperPreviewMoreConfigs.args = {
   glowTitle: false,
   border: false,
   title: 'off-chain HOW IT WORKS',
-  children: STEPPER_EXAMPLE_ELEMENTS,
+  steps: STEPPER_EXAMPLE_ELEMENTS,
 }
