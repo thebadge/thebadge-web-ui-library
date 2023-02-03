@@ -37,7 +37,8 @@ export const backgroundGradient2: string
 export const backgroundGradient3: string
 export const backgroundGradient4: string
 export const backgroundGradient5: string
-export const backgroundGradientBackground: string
+export const backgroundGradientBackgroundDark: string
+export const backgroundGradientBackgroundLight: string
 export const backgroundGradientHeader: string
 export const backgroundInherit: string
 export const black: string
@@ -183,7 +184,8 @@ export const gradient2: string
 export const gradient3: string
 export const gradient4: string
 export const gradient5: string
-export const gradientBackground: string
+export const gradientBackgroundDark: string
+export const gradientBackgroundLight: string
 export const gradientHeader: string
 export const green: string
 export const greenBorder: string
