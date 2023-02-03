@@ -138,6 +138,7 @@ export const defaultTheme: ThemeOptions = {
     },
   },
   palette: {
+    mode: 'dark',
     primary: {
       main: colors.primary,
       light: colors.primaryLight,
