@@ -42,7 +42,8 @@ export const gradient2: string
 export const gradient3: string
 export const gradient4: string
 export const gradient5: string
-export const gradientBackground: string
+export const gradientBackgroundDark: string
+export const gradientBackgroundLight: string
 export const gradientHeader: string
 export const green: string
 export const greenBorder: string
