@@ -1,19 +1,24 @@
-name: Calculate Bundle Size
+name: Package Size Report
 
 on:
   pull_request:
-    types: ['opened', 'reopened', 'synchronize']
+    branches: [ main ]
+
 jobs:
-  calculate-size:
+  pkg-size-report:
+    name: Package Size Report
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: '16.14.2'
-      - uses: sarthak-saxena/JSBundleSize@master
-        with:
-          bootstrap: 'yarn install'
-          build_command: 'yarn build'
-          dist_path: 'dist'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          node-version: '16.14.2' # ⬅ Specify a version of Node.js to build the app
+
+      - name: Package size report
+        uses: pkg-size/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
