@@ -1,10 +1,24 @@
-# The Badge ui-library
+<p align="center">
+  <a href="https://thebadge.xyz">
+    <img alt="TheBadge" src="src/assets/svgs/theBadgeIcon.svg" width="128">
+  </a>
+</p>
 
+<h1 align="center">TheBadge UI Components Library</h1>
+<p align="center">
+  <a href="https://www.npmjs.com/package/thebadge-ui-library"><img src="https://img.shields.io/npm/v/thebadge-ui-library?style=plastic" alt="Stable Version"></a>
+  <a href="https://discord.com/invite/FTxtkgbAC4"><img src="https://img.shields.io/discord/1006480637512917033?style=plastic" alt="Join to Discord"></a>
+  <a href="https://twitter.com/intent/user?screen_name=thebadgexyz"><img src="https://img.shields.io/twitter/follow/thebadgexyz?style=social" alt="Follow us on Twitter"></a>
+</p>
+
+# TheBadge-ui-library
 UI Library with Web components and styling for The Badge project.
 
-## Preview / Examles
+🚧 Under Construction 🚧
+## Preview / Examples
 
 [Chromatic](https://main--638b62c10e52ebb22bd55c21.chromatic.com/?path=/docs/)
+
 
 ## Develope the library
 
