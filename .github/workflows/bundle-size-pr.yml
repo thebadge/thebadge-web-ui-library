@@ -15,5 +15,5 @@ jobs:
         with:
           bootstrap: 'yarn install'
           build_command: 'yarn build'
-          dist_path: '/dist'
+          dist_path: 'dist'
           token: ${{ secrets.GITHUB_TOKEN }}
