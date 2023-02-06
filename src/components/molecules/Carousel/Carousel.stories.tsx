@@ -1,10 +1,10 @@
-import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
 import { Alert } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
-import { BadgePreview, BadgePreviewEffects, BadgeSize } from '../BadgePreview/BadgePreview'
-import { BadgePreviewV2, BadgeTextContrast } from '../BadgePreviewV2/BadgePreview'
+import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
+import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
 import { Carousel, CarouselProps } from './Carousel'
+import { BadgePreviewEffects, BadgeSize, BadgeTextContrast } from '@components/atoms/BadgePreview/BadgePreviewProps'
 
 export default {
   title: 'Components/Molecules/Carousel',
@@ -34,8 +34,6 @@ const Template: Story<CarouselProps> = (args) => {
 }
 const defaultBadgeCarouselExampleProps = {
   size: 'medium' as BadgeSize,
-  badgeCategory: BadgeCategories.OFFCHAIN,
-  badgeType: BadgeTypesSupported.CUSTOM,
   title: 'TITLE xxx',
   subline: 'Subline #category',
   description:
@@ -75,16 +73,16 @@ CarouselPreviewWithV2Badges.args = {
   elementHeight: 400 * 1.6,
   selfRotate: true,
   elements: [
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={1} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={3} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={4} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={5} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={6} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={7} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={8} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={9} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={10} {...defaultBadgeCarouselExampleProps} />,
   ],
 }

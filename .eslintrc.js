@@ -21,5 +21,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-empty-interface': 'off',
+    'react/prop-types': 'off',
   },
 }

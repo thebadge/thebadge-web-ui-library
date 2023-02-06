@@ -1,4 +1,4 @@
-import { Colors } from '@assets/defaultTheme'
+import { TBColor } from '@assets/defaultTheme'
 import { Box } from '@mui/material'
 import React from 'react'
 import './sectionLayout.scss'
@@ -7,8 +7,8 @@ export type SectionLayoutProps = {
   topComponent: React.ReactNode
   middleComponent: React.ReactNode
   bottomComponent: React.ReactNode
-  borderColor?: Colors
-  backgroundColor?: Colors
+  borderColor?: TBColor
+  backgroundColor?: TBColor
 }
 
 export const SectionLayout = ({

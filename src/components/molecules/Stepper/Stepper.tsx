@@ -1,6 +1,7 @@
-import { Colors } from '@assets/defaultTheme'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import { TBColor } from '@assets/defaultTheme'
+import colors from '@assets/scss/variables/_color.variables.module.scss'
+import { SpinningArrow } from '@components/atoms/SpinningArrow/SpinningArrow'
+import colorStringIsTBColor from '@helpers/IsTBColor'
 import { Box } from '@mui/material'
 import React, { createRef, RefObject, useMemo, useState } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
@@ -9,44 +10,35 @@ import './stepper.scss'
 
 export type StepperProps = {
   title: React.ReactNode
-  elements: React.ReactNode[]
+  steps?: React.ReactNode[]
   minHeight: number
-  color?: Colors
-  backgroundColor?: Colors
+  color?: TBColor
+  backgroundColor?: TBColor
   glowTitle?: boolean
   border?: boolean
 }
 
-const defaultStepperProps = {
-  title: null,
-  elements: [],
-  minHeight: 0,
-}
-
 export const Stepper = ({
-  elements,
+  steps,
   title,
   minHeight,
-  color,
+  color = 'black',
   backgroundColor,
   glowTitle,
   border,
-}: StepperProps = defaultStepperProps) => {
+}: StepperProps) => {
   const [selectedElement, setSelectedElement] = useState(0)
 
-  // Refs to move the elemenets
-  const elementRefs: RefObject<HTMLDivElement>[] = useMemo(
-    () => elements.map(() => createRef<HTMLDivElement>()),
-    [elements]
-  )
-
-  if (!elements || !(elements.length > 0)) {
+  if (!steps || !(steps.length > 0)) {
     return null
   }
 
-  function onArrowForwardClickHandler() {
+  // Refs to move the elements
+  const elementRefs: RefObject<HTMLDivElement>[] = useMemo(() => steps.map(() => createRef<HTMLDivElement>()), [steps])
+
+  const onArrowForwardClickHandler = () => {
     setSelectedElement((prev) => {
-      if (prev === elements.length - 1) return prev
+      if (prev === steps.length - 1) return prev
       else return prev + 1
     })
   }
@@ -64,6 +56,8 @@ export const Stepper = ({
     }
   }
 
+  const arrowColor = colorStringIsTBColor(color) ? colors[color] : color
+
   return (
     <Box
       className={[
@@ -79,33 +73,36 @@ export const Stepper = ({
         </StepperTitle>
       </Box>
       <Box className="stepper__content">
-        <ArrowBackIosIcon
-          className={[
-            `stepper__arrow`,
-            `color--${color ?? ''}`,
-            selectedElement === 0 ? 'stepper__arrow--disable' : '',
-          ].join(' ')}
-          onClick={onArrowBackClickHandler}
-        />
-        <Box className="stepper__step">
-          <SwitchTransition>
-            <CSSTransition
-              key={selectedElement}
-              nodeRef={elementRefs[selectedElement]}
-              addEndListener={(done) => {
-                elementRefs[selectedElement].current?.addEventListener('transitionend', done, false)
-              }}
-              timeout={300}
-              classNames="stepper__step-fade"
-            >
-              <Box ref={elementRefs[selectedElement]}>{elements[selectedElement]}</Box>
-            </CSSTransition>
-          </SwitchTransition>
-        </Box>
-        <ArrowForwardIosIcon className={`stepper__arrow color--${color ?? ''}`} onClick={onArrowForwardClickHandler} />
+        <>
+          <SpinningArrow
+            direction="left"
+            animated={false}
+            disabled={selectedElement === 0}
+            color={arrowColor}
+            className={[`stepper__arrow`, selectedElement === 0 ? 'stepper__arrow--disable' : ''].join(' ')}
+            onClick={onArrowBackClickHandler}
+          />
+          <Box className="stepper__step">
+            <SwitchTransition>
+              <CSSTransition key={selectedElement} timeout={500} classNames={`stepper__step-fade`}>
+                <Box ref={elementRefs[selectedElement]}>{steps[selectedElement]}</Box>
+              </CSSTransition>
+            </SwitchTransition>
+          </Box>
+          <SpinningArrow
+            direction="right"
+            animated={false}
+            color={arrowColor}
+            disabled={selectedElement === steps.length - 1}
+            className={[`stepper__arrow`, selectedElement === steps.length - 1 ? 'stepper__arrow--disable' : ''].join(
+              ' '
+            )}
+            onClick={onArrowForwardClickHandler}
+          />
+        </>
       </Box>
       <Box className="stepper__dot__container">
-        {elements.map((_, i) => {
+        {steps.map((_, i) => {
           return (
             <Box
               key={`dot-${i}`}
@@ -122,12 +119,12 @@ export const Stepper = ({
 }
 
 type StepperTitleProps = {
-  color?: Colors
+  color?: TBColor
   glow?: boolean
 }
 
 const StepperTitle = ({ children, color, glow }: React.PropsWithChildren<StepperTitleProps>) => {
-  function getElement(children: React.ReactNode) {
+  function getElement(children: React.ReactNode | string) {
     if (typeof children === 'string') {
       const [firstWord, ...rest] = children.split(' ')
       return (
@@ -135,12 +132,13 @@ const StepperTitle = ({ children, color, glow }: React.PropsWithChildren<Stepper
           <span>{firstWord}</span> {rest.join(' ')}
         </>
       )
-    } else return children
+    }
+    return children
   }
 
   return (
-    <p className={[`stepper__title`, `color--${color ?? ''}`, glow ? 'stepper__title--glow' : ''].join(' ')}>
+    <div className={[`stepper__title`, `color--${color ?? ''}`, glow ? 'stepper__title--glow' : ''].join(' ')}>
       {getElement(children)}
-    </p>
+    </div>
   )
 }

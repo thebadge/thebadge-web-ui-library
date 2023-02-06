@@ -1,4 +1,4 @@
-import { Colors } from '@assets/defaultTheme'
+import { TBColor } from '@assets/defaultTheme'
 import { Stepper } from '@components/molecules/Stepper/Stepper'
 import { Box, Typography } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
@@ -72,9 +72,9 @@ export const TwoSectionsExample = TemplateWithTwo.bind({})
 
 const stepperArgs = {
   minHeight: 250,
-  color: 'green' as Colors,
+  color: 'green' as TBColor,
   title: 'off-chain HOW IT WORKS',
-  elements: [
+  children: [
     <Typography key={0} fontWeight={500} fontSize={18} fontFamily="Mulish">
       Select the type of badge you are interested in. Each badge will require the submission of proof or evidence to
       certify you have the right to claim it. An example of this type of badge could be to claim a Twitter account.
@@ -138,8 +138,8 @@ const middleComponent = () => (
     </Typography>
 
     <Typography color="white">
-      Also known as "Blockchain certifications as a service". They are badges generated and backed by a public or
-      private entity. Entities that are willing to generate these badge have to be registered on the platform before
+      Also known as &quot;Blockchain certifications as a service&quot;. They are badges generated and backed by a public
+      or private entity. Entities that are willing to generate these badge have to be registered on the platform before
       they can start emitting them.
     </Typography>
   </Box>

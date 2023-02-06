@@ -19,6 +19,7 @@ const config: StorybookConfig = {
       '@hooks': path.resolve(__dirname, '../src/hooks/index'),
       '@components': path.resolve(__dirname, '../src/components'),
       '@businessLogic': path.resolve(__dirname, '../src/business-logic'),
+      '@helpers': path.resolve(__dirname, '../src/helpers'),
     }
 
     return {

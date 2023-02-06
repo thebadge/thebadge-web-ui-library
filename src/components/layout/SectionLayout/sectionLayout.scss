@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 600px;
 
   border-radius: 20px;
   overflow: hidden;
@@ -15,17 +14,20 @@
   &__top {
     display: flex;
     flex: 1;
+    max-height: fit-content; // Max height that the usual image on webpage can grow
   }
 
   &__middle {
     display: flex;
     padding: 16px;
     flex: 1;
+    align-items: flex-start;
   }
 
   &__bottom {
     display: flex;
     flex: 1;
     padding: 16px;
+    align-items: flex-end;
   }
 }

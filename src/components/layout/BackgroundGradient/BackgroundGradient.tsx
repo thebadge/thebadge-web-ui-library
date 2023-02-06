@@ -5,15 +5,17 @@ export type BackgroundGradientProps = {
   gradient: string
 }
 
-export const Background = styled(Box)<BackgroundGradientProps>(({ gradient }) => ({
-  background: `${gradient}`,
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  height: '100%',
-  width: '100%',
-  position: 'fixed',
-  zIndex: -1, // this is optional
-}))
+const Background = styled(Box, { shouldForwardProp: (propName) => propName !== 'gradient' })<BackgroundGradientProps>(
+  ({ gradient }) => ({
+    background: `${gradient}`,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    height: '100%',
+    width: '100%',
+    position: 'fixed',
+    zIndex: -1, // this is optional
+  })
+)
 
 export const BackgroundGradient = (props: BackgroundGradientProps) => {
   return <Background gradient={props.gradient} />

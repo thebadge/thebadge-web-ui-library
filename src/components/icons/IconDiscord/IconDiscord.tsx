@@ -2,7 +2,7 @@ import * as React from 'react'
 import { IconProps } from '../IconProps'
 
 export const IconDiscord = (props: IconProps) => (
-  <a href={props.link} target={'_blank'} rel="noreferrer">
+  <a className={'icon ' + (!props.link ? 'icon--disabled' : '')} href={props.link} target={'_blank'} rel="noreferrer">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={30}

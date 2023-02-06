@@ -1,6 +1,6 @@
 {
   "name": "thebadge-ui-library",
-  "version": "1.0.0",
+  "version": "1.2.3",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -14,14 +14,24 @@
     "test": "jest --verbose --debug",
     "test:quick": "jest --collectCoverage=false --env=jsdom --silent",
     "test:watch": "jest --collectCoverage=false --env=jsdom --watch --silent",
-    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
+    "release-patch": "npm version patch && git push",
+    "release-minor": "npm version minor && git push",
+    "release-major": "npm version major && git push"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.10.5",
+    "@mui/material": "^5.11.0",
+    "next": ">=12.2.4",
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.3",
-    "@emotion/server": "^11.4.0",
-    "@emotion/styled": "^11.9.3",
-    "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.9.2",
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.0",
     "next": "12.2.4",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
@@ -74,6 +84,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.54.9",
     "sass-loader": "^10.2.0",
     "style-loader": "^2.0.0",
@@ -81,12 +92,6 @@
     "typed-scss-modules": "^7.0.1",
     "typescript": "^4.8.2",
     "webpack": "^4.46.0"
-  },
-  "peerDependencies": {
-    "next": "^12.2.4",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "react-qr-code": "^2.0.8"
   },
   "readme": "ERROR: No README data found!",
   "_id": "thebadge-ui-library@1.0.0"

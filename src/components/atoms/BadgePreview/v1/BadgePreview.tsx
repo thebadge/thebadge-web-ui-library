@@ -1,5 +1,5 @@
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
-import { BadgeCategories, BadgeTypesSupported } from '@businessLogic/badge'
+import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Box, styled } from '@mui/material'
@@ -7,28 +7,8 @@ import React from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
 
-export type BadgePreviewEffects = 'wobble' | 'grow' | 'glare'
-
-export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
-export interface BadgePreviewProps {
-  size: BadgeSize
-  badgeCategory: BadgeCategories
-  badgeType: BadgeTypesSupported
-  badgeUrl: string
-  title: string
-  subline: string
-  description: string
-  iconUrl?: string
-  imageUrl?: string
-  onClick?: () => void
-  animationOnHover?: boolean
-  animationEffects: BadgePreviewEffects[]
-}
-
 const defaultValuesForBadgePreviewProps = {
   size: 'medium' as BadgeSize,
-  badgeCategory: BadgeCategories.OFFCHAIN,
-  badgeType: BadgeTypesSupported.CUSTOM,
   badgeUrl: 'https://www.thebadge.xyz/',
   title: '',
   subline: '',
@@ -37,10 +17,12 @@ const defaultValuesForBadgePreviewProps = {
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
-const BadgePreviewBox = styled(Box)<{ size: number }>(({ size = 320 }) => ({
-  width: size,
-  height: size * 1.6,
-}))
+const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName !== 'size' })<{ size: number }>(
+  ({ size = 320 }) => ({
+    width: size,
+    height: size * 1.6,
+  })
+)
 
 export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
   const badgeSize = () => {
@@ -54,6 +36,8 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         return 400
       case 'x-large':
         return 500
+      default:
+        return 300
     }
   }
 

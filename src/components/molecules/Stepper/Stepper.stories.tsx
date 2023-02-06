@@ -1,3 +1,4 @@
+import { TBColor } from '@assets/defaultTheme'
 import { Box, Typography } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
@@ -25,7 +26,7 @@ export default {
 
 const Template: Story<StepperProps> = (args) => {
   return (
-    <div style={{ background: 'gray', padding: '16px', display: 'flex', justifyContent: 'center', height: '50vh' }}>
+    <div style={{ background: 'gray', padding: '16px', display: 'flex', justifyContent: 'center', height: '100%' }}>
       <Stepper {...args} />
     </div>
   )
@@ -67,18 +68,18 @@ const STEPPER_EXAMPLE_ELEMENTS = [
 export const StepperPreview = Template.bind({})
 StepperPreview.args = {
   minHeight: 300,
-  color: 'green',
+  color: 'green' as TBColor,
   title: 'off-chain HOW IT WORKS',
-  elements: STEPPER_EXAMPLE_ELEMENTS,
+  steps: STEPPER_EXAMPLE_ELEMENTS,
 }
 
 export const StepperPreviewMoreConfigs = Template.bind({})
 StepperPreviewMoreConfigs.args = {
   minHeight: 300,
   color: 'green',
-  backgroundColor: 'black',
+  backgroundColor: 'black' as TBColor,
   glowTitle: false,
   border: false,
   title: 'off-chain HOW IT WORKS',
-  elements: STEPPER_EXAMPLE_ELEMENTS,
+  steps: STEPPER_EXAMPLE_ELEMENTS,
 }

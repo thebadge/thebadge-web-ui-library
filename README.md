@@ -19,8 +19,7 @@ UI Library with Web components and styling for The Badge project.
 
 [Chromatic](https://main--638b62c10e52ebb22bd55c21.chromatic.com/?path=/docs/)
 
-
-## Develope the library
+## Develop the library
 
 ### Run storybook
 

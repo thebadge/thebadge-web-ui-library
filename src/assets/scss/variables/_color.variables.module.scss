@@ -2,32 +2,42 @@
  * Color Palette
  */
 // primary
-$tb-primary: #2d64f1;
-$tb-primary-light: #7491ff;
-$tb-primary-dark: #003bbd;
+$tb-primary: #b74ad6;
+$tb-primary-light: #ec7cff;
+$tb-primary-dark: #840da4;
 
 // secondary
-$tb-secondary: #252c3c;
-$tb-secondary-light: #4e5566;
-$tb-secondary-dark: #000016;
+$tb-secondary: #62cba5;
+$tb-secondary-light: #95ffd6;
+$tb-secondary-dark: #2a9a76;
 
 // blue
 $tb-blue: #284ee8;
-$tb-blue-dark: #0d0b20;
-$tb-blue-light: #59bcf7;
+$tb-blue-dark: #59bcf7;
+$tb-blue-light: #59bcf733;
+
+// Dark blue
+$tb-dark-blue: #0d0b20;
 
 //purple
-
 $tb-purple: #b74ad6;
+
+// deepPurple
+$tb-deepPurple: #3919bb;
 
 // green
 $tb-green: #62cba5;
+$tb-green-light: #62cba54d;
+$tb-green-hover: #337a61; // Also green-dark
 $tb-green-border: #58bbad;
-$tb-green-hover: #58bbad29;
+
+// darker green
+$tb-dark-green: #337a61;
 
 // pink
 $tb-pink: #af20af;
-$tb-pink-light: #935995;
+$tb-pink-dark: #935995;
+$tb-pink-light: #af20af4d;
 
 // white
 $tb-white: #f5f5f5;
@@ -47,6 +57,9 @@ $tb-green-success: #00c083;
 // text
 $tb-black-text: #000000;
 
+// logo
+$tb-green-logo: #24F3D2;
+
 /*
  * Color Map (used for color classes and direct usage in components)
  */
@@ -60,14 +73,20 @@ $colors: (
   'blue': $tb-blue,
   'blueDark': $tb-blue-dark,
   'blueLight': $tb-blue-light,
+  'darkBlue': $tb-dark-blue,
   'purple': $tb-purple,
   'green': $tb-green,
+  'greenLight': $tb-green-light,
+  'greenDark': $tb-green-hover,
   'greenBorder': $tb-green-border,
   'greenHover': $tb-green-hover,
   'pink': $tb-pink,
   'pinkLight': $tb-pink-light,
+  'pinkDark': $tb-pink-dark,
   'white': $tb-white,
   'black': $tb-black,
+  'deepPurple': $tb-deepPurple,
+  'darkGreen': $tb-dark-green,
   'transparent': $tb-transparent,
   'blackBackground': $tb-black-background,
   'greyBackground': $tb-grey-background,
@@ -76,6 +95,7 @@ $colors: (
   'blueInfo': $tb-blue-info,
   'greenSuccess': $tb-green-success,
   'blackText': $tb-black-text,
+  'greenLogo': $tb-green-logo,
 );
 
 :export {

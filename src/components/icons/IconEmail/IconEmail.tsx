@@ -1,9 +1,14 @@
 import * as React from 'react'
-import MailOutlineIcon from '@mui/icons-material/MailOutline'
+import { MailOutline as MailOutlineIcon } from '@mui/icons-material'
 import { IconProps } from '../IconProps'
 
 export const IconEmail = (props: IconProps) => (
-  <a href={props.link} target={'_blank'} rel="noreferrer" className={`svg-fill--${props.color}`}>
+  <a
+    className={`icon svg-fill--${props.color}` + (!props.link ? 'icon--disabled' : '')}
+    href={props.link}
+    target={'_blank'}
+    rel="noreferrer"
+  >
     <MailOutlineIcon
       sx={{
         width: 28,

@@ -1,7 +1,8 @@
 import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import { BadgePreviewEffects, BadgePreviewProps, BadgePreviewV2 } from './BadgePreview'
+import { BadgePreviewV2 } from './BadgePreview'
+import { BadgePreviewEffects, BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 
 const EXAMPLE_URLS = {
   backgroundOne:
@@ -19,7 +20,7 @@ const EXAMPLE_URLS = {
 }
 
 export default {
-  title: 'Components/Molecules/BadgePreviewV2',
+  title: 'Components/Atoms/BadgePreview/v2',
   component: BadgePreviewV2,
   argTypes: {
     badgeBackgroundUrl: {
@@ -42,7 +43,6 @@ export default {
 } as Meta
 
 const Template: Story<BadgePreviewProps> = (args) => {
-  console.log(args)
   return (
     <div style={{ background: 'gray', padding: '32px', display: 'flex', justifyContent: 'center', height: '80vh' }}>
       <BadgePreviewV2 {...args} />

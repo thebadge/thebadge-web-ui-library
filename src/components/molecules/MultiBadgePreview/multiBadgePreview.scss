@@ -1,0 +1,120 @@
+@use '../../../assets/scss/functions/_base.functions.scss' as *;
+@use '../../../assets/scss/variables/variables.module';
+
+.multiBadgePreview {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  perspective: 1000px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &:hover {
+    .badge-preview,
+    .badge-previewV2 {
+      transition: none;
+      scale: 1;
+      animation: none;
+    }
+  }
+
+  &--animated {
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      scale: 1.075;
+    }
+  }
+}
+
+.multiBadgePreview__badge {
+  border: 1px solid transparent;
+  backface-visibility: hidden;
+  background: transparent;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+
+  &--animated {
+    &:hover {
+      scale: 1.5 !important;
+      z-index: 5 !important;
+
+      &:nth-child(1) {
+        animation: leftMove 0.5s;
+      }
+      &:nth-child(3) {
+        animation: rightMove 0.5s;
+      }
+    }
+  }
+}
+
+.multiBadgePreview__badge:nth-child(1) {
+  scale: 0.9;
+  margin-right: -60px;
+  z-index: 1;
+  animation: leftMoveRevert 0.65s;
+}
+.multiBadgePreview__badge:nth-child(2) {
+  z-index: 2;
+}
+.multiBadgePreview__badge:nth-child(3) {
+  scale: 0.9;
+  margin-left: -60px;
+  z-index: 1;
+  animation: rightMoveRevert 0.65s;
+}
+
+@keyframes leftMoveRevert {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-35%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightMoveRevert {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(35%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightMove {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(35%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leftMove {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-35%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

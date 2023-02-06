@@ -5,7 +5,7 @@ export const IconGithub = (props: IconProps) => (
   <a href={props.link} target={'_blank'} rel="noreferrer">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={`fill--${props.color}`}
+      className={`icon svg-fill--${props.color}` + (!props.link ? 'icon--disabled' : '')}
       width={24}
       height={24}
       fill={props.color}
