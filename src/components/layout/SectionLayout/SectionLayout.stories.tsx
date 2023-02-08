@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
 import { SectionLayout, SectionLayoutProps } from './SectionLayout'
+import { colors } from '../../../index'
 
 export default {
   title: 'Components/Layout/SectionLayout',
@@ -74,7 +75,7 @@ const stepperArgs = {
   minHeight: 250,
   color: 'green' as TBColor,
   title: 'off-chain HOW IT WORKS',
-  children: [
+  steps: [
     <Typography key={0} fontWeight={500} fontSize={18} fontFamily="Mulish">
       Select the type of badge you are interested in. Each badge will require the submission of proof or evidence to
       certify you have the right to claim it. An example of this type of badge could be to claim a Twitter account.
@@ -146,15 +147,20 @@ const middleComponent = () => (
 )
 
 TwoSectionsExample.args = {
-  topComponent: topComponent(),
-  middleComponent: middleComponent(),
-  bottomComponent: <Stepper {...stepperArgs} />,
-  borderColor: 'green',
+  components: [
+    { component: topComponent(), options: { type: 'top'} },
+    { component: middleComponent(), options: { type: 'middle'}},
+    { component: <Stepper {...stepperArgs} />, options: { type: 'bottom'}},
+  ],
+  borderColor: colors.deepPurple,
+  backgroundColor: colors.orangeWarning
 }
 
 SectionExample.args = {
-  topComponent: topComponent(),
-  middleComponent: middleComponent(),
-  bottomComponent: <Stepper {...stepperArgs} />,
-  borderColor: 'green',
+  components: [
+    { component: topComponent(), options: { fitContent: true } },
+    { component: middleComponent(), options: { withPadding: true }},
+    { component: <Stepper {...stepperArgs} />, options: { withPadding: true, sx: { m: 2 } }},
+  ],
+  borderColor: colors.greenLogo,
 }
