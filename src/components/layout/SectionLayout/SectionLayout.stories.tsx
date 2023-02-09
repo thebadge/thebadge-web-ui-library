@@ -148,19 +148,19 @@ const middleComponent = () => (
 
 TwoSectionsExample.args = {
   components: [
-    { component: topComponent(), options: { type: 'top'} },
-    { component: middleComponent(), options: { type: 'middle'}},
-    { component: <Stepper {...stepperArgs} />, options: { type: 'bottom'}},
+    { component: topComponent(), options: { type: 'top' } },
+    { component: middleComponent(), options: { type: 'middle' } },
+    { component: <Stepper {...stepperArgs} />, options: { type: 'bottom' } },
   ],
   borderColor: colors.deepPurple,
-  backgroundColor: colors.orangeWarning
+  backgroundColor: colors.orangeWarning,
 }
 
 SectionExample.args = {
   components: [
     { component: topComponent(), options: { fitContent: true } },
-    { component: middleComponent(), options: { withPadding: true }},
-    { component: <Stepper {...stepperArgs} />, options: { withPadding: true, sx: { m: 2 } }},
+    { component: middleComponent(), options: { withPadding: true } },
+    { component: <Stepper {...stepperArgs} />, options: { withPadding: true, sx: { m: 2 } } },
   ],
   borderColor: colors.greenLogo,
 }

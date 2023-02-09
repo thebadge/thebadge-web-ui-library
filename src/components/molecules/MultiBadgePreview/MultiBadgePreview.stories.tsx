@@ -18,7 +18,7 @@ const Template: Story<MultiBadgePreviewProps> = (args) => {
     </div>
   )
 }
-const defaultBadgeCarouselExampleProps = {
+const defaultBadgePreviewExampleProps = {
   size: 'small' as BadgeSize,
   badgeCategory: BadgeCategories.OFFCHAIN,
   badgeType: BadgeTypes.CUSTOM,
@@ -38,18 +38,18 @@ const defaultBadgeCarouselExampleProps = {
 export const MultiBadgePreviewTemplate = Template.bind({})
 MultiBadgePreviewTemplate.args = {
   badges: [
-    <BadgePreview key={0} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview key={0} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreview key={1} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreview key={2} {...defaultBadgePreviewExampleProps} />,
   ],
 }
 
 export const MultiBadgePreviewScaledToHalf = Template.bind({})
 MultiBadgePreviewScaledToHalf.args = {
   badges: [
-    <BadgePreview key={0} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview key={0} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreview key={1} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreview key={2} {...defaultBadgePreviewExampleProps} />,
   ],
   sizeScale: 0.5,
 }
@@ -57,9 +57,9 @@ MultiBadgePreviewScaledToHalf.args = {
 export const MultiBadgePreviewAnimatedWithLink = Template.bind({})
 MultiBadgePreviewAnimatedWithLink.args = {
   badges: [
-    <BadgePreview key={0} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreview key={2} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreview key={0} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreview key={1} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreview key={2} {...defaultBadgePreviewExampleProps} />,
   ],
   animated: true,
   onGroupClick: () => {
@@ -70,18 +70,18 @@ MultiBadgePreviewAnimatedWithLink.args = {
 export const MultiBadgePreviewWithV2Badges = Template.bind({})
 MultiBadgePreviewWithV2Badges.args = {
   badges: [
-    <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={0} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreviewV2 key={1} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgePreviewExampleProps} />,
   ],
 }
 
 export const MultiBadgePreviewWithV2BadgesScaledToHalf = Template.bind({})
 MultiBadgePreviewWithV2BadgesScaledToHalf.args = {
   badges: [
-    <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={0} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreviewV2 key={1} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgePreviewExampleProps} />,
   ],
   sizeScale: 0.5,
 }
@@ -89,9 +89,9 @@ MultiBadgePreviewWithV2BadgesScaledToHalf.args = {
 export const MultiBadgePreviewWithV2BadgesAnimatedWithLink = Template.bind({})
 MultiBadgePreviewWithV2BadgesAnimatedWithLink.args = {
   badges: [
-    <BadgePreviewV2 key={0} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={1} {...defaultBadgeCarouselExampleProps} />,
-    <BadgePreviewV2 key={2} {...defaultBadgeCarouselExampleProps} />,
+    <BadgePreviewV2 key={0} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreviewV2 key={1} {...defaultBadgePreviewExampleProps} />,
+    <BadgePreviewV2 key={2} {...defaultBadgePreviewExampleProps} />,
   ],
   animated: true,
   onGroupClick: () => {
