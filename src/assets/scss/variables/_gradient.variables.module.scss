@@ -33,13 +33,7 @@ $tb-gradient-header: linear-gradient(
   #891cfb 98.2%
 );
 
-$tb-gradient-background-dark: radial-gradient(
-  94.86% 21.92% at 3.16% 1.15%,
-  #420756 0%,
-  #190321 61.46%,
-  #000000 100%,
-  #000000 100%
-);
+$tb-gradient-background-dark: radial-gradient(circle at 15% 15%, #420756 0%, #190321 35%, #000000 100%);
 
 $tb-gradient-background-light: linear-gradient(180deg, rgba(137, 28, 251, 0.2475) -13.61%, rgba(255, 255, 255, 0.254) 40.93%, rgba(255, 255, 255, 0.55) 82.02%, rgba(255, 255, 255, 0.75) 129.84%);
 
