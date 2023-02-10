@@ -68,9 +68,6 @@ const TemplateWithTwo: Story<SectionLayoutProps> = (args) => (
   </div>
 )
 
-export const SectionExample = Template.bind({})
-export const TwoSectionsExample = TemplateWithTwo.bind({})
-
 const stepperArgs = {
   minHeight: 250,
   color: 'green' as TBColor,
@@ -146,6 +143,25 @@ const middleComponent = () => (
   </Box>
 )
 
+export const SectionExampleWithOneComponent = Template.bind({})
+SectionExampleWithOneComponent.args = {
+  components: [
+    { component: topComponent() },
+  ],
+  borderColor: colors.blueInfo,
+}
+
+export const SectionExampleWithSeveralComponents = Template.bind({})
+SectionExampleWithSeveralComponents.args = {
+  components: [
+    { component: topComponent(), options: { fitContent: true } },
+    { component: middleComponent(), options: { withPadding: true } },
+    { component: <Stepper {...stepperArgs} />, options: { withPadding: true, sx: { m: 2 } } },
+  ],
+  borderColor: colors.greenLogo,
+}
+
+export const TwoSectionsExample = TemplateWithTwo.bind({})
 TwoSectionsExample.args = {
   components: [
     { component: topComponent(), options: { type: 'top' } },
@@ -154,13 +170,4 @@ TwoSectionsExample.args = {
   ],
   borderColor: colors.deepPurple,
   backgroundColor: colors.orangeWarning,
-}
-
-SectionExample.args = {
-  components: [
-    { component: topComponent(), options: { fitContent: true } },
-    { component: middleComponent(), options: { withPadding: true } },
-    { component: <Stepper {...stepperArgs} />, options: { withPadding: true, sx: { m: 2 } } },
-  ],
-  borderColor: colors.greenLogo,
 }
