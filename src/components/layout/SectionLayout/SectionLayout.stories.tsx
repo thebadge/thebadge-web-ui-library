@@ -4,6 +4,7 @@ import { Box, Typography } from '@mui/material'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
 import { SectionLayout, SectionLayoutProps } from './SectionLayout'
+import { colors } from '../../../index'
 
 export default {
   title: 'Components/Layout/SectionLayout',
@@ -67,14 +68,11 @@ const TemplateWithTwo: Story<SectionLayoutProps> = (args) => (
   </div>
 )
 
-export const SectionExample = Template.bind({})
-export const TwoSectionsExample = TemplateWithTwo.bind({})
-
 const stepperArgs = {
   minHeight: 250,
   color: 'green' as TBColor,
   title: 'off-chain HOW IT WORKS',
-  children: [
+  steps: [
     <Typography key={0} fontWeight={500} fontSize={18} fontFamily="Mulish">
       Select the type of badge you are interested in. Each badge will require the submission of proof or evidence to
       certify you have the right to claim it. An example of this type of badge could be to claim a Twitter account.
@@ -145,16 +143,47 @@ const middleComponent = () => (
   </Box>
 )
 
-TwoSectionsExample.args = {
-  topComponent: topComponent(),
-  middleComponent: middleComponent(),
-  bottomComponent: <Stepper {...stepperArgs} />,
-  borderColor: 'green',
+const badgeCreatorSampleComponent = () => (
+  <Box
+    style={{
+      display: 'flex',
+      flex: 1,
+      flexDirection: 'column',
+      placeContent: 'center',
+      textAlign: 'center',
+    }}
+  >
+    <Typography color={colors.pink} variant="h2">
+      Badge Creator
+    </Typography>
+  </Box>
+)
+
+export const SectionExampleWithOneComponent = Template.bind({})
+SectionExampleWithOneComponent.args = {
+  components: [{ component: badgeCreatorSampleComponent() }],
+  borderColor: colors.pink,
+  backgroundColor: colors.transparent,
+  sx: { borderWidth: '2px' },
 }
 
-SectionExample.args = {
-  topComponent: topComponent(),
-  middleComponent: middleComponent(),
-  bottomComponent: <Stepper {...stepperArgs} />,
-  borderColor: 'green',
+export const SectionExampleWithSeveralComponents = Template.bind({})
+SectionExampleWithSeveralComponents.args = {
+  components: [
+    { component: topComponent(), options: { fitContent: true } },
+    { component: middleComponent(), options: { withPadding: true } },
+    { component: <Stepper {...stepperArgs} />, options: { withPadding: true, sx: { m: 2 } } },
+  ],
+  borderColor: colors.greenLogo,
+}
+
+export const TwoSectionsExample = TemplateWithTwo.bind({})
+TwoSectionsExample.args = {
+  components: [
+    { component: topComponent(), options: { type: 'top' } },
+    { component: middleComponent(), options: { type: 'middle' } },
+    { component: <Stepper {...stepperArgs} />, options: { type: 'bottom' } },
+  ],
+  borderColor: colors.deepPurple,
+  backgroundColor: colors.orangeWarning,
 }

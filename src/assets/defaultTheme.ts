@@ -93,16 +93,16 @@ const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) 
     lineHeight: `${fonts.lineHeightBody2}`,
   },
   body3: {
-    fontSize: `${fonts.fontSizeBody2}`,
+    fontSize: `${fonts.fontSizeBody3}`,
     fontStyle: 'normal',
     fontWeight: fonts.fontWeightExtraLarge,
-    lineHeight: `${fonts.lineHeightBody2}`,
+    lineHeight: `${fonts.lineHeightBody3}`,
   },
   body4: {
-    fontSize: `${fonts.fontSizeBody2}`,
+    fontSize: `${fonts.fontSizeBody4}`,
     fontStyle: 'normal',
     fontWeight: fonts.fontWeightNormal,
-    lineHeight: `${fonts.lineHeightBody2}`,
+    lineHeight: `${fonts.lineHeightBody4}`,
   },
   button: {
     fontSize: `${fonts.fontSizeButton}`,

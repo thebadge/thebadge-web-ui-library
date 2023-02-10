@@ -11,23 +11,34 @@
   border-style: solid;
   border-width: 1px;
 
-  &__top {
+  &__component {
     display: flex;
     flex: 1;
-    max-height: fit-content; // Max height that the usual image on webpage can grow
-  }
 
-  &__middle {
-    display: flex;
-    padding: 16px;
-    flex: 1;
-    align-items: flex-start;
-  }
 
-  &__bottom {
-    display: flex;
-    flex: 1;
-    padding: 16px;
-    align-items: flex-end;
+    // flavours
+    &-top {
+      max-height: fit-content;
+    }
+
+    &-middle {
+      padding: 1rem;
+      align-items: flex-start;
+    }
+
+    &-bottom {
+      padding: 1rem;
+      align-items: flex-end;
+    }
+
+
+    // some custom configurations
+    &--with-padding {
+      padding: 1rem;
+    }
+
+    &--fit-content {
+      max-height: fit-content;  // Max height that the usual image on webpage can grow
+    }
   }
 }
