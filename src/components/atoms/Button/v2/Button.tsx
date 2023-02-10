@@ -16,7 +16,7 @@ const StyledButton = styled(Button, {
   backgroundColor: backgroundColor || colors.blue,
   whiteSpace: 'pre-line',
   fontWeight: '500',
-  fontSize: '2ßpx',
+  fontSize: '28px',
   lineHeight: '28px',
   borderRadius: '8px',
   padding: theme.spacing(0.5, 2.6),
