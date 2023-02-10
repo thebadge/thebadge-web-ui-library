@@ -7,11 +7,11 @@ import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scs
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
-import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 
 // components
 import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
 import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
+import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { Button } from '@components/atoms/Button/v1/Button'
 import { ButtonV2 } from '@components/atoms/Button/v2/Button'
 import { NavigationHeader, NavigationHeaderProps } from '@components/atoms/NavigationHeader/NavigationHeader'
@@ -33,6 +33,10 @@ import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Carousel } from '@components/molecules/Carousel/Carousel'
 import { MultiBadgePreview, MultiBadgePreviewProps } from '@components/molecules/MultiBadgePreview/MultiBadgePreview'
+import {
+  ResizedBadgePreviewsList,
+  ResizedBadgePreviewsListProps,
+} from '@components/molecules/ResizedBadgePreviewsList/ResizedBadgePreviewsList'
 import { Stepper, StepperProps } from '@components/molecules/Stepper/Stepper'
 
 export {
@@ -46,6 +50,7 @@ export {
   BadgePreview,
   BadgePreviewV2,
   NavigationHeader,
+  SpinningArrow,
   IconBadge,
   IconCurator,
   IconDecentralized,
@@ -62,8 +67,8 @@ export {
   LogoTheBadgeWithText,
   Carousel,
   MultiBadgePreview,
+  ResizedBadgePreviewsList,
   Stepper,
-  SpinningArrow,
 }
 export type {
   TBColor,
@@ -75,4 +80,5 @@ export type {
   SpinningArrowProps,
   NavigationHeaderProps,
   BadgePreviewProps,
+  ResizedBadgePreviewsListProps,
 }
