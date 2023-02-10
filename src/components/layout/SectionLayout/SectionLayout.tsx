@@ -20,15 +20,17 @@ export type SectionLayoutProps = {
   components: SectionLayoutComponent[]
   borderColor?: string
   backgroundColor?: string
+  sx?: SxProps<Theme>
 }
 
-export const SectionLayout = ({ borderColor, backgroundColor, components }: SectionLayoutProps) => {
+export const SectionLayout = ({ components, borderColor, backgroundColor, sx }: SectionLayoutProps) => {
   return (
     <Box
       className="section-layout"
       sx={{
         borderColor: borderColor || 'green',
         backgroundColor: backgroundColor || 'black',
+        ...sx,
       }}
     >
       {components.map(({ component, options }, index) => {

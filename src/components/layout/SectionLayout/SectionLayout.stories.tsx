@@ -143,10 +143,28 @@ const middleComponent = () => (
   </Box>
 )
 
+const badgeCreatorSampleComponent = () => (
+  <Box
+    style={{
+      display: 'flex',
+      flex: 1,
+      flexDirection: 'column',
+      placeContent: 'center',
+      textAlign: 'center',
+    }}
+  >
+    <Typography color={colors.pink} variant="h2">
+      Badge Creator
+    </Typography>
+  </Box>
+)
+
 export const SectionExampleWithOneComponent = Template.bind({})
 SectionExampleWithOneComponent.args = {
-  components: [{ component: topComponent() }],
-  borderColor: colors.blueInfo,
+  components: [{ component: badgeCreatorSampleComponent() }],
+  borderColor: colors.pink,
+  backgroundColor: colors.transparent,
+  sx: { borderWidth: '2px' },
 }
 
 export const SectionExampleWithSeveralComponents = Template.bind({})
