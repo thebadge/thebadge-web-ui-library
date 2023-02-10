@@ -141,7 +141,7 @@ $--badgeBackgroundUrl: '';
       flex: 0 1 auto;
       font-weight: variables.$font-weight-large;
       font-size: convert-to-rem(22px);
-      line-height: convert-to-rem(24px);
+      line-height: convert-to-rem(25px);
       margin-top: 3%;
       margin-bottom: 3%;
       overflow: hidden;
@@ -151,15 +151,15 @@ $--badgeBackgroundUrl: '';
         margin-top: 0;
         font-weight: variables.$font-weight-large;
         font-size: convert-to-rem(12px);
-        line-height: convert-to-rem(14px);
+        line-height: convert-to-rem(15px);
       }
       &--medium {
         font-size: convert-to-rem(16px);
-        line-height: convert-to-rem(18px);
+        line-height: convert-to-rem(19px);
       }
       &--large {
         font-size: convert-to-rem(18px);
-        line-height: convert-to-rem(20px);
+        line-height: convert-to-rem(21px);
       }
     }
 
@@ -167,7 +167,7 @@ $--badgeBackgroundUrl: '';
       flex: 0 1 auto;
       font-weight: variables.$font-weight-black;
       font-size: convert-to-rem(20px);
-      line-height: convert-to-rem(22px);
+      line-height: convert-to-rem(23px);
       margin-bottom: 3%;
       white-space: nowrap;
       overflow: hidden;
@@ -175,15 +175,15 @@ $--badgeBackgroundUrl: '';
 
       &--small {
         font-size: convert-to-rem(11px);
-        line-height: convert-to-rem(12px);
+        line-height: convert-to-rem(13px);
       }
       &--medium {
         font-size: convert-to-rem(15px);
-        line-height: convert-to-rem(17px);
+        line-height: convert-to-rem(18px);
       }
       &--large {
         font-size: convert-to-rem(17px);
-        line-height: convert-to-rem(19px);
+        line-height: convert-to-rem(20px);
       }
     }
 
