@@ -56,7 +56,7 @@ BadgePreviewLongTexts.args = {
   size: 'large',
   title:
     'TITLE xxx Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  subline:
+  category:
     'Subline Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   description:
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
@@ -74,12 +74,12 @@ BadgePreviewLongTexts.args = {
 export const BadgePreviewWithAnimationOnHover = Template.bind({})
 BadgePreviewWithAnimationOnHover.args = {
   size: 'medium',
-  title: 'TITLE xxx',
-  subline: 'Subline #category',
-  description:
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  title: 'Diploma in Intellectual Property',
+  category: 'Diploma certificate.',
+  description: 'User with address: 0xD28....16eC has a degree in intellectual property from Austral University',
   badgeUrl: 'https://www.thebadge.xyz',
+  imageUrl:
+    'https://images.unsplash.com/photo-1564054074885-e5a7c93671d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
   animationOnHover: true,
   animationEffects: ['wobble', 'grow', 'glare'],
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,

@@ -7,7 +7,7 @@ export interface BadgePreviewProps {
   badgeBackgroundUrl?: string
   textContrast?: BadgeTextContrast
   title: string
-  subline: string
+  category: string
   description: string
   iconUrl?: string
   imageUrl?: string

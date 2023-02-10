@@ -11,7 +11,7 @@ const defaultValuesForBadgePreviewProps = {
   size: 'medium' as BadgeSize,
   badgeUrl: 'https://www.thebadge.xyz/',
   title: '',
-  subline: '',
+  category: '',
   description: '',
   animationOnHover: false,
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
@@ -112,7 +112,7 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         <div
           className={[`badge-preview__content--subline`, `badge-preview__content--subline--${props.size}`].join(' ')}
         >
-          {props.subline}
+          {props.category}
         </div>
         <div
           className={[

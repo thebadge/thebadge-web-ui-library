@@ -1,4 +1,3 @@
-import badgeBackground from '@assets/svgs/badgeBlankBackground.svg'
 import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Box, styled } from '@mui/material'
@@ -14,7 +13,7 @@ const defaultValuesForBadgePreviewProps = {
   badgeUrl: 'https://www.thebadge.xyz/',
   badgeBackgroundUrl: defaultBackgroundUrl,
   title: '',
-  subline: '',
+  category: '',
   description: '',
   animationOnHover: false,
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
@@ -149,32 +148,29 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
           <div
             className={`badge-previewV2__header--image-container badge-previewV2__header--image-container--${props.size}`}
           >
-            <img
-              className={'badge-previewV2__header--background-image'}
-              src={badgeBackground}
-              alt="Badge image background"
-            />
-            <span className={'badge-previewV2__header--image'}>
-              {props.imageUrl ? (
-                <img src={props.imageUrl} alt="Badge image" />
-              ) : (
-                <LogoTheBadgeWithText size={badgeImageSize()} />
-              )}
-            </span>
+            <div className={'badge-previewV2__header--background-image'} aria-label="Badge image background">
+              <span className={'badge-previewV2__header--image'}>
+                {props.imageUrl ? (
+                  <img src={props.imageUrl} alt="Badge image" />
+                ) : (
+                  <LogoTheBadgeWithText size={badgeImageSize()} />
+                )}
+              </span>
+            </div>
           </div>
         </div>
-        <div className={`badge-previewV2__content`}>
-          <div className={`badge-previewV2__content--subline badge-previewV2__content--subline--${props.size}`}>
-            {props.subline}
+        <div className={`badge-previewV2__content badge-previewV2__content--${props.size}`}>
+          <div className={`badge-previewV2__content--title badge-previewV2__content--title--${props.size}`}>
+            {props.title}
           </div>
           <div
             className={[
-              `badge-previewV2__content--title`,
+              `badge-previewV2__content--category`,
               `text-max-lines--${badgeTitleMaxLines()}`,
-              `badge-previewV2__content--title--${props.size}`,
+              `badge-previewV2__content--category--${props.size}`,
             ].join(' ')}
           >
-            {props.title}
+            {props.category}
           </div>
           <div
             className={[
