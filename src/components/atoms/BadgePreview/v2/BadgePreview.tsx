@@ -1,6 +1,6 @@
 import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
-import { Box, styled } from '@mui/material'
+import { Box, styled, Typography } from '@mui/material'
 import React, { useEffect } from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
@@ -104,9 +104,9 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
     const badgePreviewPropsSize = props.size
     switch (badgePreviewPropsSize) {
       case 'small':
-        return 5
+        return 3
       case 'medium':
-        return 5
+        return 4
       case 'large':
         return 5
       case 'x-large':
@@ -159,8 +159,14 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
             </div>
           </div>
         </div>
-        <div className={`badge-previewV2__content badge-previewV2__content--${props.size}`}>
-          <div className={`badge-previewV2__content--title badge-previewV2__content--title--${props.size}`}>
+        <Typography component={'div'} className={`badge-previewV2__content badge-previewV2__content--${props.size}`}>
+          <div
+            className={[
+              `badge-previewV2__content--title`,
+              `text-max-lines--${badgeTitleMaxLines()}`,
+              `badge-previewV2__content--title--${props.size}`,
+            ].join(' ')}
+          >
             {props.title}
           </div>
           <div
@@ -181,7 +187,7 @@ export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgeP
           >
             {props.description}
           </div>
-        </div>
+        </Typography>
         <div className="glare" />
       </div>
     </BadgePreviewBox>
