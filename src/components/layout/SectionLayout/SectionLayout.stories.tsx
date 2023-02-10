@@ -145,9 +145,7 @@ const middleComponent = () => (
 
 export const SectionExampleWithOneComponent = Template.bind({})
 SectionExampleWithOneComponent.args = {
-  components: [
-    { component: topComponent() },
-  ],
+  components: [{ component: topComponent() }],
   borderColor: colors.blueInfo,
 }
 
