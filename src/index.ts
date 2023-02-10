@@ -33,6 +33,10 @@ import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Carousel } from '@components/molecules/Carousel/Carousel'
 import { MultiBadgePreview, MultiBadgePreviewProps } from '@components/molecules/MultiBadgePreview/MultiBadgePreview'
+import {
+  ResizedBadgePreviewsList,
+  ResizedBadgePreviewsListProps,
+} from '@components/molecules/ResizedBadgePreviewsList/ResizedBadgePreviewsList'
 import { Stepper, StepperProps } from '@components/molecules/Stepper/Stepper'
 
 export {
@@ -46,6 +50,7 @@ export {
   BadgePreview,
   BadgePreviewV2,
   NavigationHeader,
+  SpinningArrow,
   IconBadge,
   IconCurator,
   IconDecentralized,
@@ -62,8 +67,8 @@ export {
   LogoTheBadgeWithText,
   Carousel,
   MultiBadgePreview,
+  ResizedBadgePreviewsList,
   Stepper,
-  SpinningArrow,
 }
 export type {
   TBColor,
@@ -75,4 +80,5 @@ export type {
   SpinningArrowProps,
   NavigationHeaderProps,
   BadgePreviewProps,
+  ResizedBadgePreviewsListProps,
 }
