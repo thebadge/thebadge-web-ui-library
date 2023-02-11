@@ -1,7 +1,7 @@
 import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
-import { createTheme, Palette, ThemeOptions } from '@mui/material'
+import { createTheme, Palette, ThemeOptions, Typography } from '@mui/material'
 import { TypographyOptions } from '@mui/material/styles/createTypography'
 
 const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) = {
@@ -225,3 +225,22 @@ export const defaultTheme: ThemeOptions = {
 }
 
 export type TBColor = keyof typeof colors
+
+export function getTypographyVariants(theme: ThemeOptions) {
+  // Take all the variants, to ensure MUI made all of them responsive, including our custom ones
+  return Object.keys(theme.typography as TypographyOptions).filter(
+    (keyName) => keyName !== 'fontFamily'
+  ) as (keyof typeof Typography)[]
+}
+
+export function overrideFontFamily(theme: ThemeOptions, fontFamily: string): TypographyOptions {
+  const overrideTypography: TypographyOptions = { ...theme.typography } as TypographyOptions
+  const variants = getTypographyVariants(theme)
+  variants.forEach((variantKey) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    overrideTypography[variantKey].fontFamily = fontFamily
+  })
+
+  return overrideTypography
+}
