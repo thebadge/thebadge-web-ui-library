@@ -8,7 +8,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'All the available typography variants on OhMD v4',
+        component: 'All the available typography variants on TheBadge',
       },
     },
   },
@@ -19,7 +19,7 @@ type TypographyStoryProps = {
 }
 
 const Template: Story<TypographyStoryProps> = (args) => (
-  <Grid item container direction={'column'} spacing={2}>
+  <Grid item container direction={'column'} spacing={2} sx={{ background: 'black' }}>
     <Grid item>
       <Typography variant="h1" component="h1" gutterBottom={args.gutter}>
         h1. Heading

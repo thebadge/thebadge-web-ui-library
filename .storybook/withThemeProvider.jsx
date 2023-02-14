@@ -1,10 +1,15 @@
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
+import { createTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@mui/material'
 import { ThemeProvider as SBThemeProvider } from '@storybook/theming'
 import React from 'react'
-import { defaultTheme } from '../src/assets/defaultTheme'
+import { defaultTheme, getTypographyVariants } from '../src/assets/defaultTheme'
 
 export const withThemeProvider = (Story, context) => {
-  const theme = createTheme(defaultTheme)
+  const variants = getTypographyVariants(defaultTheme)
+  const theme = responsiveFontSizes(createTheme(defaultTheme), {
+    disableAlign: true,
+    factor: 1.4,
+    variants,
+  })
   return (
     <ThemeProvider theme={theme}>
       <SBThemeProvider theme={theme}>
