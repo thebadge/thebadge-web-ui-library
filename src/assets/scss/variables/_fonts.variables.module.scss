@@ -15,73 +15,76 @@ $font-weight-bold: 700;
 $font-weight-xbold: 800;
 $font-weight-black: 900;
 
+// line-height need to be unit-less, according to the docs and also
+// you can se why here -> node_modules/@mui/material/styles/responsiveFontSizes.js:30
+
 // headlines
 // h1
-$font-size-h1: 60;
+$font-size-h1: 60px;
 $line-height-h1: 113%;
 // h2
-$font-size-h2: 50;
+$font-size-h2: 50px;
 $line-height-h2: 120%;
 // h3
-$font-size-h3: 44;
+$font-size-h3: 44px;
 $line-height-h3: 100%;
 // h4
-$font-size-h4: 21;
+$font-size-h4: 21px;
 $line-height-h4: 115%;
 // h5
-$font-size-h5: 20;
+$font-size-h5: 20px;
 $line-height-h5: 120%;
 // h6
-$font-size-h6: 18;
+$font-size-h6: 18px;
 $line-height-h6: 117%;
 
 // bodies
 // Body 1
-$font-size-body1: 19;
+$font-size-body1: 19px;
 $line-height-body1: 147%;
 // Body 2
-$font-size-body2: 18;
+$font-size-body2: 18px;
 $line-height-body2: 133%;
 // Body 3
-$font-size-body3: 20;
+$font-size-body3: 20px;
 $line-height-body3: 130%;
 // Body 4
-$font-size-body4: 12;
+$font-size-body4: 12px;
 $line-height-body4: 133%;
 
 // titles
 // Title 1
-$font-size-title1: 23;
+$font-size-title1: 23px;
 $line-height-title1: 121%;
 // Title 2
-$font-size-title2: 28;
+$font-size-title2: 28px;
 $line-height-title2: 107%;
 // Title 3
-$font-size-title3: 35;
+$font-size-title3: 35px;
 $line-height-title3: 100%;
 // Title 4
-$font-size-title4: 22;
+$font-size-title4: 22px;
 $line-height-title4: 110%;
 // Title 5
-$font-size-title5: 21;
+$font-size-title5: 21px;
 $line-height-title5: 114%;
 
 // subtitles
-$font-size-subtitle1: 16;
+$font-size-subtitle1: 16px;
 $line-height-subtitle1: 150%;
-$font-size-subtitle2: 14;
+$font-size-subtitle2: 14px;
 $line-height-subtitle2: 114%;
 
 // button
-$font-size-button: 18;
+$font-size-button: 18px;
 $line-height-button: 111%;
 
 // caption
-$font-size-caption: 12;
+$font-size-caption: 12px;
 $line-height-caption: 115%;
 
 // overline
-$font-size-overline: 10;
+$font-size-overline: 10px;
 $line-height-overline: 120%;
 
 $default: 1;
