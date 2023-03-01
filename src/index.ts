@@ -1,5 +1,5 @@
 // assets
-import { defaultTheme, TBColor } from '@assets/defaultTheme'
+import { TBColor } from '@assets/defaultTheme'
 import { lightTheme } from '@assets/lightTheme'
 import { darkTheme } from '@assets/darkTheme'
 
@@ -42,7 +42,6 @@ import {
 import { Stepper, StepperProps } from '@components/molecules/Stepper/Stepper'
 
 export {
-  defaultTheme,
   lightTheme,
   darkTheme,
   colors,

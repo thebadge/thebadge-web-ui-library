@@ -1,7 +1,7 @@
 import { ThemeOptions } from '@mui/material'
 import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
-import { gradients } from '../index'
+import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
 import { genericColors, typography } from '@assets/defaultTheme'
 
 export const darkTheme: ThemeOptions = {
