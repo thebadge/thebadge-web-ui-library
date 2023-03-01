@@ -2,7 +2,6 @@ import colors from '@assets/scss/variables/_color.variables.module.scss'
 import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
 import { createTheme, Palette, ThemeOptions, Typography } from '@mui/material'
 import { TypographyOptions } from '@mui/material/styles/createTypography'
-import { darkTheme } from '@assets/darkTheme'
 
 export const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) = {
   fontFamily: fonts.fontTheBadgeWeb,
@@ -248,8 +247,6 @@ export const genericColors = {
     },
   }),
 }
-
-export const defaultTheme = darkTheme
 
 export type TBColor = keyof typeof colors
 
