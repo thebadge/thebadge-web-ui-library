@@ -17,7 +17,10 @@ jobs:
     # Job steps
     steps:
       - uses: actions/checkout@v1
-
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.1
       - name: Add comment to PR
         id: loading_comment_to_pr
         uses: marocchino/sticky-pull-request-comment@v1

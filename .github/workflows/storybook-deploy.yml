@@ -15,6 +15,10 @@ jobs:
     # Job steps
     steps:
       - uses: actions/checkout@v1
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.1
       - run: yarn
         #👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
