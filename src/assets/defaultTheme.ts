@@ -1,10 +1,10 @@
-import breakpoints from '@assets/scss/variables/_breakpoint.variables.module.scss'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
 import { createTheme, Palette, ThemeOptions, Typography } from '@mui/material'
 import { TypographyOptions } from '@mui/material/styles/createTypography'
+import { darkTheme } from '@assets/darkTheme'
 
-const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) = {
+export const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) = {
   fontFamily: fonts.fontTheBadgeWeb,
   h1: {
     fontSize: `${fonts.fontSizeH1}`,
@@ -120,109 +120,136 @@ const typography: TypographyOptions | ((palette: Palette) => TypographyOptions) 
     letterSpacing: '0.04em',
     textTransform: 'uppercase',
   },
+  /** ------------ DApp Font Types ------------ **/
+  dAppHeadline1: {
+    fontSize: `${fonts.fontSizeDAppHeadline1}`,
+    lineHeight: `${fonts.lineHeightDAppHeadline1}`,
+    fontWeight: fonts.fontWeightExtraBold,
+  },
+  dAppHeadline2: {
+    fontSize: `${fonts.fontSizeDAppHeadline2}`,
+    lineHeight: `${fonts.lineHeightDAppHeadline2}`,
+    fontWeight: fonts.fontWeightBold,
+  },
+  dAppTitle1: {
+    fontSize: `${fonts.fontSizeDAppTitle1}`,
+    lineHeight: `${fonts.lineHeightDAppTitle1}`,
+    fontWeight: fonts.fontWeightBlack,
+  },
+  dAppTitle2: {
+    fontSize: `${fonts.fontSizeDAppTitle2}`,
+    lineHeight: `${fonts.lineHeightDAppTitle2}`,
+    fontWeight: fonts.fontWeightLarge,
+  },
+  dAppTitle3: {
+    fontSize: `${fonts.fontSizeDAppTitle3}`,
+    lineHeight: `${fonts.lineHeightDAppTitle3}`,
+    fontWeight: fonts.fontWeightBold,
+  },
+  dAppTitle4: {
+    fontSize: `${fonts.fontSizeDAppTitle4}`,
+    lineHeight: `${fonts.lineHeightDAppTitle4}`,
+    fontWeight: fonts.fontWeightNormal,
+  },
+  dAppTitle5: {
+    fontSize: `${fonts.fontSizeDAppTitle5}`,
+    lineHeight: `${fonts.lineHeightDAppTitle5}`,
+    fontWeight: fonts.fontWeightBlack,
+  },
+  dAppBody1: {
+    fontSize: `${fonts.fontSizeDAppBody1}`,
+    lineHeight: `${fonts.lineHeightDAppBody1}`,
+    fontWeight: fonts.fontWeightLarge,
+  },
+  dAppBody3: {
+    fontSize: `${fonts.fontSizeDAppBody3}`,
+    lineHeight: `${fonts.lineHeightDAppBody3}`,
+    fontWeight: fonts.fontWeightExtraLarge,
+  },
+  dAppBody4: {
+    fontSize: `${fonts.fontSizeDAppBody4}`,
+    lineHeight: `${fonts.lineHeightDAppBody4}`,
+    fontWeight: fonts.fontWeightBold,
+  },
+  dAppNumber: {
+    fontSize: `${fonts.fontSizeDAppNumber}`,
+    lineHeight: `${fonts.lineHeightDAppNumber}`,
+    fontWeight: fonts.fontWeightBlack,
+  },
+  dAppDaysHours: {
+    fontSize: `${fonts.fontSizeDAppDayshours}`,
+    lineHeight: `${fonts.lineHeightDAppDayshours}`,
+    fontWeight: fonts.fontWeightBlack,
+  },
+  dAppButton: {
+    fontSize: `${fonts.fontSizeDAppButton}`,
+    lineHeight: `${fonts.lineHeightDAppButton}`,
+    fontWeight: fonts.fontWeightBold,
+  },
 }
 
 // Workaourd to have augmentColor fn
 const { palette } = createTheme()
 const { augmentColor } = palette
 
-export const defaultTheme: ThemeOptions = {
-  typography,
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: Number(breakpoints.s),
-      md: Number(breakpoints.m),
-      lg: Number(breakpoints.l),
-      xl: Number(breakpoints.xl),
-    },
-  },
-  palette: {
-    mode: 'dark',
-    primary: {
-      main: colors.primary,
-      light: colors.primaryLight,
-      dark: colors.primaryDark,
+export const genericColors = {
+  blue: augmentColor({
+    color: {
+      main: colors.blue,
+      dark: colors.blueDark,
+      light: colors.blueLight,
       contrastText: colors.white,
     },
-    secondary: {
-      main: colors.secondary,
-      light: colors.secondaryLight,
-      dark: colors.secondaryDark,
+  }),
+  darkBlue: augmentColor({
+    color: {
+      main: colors.darkBlue,
       contrastText: colors.white,
     },
-    error: {
-      main: colors.redError,
+  }),
+  // this will tell MUI to calculate the main, dark, light and contrastText variants based on the given main
+  purple: augmentColor({
+    color: {
+      main: colors.purple,
       contrastText: colors.white,
     },
-    warning: {
-      main: colors.orangeWarning,
+  }),
+  green: augmentColor({
+    color: {
+      main: colors.green,
+      light: colors.greenLight,
+      dark: colors.greenDark,
       contrastText: colors.white,
     },
-    info: {
-      main: colors.blueInfo,
+  }),
+  darkGreen: augmentColor({
+    color: {
+      main: colors.darkGreen,
       contrastText: colors.white,
     },
-    success: {
-      main: colors.greenSuccess,
+  }),
+  pink: augmentColor({
+    color: {
+      main: colors.pink,
+      light: colors.pinkLight,
+      dark: colors.pinkDark,
       contrastText: colors.white,
     },
-    blue: augmentColor({
-      color: {
-        main: colors.blue,
-        dark: colors.blueDark,
-        light: colors.blueLight,
-        contrastText: colors.white,
-      },
-    }),
-    darkBlue: augmentColor({
-      color: {
-        main: colors.darkBlue,
-        contrastText: colors.white,
-      },
-    }),
-    // this will tell MUI to calculate the main, dark, light and contrastText variants based on the given main
-    purple: augmentColor({
-      color: {
-        main: colors.purple,
-        contrastText: colors.white,
-      },
-    }),
-    green: augmentColor({
-      color: {
-        main: colors.green,
-        light: colors.greenLight,
-        dark: colors.greenDark,
-        contrastText: colors.white,
-      },
-    }),
-    darkGreen: augmentColor({
-      color: {
-        main: colors.darkGreen,
-        contrastText: colors.white,
-      },
-    }),
-    pink: augmentColor({
-      color: {
-        main: colors.pink,
-        light: colors.pinkLight,
-        dark: colors.pinkDark,
-        contrastText: colors.white,
-      },
-    }),
-    white: augmentColor({
-      color: {
-        main: colors.white,
-      },
-    }),
-    deepPurple: augmentColor({
-      color: {
-        main: colors.deepPurple,
-        contrastText: colors.white,
-      },
-    }),
-  },
+  }),
+  white: augmentColor({
+    color: {
+      main: colors.white,
+    },
+  }),
+  deepPurple: augmentColor({
+    color: {
+      main: colors.deepPurple,
+      contrastText: colors.white,
+    },
+  }),
 }
+
+export const defaultTheme = darkTheme
 
 export type TBColor = keyof typeof colors
 

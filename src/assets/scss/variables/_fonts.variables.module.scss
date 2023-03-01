@@ -72,6 +72,7 @@ $line-height-title5: 114%;
 // subtitles
 $font-size-subtitle1: 16px;
 $line-height-subtitle1: 150%;
+
 $font-size-subtitle2: 14px;
 $line-height-subtitle2: 114%;
 
@@ -86,6 +87,56 @@ $line-height-caption: 115%;
 // overline
 $font-size-overline: 10px;
 $line-height-overline: 120%;
+
+// ------------ DApp Font Types ------------
+
+// Headline 1
+$font-size-dapp-headline1: 40px;
+$line-height-dapp-headline1: 125%;
+// Headline 2
+$font-size-dapp-headline2: 30px;
+$line-height-dapp-headline2: 100%;
+
+// Title 1
+$font-size-dapp-title1: 20px;
+$line-height-dapp-title1: 150%;
+// Title 2
+$font-size-dapp-title2: 18px;
+$line-height-dapp-title2: 165%;
+// Title 3
+$font-size-dapp-title3: 25px;
+$line-height-dapp-title3: 120%;
+// Title 4
+$font-size-dapp-title4: 20px;
+$line-height-dapp-title4: 130%;
+// Title 5
+$font-size-dapp-title5: 12px;
+$line-height-dapp-title5: 100%;
+
+// Body 1
+$font-size-dapp-body1: 11px;
+$line-height-dapp-body1: 145%;
+// Body 3
+$font-size-dapp-body3: 10px;
+$line-height-dapp-body3: 110%;
+// Body 4
+$font-size-dapp-body4: 11px;
+$line-height-dapp-body4: 100%;
+
+// Number
+$font-size-dapp-number: 40px;
+$line-height-dapp-number: 112%;
+
+// Dayshours
+$font-size-dapp-dayshours: 25px;
+$line-height-dapp-dayshours: 100%;
+
+// button
+$font-size-dapp-button: 11px;
+$line-height-dapp-button: 100%;
+
+
+// ------------    End        ------------
 
 $default: 1;
 
@@ -145,4 +196,37 @@ $default: 1;
   // Overline
   fontSizeOverline: $font-size-overline;
   lineHeightOverline: $line-height-overline;
+  // ------------ DApp Font Types ------------
+  // Headers
+  fontSizeDAppHeadline1: $font-size-dapp-headline1;
+  lineHeightDAppHeadline1: $line-height-dapp-headline1;
+  fontSizeDAppHeadline2: $font-size-dapp-headline2;
+  lineHeightDAppHeadline2: $line-height-dapp-headline2;
+  // Bodies
+  fontSizeDAppTitle1: $font-size-dapp-title1;
+  lineHeightDAppTitle1: $line-height-dapp-title1;
+  fontSizeDAppTitle2: $font-size-dapp-title2;
+  lineHeightDAppTitle2: $line-height-dapp-title2;
+  fontSizeDAppTitle3: $font-size-dapp-title3;
+  lineHeightDAppTitle3: $line-height-dapp-title3;
+  fontSizeDAppTitle4: $font-size-dapp-title4;
+  lineHeightDAppTitle4: $line-height-dapp-title4;
+  fontSizeDAppTitle5: $font-size-dapp-title5;
+  lineHeightDAppTitle5: $line-height-dapp-title5;
+  // Titles
+  fontSizeDAppBody1: $font-size-dapp-body1;
+  lineHeightDAppBody1: $line-height-dapp-body1;
+  fontSizeDAppBody3: $font-size-dapp-body3;
+  lineHeightDAppBody3: $line-height-dapp-body3;
+  fontSizeDAppBody4: $font-size-dapp-body4;
+  lineHeightDAppBody4: $line-height-dapp-body4;
+  // Number
+  fontSizeDAppNumber: $font-size-dapp-number;
+  lineHeightDAppNumber: $line-height-dapp-number;
+  // DaysHours
+  fontSizeDAppDayshours: $font-size-dapp-dayshours;
+  lineHeightDAppDayshours: $line-height-dapp-dayshours;
+  // Button
+  fontSizeDAppButton: $font-size-dapp-button;
+  lineHeightDAppButton: $line-height-dapp-button;
 }
