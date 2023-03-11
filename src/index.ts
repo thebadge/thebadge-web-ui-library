@@ -40,6 +40,7 @@ import {
   ResizedBadgePreviewsListProps,
 } from '@components/molecules/ResizedBadgePreviewsList/ResizedBadgePreviewsList'
 import { Stepper, StepperProps } from '@components/molecules/Stepper/Stepper'
+import { BoxBorderGradient } from '@components/layout/BoxBorderGradient/BoxBorderGradient'
 
 export {
   lightTheme,
@@ -51,6 +52,7 @@ export {
   Button,
   ButtonV2,
   BadgePreview,
+  BoxBorderGradient,
   BadgePreviewV2,
   NavigationHeader,
   SpinningArrow,
