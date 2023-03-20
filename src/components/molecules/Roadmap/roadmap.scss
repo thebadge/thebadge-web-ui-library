@@ -1,6 +1,3 @@
-@use '../../../assets/scss/functions/_base.functions.scss' as *;
-@use '../../../assets/scss/variables/variables.module';
-
 .roadmap {
   z-index: 2;
   h3 {
@@ -15,6 +12,7 @@
     width: 100%;
     border-radius: 24px;
     margin: 24px 0;
+    align-items: center
   }
   &__timeline_mobile {
     height: 48.5rem;
@@ -25,10 +23,10 @@
   &__circle {
     height: 78px;
     width: 78px;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     background-clip: content-box;
     border-radius: 50%;
-    border: 10px salmon solid;
+    border: 10px tomato solid;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +39,7 @@
       position: absolute;
       border-left: 16px solid transparent;
       border-right: 16px solid transparent;
-      border-top: 24px solid salmon;
+      border-top: 24px solid tomato;
       margin-top: 84px;
     }
 
@@ -55,9 +53,9 @@
   &__circle_mobile {
     height: 60px;
     width: 60px;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border-radius: 50%;
-    border: 6px salmon solid;
+    border: 6px tomato solid;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,7 +69,8 @@
       position: absolute;
       border-top: 8px solid transparent;
       border-bottom: 8px solid transparent;
-      border-left: 12px solid salmon;
+      border-left: 12px solid tomato
+      ;
       margin-left: 64px;
     }
 
@@ -88,17 +87,30 @@
       font-size: medium;
       position: absolute;
       width: max-content;
+
+      span {
+        font-weight: 500;
+        font-size: small;
+        margin: 0 0.25rem 0 0;
+      }
     }
   }
 
   &__year {
+    span {
+      font-weight: 500;
+      font-size: medium;
+      margin: 0 0.4rem 0 0;
+    }
     p {
       color: white;
       font-weight: 700;
+      font-size: larger;
+      display: flex;
+      align-items: center;
     }
   }
 
-  
   &__text {
     .line {
       width: 2px;
@@ -107,7 +119,8 @@
       margin: 0 50% 8px;
     }
 
-    h4, h5 {
+    h4,
+    h5 {
       text-transform: uppercase;
       font-weight: 800;
     }
