@@ -48,7 +48,7 @@
     p {
       font-size: xx-large;
       font-weight: 700;
-      color: rgb(175, 175, 175);
+      color: rgb(61, 61, 61);
     }
   }
 
@@ -78,7 +78,7 @@
     p {
       font-size: x-large;
       font-weight: 700;
-      color: rgb(175, 175, 175);
+      color: rgb(61, 61, 61);
     }
 
     .year_mobile {
@@ -106,17 +106,15 @@
       border: 2px dashed white;
       margin: 0 50% 8px;
     }
-    :nth-child(2) {
-      text-transform: uppercase;
-    }
 
-    :nth-child(1) {
+    h4, h5 {
       text-transform: uppercase;
+      font-weight: 800;
     }
 
     p {
       color: white;
-      font-weight: 700;
+      font-weight: 600;
       font-size: small;
       text-align: center;
     }

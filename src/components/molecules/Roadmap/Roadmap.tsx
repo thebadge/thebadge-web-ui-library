@@ -1,6 +1,7 @@
 // import { Colors } from '@assets/defaultTheme'
 // import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { BoxGradient } from '@components/layout/BoxGradient/BoxGradient'
 import React from 'react'
 
@@ -27,7 +28,7 @@ export const Roadmap = () => {
             <Grid container direction="column" width={'30%'} gap={15}>
               <Grid item className="roadmap__circle_mobile">
                 <p>01</p>
-                <p className="year_mobile">2022 (C)</p>
+                <p className="year_mobile"><CheckCircleOutlineIcon /> 2022</p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>02</p>
@@ -135,7 +136,7 @@ export const Roadmap = () => {
           >
             <Grid container gap={0} justifyContent="space-around" flexWrap="nowrap">
               <Grid item className="roadmap__year">
-                <p>2022 (C)</p>
+                <p><CheckCircleOutlineIcon /> 2022</p>
               </Grid>
               <Grid item className="roadmap__year">
                 <p>2023 Q1</p>
