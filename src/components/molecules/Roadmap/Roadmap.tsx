@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
 import { BoxGradient } from '@components/layout/BoxGradient/BoxGradient'
 import React from 'react'
 
@@ -24,23 +24,34 @@ export const Roadmap = () => {
             <Grid container direction="column" width={'30%'} gap={15}>
               <Grid item className="roadmap__circle_mobile">
                 <p>01</p>
-                <p className="year_mobile"><CheckCircleOutlineIcon />2022</p>
+                <p className="year_mobile">
+                  <CheckCircleOutlineIcon />
+                  2022
+                </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>02</p>
-                <p className="year_mobile"><span>Q1 & Q2</span>2023</p>
+                <p className="year_mobile">
+                  <span>Q1 & Q2</span>2023
+                </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>03</p>
-                <p className="year_mobile"><span>Q3</span>2023</p>
+                <p className="year_mobile">
+                  <span>Q3</span>2023
+                </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>04</p>
-                <p className="year_mobile"><span>Q4</span>2023</p>
+                <p className="year_mobile">
+                  <span>Q4</span>2023
+                </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>05</p>
-                <p className="year_mobile"><span>Q1</span>2024</p>
+                <p className="year_mobile">
+                  <span>Q1</span>2024
+                </p>
               </Grid>
             </Grid>
             <BoxGradient
@@ -66,20 +77,25 @@ export const Roadmap = () => {
                   Certification platform development
                 </Typography>
                 <Typography variant="body2">
-                  Creating the first badges that will help us to better understand the best way to make our platform adaptable to different scenarios.
+                  Creating the first badges that will help us to better understand the best way to make our platform
+                  adaptable to different scenarios.
                 </Typography>
               </Grid>
               <Grid item className="roadmap__text" md={1}>
                 <Typography component="h4" variant="h5" align="center" mb={1} color="white">
                   Security layer development
                 </Typography>
-                <Typography variant="body2">Develop the functionality that will allow our community to create badges with private evidence.</Typography>
+                <Typography variant="body2">
+                  Develop the functionality that will allow our community to create badges with private evidence.
+                </Typography>
               </Grid>
               <Grid item className="roadmap__text" md={1}>
                 <Typography component="h4" variant="h5" align="center" mb={1} color="white">
-                  Pre-launch campaign       </Typography>
+                  Pre-launch campaign{' '}
+                </Typography>
                 <Typography variant="body2">
-                  Marketing pre-launch campaign, incentives for early adopters. Audit and testing of the platform.                </Typography>
+                  Marketing pre-launch campaign, incentives for early adopters. Audit and testing of the platform.{' '}
+                </Typography>
               </Grid>
               <Grid item className="roadmap__text" md={1}>
                 <Typography component="h4" variant="h5" align="center" mb={1} color="white">
@@ -99,11 +115,7 @@ export const Roadmap = () => {
             ROADMAP
           </Typography>
           <Box position="relative" zIndex={1}>
-            <Grid
-              container
-              gap={4}
-              justifyContent="space-around"
-            >
+            <Grid container gap={4} justifyContent="space-around">
               <Grid item className="roadmap__circle">
                 <p>01</p>
               </Grid>
@@ -128,19 +140,29 @@ export const Roadmap = () => {
           >
             <Grid container gap={0} justifyContent="space-around" flexWrap="nowrap">
               <Grid item className="roadmap__year">
-                <p><CheckCircleOutlineIcon /> 2022</p>
+                <p>
+                  <CheckCircleOutlineIcon /> 2022
+                </p>
               </Grid>
               <Grid item className="roadmap__year">
-                <p><span>Q1 & Q2</span>2023</p>
+                <p>
+                  <span>Q1 & Q2</span>2023
+                </p>
               </Grid>
               <Grid item className="roadmap__year">
-                <p><span>Q3</span>2023</p>
+                <p>
+                  <span>Q3</span>2023
+                </p>
               </Grid>
               <Grid item className="roadmap__year">
-                <p><span>Q4</span>2023</p>
+                <p>
+                  <span>Q4</span>2023
+                </p>
               </Grid>
               <Grid item className="roadmap__year">
-                <p><span>Q1</span>2024</p>
+                <p>
+                  <span>Q1</span>2024
+                </p>
               </Grid>
             </Grid>
           </BoxGradient>
@@ -161,7 +183,8 @@ export const Roadmap = () => {
                 Certification platform development
               </Typography>
               <Typography variant="body2">
-                Creating the first badges that will help us to better understand the best way to make our platform adaptable to different scenarios.
+                Creating the first badges that will help us to better understand the best way to make our platform
+                adaptable to different scenarios.
               </Typography>
             </Grid>
             <Grid item className="roadmap__text" md={1}>
@@ -169,7 +192,9 @@ export const Roadmap = () => {
               <Typography component="h5" variant="h5" align="center" mb={2} color="white">
                 Security layer development
               </Typography>
-              <Typography variant="body2">Develop the functionality that will allow our community to create badges with private evidence.</Typography>
+              <Typography variant="body2">
+                Develop the functionality that will allow our community to create badges with private evidence.
+              </Typography>
             </Grid>
             <Grid item className="roadmap__text" md={1}>
               <div className="line" />
