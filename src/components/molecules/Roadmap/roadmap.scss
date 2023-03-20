@@ -28,22 +28,21 @@
     background-color: rgb(255, 255, 255);
     background-clip: content-box;
     border-radius: 50%;
-    border: 10px transparent solid;
+    border: 10px salmon solid;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    box-shadow: 0 0 0 5em rgba(0, 0, 0);
 
     &::before {
       content: '';
       width: 0px;
       height: 0px;
       position: absolute;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 10px solid white;
-      margin-top: 92px;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 24px solid salmon;
+      margin-top: 84px;
     }
 
     p {
@@ -63,6 +62,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
+    position: relative;
 
     &::before {
       content: '';
@@ -80,13 +80,25 @@
       font-weight: 700;
       color: rgb(175, 175, 175);
     }
+
+    .year_mobile {
+      color: white;
+      font-weight: 700;
+      margin-top: 7em;
+      font-size: medium;
+      position: absolute;
+      width: max-content;
+    }
   }
+
   &__year {
     p {
       color: white;
       font-weight: 700;
     }
   }
+
+  
   &__text {
     .line {
       width: 2px;

@@ -27,23 +27,23 @@ export const Roadmap = () => {
             <Grid container direction="column" width={'30%'} gap={15}>
               <Grid item className="roadmap__circle_mobile">
                 <p>01</p>
-                {/* <p>2022 (C)</p> */}
+                <p className="year_mobile">2022 (C)</p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>02</p>
-                {/* <p>2023 Q1</p> */}
+                <p className="year_mobile">2023 Q1</p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>03</p>
-                {/* <p>2023 Q2 & Q3</p> */}
+                <p className="year_mobile">2023 Q2 & Q3</p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>04</p>
-                {/* <p>2023 Q4</p> */}
+                <p className="year_mobile">2023 Q4</p>
               </Grid>
               <Grid item className="roadmap__circle_mobile">
                 <p>05</p>
-                {/* <p>2024 Q1</p> */}
+                <p className="year_mobile">2024 Q1</p>
               </Grid>
             </Grid>
             <BoxGradient
@@ -110,10 +110,6 @@ export const Roadmap = () => {
               container
               gap={4}
               justifyContent="space-around"
-              sx={{
-                background:
-                  'linear-gradient(90deg, #008362 0%, #5BBCAD 21.48%, #002CBF 50.63%, #B74AD6 74.67%, #891CFB 98.2%);',
-              }}
             >
               <Grid item className="roadmap__circle">
                 <p>01</p>
