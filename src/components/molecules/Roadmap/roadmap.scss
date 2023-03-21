@@ -1,0 +1,134 @@
+.roadmap {
+  z-index: 2;
+  h3 {
+    z-index: 2;
+    position: relative;
+  }
+
+  &__timeline {
+    z-index: 1;
+    position: relative;
+    height: 58px;
+    width: 100%;
+    border-radius: 24px;
+    margin: 24px 0;
+    align-items: center;
+  }
+  &__timeline_mobile {
+    height: 48.5rem;
+    width: 25px;
+    border-radius: 24px;
+    margin: 0;
+  }
+  &__circle {
+    height: 78px;
+    width: 78px;
+    background-color: white;
+    background-clip: content-box;
+    border-radius: 50%;
+    border: 10px tomato solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    &::before {
+      content: '';
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-top: 24px solid tomato;
+      margin-top: 84px;
+    }
+
+    p {
+      font-size: xx-large;
+      font-weight: 700;
+      color: rgb(61, 61, 61);
+    }
+  }
+
+  &__circle_mobile {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 50%;
+    border: 6px tomato solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 12px solid tomato;
+      margin-left: 64px;
+    }
+
+    p {
+      font-size: x-large;
+      font-weight: 700;
+      color: rgb(61, 61, 61);
+    }
+
+    .year_mobile {
+      color: white;
+      font-weight: 700;
+      margin-top: 7em;
+      font-size: medium;
+      position: absolute;
+      width: max-content;
+
+      span {
+        font-weight: 500;
+        font-size: small;
+        margin: 0 0.25rem 0 0;
+      }
+    }
+  }
+
+  &__year {
+    span {
+      font-weight: 500;
+      font-size: medium;
+      margin: 0 0.4rem 0 0;
+    }
+    p {
+      color: white;
+      font-weight: 700;
+      font-size: larger;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    .line {
+      width: 2px;
+      height: 50px;
+      border: 2px dashed white;
+      margin: 0 50% 8px;
+    }
+
+    h4,
+    h5 {
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    p {
+      color: white;
+      font-weight: 600;
+      font-size: small;
+      text-align: center;
+    }
+  }
+}
