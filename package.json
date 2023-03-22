@@ -1,6 +1,6 @@
 {
   "name": "thebadge-ui-library",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -93,6 +93,5 @@
     "typescript": "^4.8.2",
     "webpack": "^4.46.0"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "thebadge-ui-library@1.0.0"
+  "readme": "ERROR: No README data found!"
 }
