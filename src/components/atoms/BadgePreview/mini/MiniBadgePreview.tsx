@@ -1,4 +1,4 @@
-import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
+import { BadgePreviewEffects, MiniBadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Box, styled, Typography } from '@mui/material'
 import React, { useEffect } from 'react'
@@ -8,9 +8,7 @@ import './miniBadgePreview.scss'
 const defaultBackgroundUrl =
   'https://images.unsplash.com/photo-1566041510639-8d95a2490bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80'
 
-const defaultValuesForBadgePreviewProps = {
-  size: 'medium' as BadgeSize,
-  badgeUrl: 'https://www.thebadge.xyz/',
+const defaultValuesForMiniBadgePreviewProps = {
   badgeBackgroundUrl: defaultBackgroundUrl,
   title: '',
   category: '',
@@ -31,7 +29,7 @@ const MiniBadgePreviewBox = styled(Box)<{ highlightColor?: string }>(({ highligh
   padding: '0 12px',
 }))
 
-export const MiniBadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
+export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesForMiniBadgePreviewProps) => {
   useEffect(() => {
     // As the background is made with .scss, we add the variable to be able
     // to use the given url on it
@@ -54,14 +52,11 @@ export const MiniBadgePreview = (props: BadgePreviewProps = defaultValuesForBadg
       <div
         className={[
           `mini-badge-preview__container`,
-          `mini-badge-preview__container--${props.size}`,
           `mini-badge-preview__container--${props.textContrast ?? 'light'}`,
         ].join(' ')}
       >
         <div className={'mini-badge-preview__header'}>
-          <div
-            className={`mini-badge-preview__header--image-container mini-badge-preview__header--image-container--${props.size}`}
-          >
+          <div className={'mini-badge-preview__header--image-container'}>
             <div className={'mini-badge-preview__header--background-image'} aria-label="Badge image background">
               <span className={'mini-badge-preview__header--image'}>
                 {props.imageUrl ? <img src={props.imageUrl} alt="Badge image" /> : <LogoTheBadgeWithText size={60} />}
@@ -69,10 +64,7 @@ export const MiniBadgePreview = (props: BadgePreviewProps = defaultValuesForBadg
             </div>
           </div>
         </div>
-        <Typography
-          component={'div'}
-          className={`mini-badge-preview__content mini-badge-preview__content--${props.size}`}
-        >
+        <Typography component={'div'} className={'mini-badge-preview__content'}>
           <div
             className={[
               `mini-badge-preview__content--title`,

@@ -17,3 +17,4 @@ export interface BadgePreviewProps {
   highlightColor?: string // for now only used on mini badge preview
   textContrastOutside?: BadgeTextContrast // for now only used on mini badge preview
 }
+export type MiniBadgePreviewProps = Omit<BadgePreviewProps, 'size' | 'badgeUrl' | 'iconUrl'>
