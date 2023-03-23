@@ -1,0 +1,224 @@
+@use '../../../../assets/scss/functions/_base.functions' as *;
+@use '../../../../assets/scss/variables/variables.module';
+
+$--badgeBackgroundUrl: '';
+
+.mini-badge-preview {
+  position: relative;
+  color: variables.$tb-black-text;
+  cursor: pointer;
+
+  &__container {
+    display: flex;
+    flex-flow: column;
+    width: 135px;
+    height: 150px;
+    border-radius: 8px;
+    padding: 8px;
+
+    &--dark {
+      color: white;
+      background: var(--badgeBackgroundUrl) center;
+      background-size: cover;
+      background-repeat: repeat-x;
+    }
+
+    &--dark-withTextBackground {
+      color: white;
+      background: linear-gradient(
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 2%,
+            rgba(0, 0, 0, 0.7) 25%,
+            rgba(0, 0, 0, 0.9) 100%
+          )
+          bottom,
+        var(--badgeBackgroundUrl) center;
+      background-size: auto 30%, cover;
+      background-repeat: repeat-x;
+    }
+
+    &--light {
+      color: black;
+      background: var(--badgeBackgroundUrl) center;
+      background-size: cover;
+      background-repeat: repeat-x;
+    }
+
+    &--light-withTextBackground {
+      color: black;
+      background: linear-gradient(
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 2%,
+            rgba(255, 255, 255, 0.7) 25%,
+            rgba(255, 255, 255, 0.9) 75%
+          )
+          bottom,
+        var(--badgeBackgroundUrl) center;
+      background-size: auto 30%, cover;
+      background-repeat: repeat-x;
+    }
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 12px;
+    flex: 5;
+
+    &--image-container {
+      display: flex;
+      position: relative;
+
+      &--x-large {
+        padding-bottom:16px;
+        padding-top: 16px;
+      }
+    }
+
+    &--background-image {
+      width: 85%;
+      aspect-ratio: 1; // Keeps the relations with the width, making it square and responsive
+      background: #000216;
+      border-radius: 16px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+    }
+
+    &--image {
+      border-radius: 16px;
+      height: fit-content;
+      width: fit-content;
+      max-height: 100%;
+      max-width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &__content {
+    position: relative;
+    flex: 2;
+
+    &--title {
+      flex: 0 1 auto;
+      font-weight: variables.$font-weight-large;
+      font-size: convert-to-rem(10px);
+      line-height: convert-to-rem(12px);
+      margin: 3% 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &--category {
+      flex: 0 1 auto;
+      font-weight: variables.$font-weight-black;
+      font-size: convert-to-rem(10px);
+      line-height: convert-to-rem(12px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &--description {
+      font-weight: variables.$font-weight-normal;
+      font-size: convert-to-rem(11px);
+      line-height: convert-to-rem(14px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 12px;
+    }
+
+    &--dark,
+    &--dark-withTextBackground {
+      color: white;
+    }
+
+
+    &--light,
+    &--light-withTextBackground {
+      color: black;
+    }
+  }
+
+  &--grow {
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      scale: 1.075;
+    }
+  }
+
+  &--wobble {
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      animation: move-v2 5s infinite;
+    }
+  }
+
+  &--glare {
+    .glare {
+      border-radius: 8px;
+
+      &:hover {
+        animation: glare-v2 5s infinite;
+        mix-blend-mode: overlay;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  @keyframes move-v2 {
+    0% {
+      transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
+    }
+    33% {
+      transform: perspective(1500px) rotateY(10deg) rotateX(-5deg);
+    }
+    66% {
+      transform: perspective(1500px) rotateY(-10deg) rotateX(5deg);
+    }
+    100% {
+      transform: perspective(1500px) rotateY(0deg) rotateX(0deg);
+    }
+  }
+
+  @keyframes glare-v2 {
+    0% {
+      background: none;
+    }
+    33% {
+      // at X Y
+      // First value moves over X axis
+      // Second value vmoves over Y axis
+      background: radial-gradient(
+        farthest-corner circle at 20% 20%,
+        rgba(255, 255, 255, 0.8) 10%,
+        rgba(255, 255, 255, 0.65) 20%,
+        rgba(0, 0, 0, 0.5) 90%
+      );
+    }
+    66% {
+      background: radial-gradient(
+        farthest-corner circle at 80% 80%,
+        rgba(255, 255, 255, 0.8) 10%,
+        rgba(255, 255, 255, 0.65) 20%,
+        rgba(0, 0, 0, 0.5) 90%
+      );
+    }
+    100% {
+      background: none;
+    }
+  }
+}
+
+.glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

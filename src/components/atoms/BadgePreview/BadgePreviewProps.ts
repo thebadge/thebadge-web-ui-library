@@ -14,4 +14,7 @@ export interface BadgePreviewProps {
   onClick?: () => void
   animationOnHover?: boolean
   animationEffects: BadgePreviewEffects[]
+  highlightColor?: string // for now only used on mini badge preview
+  textContrastOutside?: BadgeTextContrast // for now only used on mini badge preview
 }
+export type MiniBadgePreviewProps = Omit<BadgePreviewProps, 'size' | 'badgeUrl' | 'iconUrl'>
