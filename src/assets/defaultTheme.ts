@@ -246,6 +246,12 @@ export const genericColors = {
       contrastText: colors.white,
     },
   }),
+  greenLogo: augmentColor({
+    color: {
+      main: colors.greenLogo,
+      contrastText: colors.blackText,
+    },
+  }),
 }
 
 export type TBColor = keyof typeof colors

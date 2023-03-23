@@ -13,6 +13,7 @@ import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
 // components
 import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
 import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
+import { MiniBadgePreview } from '@components/atoms/BadgePreview/mini/MiniBadgePreview'
 import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { Button } from '@components/atoms/Button/v1/Button'
 import { ButtonV2 } from '@components/atoms/Button/v2/Button'
@@ -29,6 +30,7 @@ import { IconMedium } from '@components/icons/IconMedium/IconMedium'
 import { IconTwitter } from '@components/icons/IconTwitter/IconTwitter'
 import { BackgroundGradient } from '@components/layout/BackgroundGradient/BackgroundGradient'
 import { BoxGradient, BoxGradientProps } from '@components/layout/BoxGradient/BoxGradient'
+import { BoxBorderGradient } from '@components/layout/BoxBorderGradient/BoxBorderGradient'
 import { SectionLayout, SectionLayoutProps } from '@components/layout/SectionLayout/SectionLayout'
 import { LogoProps } from '@components/logos/LogoProps'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
@@ -41,7 +43,6 @@ import {
   ResizedBadgePreviewsListProps,
 } from '@components/molecules/ResizedBadgePreviewsList/ResizedBadgePreviewsList'
 import { Stepper, StepperProps } from '@components/molecules/Stepper/Stepper'
-import { BoxBorderGradient } from '@components/layout/BoxBorderGradient/BoxBorderGradient'
 
 export {
   lightTheme,
@@ -53,8 +54,8 @@ export {
   Button,
   ButtonV2,
   BadgePreview,
-  BoxBorderGradient,
   BadgePreviewV2,
+  MiniBadgePreview,
   NavigationHeader,
   SpinningArrow,
   IconBadge,
@@ -68,6 +69,7 @@ export {
   IconTwitter,
   BackgroundGradient,
   BoxGradient,
+  BoxBorderGradient,
   SectionLayout,
   LogoTheBadge,
   LogoTheBadgeWithText,
