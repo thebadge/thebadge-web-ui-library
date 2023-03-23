@@ -19,10 +19,10 @@ const defaultValuesForBadgePreviewProps = {
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
-const MiniBadgePreviewBox = styled(Box)<{ highlightColor?: string }>(({highlightColor}) => ({
+const MiniBadgePreviewBox = styled(Box)<{ highlightColor?: string }>(({ highlightColor }) => ({
   width: 180,
   height: 250,
-  border: `2px solid ${highlightColor||colors.white}`,
+  border: `2px solid ${highlightColor || colors.white}`,
   borderRadius: '8px',
   display: 'flex',
   flexDirection: 'column',
@@ -64,21 +64,20 @@ export const MiniBadgePreview = (props: BadgePreviewProps = defaultValuesForBadg
           >
             <div className={'mini-badge-preview__header--background-image'} aria-label="Badge image background">
               <span className={'mini-badge-preview__header--image'}>
-                {props.imageUrl ? (
-                  <img src={props.imageUrl} alt="Badge image" />
-                ) : (
-                  <LogoTheBadgeWithText size={60} />
-                )}
+                {props.imageUrl ? <img src={props.imageUrl} alt="Badge image" /> : <LogoTheBadgeWithText size={60} />}
               </span>
             </div>
           </div>
         </div>
-        <Typography component={'div'} className={`mini-badge-preview__content mini-badge-preview__content--${props.size}`}>
+        <Typography
+          component={'div'}
+          className={`mini-badge-preview__content mini-badge-preview__content--${props.size}`}
+        >
           <div
             className={[
               `mini-badge-preview__content--title`,
               `text-max-lines--1`,
-              `mini-badge-preview__content--${props.textContrast ?? 'light'}`
+              `mini-badge-preview__content--${props.textContrast ?? 'light'}`,
             ].join(' ')}
           >
             {props.title}
@@ -87,7 +86,7 @@ export const MiniBadgePreview = (props: BadgePreviewProps = defaultValuesForBadg
             className={[
               `mini-badge-preview__content--category`,
               `text-max-lines--1`,
-              `mini-badge-preview__content--${props.textContrast ?? 'light'}`
+              `mini-badge-preview__content--${props.textContrast ?? 'light'}`,
             ].join(' ')}
           >
             {props.category}
@@ -98,7 +97,7 @@ export const MiniBadgePreview = (props: BadgePreviewProps = defaultValuesForBadg
         className={[
           `mini-badge-preview__content--description`,
           `text-max-lines--4`,
-          `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`
+          `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`,
         ].join(' ')}
       >
         {props.description}
