@@ -12,9 +12,6 @@ export const Roadmap = () => {
       {/* Roadmap for MOBILE */}
       {shoMobileView && (
         <>
-          <Typography component="h3" variant="h3" align="center" mb={3} color="white">
-            ROADMAP
-          </Typography>
           <Box
             sx={{
               display: 'flex',
@@ -111,9 +108,6 @@ export const Roadmap = () => {
       {/* Roadmap for desktop */}
       {!shoMobileView && (
         <>
-          <Typography component="h3" variant="h3" align="center" mb={3} color="white">
-            ROADMAP
-          </Typography>
           <Box position="relative" zIndex={1}>
             <Grid container gap={4} justifyContent="space-around">
               <Grid item className="roadmap__circle">
