@@ -1,3 +1,5 @@
+import React from 'react'
+
 export type BadgePreviewEffects = 'wobble' | 'grow' | 'glare'
 export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
 export type BadgeTextContrast = 'light' | 'dark' | 'light-withTextBackground' | 'dark-withTextBackground'
@@ -11,10 +13,13 @@ export interface BadgePreviewProps {
   description: string
   iconUrl?: string
   imageUrl?: string
-  onClick?: () => void
+  onClick?: () => void // will be shared among the button and the badge
   animationOnHover?: boolean
   animationEffects: BadgePreviewEffects[]
   highlightColor?: string // for now only used on mini badge preview
   textContrastOutside?: BadgeTextContrast // for now only used on mini badge preview
+  buttonTitle?: string // Text that will be used on the button
+  miniIcon?: React.ReactNode // Icon above the title
+  selected?: boolean // Marks the badge as selected
 }
 export type MiniBadgePreviewProps = Omit<BadgePreviewProps, 'size' | 'badgeUrl' | 'iconUrl'>

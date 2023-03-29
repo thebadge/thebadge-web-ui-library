@@ -6,17 +6,19 @@ export type ButtonProps = MUIButtonProps & {
   width?: string
   fontColor?: string
   backgroundColor?: string
+  fontSize?: string
+  height?: string
 }
 
 const StyledButton = styled(Button, {
   shouldForwardProp: (propName) => propName !== 'fontColor' && propName !== 'backgroundColor',
-})<ButtonProps>(({ theme, width, fontColor, backgroundColor }) => ({
+})<ButtonProps>(({ theme, width, fontColor, backgroundColor, height }) => ({
+  height,
   width: width ? `${width}` : 'fit-content',
   color: fontColor || colors.white,
   backgroundColor: backgroundColor || colors.blue,
   whiteSpace: 'pre-line',
   fontWeight: '500',
-  fontSize: '28px',
   lineHeight: '28px',
   borderRadius: '8px',
   padding: theme.spacing(0.5, 2.6),
@@ -35,5 +37,5 @@ const StyledButton = styled(Button, {
 }))
 
 export const ButtonV2 = (props: ButtonProps) => {
-  return <StyledButton {...props} />
+  return <StyledButton style={{ fontSize: props.fontSize || '28px' }} {...props} />
 }

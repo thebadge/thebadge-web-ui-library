@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
 import { MiniBadgePreview } from './MiniBadgePreview'
 import { BadgePreviewEffects, BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
-import { colors } from '../../../../index'
+import { colors, IconBadge } from '../../../../index'
 
 const EXAMPLE_URLS = {
   backgroundOne:
@@ -55,8 +55,7 @@ const Template: Story<BadgePreviewProps> = (args) => {
 export const BadgePreviewLongTexts = Template.bind({})
 BadgePreviewLongTexts.args = {
   size: 'large',
-  title:
-    'TITLE xxx Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  title: 'INFO TITLE',
   category:
     'Subline Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   description:
@@ -71,6 +70,10 @@ BadgePreviewLongTexts.args = {
   animationEffects: [] as BadgePreviewEffects[],
   textContrast: 'dark-withTextBackground',
   textContrastOutside: 'dark-withTextBackground',
+  highlightColor: colors.greenLogo,
+  buttonTitle: 'CURATE',
+  miniIcon: <IconBadge width={25} height={25} color={colors.white} />,
+  selected: true,
 }
 
 export const BadgePreviewWithAnimationOnHover = Template.bind({})

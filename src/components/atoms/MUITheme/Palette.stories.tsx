@@ -17,7 +17,7 @@ export default {
 
 const Template: Story = () => {
   const theme = useTheme()
-  // Its needs to be any to be able to acces the values with the [key] notation.
+  // Its needs to be any to be able to access the values with the [key] notation.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const palette = theme.palette as any
   return (
