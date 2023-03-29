@@ -30,8 +30,7 @@ const MiniBadgePreviewBox = styled(Box)<{ highlightColor?: string }>(() => ({
 
 export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesForMiniBadgePreviewProps) => {
   const theme = useTheme()
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const palette = theme.palette as any
+  const palette = theme.palette
   useEffect(() => {
     // As the background is made with .scss, we add the variable to be able
     // to use the given url on it
@@ -106,7 +105,7 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
         <div className="mini-badge-preview__content--button-container">
           <ButtonV2
             backgroundColor={props.highlightColor}
-            fontColor={palette.getContrastText(props.highlightColor)}
+            fontColor={props.highlightColor ? palette.getContrastText(props.highlightColor) : undefined}
             width={'100%'}
             fontSize={'12px'}
             height={'20px'}
