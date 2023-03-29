@@ -4,6 +4,8 @@ import React from 'react'
 export type BoxGradientProps = {
   gradient: string
   shadowColor?: string
+  className?: string
+  children?: React.ReactNode
   sx?: SxProps<Theme>
 }
 
