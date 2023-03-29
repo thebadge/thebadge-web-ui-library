@@ -1,6 +1,6 @@
 import { BadgePreviewEffects, MiniBadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
-import { alpha, Box, styled, Typography, useTheme } from '@mui/material'
+import { alpha, Box, Stack, styled, Typography, useTheme } from '@mui/material'
 import React, { useEffect } from 'react'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import './miniBadgePreview.scss'
@@ -18,9 +18,11 @@ const defaultValuesForMiniBadgePreviewProps = {
   animationEffects: ['wobble', 'grow'] as BadgePreviewEffects[],
 }
 
-const MiniBadgePreviewBox = styled(Box)<{ highlightColor?: string }>(() => ({
+const MiniBadgePreviewBox = styled(Box, {
+  shouldForwardProp: (propName) => propName !== 'hasActionButton' && propName !== 'hasIcon',
+})<{ hasActionButton: boolean; hasIcon: boolean }>(({ hasActionButton, hasIcon }) => ({
   width: 180,
-  height: 300,
+  height: 250 + (hasIcon ? 25 : 0) + (hasActionButton ? 25 : 0),
   borderRadius: '8px',
   display: 'flex',
   flexDirection: 'column',
@@ -50,6 +52,8 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
         border: `2px solid ${props.highlightColor || colors.white}`,
         background: props.selected && props.highlightColor ? `${alpha(props.highlightColor, 0.15)}` : null,
       }}
+      hasActionButton={!!props.buttonTitle}
+      hasIcon={!!props.miniIcon}
       className={'mini-badge-preview ' + (props.animationOnHover ? animationEffectClasses() : '')}
       onClick={props.onClick}
     >
@@ -69,7 +73,8 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
           </div>
         </div>
         <Typography component={'div'} className={'mini-badge-preview__content'}>
-          <div
+          <Box
+            sx={{ my: 0.5 }}
             className={[
               `mini-badge-preview__content--category`,
               `text-max-lines--1`,
@@ -77,44 +82,46 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
             ].join(' ')}
           >
             {props.category}
-          </div>
+          </Box>
         </Typography>
       </div>
-      <div className="mini-badge-preview__content--title-container">
+      <Stack sx={{ mt: 1, mr: 'auto', gap: 0.5 }} flex={1}>
         {props?.miniIcon}
-        <h1
-          className={[
-            `mini-badge-preview__content--title`,
-            `text-max-lines--1`,
-            `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`,
-          ].join(' ')}
-        >
-          {props.title}
-        </h1>
-        <h3
-          className={[
-            `mini-badge-preview__content--description`,
-            `text-max-lines--4`,
-            `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`,
-          ].join(' ')}
-        >
-          {props.description}
-        </h3>
-      </div>
+        <Stack sx={{ ml: '2px', gap: 0.5 }}>
+          <h1
+            className={[
+              `mini-badge-preview__content--title`,
+              `text-max-lines--1`,
+              `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`,
+            ].join(' ')}
+          >
+            {props.title}
+          </h1>
+          <h3
+            className={[
+              `mini-badge-preview__content--description`,
+              `text-max-lines--3`,
+              `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`,
+            ].join(' ')}
+          >
+            {props.description}
+          </h3>
+        </Stack>
+      </Stack>
       {props.buttonTitle ? (
-        <div className="mini-badge-preview__content--button-container">
+        <Box className="mini-badge-preview__content--button-container">
           <ButtonV2
             backgroundColor={props.highlightColor}
             fontColor={props.highlightColor ? palette.getContrastText(props.highlightColor) : undefined}
             width={'100%'}
-            fontSize={'12px'}
+            sx={{ fontSize: '12px !important' }}
             height={'20px'}
           >
             {props.buttonTitle}
           </ButtonV2>
-        </div>
+        </Box>
       ) : null}
-      <div className="glare" />
+      {/*<div className="glare" />*/}
     </MiniBadgePreviewBox>
   )
 }

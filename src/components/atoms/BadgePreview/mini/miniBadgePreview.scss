@@ -7,7 +7,7 @@ $--badgeBackgroundUrl: '';
   position: relative;
   color: variables.$tb-black-text;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px 10px 10px;
 
   &__container {
     display: flex;
@@ -105,17 +105,12 @@ $--badgeBackgroundUrl: '';
     position: relative;
     flex: 2;
 
-    &--title-container {
-      overflow: hidden;
-      margin-top: 8px;
-    }
 
     &--title {
       flex: 0 1 auto;
-      font-weight: variables.$font-weight-large;
+      font-weight: variables.$font-weight-xbold;
       font-size: convert-to-rem(10px);
       line-height: convert-to-rem(12px);
-      margin: 3% 0;
       overflow: hidden;
       text-overflow: ellipsis;
     }
@@ -132,11 +127,10 @@ $--badgeBackgroundUrl: '';
 
     &--description {
       font-weight: variables.$font-weight-normal;
-      font-size: convert-to-rem(11px);
+      font-size: convert-to-rem(12px);
       line-height: convert-to-rem(14px);
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-top: 12px;
     }
 
     &--button-container {
