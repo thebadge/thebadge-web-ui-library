@@ -20,7 +20,7 @@ const defaultValuesForMiniBadgePreviewProps = {
 
 const MiniBadgePreviewBox = styled(Box)<{ highlightColor?: string }>(() => ({
   width: 180,
-  maxHeight: 300,
+  height: 300,
   borderRadius: '8px',
   display: 'flex',
   flexDirection: 'column',
@@ -86,7 +86,7 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
           className={[
             `mini-badge-preview__content--title`,
             `text-max-lines--1`,
-            `mini-badge-preview__content--${props.textContrast ?? 'light'}`,
+            `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`,
           ].join(' ')}
         >
           {props.title}
