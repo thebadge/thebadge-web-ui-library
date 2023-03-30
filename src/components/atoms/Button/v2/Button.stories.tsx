@@ -1,7 +1,7 @@
 import React from 'react'
 import { Meta } from '@storybook/react/types-6-0'
 import { Story } from '@storybook/react'
-import { ButtonV2, ButtonProps } from './Button'
+import { ButtonV2, ButtonV2Props } from './Button'
 import badgeBackground from '@assets/svgs/badgeBackground.svg'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { ButtonProps as MUIButtonProps } from '@mui/material/Button/Button'
@@ -13,7 +13,7 @@ export default {
 } as Meta
 
 // Create a master template for mapping args to render the Button component
-type ButtonPropsWithLabel = MUIButtonProps & ButtonProps & { label?: string }
+type ButtonPropsWithLabel = MUIButtonProps & ButtonV2Props & { label?: string }
 // eslint-disable-next-line react/prop-types
 const Template: Story<ButtonPropsWithLabel> = ({ label, ...args }) => <ButtonV2 {...args}>{label}</ButtonV2>
 
@@ -30,7 +30,7 @@ export const JoinOurCommunity = Template.bind({})
 JoinOurCommunity.args = {
   label: 'Join our community',
   backgroundColor: colors.green,
-  endIcon: <IconDiscord color={colors.white}></IconDiscord>,
+  endIcon: <IconDiscord color={colors.white} />,
 }
 
 export const SampleButtonPink = Template.bind({})
