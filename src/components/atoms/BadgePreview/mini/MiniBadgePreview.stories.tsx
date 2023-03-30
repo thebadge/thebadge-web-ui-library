@@ -52,7 +52,7 @@ const Template: Story<BadgePreviewProps> = (args) => {
         gap: '32px',
         display: 'flex',
         justifyContent: 'center',
-        height: '80vh',
+        height: '100vh',
       }}
     >
       <MiniBadgePreview {...args} />
@@ -117,8 +117,10 @@ BadgePreviewWithAnimationOnHover.args = {
   animationEffects: ['wobble', 'grow', 'glare'],
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
   textContrast: 'dark-withTextBackground',
-  highlightColor: colors.greenLogo,
+  highlightColor: colors.blue,
   textContrastOutside: 'dark-withTextBackground',
+  buttonTitle: 'MINT',
+  miniIcon: <IconBadge width={25} height={25} color={colors.white} />,
 }
 
 export const BadgePreviewWithButtonAndIconOnly = TemplateMixed.bind({})

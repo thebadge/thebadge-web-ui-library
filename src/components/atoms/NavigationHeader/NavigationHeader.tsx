@@ -10,6 +10,7 @@ import {
   Tabs,
   Toolbar,
   Tooltip,
+  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
@@ -171,7 +172,7 @@ export const NavigationHeader = ({
                 disabled={callToActionItem.disabled}
                 endIcon={callToActionItem.icon}
               >
-                {callToActionItem.label}
+                <Typography>{callToActionItem.label}</Typography>
               </ButtonV2>
             </CallToActionContainer>
           </Tooltip>
