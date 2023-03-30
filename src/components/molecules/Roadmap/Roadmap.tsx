@@ -22,13 +22,13 @@ export const Roadmap = () => {
               <Grid item className="roadmap__circle_mobile border-color--1">
                 <p>01</p>
                 <p className="year_mobile">
-                  <CheckCircleOutlineIcon />{' '}2022
+                  <CheckCircleOutlineIcon /> 2022
                 </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile border-color--2">
                 <p>02</p>
                 <p className="year_mobile">
-                  <CheckCircleOutlineIcon />{' '}<span>Q1</span>2023
+                  <CheckCircleOutlineIcon /> <span>Q1</span>2023
                 </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile border-color--3">
@@ -90,17 +90,15 @@ export const Roadmap = () => {
                 <Typography component="h4" variant="h5" align="center" mb={1} color="white">
                   Going live{' '}
                 </Typography>
-                <Typography variant="body2">
-                  We will be releasing our platform on mainnet and open to use.{' '}
-                </Typography>
+                <Typography variant="body2">We will be releasing our platform on mainnet and open to use. </Typography>
               </Grid>
               <Grid item className="roadmap__text" md={1}>
                 <Typography component="h4" variant="h5" align="center" mb={1} color="white">
                   Third-party and more
                 </Typography>
                 <Typography variant="body2">
-                  Develop and release the third-party creators functionality, together with many other new features
-                  and available badge types.
+                  Develop and release the third-party creators functionality, together with many other new features and
+                  available badge types.
                 </Typography>
               </Grid>
             </Grid>
@@ -138,12 +136,14 @@ export const Roadmap = () => {
             <Grid container gap={0} justifyContent="space-around" flexWrap="nowrap">
               <Grid item className="roadmap__year">
                 <p>
-                  <CheckCircleOutlineIcon sx={{marginRight: '4px'}} />2022
+                  <CheckCircleOutlineIcon sx={{ marginRight: '4px' }} />
+                  2022
                 </p>
               </Grid>
               <Grid item className="roadmap__year">
                 <p>
-                  <CheckCircleOutlineIcon sx={{marginRight: '4px'}} /><span>Q1</span>2023
+                  <CheckCircleOutlineIcon sx={{ marginRight: '4px' }} />
+                  <span>Q1</span>2023
                 </p>
               </Grid>
               <Grid item className="roadmap__year">
@@ -199,9 +199,7 @@ export const Roadmap = () => {
               <Typography component="h5" variant="h5" align="center" mb={2} color="white">
                 Going live
               </Typography>
-              <Typography variant="body2">
-                We will be releasing our platform on mainnet and open to use.
-              </Typography>
+              <Typography variant="body2">We will be releasing our platform on mainnet and open to use.</Typography>
             </Grid>
             <Grid item className="roadmap__text" md={1}>
               <div className="line" />
@@ -209,8 +207,8 @@ export const Roadmap = () => {
                 Third-party and more
               </Typography>
               <Typography variant="body2">
-                Develop and release the third-party creators functionality, together with many other new features
-                and available badge types.
+                Develop and release the third-party creators functionality, together with many other new features and
+                available badge types.
               </Typography>
             </Grid>
           </Grid>
