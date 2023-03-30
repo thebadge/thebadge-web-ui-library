@@ -9,9 +9,10 @@ import {
   Tab,
   Tabs,
   Toolbar,
-  Tooltip, Typography,
+  Tooltip,
+  Typography,
   useMediaQuery,
-  useTheme
+  useTheme,
 } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { ButtonV2 } from '../Button/v2/Button'
