@@ -10,7 +10,7 @@ export type EmptyBadgePreviewProps = {
 }
 
 export default {
-  title: 'Components/Atoms/EmptyBadgePreviewItem',
+  title: 'Components/Atoms/BadgePreview/empty',
   component: EmptyBadgePreview,
 } as Meta
 

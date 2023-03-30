@@ -19,32 +19,32 @@ export const Roadmap = () => {
             }}
           >
             <Grid container direction="column" width={'30%'} gap={15}>
-              <Grid item className="roadmap__circle_mobile">
+              <Grid item className="roadmap__circle_mobile border-color--1">
                 <p>01</p>
                 <p className="year_mobile">
                   <CheckCircleOutlineIcon />
                   2022
                 </p>
               </Grid>
-              <Grid item className="roadmap__circle_mobile">
+              <Grid item className="roadmap__circle_mobile border-color--2">
                 <p>02</p>
                 <p className="year_mobile">
                   <span>Q1 & Q2</span>2023
                 </p>
               </Grid>
-              <Grid item className="roadmap__circle_mobile">
+              <Grid item className="roadmap__circle_mobile border-color--3">
                 <p>03</p>
                 <p className="year_mobile">
                   <span>Q3</span>2023
                 </p>
               </Grid>
-              <Grid item className="roadmap__circle_mobile">
+              <Grid item className="roadmap__circle_mobile border-color--4">
                 <p>04</p>
                 <p className="year_mobile">
                   <span>Q4</span>2023
                 </p>
               </Grid>
-              <Grid item className="roadmap__circle_mobile">
+              <Grid item className="roadmap__circle_mobile border-color--5">
                 <p>05</p>
                 <p className="year_mobile">
                   <span>Q1</span>2024
@@ -110,19 +110,19 @@ export const Roadmap = () => {
         <>
           <Box position="relative" zIndex={1}>
             <Grid container gap={4} justifyContent="space-around">
-              <Grid item className="roadmap__circle">
+              <Grid item className="roadmap__circle border-color--1">
                 <p>01</p>
               </Grid>
-              <Grid item className="roadmap__circle">
+              <Grid item className="roadmap__circle border-color--2">
                 <p>02</p>
               </Grid>
-              <Grid item className="roadmap__circle">
+              <Grid item className="roadmap__circle border-color--3">
                 <p>03</p>
               </Grid>
-              <Grid item className="roadmap__circle">
+              <Grid item className="roadmap__circle border-color--4">
                 <p>04</p>
               </Grid>
-              <Grid item className="roadmap__circle">
+              <Grid item className="roadmap__circle border-color--5">
                 <p>05</p>
               </Grid>
             </Grid>
