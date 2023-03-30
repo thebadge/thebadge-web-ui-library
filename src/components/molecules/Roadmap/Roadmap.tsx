@@ -2,15 +2,15 @@ import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
 import { BoxGradient } from '@components/layout/BoxGradient/BoxGradient'
 import React from 'react'
-
 import './roadmap.scss'
+
 export const Roadmap = () => {
-  const shoMobileView = useMediaQuery('(max-width:800px)')
+  const showMobileView = useMediaQuery('(max-width:800px)')
 
   return (
     <Box className="roadmap">
       {/* Roadmap for MOBILE */}
-      {shoMobileView && (
+      {showMobileView && (
         <>
           <Box
             sx={{
@@ -18,36 +18,35 @@ export const Roadmap = () => {
               gap: 1,
             }}
           >
-            <Grid container direction="column" width={'30%'} gap={15}>
+            <Grid container direction="column" width={'30%'} gap={14} padding={'16px 8px'}>
               <Grid item className="roadmap__circle_mobile border-color--1">
                 <p>01</p>
                 <p className="year_mobile">
-                  <CheckCircleOutlineIcon />
-                  2022
+                  <CheckCircleOutlineIcon /> 2022
                 </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile border-color--2">
                 <p>02</p>
                 <p className="year_mobile">
-                  <span>Q1 & Q2</span>2023
+                  <CheckCircleOutlineIcon /> <span>Q1</span>2023
                 </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile border-color--3">
                 <p>03</p>
                 <p className="year_mobile">
-                  <span>Q3</span>2023
+                  <span>Q2</span>2023
                 </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile border-color--4">
                 <p>04</p>
                 <p className="year_mobile">
-                  <span>Q4</span>2023
+                  <span>Q3</span>2023
                 </p>
               </Grid>
               <Grid item className="roadmap__circle_mobile border-color--5">
                 <p>05</p>
                 <p className="year_mobile">
-                  <span>Q1</span>2024
+                  <span>Q4</span>2023
                 </p>
               </Grid>
             </Grid>
@@ -74,31 +73,33 @@ export const Roadmap = () => {
                   Certification platform development
                 </Typography>
                 <Typography variant="body2">
-                  Creating the first badges that will help us to better understand the best way to make our platform
-                  adaptable to different scenarios.
+                  Develop core functionalities of the platform: creation, minting and curation processes, while start
+                  creating badges defining our first use cases.
                 </Typography>
               </Grid>
               <Grid item className="roadmap__text" md={1}>
                 <Typography component="h4" variant="h5" align="center" mb={1} color="white">
-                  Security layer development
+                  Beta launch and marketing campaign
                 </Typography>
                 <Typography variant="body2">
-                  Develop the functionality that will allow our community to create badges with private evidence.
+                  Start the beta testing program and marketing pre-launch campaign, with incentives for early adopters.
+                  Audit of contracts and testing of the platform.
                 </Typography>
               </Grid>
               <Grid item className="roadmap__text" md={1}>
                 <Typography component="h4" variant="h5" align="center" mb={1} color="white">
-                  Pre-launch campaign{' '}
+                  Going live{' '}
+                </Typography>
+                <Typography variant="body2">We will be releasing our platform on mainnet and open to use. </Typography>
+              </Grid>
+              <Grid item className="roadmap__text" md={1}>
+                <Typography component="h4" variant="h5" align="center" mb={1} color="white">
+                  Third-party and more
                 </Typography>
                 <Typography variant="body2">
-                  Marketing pre-launch campaign, incentives for early adopters. Audit and testing of the platform.{' '}
+                  Develop and release the third-party creators functionality, together with many other new features and
+                  available badge types.
                 </Typography>
-              </Grid>
-              <Grid item className="roadmap__text" md={1}>
-                <Typography component="h4" variant="h5" align="center" mb={1} color="white">
-                  Going live
-                </Typography>
-                <Typography variant="body2">We will be releasing our platform.</Typography>
               </Grid>
             </Grid>
           </Box>
@@ -106,7 +107,7 @@ export const Roadmap = () => {
       )}
 
       {/* Roadmap for desktop */}
-      {!shoMobileView && (
+      {!showMobileView && (
         <>
           <Box position="relative" zIndex={1}>
             <Grid container gap={4} justifyContent="space-around">
@@ -135,12 +136,19 @@ export const Roadmap = () => {
             <Grid container gap={0} justifyContent="space-around" flexWrap="nowrap">
               <Grid item className="roadmap__year">
                 <p>
-                  <CheckCircleOutlineIcon /> 2022
+                  <CheckCircleOutlineIcon sx={{ marginRight: '4px' }} />
+                  2022
                 </p>
               </Grid>
               <Grid item className="roadmap__year">
                 <p>
-                  <span>Q1 & Q2</span>2023
+                  <CheckCircleOutlineIcon sx={{ marginRight: '4px' }} />
+                  <span>Q1</span>2023
+                </p>
+              </Grid>
+              <Grid item className="roadmap__year">
+                <p>
+                  <span>Q2</span>2023
                 </p>
               </Grid>
               <Grid item className="roadmap__year">
@@ -151,11 +159,6 @@ export const Roadmap = () => {
               <Grid item className="roadmap__year">
                 <p>
                   <span>Q4</span>2023
-                </p>
-              </Grid>
-              <Grid item className="roadmap__year">
-                <p>
-                  <span>Q1</span>2024
                 </p>
               </Grid>
             </Grid>
@@ -177,26 +180,18 @@ export const Roadmap = () => {
                 Certification platform development
               </Typography>
               <Typography variant="body2">
-                Creating the first badges that will help us to better understand the best way to make our platform
-                adaptable to different scenarios.
+                Develop core functionalities of the platform: creation, minting and curation processes, while start
+                creating badges defining our first use cases.
               </Typography>
             </Grid>
             <Grid item className="roadmap__text" md={1}>
               <div className="line" />
               <Typography component="h5" variant="h5" align="center" mb={2} color="white">
-                Security layer development
+                Beta launch and marketing campaign
               </Typography>
               <Typography variant="body2">
-                Develop the functionality that will allow our community to create badges with private evidence.
-              </Typography>
-            </Grid>
-            <Grid item className="roadmap__text" md={1}>
-              <div className="line" />
-              <Typography component="h5" variant="h5" align="center" mb={2} color="white">
-                Pre-launch campaign
-              </Typography>
-              <Typography variant="body2">
-                Marketing pre-launch campaign, incentives for early adopters. Audit and testing of the platform.
+                Start the beta testing program and marketing pre-launch campaign, with incentives for early adopters.
+                Audit of contracts and testing of the platform.
               </Typography>
             </Grid>
             <Grid item className="roadmap__text" md={1}>
@@ -204,7 +199,17 @@ export const Roadmap = () => {
               <Typography component="h5" variant="h5" align="center" mb={2} color="white">
                 Going live
               </Typography>
-              <Typography variant="body2">We will be releasing our platform.</Typography>
+              <Typography variant="body2">We will be releasing our platform on mainnet and open to use.</Typography>
+            </Grid>
+            <Grid item className="roadmap__text" md={1}>
+              <div className="line" />
+              <Typography component="h5" variant="h5" align="center" mb={2} color="white">
+                Third-party and more
+              </Typography>
+              <Typography variant="body2">
+                Develop and release the third-party creators functionality, together with many other new features and
+                available badge types.
+              </Typography>
             </Grid>
           </Grid>
         </>
