@@ -13,6 +13,7 @@ import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
 // components
 import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
 import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
+import { EmptyBadgePreview } from '@components/atoms/BadgePreview/empty/EmptyBadgePreview'
 import { MiniBadgePreview } from '@components/atoms/BadgePreview/mini/MiniBadgePreview'
 import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { Button } from '@components/atoms/Button/v1/Button'
@@ -55,6 +56,7 @@ export {
   ButtonV2,
   BadgePreview,
   BadgePreviewV2,
+  EmptyBadgePreview,
   MiniBadgePreview,
   NavigationHeader,
   SpinningArrow,

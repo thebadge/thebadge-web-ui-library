@@ -10,12 +10,15 @@ import {
   Tabs,
   Toolbar,
   Tooltip,
+  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { ButtonV2 } from '../Button/v2/Button'
 import { NavIcon } from './NavIcon'
+import { SxProps } from '@mui/system'
+import { Theme } from '@mui/material/styles'
 
 interface NavigationHeaderItem {
   label: string
@@ -23,6 +26,7 @@ interface NavigationHeaderItem {
   onClick?: () => void
   disabled?: boolean
   tooltip?: string
+  sx?: SxProps<Theme>
 }
 
 export interface NavigationHeaderProps {
@@ -161,14 +165,14 @@ export const NavigationHeader = ({
               <ButtonV2
                 fontColor={colors.white}
                 backgroundColor={colors.blue}
-                sx={{ textTransform: 'none' }}
+                sx={{ textTransform: 'none', ...(callToActionItem.sx ? callToActionItem.sx : {}) }}
                 variant="contained"
                 size="small"
                 onClick={callToActionItem.onClick}
                 disabled={callToActionItem.disabled}
                 endIcon={callToActionItem.icon}
               >
-                {callToActionItem.label}
+                <Typography>{callToActionItem.label}</Typography>
               </ButtonV2>
             </CallToActionContainer>
           </Tooltip>

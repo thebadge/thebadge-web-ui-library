@@ -45,8 +45,36 @@ export default {
 
 const Template: Story<BadgePreviewProps> = (args) => {
   return (
-    <div style={{ background: 'gray', padding: '32px', display: 'flex', justifyContent: 'center', height: '80vh' }}>
+    <div
+      style={{
+        background: 'gray',
+        padding: '32px',
+        gap: '32px',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '100vh',
+      }}
+    >
       <MiniBadgePreview {...args} />
+      <MiniBadgePreview {...args} description={args.description.slice(0, 13)} />
+    </div>
+  )
+}
+
+const TemplateMixed: Story<BadgePreviewProps> = (args) => {
+  return (
+    <div
+      style={{
+        background: 'gray',
+        padding: '32px',
+        gap: '32px',
+        display: 'flex',
+        justifyContent: 'center',
+        height: '80vh',
+      }}
+    >
+      <MiniBadgePreview {...args} buttonTitle="Example" />
+      <MiniBadgePreview {...args} miniIcon={<IconBadge width={25} height={25} color={colors.white} />} />
     </div>
   )
 }
@@ -78,6 +106,25 @@ BadgePreviewLongTexts.args = {
 
 export const BadgePreviewWithAnimationOnHover = Template.bind({})
 BadgePreviewWithAnimationOnHover.args = {
+  size: 'medium',
+  title: 'Diploma in Intellectual Property',
+  category: 'Diploma certificate.',
+  description: 'User with address: 0xD28....16eC has a degree in intellectual property from Austral University',
+  badgeUrl: 'https://www.thebadge.xyz',
+  imageUrl:
+    'https://images.unsplash.com/photo-1564054074885-e5a7c93671d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+  animationOnHover: true,
+  animationEffects: ['wobble', 'grow', 'glare'],
+  badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
+  textContrast: 'dark-withTextBackground',
+  highlightColor: colors.blue,
+  textContrastOutside: 'dark-withTextBackground',
+  buttonTitle: 'MINT',
+  miniIcon: <IconBadge width={25} height={25} color={colors.white} />,
+}
+
+export const BadgePreviewWithButtonAndIconOnly = TemplateMixed.bind({})
+BadgePreviewWithButtonAndIconOnly.args = {
   size: 'medium',
   title: 'Diploma in Intellectual Property',
   category: 'Diploma certificate.',
