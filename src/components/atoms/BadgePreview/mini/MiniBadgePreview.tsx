@@ -85,7 +85,7 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
           </Box>
         </Typography>
       </div>
-      <Stack sx={{ mt: 1, mr: 'auto', gap: 0.5 }} flex={1}>
+      <Stack sx={{ mt: 1, mr: 'auto', gap: 0.5 }} flex={1} maxWidth={'100%'}>
         {props?.miniIcon}
         <Stack sx={{ ml: '2px', gap: 0.5 }}>
           <h1
