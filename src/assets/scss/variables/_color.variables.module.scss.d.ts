@@ -1,5 +1,6 @@
 export const black: string
 export const blackBackground: string
+export const blackBackgroundShadow: string
 export const blackText: string
 export const blue: string
 export const blueDark: string
@@ -16,6 +17,7 @@ export const greenLight: string
 export const greenLogo: string
 export const greenSuccess: string
 export const greyBackground: string
+export const greyStroke: string
 export const orangeWarning: string
 export const pink: string
 export const pinkDark: string

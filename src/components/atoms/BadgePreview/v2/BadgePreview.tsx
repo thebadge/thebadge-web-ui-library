@@ -26,7 +26,7 @@ const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName 
   })
 )
 
-export const BadgePreviewV2 = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
+export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
   useEffect(() => {
     // As the background is made with .scss, we add the variable to be able
     // to use the given url on it

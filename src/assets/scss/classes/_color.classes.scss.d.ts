@@ -1,5 +1,6 @@
 export const backgroundColorBlack: string
 export const backgroundColorBlackBackground: string
+export const backgroundColorBlackBackgroundShadow: string
 export const backgroundColorBlackText: string
 export const backgroundColorBlue: string
 export const backgroundColorBlueDark: string
@@ -16,6 +17,7 @@ export const backgroundColorGreenLight: string
 export const backgroundColorGreenLogo: string
 export const backgroundColorGreenSuccess: string
 export const backgroundColorGreyBackground: string
+export const backgroundColorGreyStroke: string
 export const backgroundColorInherit: string
 export const backgroundColorOrangeWarning: string
 export const backgroundColorPink: string
@@ -33,6 +35,7 @@ export const backgroundColorTransparent: string
 export const backgroundColorWhite: string
 export const black: string
 export const blackBackground: string
+export const blackBackgroundShadow: string
 export const blackText: string
 export const blue: string
 export const blueDark: string
@@ -40,6 +43,7 @@ export const blueInfo: string
 export const blueLight: string
 export const borderColorBlack: string
 export const borderColorBlackBackground: string
+export const borderColorBlackBackgroundShadow: string
 export const borderColorBlackText: string
 export const borderColorBlue: string
 export const borderColorBlueDark: string
@@ -56,6 +60,7 @@ export const borderColorGreenLight: string
 export const borderColorGreenLogo: string
 export const borderColorGreenSuccess: string
 export const borderColorGreyBackground: string
+export const borderColorGreyStroke: string
 export const borderColorInherit: string
 export const borderColorOrangeWarning: string
 export const borderColorPink: string
@@ -73,6 +78,7 @@ export const borderColorTransparent: string
 export const borderColorWhite: string
 export const colorBlack: string
 export const colorBlackBackground: string
+export const colorBlackBackgroundShadow: string
 export const colorBlackText: string
 export const colorBlue: string
 export const colorBlueDark: string
@@ -89,6 +95,7 @@ export const colorGreenLight: string
 export const colorGreenLogo: string
 export const colorGreenSuccess: string
 export const colorGreyBackground: string
+export const colorGreyStroke: string
 export const colorInherit: string
 export const colorOrangeWarning: string
 export const colorPink: string
@@ -109,6 +116,7 @@ export const darkGreen: string
 export const deepPurple: string
 export const fillBlack: string
 export const fillBlackBackground: string
+export const fillBlackBackgroundShadow: string
 export const fillBlackText: string
 export const fillBlue: string
 export const fillBlueDark: string
@@ -125,6 +133,7 @@ export const fillGreenLight: string
 export const fillGreenLogo: string
 export const fillGreenSuccess: string
 export const fillGreyBackground: string
+export const fillGreyStroke: string
 export const fillInherit: string
 export const fillOrangeWarning: string
 export const fillPink: string
@@ -148,6 +157,7 @@ export const greenLight: string
 export const greenLogo: string
 export const greenSuccess: string
 export const greyBackground: string
+export const greyStroke: string
 export const orangeWarning: string
 export const pink: string
 export const pinkDark: string
@@ -162,6 +172,7 @@ export const secondaryDark: string
 export const secondaryLight: string
 export const svgFillBlack: string
 export const svgFillBlackBackground: string
+export const svgFillBlackBackgroundShadow: string
 export const svgFillBlackText: string
 export const svgFillBlue: string
 export const svgFillBlueDark: string
@@ -178,6 +189,7 @@ export const svgFillGreenLight: string
 export const svgFillGreenLogo: string
 export const svgFillGreenSuccess: string
 export const svgFillGreyBackground: string
+export const svgFillGreyStroke: string
 export const svgFillInherit: string
 export const svgFillOrangeWarning: string
 export const svgFillPink: string

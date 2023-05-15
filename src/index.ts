@@ -11,8 +11,7 @@ import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
 
 // components
-import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
-import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
+import { BadgePreview } from '@components/atoms/BadgePreview/v2/BadgePreview'
 import { EmptyBadgePreview } from '@components/atoms/BadgePreview/empty/EmptyBadgePreview'
 import { MiniBadgePreview } from '@components/atoms/BadgePreview/mini/MiniBadgePreview'
 import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
@@ -44,6 +43,10 @@ import {
   ResizedBadgePreviewsListProps,
 } from '@components/molecules/ResizedBadgePreviewsList/ResizedBadgePreviewsList'
 import { Stepper, StepperProps } from '@components/molecules/Stepper/Stepper'
+import {
+  PendingBadgeOverlay,
+  PendingBadgeOverlayProps,
+} from '@components/overlays/PendingBadgeOverlay/PendingBadgeOverlay'
 
 export {
   lightTheme,
@@ -55,7 +58,6 @@ export {
   Button,
   ButtonV2,
   BadgePreview,
-  BadgePreviewV2,
   EmptyBadgePreview,
   MiniBadgePreview,
   NavigationHeader,
@@ -80,6 +82,7 @@ export {
   ResizedBadgePreviewsList,
   Stepper,
   Roadmap,
+  PendingBadgeOverlay,
 }
 export type {
   TBColor,
@@ -92,4 +95,5 @@ export type {
   NavigationHeaderProps,
   BadgePreviewProps,
   ResizedBadgePreviewsListProps,
+  PendingBadgeOverlayProps,
 }
