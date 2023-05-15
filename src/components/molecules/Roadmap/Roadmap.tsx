@@ -30,7 +30,7 @@ const MobileRoadmap = ({ elements }: RoadmapProps): React.ReactElement => {
             const currentQuarter = `Q${index + 1}`
             const quarterAndYearSplit: string[] = element.quarterNumber.split(currentQuarter)
             return (
-              <Grid item className={`roadmap__circle_mobile border-color--${index + 1}`}>
+              <Grid item className={`roadmap__circle_mobile border-color--${index + 1}`} key={index}>
                 <p>{element.numberTitle}</p>
                 <p className="year_mobile">
                   {element.quarterDone && <CheckCircleOutlineIcon />}
@@ -58,7 +58,7 @@ const MobileRoadmap = ({ elements }: RoadmapProps): React.ReactElement => {
         <Grid container gap={0} justifyContent="space-around" direction="column" spacing={4} columns={5}>
           {elements.map((element, index) => {
             return (
-              <Grid item className="roadmap__text" md={1}>
+              <Grid item className="roadmap__text" md={1} key={index}>
                 <Typography component="h4" variant="h5" align="center" mb={1} color="white">
                   {element.quarterTitle}
                 </Typography>
@@ -79,7 +79,7 @@ const DesktopRoadmap = ({ elements }: RoadmapProps): React.ReactElement => {
         <Grid container gap={4} justifyContent="space-around">
           {elements.map((element, index) => {
             return (
-              <Grid item className={`roadmap__circle border-color--${index + 1}`}>
+              <Grid item className={`roadmap__circle border-color--${index + 1}`} key={index}>
                 <p>{element.numberTitle}</p>
               </Grid>
             )
@@ -96,7 +96,7 @@ const DesktopRoadmap = ({ elements }: RoadmapProps): React.ReactElement => {
             const currentQuarter = `Q${index + 1}`
             const quarterAndYearSplit: string[] = element.quarterNumber.split(currentQuarter)
             return (
-              <Grid item className="roadmap__year">
+              <Grid item className="roadmap__year" key={index}>
                 <p>
                   {element.quarterDone && <CheckCircleOutlineIcon sx={{ marginRight: '4px' }} />}
                   {quarterAndYearSplit.length > 1 ? (
@@ -116,7 +116,7 @@ const DesktopRoadmap = ({ elements }: RoadmapProps): React.ReactElement => {
       <Grid container gap={0} justifyContent="space-around" flexWrap="nowrap" spacing={4} columns={5}>
         {elements.map((element, index) => {
           return (
-            <Grid item className="roadmap__text" md={1}>
+            <Grid item className="roadmap__text" md={1} key={index}>
               <div className="line" />
               <Typography component="h5" variant="h5" align="center" mb={2} color="white">
                 {element.quarterTitle}
