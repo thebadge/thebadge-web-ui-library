@@ -37,7 +37,7 @@ import { LogoProps } from '@components/logos/LogoProps'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Carousel } from '@components/molecules/Carousel/Carousel'
-import { Roadmap } from '@components/molecules/Roadmap/Roadmap'
+import { Roadmap, RoadmapItem, RoadmapProps } from '@components/molecules/Roadmap/Roadmap'
 import { MultiBadgePreview, MultiBadgePreviewProps } from '@components/molecules/MultiBadgePreview/MultiBadgePreview'
 import {
   ResizedBadgePreviewsList,
@@ -92,4 +92,6 @@ export type {
   NavigationHeaderProps,
   BadgePreviewProps,
   ResizedBadgePreviewsListProps,
+  RoadmapProps,
+  RoadmapItem,
 }
