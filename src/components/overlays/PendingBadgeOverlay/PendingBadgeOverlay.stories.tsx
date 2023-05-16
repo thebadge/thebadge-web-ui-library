@@ -5,6 +5,7 @@ import { PendingBadgeOverlay, PendingBadgeOverlayProps } from './PendingBadgeOve
 import { BadgePreview } from '@components/atoms/BadgePreview/v2/BadgePreview'
 import { MiniBadgePreview } from '@components/atoms/BadgePreview/mini/MiniBadgePreview'
 import { BadgePreviewEffects, BadgeTextContrast } from '@components/atoms/BadgePreview/BadgePreviewProps'
+import { colors } from '../../../index'
 
 export default {
   title: 'Components/Overlays/PendingBadgeOverlay',
@@ -41,17 +42,30 @@ SampleBadgeWithPendingBadgeOverlay.args = {
 export const SampleBadgeWithPendingBadgeOverlayWithTimeLeft = Template.bind({})
 SampleBadgeWithPendingBadgeOverlayWithTimeLeft.args = {
   badge: <BadgePreview {...badgeCommonArgs} size={'medium'} badgeUrl={'https://www.thebadge.xyz'} />,
-  percentage: 60,
+  percentage: 63,
   timeLeft: {
     quantity: 10,
     unitText: 'days left',
   },
 }
 
+export const SampleBadgeWithPendingBadgeOverlayWithCustomColors = Template.bind({})
+SampleBadgeWithPendingBadgeOverlayWithCustomColors.args = {
+  badge: <BadgePreview {...badgeCommonArgs} size={'medium'} badgeUrl={'https://www.thebadge.xyz'} />,
+  percentage: 81,
+  timeLeft: {
+    quantity: 10,
+    unitText: 'days left',
+  },
+  backgroundShadowColor: colors.blueLight,
+  progressDoneStrokeColor: colors.blue,
+  progressRemainingStrokeColor: colors.orangeWarning,
+}
+
 export const SampleMiniBadgeWithPendingBadgeOverlay = Template.bind({})
 SampleMiniBadgeWithPendingBadgeOverlay.args = {
   badge: <MiniBadgePreview {...badgeCommonArgs} />,
-  percentage: 65,
+  percentage: 62,
 }
 
 export const SampleMiniBadgeWithPendingBadgeOverlayWithTimeLeft = Template.bind({})
@@ -59,7 +73,20 @@ SampleMiniBadgeWithPendingBadgeOverlayWithTimeLeft.args = {
   badge: <MiniBadgePreview {...badgeCommonArgs} />,
   percentage: 65,
   timeLeft: {
-    quantity: 1532,
+    quantity: 153,
     unitText: 'hours left',
   },
+}
+
+export const SampleMiniBadgeWithPendingBadgeOverlayWithCustomColors = Template.bind({})
+SampleMiniBadgeWithPendingBadgeOverlayWithCustomColors.args = {
+  badge: <MiniBadgePreview {...badgeCommonArgs} />,
+  percentage: 72,
+  timeLeft: {
+    quantity: 3,
+    unitText: 'months left',
+  },
+  backgroundShadowColor: colors.greenLight,
+  progressDoneStrokeColor: colors.green,
+  progressRemainingStrokeColor: colors.white,
 }

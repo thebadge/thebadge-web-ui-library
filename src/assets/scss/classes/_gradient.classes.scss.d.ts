@@ -10,7 +10,6 @@ export const backgroundGradientHeader: string
 export const backgroundInherit: string
 export const black: string
 export const blackBackground: string
-export const blackBackgroundShadow: string
 export const blackText: string
 export const blue: string
 export const blueDark: string
