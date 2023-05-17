@@ -19,7 +19,7 @@ $tb-blue-light: #59bcf733;
 // Dark blue
 $tb-dark-blue: #0d0b20;
 
-//purple
+// purple
 $tb-purple: #b74ad6;
 
 // deepPurple
@@ -47,6 +47,9 @@ $tb-transparent: transparent;
 // background
 $tb-black-background: #2d2d2d;
 $tb-grey-background: #7e7e7e;
+
+// stroke
+$tb-grey-stroke: #d9d9d9;
 
 // messages
 $tb-red-error: #ed5956;
@@ -90,6 +93,7 @@ $colors: (
   'transparent': $tb-transparent,
   'blackBackground': $tb-black-background,
   'greyBackground': $tb-grey-background,
+  'greyStroke': $tb-grey-stroke,
   'redError': $tb-red-error,
   'orangeWarning': $tb-orange-warning,
   'blueInfo': $tb-blue-info,

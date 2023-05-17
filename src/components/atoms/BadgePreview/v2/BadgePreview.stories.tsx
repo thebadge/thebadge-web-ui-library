@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
-import { BadgePreviewV2 } from './BadgePreview'
+import { BadgePreview } from './BadgePreview'
 import { BadgePreviewEffects, BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 
 const EXAMPLE_URLS = {
@@ -21,7 +21,7 @@ const EXAMPLE_URLS = {
 
 export default {
   title: 'Components/Atoms/BadgePreview/v2',
-  component: BadgePreviewV2,
+  component: BadgePreview,
   argTypes: {
     badgeBackgroundUrl: {
       options: Object.keys(EXAMPLE_URLS), // An array of serializable values
@@ -45,7 +45,7 @@ export default {
 const Template: Story<BadgePreviewProps> = (args) => {
   return (
     <div style={{ background: 'gray', padding: '32px', display: 'flex', justifyContent: 'center', height: '80vh' }}>
-      <BadgePreviewV2 {...args} />
+      <BadgePreview {...args} />
     </div>
   )
 }

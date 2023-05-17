@@ -1,13 +1,13 @@
 import { BadgeCategories, BadgeTypes } from '@businessLogic/badge'
 import { BadgePreviewEffects, BadgeSize, BadgeTextContrast } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
+import { BadgePreview as BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
 import {
   ResizedBadgePreviewsList,
   ResizedBadgePreviewsListProps,
 } from '@components/molecules/ResizedBadgePreviewsList/ResizedBadgePreviewsList'
 import { Meta, Story } from '@storybook/react'
 import React from 'react'
-import { BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
 
 export default {
   title: 'Components/Molecules/ResizedBadgePreviewsList',

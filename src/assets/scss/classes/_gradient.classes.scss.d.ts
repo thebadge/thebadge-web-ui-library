@@ -35,6 +35,7 @@ export const greenLight: string
 export const greenLogo: string
 export const greenSuccess: string
 export const greyBackground: string
+export const greyStroke: string
 export const orangeWarning: string
 export const pink: string
 export const pinkDark: string

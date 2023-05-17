@@ -57,6 +57,7 @@ export const greenLight: string
 export const greenLogo: string
 export const greenSuccess: string
 export const greyBackground: string
+export const greyStroke: string
 export const lineHeightBody1: string
 export const lineHeightBody2: string
 export const lineHeightBody3: string
