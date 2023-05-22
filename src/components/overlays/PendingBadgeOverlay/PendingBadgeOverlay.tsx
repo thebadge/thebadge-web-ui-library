@@ -94,7 +94,7 @@ export const PendingBadgeOverlay = (props: PendingBadgeOverlayProps) => {
                 {props.timeLeft ? (
                   <Box sx={{ position: 'absolute' }}>
                     <TimeLeftContainer sx={{ maxWidth: circularProgressSize / 1.5 }}>
-                      <Typography variant={'h2'} component={'h2'} sx={{ textAlign: 'center' }}>
+                      <Typography variant={'h2'} component={'h2'} lineHeight={'100%'} sx={{ textAlign: 'center' }}>
                         {props.timeLeft?.quantity}
                       </Typography>
                       <Typography
@@ -103,6 +103,7 @@ export const PendingBadgeOverlay = (props: PendingBadgeOverlayProps) => {
                         fontSize={16}
                         component={'span'}
                         sx={{ textAlign: 'center' }}
+                        lineHeight={'125%'}
                       >
                         {props.timeLeft?.unitText}
                       </Typography>
