@@ -1,7 +1,7 @@
 import { BadgePreviewEffects, MiniBadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { alpha, Box, Stack, styled, Typography, useTheme } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import './miniBadgePreview.scss'
 import { ButtonV2 } from '@components/atoms/Button/v2/Button'
@@ -33,6 +33,10 @@ const MiniBadgePreviewBox = styled(Box, {
 export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesForMiniBadgePreviewProps) => {
   const theme = useTheme()
   const palette = theme.palette
+  const descriptionRef = useRef<HTMLHeadingElement>(null)
+  const titleRef = useRef<HTMLHeadingElement>(null)
+  const [descriptionMaxLines, setDescriptionMaxLines] = useState(3)
+
   useEffect(() => {
     // As the background is made with .scss, we add the variable to be able
     // to use the given url on it
@@ -41,6 +45,17 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
       `url(${props.badgeBackgroundUrl ? props.badgeBackgroundUrl : defaultBackgroundUrl})`
     )
   }, [props.badgeBackgroundUrl])
+
+  useEffect(() => {
+    if (!titleRef.current) return
+    // This useEffect determines how many lines should be displayed for the description based on the height of the title element.
+    const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight)
+    const textHeight = titleRef.current.offsetHeight
+    const numberOfLines = Math.round(textHeight / lineHeight)
+    // The title element is hardcoded to be NOT more than 2 lines
+    if (numberOfLines === 2) setDescriptionMaxLines(2)
+    else setDescriptionMaxLines(3)
+  }, [titleRef.current, props.title])
 
   const animationEffectClasses = () => {
     return props.animationEffects && props.animationEffects.map((effect) => `mini-badge-preview--${effect}`).join(' ')
@@ -89,18 +104,20 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
         {props?.miniIcon}
         <Stack sx={{ ml: '2px', gap: 0.5 }}>
           <h1
+            ref={titleRef}
             className={[
               `mini-badge-preview__content--title`,
-              `text-max-lines--1`,
+              `text-max-lines--2`,
               `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`,
             ].join(' ')}
           >
             {props.title}
           </h1>
           <h3
+            ref={descriptionRef}
             className={[
               `mini-badge-preview__content--description`,
-              `text-max-lines--3`,
+              `text-max-lines--${descriptionMaxLines}`,
               `mini-badge-preview__content--${props.textContrastOutside ?? 'light'}`,
             ].join(' ')}
           >

@@ -1,7 +1,7 @@
 import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Box, styled, Typography } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
 
