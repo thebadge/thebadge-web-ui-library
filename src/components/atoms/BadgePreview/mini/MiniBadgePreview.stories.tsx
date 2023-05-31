@@ -74,7 +74,7 @@ const TemplateMixed: Story<BadgePreviewProps> = (args) => {
       }}
     >
       <MiniBadgePreview {...args} buttonTitle="Example" />
-      <MiniBadgePreview {...args} miniIcon={<IconBadge width={25} height={25} color={colors.white} />} />
+      <MiniBadgePreview {...args} miniIcon={<IconBadge width={20} height={20} color={colors.white} />} />
     </div>
   )
 }
