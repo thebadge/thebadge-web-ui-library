@@ -2,7 +2,7 @@ import { TBColor } from '@assets/defaultTheme'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { SpinningArrow } from '@components/atoms/SpinningArrow/SpinningArrow'
 import colorStringIsTBColor from '@helpers/IsTBColor'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React, { createRef, RefObject, useMemo, useState } from 'react'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 
@@ -128,17 +128,15 @@ const StepperTitle = ({ children, color, glow }: React.PropsWithChildren<Stepper
     if (typeof children === 'string') {
       const [firstWord, ...rest] = children.split(' ')
       return (
-        <>
+        <Typography
+          className={[`stepper__title`, `color--${color ?? ''}`, glow ? 'stepper__title--glow' : ''].join(' ')}
+        >
           <span>{firstWord}</span> {rest.join(' ')}
-        </>
+        </Typography>
       )
     }
     return children
   }
 
-  return (
-    <div className={[`stepper__title`, `color--${color ?? ''}`, glow ? 'stepper__title--glow' : ''].join(' ')}>
-      {getElement(children)}
-    </div>
-  )
+  return <div>{getElement(children)}</div>
 }

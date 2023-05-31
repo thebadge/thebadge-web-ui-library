@@ -2,7 +2,6 @@
 @use 'variables/color.variables.module' as *;
 
 :root, body {
-  font-family: $font-the-badge-web;
   font-weight: $font-weight-normal;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;  /* stylelint-disable-line property-no-vendor-prefix */
