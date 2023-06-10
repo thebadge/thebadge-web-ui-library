@@ -47,6 +47,7 @@ import {
   PendingBadgeOverlay,
   PendingBadgeOverlayProps,
 } from '@components/overlays/PendingBadgeOverlay/PendingBadgeOverlay'
+import Editor, { EditorProps } from '@components/atoms/TextEditor/Editor'
 
 export {
   lightTheme,
@@ -83,6 +84,7 @@ export {
   Stepper,
   Roadmap,
   PendingBadgeOverlay,
+  Editor,
 }
 export type {
   TBColor,
@@ -98,4 +100,5 @@ export type {
   RoadmapProps,
   RoadmapItem,
   PendingBadgeOverlayProps,
+  EditorProps,
 }
