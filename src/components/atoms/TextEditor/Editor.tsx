@@ -2,11 +2,13 @@ import React from 'react'
 import './highlight'
 import { StyledEditor } from './styles'
 import EditorToolbar, { formats } from './EditorToolbar'
-import ReactQuill, { ReactQuillProps } from 'react-quill'
 import { SxProps } from '@mui/material'
 import { Theme } from '@mui/material/styles'
+import { ReactQuillProps } from 'react-quill'
 // editor
 import 'react-quill/dist/quill.snow.css'
+
+const ReactQuill = typeof window === 'object' ? require('react-quill') : () => false
 
 export type EditorProps = ReactQuillProps & {
   id?: string
