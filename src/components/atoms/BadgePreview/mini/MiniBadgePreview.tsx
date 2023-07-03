@@ -28,7 +28,7 @@ const MiniBadgePreviewBox = styled(Box, {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  margin: '2px'
+  margin: '2px',
 }))
 
 export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesForMiniBadgePreviewProps) => {

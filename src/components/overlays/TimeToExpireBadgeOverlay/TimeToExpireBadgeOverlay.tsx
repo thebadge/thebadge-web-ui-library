@@ -27,8 +27,7 @@ const TimeLeftContainer = styled(Box)<{ width: string; background: string }>(({ 
   padding: 8,
   borderTopLeftRadius: 16,
   borderTopRightRadius: 16,
-  boxShadow: `-5px 0 5px -5px ${colors.black}, 5px 0 5px -5px ${colors.black}`
-
+  boxShadow: `-5px 0 5px -5px ${colors.black}, 5px 0 5px -5px ${colors.black}`,
 }))
 
 export interface TimeToExpireBadgeOverlayProps {
