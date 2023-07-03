@@ -27,6 +27,8 @@ const TimeLeftContainer = styled(Box)<{ width: string; background: string }>(({ 
   padding: 8,
   borderTopLeftRadius: 16,
   borderTopRightRadius: 16,
+  boxShadow: `-5px 0 5px -5px ${colors.black}, 5px 0 5px -5px ${colors.black}`
+
 }))
 
 export interface TimeToExpireBadgeOverlayProps {
@@ -50,7 +52,7 @@ export const TimeToExpireBadgeOverlay = (props: TimeToExpireBadgeOverlayProps) =
     const { clientWidth, clientHeight } = badgeRef?.current || { clientWidth: 0, clientHeight: 0 }
     setBadgeWidth(clientWidth)
     setBadgeHeight(clientHeight)
-    setTimeToExpireWidth(clientWidth >= 200 ? '65%' : '85%')
+    setTimeToExpireWidth(clientWidth >= 200 ? '60%' : '75%')
   })
 
   return (
@@ -65,7 +67,6 @@ export const TimeToExpireBadgeOverlay = (props: TimeToExpireBadgeOverlayProps) =
             <Typography
               variant={'h2'}
               component={'h2'}
-              fontSize={'64px !important'}
               lineHeight={'100%'}
               sx={{ textAlign: 'center' }}
               color={props.overlayTextColor || colors.black}
@@ -75,8 +76,8 @@ export const TimeToExpireBadgeOverlay = (props: TimeToExpireBadgeOverlayProps) =
             </Typography>
             <Typography
               textTransform={'uppercase'}
-              variant="dAppTitle3"
-              fontSize={'20px !important'}
+              variant="dAppTitle2"
+              fontSize={16}
               component={'span'}
               sx={{ textAlign: 'center' }}
               lineHeight={'125%'}

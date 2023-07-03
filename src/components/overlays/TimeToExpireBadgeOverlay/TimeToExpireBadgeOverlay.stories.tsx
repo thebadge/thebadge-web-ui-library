@@ -14,7 +14,7 @@ export default {
 
 // Create a master template for mapping args to render the Button component
 const Template: Story<TimeToExpireBadgeOverlayProps> = (args) => (
-  <div style={{ background: 'black' }}>
+  <div style={{ background: 'white', height: '100vh' }}>
     <TimeToExpireBadgeOverlay {...args} />
   </div>
 )
