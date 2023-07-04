@@ -17,6 +17,7 @@ import { MiniBadgePreview } from '@components/atoms/BadgePreview/mini/MiniBadgeP
 import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { Button } from '@components/atoms/Button/v1/Button'
 import { ButtonV2 } from '@components/atoms/Button/v2/Button'
+import Editor, { EditorProps } from '@components/atoms/TextEditor/Editor'
 import { NavigationHeader, NavigationHeaderProps } from '@components/atoms/NavigationHeader/NavigationHeader'
 import { SpinningArrow, SpinningArrowProps } from '@components/atoms/SpinningArrow/SpinningArrow'
 import { IconBadge } from '@components/icons/IconBadge/IconBadge'
@@ -47,7 +48,10 @@ import {
   PendingBadgeOverlay,
   PendingBadgeOverlayProps,
 } from '@components/overlays/PendingBadgeOverlay/PendingBadgeOverlay'
-import Editor, { EditorProps } from '@components/atoms/TextEditor/Editor'
+import {
+  TimeToExpireBadgeOverlay,
+  TimeToExpireBadgeOverlayProps,
+} from '@components/overlays/TimeToExpireBadgeOverlay/TimeToExpireBadgeOverlay'
 
 export {
   lightTheme,
@@ -61,6 +65,7 @@ export {
   BadgePreview,
   EmptyBadgePreview,
   MiniBadgePreview,
+  Editor,
   NavigationHeader,
   SpinningArrow,
   IconBadge,
@@ -84,10 +89,11 @@ export {
   Stepper,
   Roadmap,
   PendingBadgeOverlay,
-  Editor,
+  TimeToExpireBadgeOverlay,
 }
 export type {
   TBColor,
+  EditorProps,
   StepperProps,
   MultiBadgePreviewProps,
   LogoProps,
@@ -100,5 +106,5 @@ export type {
   RoadmapProps,
   RoadmapItem,
   PendingBadgeOverlayProps,
-  EditorProps,
+  TimeToExpireBadgeOverlayProps,
 }

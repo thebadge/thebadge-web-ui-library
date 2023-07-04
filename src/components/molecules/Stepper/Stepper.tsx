@@ -62,7 +62,7 @@ export const Stepper = ({
     <Box
       className={[
         `stepper`,
-        `background-color--${backgroundColor ?? 'white'}`,
+        `background-color--${backgroundColor ?? colors.white}`,
         border ? `stepper--withBorder border-color--${color}` : '',
       ].join(' ')}
       minHeight={minHeight}
