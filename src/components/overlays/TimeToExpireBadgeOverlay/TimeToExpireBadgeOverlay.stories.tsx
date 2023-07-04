@@ -36,11 +36,13 @@ const badgeCommonArgs = {
 export const SampleBadgeWithPendingBadgeOverlay = Template.bind({})
 SampleBadgeWithPendingBadgeOverlay.args = {
   badge: <BadgePreview {...badgeCommonArgs} size={'medium'} badgeUrl={'https://www.thebadge.xyz'} />,
+  badgeTextContrast: 'dark-withTextBackground',
 }
 
 export const SampleBadgeWithPendingBadgeOverlayWithTimeLeft = Template.bind({})
 SampleBadgeWithPendingBadgeOverlayWithTimeLeft.args = {
   badge: <BadgePreview {...badgeCommonArgs} size={'medium'} badgeUrl={'https://www.thebadge.xyz'} />,
+  badgeTextContrast: 'dark-withTextBackground',
   timeLeft: {
     quantity: 10,
     unitText: 'days left to expire',
@@ -50,6 +52,7 @@ SampleBadgeWithPendingBadgeOverlayWithTimeLeft.args = {
 export const SampleBadgeWithPendingBadgeOverlayWithCustomColors = Template.bind({})
 SampleBadgeWithPendingBadgeOverlayWithCustomColors.args = {
   badge: <BadgePreview {...badgeCommonArgs} size={'medium'} badgeUrl={'https://www.thebadge.xyz'} />,
+  badgeTextContrast: 'dark-withTextBackground',
   timeLeft: {
     quantity: 10,
     unitText: 'days left to expire',
@@ -62,11 +65,13 @@ SampleBadgeWithPendingBadgeOverlayWithCustomColors.args = {
 export const SampleMiniBadgeWithPendingBadgeOverlay = Template.bind({})
 SampleMiniBadgeWithPendingBadgeOverlay.args = {
   badge: <MiniBadgePreview {...badgeCommonArgs} />,
+  badgeTextContrast: 'light-withTextBackground',
 }
 
 export const SampleMiniBadgeWithPendingBadgeOverlayWithTimeLeft = Template.bind({})
 SampleMiniBadgeWithPendingBadgeOverlayWithTimeLeft.args = {
   badge: <MiniBadgePreview {...badgeCommonArgs} />,
+  badgeTextContrast: 'light-withTextBackground',
   timeLeft: {
     quantity: 153,
     unitText: 'hours left to expire',
@@ -76,6 +81,7 @@ SampleMiniBadgeWithPendingBadgeOverlayWithTimeLeft.args = {
 export const SampleMiniBadgeWithPendingBadgeOverlayWithCustomColors = Template.bind({})
 SampleMiniBadgeWithPendingBadgeOverlayWithCustomColors.args = {
   badge: <MiniBadgePreview {...badgeCommonArgs} />,
+  badgeTextContrast: 'light-withTextBackground',
   timeLeft: {
     quantity: 3,
     unitText: 'months left to expire',

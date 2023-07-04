@@ -3,6 +3,7 @@ import React from 'react'
 import './sectionLayout.scss'
 import { SxProps } from '@mui/system'
 import { Theme } from '@mui/material/styles'
+import { colors } from '../../../index'
 
 export type SectionLayoutComponent = {
   component: React.ReactNode
@@ -29,7 +30,7 @@ export const SectionLayout = ({ components, borderColor, backgroundColor, sx }: 
       className="section-layout"
       sx={{
         borderColor: borderColor || 'green',
-        backgroundColor: backgroundColor || 'black',
+        backgroundColor: backgroundColor || colors.black,
         ...sx,
       }}
     >

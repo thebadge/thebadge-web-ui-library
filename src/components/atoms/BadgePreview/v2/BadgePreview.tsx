@@ -4,6 +4,7 @@ import { Box, styled, Typography } from '@mui/material'
 import React, { useEffect } from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
+import { colors } from '../../../../index'
 
 const defaultBackgroundUrl =
   'https://images.unsplash.com/photo-1566041510639-8d95a2490bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80'
@@ -75,12 +76,12 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
     switch (textContrast) {
       case 'light':
       case 'light-withTextBackground':
-        return 'black'
+        return colors.black
       case 'dark':
       case 'dark-withTextBackground':
-        return 'white'
+        return colors.white
       default:
-        return 'black'
+        return colors.black
     }
   }
 
