@@ -18,13 +18,11 @@ export default [
     input: './src/index.ts',
     output: [
       {
-        file: 'dist/index.js',
-        format: 'cjs',
-      },
-      {
-        file: 'dist/index.es.js',
+        dir: 'dist',
         format: 'es',
         exports: 'named',
+        preserveModules: true,
+        sourcemap: true,
       },
     ],
     plugins: [
@@ -69,6 +67,7 @@ export default [
       // TS
       typescript({
         sourceMap: true,
+        declarationDir: 'dist/types',
       }),
       resolve(),
       external(),

@@ -2,8 +2,8 @@
   "name": "@thebadge/ui-library",
   "version": "1.7.4",
   "license": "MIT",
-  "main": "dist/index.js",
   "module": "dist/index.es.js",
+  "files": ["dist/"],
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
