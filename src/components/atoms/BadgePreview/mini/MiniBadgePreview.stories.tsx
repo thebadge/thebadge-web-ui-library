@@ -2,7 +2,7 @@ import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
 import { MiniBadgePreview } from './MiniBadgePreview'
-import { BadgePreviewEffects, BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
+import { BadgePreviewEffects, MiniBadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { colors, IconBadge } from '../../../../index'
 
 const EXAMPLE_URLS = {
@@ -43,7 +43,7 @@ export default {
   },
 } as Meta
 
-const Template: Story<BadgePreviewProps> = (args) => {
+const Template: Story<MiniBadgePreviewProps> = (args) => {
   return (
     <div
       style={{
@@ -61,7 +61,7 @@ const Template: Story<BadgePreviewProps> = (args) => {
   )
 }
 
-const TemplateMixed: Story<BadgePreviewProps> = (args) => {
+const TemplateMixed: Story<MiniBadgePreviewProps> = (args) => {
   return (
     <div
       style={{
@@ -82,7 +82,6 @@ const TemplateMixed: Story<BadgePreviewProps> = (args) => {
 // Reuse that template for creating different stories
 export const BadgePreviewLongTexts = Template.bind({})
 BadgePreviewLongTexts.args = {
-  size: 'large',
   title: 'INFO TITLE',
   category:
     'Subline Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -93,7 +92,6 @@ BadgePreviewLongTexts.args = {
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-  badgeUrl: 'https://www.thebadge.xyz',
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
   animationEffects: [] as BadgePreviewEffects[],
   textContrast: 'dark-withTextBackground',
@@ -106,11 +104,9 @@ BadgePreviewLongTexts.args = {
 
 export const BadgePreviewWithAnimationOnHover = Template.bind({})
 BadgePreviewWithAnimationOnHover.args = {
-  size: 'medium',
   title: 'Diploma in Intellectual Property',
   category: 'Diploma certificate.',
   description: 'User with address: 0xD28....16eC has a degree in intellectual property from Austral University',
-  badgeUrl: 'https://www.thebadge.xyz',
   imageUrl:
     'https://images.unsplash.com/photo-1564054074885-e5a7c93671d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
   animationOnHover: true,
@@ -125,11 +121,9 @@ BadgePreviewWithAnimationOnHover.args = {
 
 export const BadgePreviewWithButtonAndIconOnly = TemplateMixed.bind({})
 BadgePreviewWithButtonAndIconOnly.args = {
-  size: 'medium',
   title: 'Diploma in Intellectual Property',
   category: 'Diploma certificate.',
   description: 'User with address: 0xD28....16eC has a degree in intellectual property from Austral University',
-  badgeUrl: 'https://www.thebadge.xyz',
   imageUrl:
     'https://images.unsplash.com/photo-1564054074885-e5a7c93671d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
   animationOnHover: true,

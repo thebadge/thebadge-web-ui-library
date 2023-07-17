@@ -1,6 +1,6 @@
+import colors from '@assets/scss/variables/_color.variables.module.scss'
 import React, { useEffect, useRef, useState } from 'react'
 import { Box, CircularProgress, styled, Tooltip, Typography } from '@mui/material'
-import { colors } from '../../../index'
 
 const OverlayContainer = styled(Box)<{ width: number; height: number; background: string }>(
   ({ width, height, background }) => ({

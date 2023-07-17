@@ -1,8 +1,6 @@
 @use '../../../../assets/scss/functions/_base.functions' as *;
 @use '../../../../assets/scss/variables/variables.module';
 
-$--badgeBackgroundUrl: '';
-
 .mini-badge-preview {
   position: relative;
   color: variables.$tb-black-text;
@@ -11,11 +9,21 @@ $--badgeBackgroundUrl: '';
 
   &__container {
     display: flex;
+    position: relative;
     flex-flow: column;
     width: 100%;
     height: 150px;
     border-radius: 8px;
     padding: 8px;
+
+    &--backgroundImage {
+      position: absolute;
+      border-radius: 8px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
     &--dark {
       color: white;

@@ -1,6 +1,6 @@
+import colors from '@assets/scss/variables/_color.variables.module.scss'
 import React, { useEffect, useRef, useState } from 'react'
 import { Box, styled, Typography } from '@mui/material'
-import { colors } from '../../../index'
 import { BadgeTextContrast } from '@components/atoms/BadgePreview/BadgePreviewProps'
 
 const OverlayContainer = styled(Box)<{ width: number; height: number }>(({ width, height }) => ({

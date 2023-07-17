@@ -1,10 +1,10 @@
+import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { BadgePreviewEffects, BadgePreviewProps, BadgeSize } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { Box, styled, Typography } from '@mui/material'
-import React, { useEffect } from 'react'
+import React from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
-import { colors } from '../../../../index'
 
 const defaultBackgroundUrl =
   'https://images.unsplash.com/photo-1566041510639-8d95a2490bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80'
@@ -28,15 +28,6 @@ const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName 
 )
 
 export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePreviewProps) => {
-  useEffect(() => {
-    // As the background is made with .scss, we add the variable to be able
-    // to use the given url on it
-    document.documentElement.style.setProperty(
-      '--badgeBackgroundUrl',
-      `url(${props.badgeBackgroundUrl ? props.badgeBackgroundUrl : defaultBackgroundUrl})`
-    )
-  }, [props.badgeBackgroundUrl])
-
   const badgeSize = () => {
     const badgePreviewPropsSize = props.size
     switch (badgePreviewPropsSize) {
@@ -124,6 +115,8 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
     return props.animationEffects && props.animationEffects.map((effect) => `badge-previewV2--${effect}`).join(' ')
   }
 
+  const hasGlare = props.animationEffects.includes('glare')
+
   return (
     <BadgePreviewBox
       size={badgeSize()}
@@ -137,14 +130,29 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
           `badge-previewV2__container--${props.textContrast ?? 'light'}`,
         ].join(' ')}
       >
+        <img
+          className={`badge-previewV2__container--backgroundImage`}
+          src={`${props.badgeBackgroundUrl ? props.badgeBackgroundUrl : defaultBackgroundUrl}`}
+          alt="Badge Background"
+        />
+        <div
+          className={[
+            `badge-previewV2__container__shadow`,
+            `badge-previewV2__container__shadow--${props.textContrast ?? 'light'}`,
+          ].join(' ')}
+        />
         <div className={'badge-previewV2__header'}>
           <div className={'badge-previewV2__header--logo-qr-container'}>
             <span className={'badge-previewV2__header--tb-logo'}>
               <LogoTheBadgeWithText fill={getLogoFillColor()} size={badgeLogoSize()} />
             </span>
-            <div className={`badge-previewV2__header--qr-code badge-previewV2__header--qr-code--${props.size}`}>
-              <QRCode size={badgeQRSize()} value={props.badgeUrl} viewBox={`0 0 ${badgeQRSize()} ${badgeQRSize()}`} />
-            </div>
+            {props.badgeUrl ? (
+              <div className={`badge-previewV2__header--qr-code badge-previewV2__header--qr-code--${props.size}`}>
+                <QRCode size={badgeQRSize()} value={props.badgeUrl} viewBox={`0 0 ${badgeQRSize()} ${badgeQRSize()}`} />
+              </div>
+            ) : (
+              <div id="qr-placeholder" style={{ height: `${badgeQRSize()}px`, width: `${badgeQRSize()}px` }} />
+            )}
           </div>
           <div
             className={`badge-previewV2__header--image-container badge-previewV2__header--image-container--${props.size}`}
@@ -152,7 +160,11 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
             <div className={'badge-previewV2__header--background-image'} aria-label="Badge image background">
               <span className={'badge-previewV2__header--image'}>
                 {props.imageUrl ? (
-                  <img src={props.imageUrl} alt="Badge image" />
+                  <img
+                    src={props.imageUrl}
+                    alt="Badge image"
+                    className={'badge-previewV2__header--image--badgeImage'}
+                  />
                 ) : (
                   <LogoTheBadgeWithText size={badgeImageSize()} />
                 )}
@@ -189,7 +201,7 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
             {props.description}
           </div>
         </Typography>
-        <div className="glare" />
+        {hasGlare && <div className="glare" />}
       </div>
     </BadgePreviewBox>
   )

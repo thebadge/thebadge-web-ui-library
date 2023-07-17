@@ -1,9 +1,9 @@
+import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { Box } from '@mui/material'
 import React from 'react'
 import './sectionLayout.scss'
 import { SxProps } from '@mui/system'
 import { Theme } from '@mui/material/styles'
-import { colors } from '../../../index'
 
 export type SectionLayoutComponent = {
   component: React.ReactNode
