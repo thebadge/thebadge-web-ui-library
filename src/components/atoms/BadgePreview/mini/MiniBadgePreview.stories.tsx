@@ -56,7 +56,7 @@ const Template: Story<MiniBadgePreviewProps> = (args) => {
       }}
     >
       <MiniBadgePreview {...args} />
-      <MiniBadgePreview {...args} description={args.description.slice(0, 13)} />
+      <MiniBadgePreview {...args} description={args.description} />
     </div>
   )
 }
