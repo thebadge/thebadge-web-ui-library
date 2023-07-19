@@ -5,12 +5,12 @@ export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
 export type BadgeTextContrast = 'light' | 'dark' | 'light-withTextBackground' | 'dark-withTextBackground'
 export interface BadgePreviewProps {
   size: BadgeSize
-  badgeUrl: string
+  badgeUrl?: string
   badgeBackgroundUrl?: string
   textContrast?: BadgeTextContrast
   title: string
   category: string
-  description: string
+  description: string | React.ReactNode
   iconUrl?: string
   imageUrl?: string
   onClick?: () => void // will be shared among the button and the badge

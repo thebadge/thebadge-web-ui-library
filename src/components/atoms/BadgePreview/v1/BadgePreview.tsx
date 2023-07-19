@@ -94,12 +94,14 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
             <LogoTheBadge size={badgeLogoSize()} />
           </span>
           <div className={'badge-preview__header--qr-code'}>
-            <QRCode
-              size={256}
-              style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
-              value={props.badgeUrl}
-              viewBox={`0 0 256 256`}
-            />
+            {props.badgeUrl && (
+              <QRCode
+                size={256}
+                style={{ height: 'auto', maxWidth: '100%', width: '100%' }}
+                value={props.badgeUrl}
+                viewBox={`0 0 256 256`}
+              />
+            )}
           </div>
           <span className={'badge-preview__header--image'}>
             {props.imageUrl ? (

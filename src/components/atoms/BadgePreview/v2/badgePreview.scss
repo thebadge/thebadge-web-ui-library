@@ -1,61 +1,87 @@
 @use '../../../../assets/scss/functions/_base.functions' as *;
 @use '../../../../assets/scss/variables/variables.module';
 
-$--badgeBackgroundUrl: '';
-
 .badge-previewV2 {
   position: relative;
   color: variables.$tb-black-text;
-  cursor: pointer;
 
   &__container {
     display: flex;
+    position: relative;
     flex-flow: column;
     width: 100%;
     height: 100%;
     border-radius: 8px;
     padding: 16px;
 
+    &--backgroundImage {
+      position: absolute;
+      border-radius: 8px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
     &--dark {
       color: white;
-      background: var(--badgeBackgroundUrl) center;
-      background-size: cover;
-      background-repeat: repeat-x;
+
     }
 
     &--dark-withTextBackground {
       color: white;
-      background: linear-gradient(
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.2) 2%,
-            rgba(0, 0, 0, 0.7) 25%,
-            rgba(0, 0, 0, 0.9) 100%
-          )
-          bottom,
-        var(--badgeBackgroundUrl) center;
-      background-size: auto 30%, cover;
-      background-repeat: repeat-x;
     }
 
     &--light {
       color: black;
-      background: var(--badgeBackgroundUrl) center;
-      background-size: cover;
-      background-repeat: repeat-x;
     }
 
     &--light-withTextBackground {
       color: black;
-      background: linear-gradient(
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.2) 2%,
-            rgba(255, 255, 255, 0.7) 25%,
-            rgba(255, 255, 255, 0.9) 75%
-          )
-          bottom,
-        var(--badgeBackgroundUrl) center;
-      background-size: auto 30%, cover;
-      background-repeat: repeat-x;
+    }
+
+    &__shadow {
+      position: absolute;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30%;
+
+      &--dark {
+        color: white;
+        background-size: cover;
+        background-repeat: repeat-x;
+      }
+
+      &--dark-withTextBackground {
+        color: white;
+        background: linear-gradient(
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba(0, 0, 0, 0.2) 2%,
+                        rgba(0, 0, 0, 0.7) 25%,
+                        rgba(0, 0, 0, 0.9) 100%
+        )
+        bottom;
+      }
+
+      &--light {
+        color: black;
+        background-size: cover;
+        background-repeat: repeat-x;
+      }
+
+      &--light-withTextBackground {
+        color: black;
+        background: linear-gradient(
+                        rgba(255, 255, 255, 0) 0%,
+                        rgba(255, 255, 255, 0.2) 2%,
+                        rgba(255, 255, 255, 0.7) 25%,
+                        rgba(255, 255, 255, 0.9) 75%
+        )
+        bottom;
+      }
     }
 
     &--small {
@@ -100,6 +126,10 @@ $--badgeBackgroundUrl: '';
       max-height: 100%;
       max-width: 100%;
       overflow: hidden;
+
+      &--badgeImage {
+        min-width: 150px;
+      }
     }
 
     &--logo-qr-container {
@@ -173,16 +203,19 @@ $--badgeBackgroundUrl: '';
       text-overflow: ellipsis;
 
       &--small {
-        font-size: convert-to-rem(11px);
-        line-height: convert-to-rem(13px);
+        font-size: convert-to-rem(13px);
+        line-height: convert-to-rem(17px);
+        letter-spacing: 0.6px;
       }
       &--medium {
         font-size: convert-to-rem(15px);
-        line-height: convert-to-rem(18px);
+        line-height: convert-to-rem(19px);
+        letter-spacing: 0.6px;
       }
       &--large {
         font-size: convert-to-rem(17px);
-        line-height: convert-to-rem(20px);
+        line-height: convert-to-rem(21px);
+        letter-spacing: 0.6px;
       }
     }
 

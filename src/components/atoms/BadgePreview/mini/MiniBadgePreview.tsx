@@ -39,15 +39,6 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
   const [descriptionMaxLines, setDescriptionMaxLines] = useState(3)
 
   useEffect(() => {
-    // As the background is made with .scss, we add the variable to be able
-    // to use the given url on it
-    document.documentElement.style.setProperty(
-      '--badgeBackgroundUrl',
-      `url(${props.badgeBackgroundUrl ? props.badgeBackgroundUrl : defaultBackgroundUrl})`
-    )
-  }, [props.badgeBackgroundUrl])
-
-  useEffect(() => {
     if (!titleRef.current) return
     // This useEffect determines how many lines should be displayed for the description based on the height of the title element.
     const lineHeight = parseFloat(getComputedStyle(titleRef.current).lineHeight)
@@ -79,6 +70,11 @@ export const MiniBadgePreview = (props: MiniBadgePreviewProps = defaultValuesFor
           `mini-badge-preview__container--${props.textContrast ?? 'light'}`,
         ].join(' ')}
       >
+        <img
+          className={`mini-badge-preview__container--backgroundImage`}
+          src={`${props.badgeBackgroundUrl ? props.badgeBackgroundUrl : defaultBackgroundUrl}`}
+          alt="Badge Background"
+        />
         <div className={'mini-badge-preview__header'}>
           <div className={'mini-badge-preview__header--image-container'}>
             <div className={'mini-badge-preview__header--background-image'} aria-label="Badge image background">
