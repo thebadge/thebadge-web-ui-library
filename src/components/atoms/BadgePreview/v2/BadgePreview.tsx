@@ -143,7 +143,11 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         />
         <div className={'badge-previewV2__header'}>
           <div className={'badge-previewV2__header--logo-qr-container'}>
-            <span className={'badge-previewV2__header--tb-logo'}>
+            <span
+              className={[`badge-previewV2__header--tb-logo`, `badge-previewV2__header--tb-logo--${props.size}`].join(
+                ' '
+              )}
+            >
               <LogoTheBadgeWithText fill={getLogoFillColor()} size={badgeLogoSize()} />
             </span>
             {props.badgeUrl ? (
@@ -154,24 +158,19 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
               <div id="qr-placeholder" style={{ height: `${badgeQRSize()}px`, width: `${badgeQRSize()}px` }} />
             )}
           </div>
-          <div
-            className={`badge-previewV2__header--image-container badge-previewV2__header--image-container--${props.size}`}
-          >
-            <div className={'badge-previewV2__header--background-image'} aria-label="Badge image background">
-              <span className={'badge-previewV2__header--image'}>
-                {props.imageUrl ? (
-                  <img
-                    src={props.imageUrl}
-                    alt="Badge image"
-                    className={'badge-previewV2__header--image--badgeImage'}
-                  />
-                ) : (
-                  <LogoTheBadgeWithText size={badgeImageSize()} />
-                )}
-              </span>
-            </div>
-          </div>
         </div>
+        <div className={`badge-previewV2__image-container badge-previewV2__image-container--${props.size}`}>
+          {props.imageUrl ? (
+            <img
+              src={props.imageUrl}
+              alt="Badge image"
+              className={[`badge-previewV2__image`, `badge-previewV2__image--${props.size}`].join(' ')}
+            />
+          ) : (
+            <LogoTheBadgeWithText size={badgeImageSize()} />
+          )}
+        </div>
+        {/* Badge Content - Tittle - Category - Description */}
         <Typography component={'div'} className={`badge-previewV2__content badge-previewV2__content--${props.size}`}>
           <div
             className={[
