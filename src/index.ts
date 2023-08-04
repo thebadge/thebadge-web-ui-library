@@ -52,6 +52,7 @@ import {
   TimeToExpireBadgeOverlay,
   TimeToExpireBadgeOverlayProps,
 } from '@components/overlays/TimeToExpireBadgeOverlay/TimeToExpireBadgeOverlay'
+import { Flipper } from '@components/atoms/Flipper/Flipper'
 
 export {
   lightTheme,
@@ -90,6 +91,7 @@ export {
   Roadmap,
   PendingBadgeOverlay,
   TimeToExpireBadgeOverlay,
+  Flipper,
 }
 export type {
   TBColor,
