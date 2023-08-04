@@ -5,11 +5,15 @@
 </p>
 
 <h1 align="center">TheBadge UI Components Library</h1>
-<p align="center">
+
+[![Publish to NPM](https://github.com/thebadge/thebadge-ui-library/actions/workflows/publish.yml/badge.svg?event=push)](https://github.com/thebadge/thebadge-ui-library/actions/workflows/publish.yml)
+[![Chromatic Deployment](https://github.com/thebadge/thebadge-ui-library/actions/workflows/storybook-deploy.yml/badge.svg)](https://github.com/thebadge/thebadge-ui-library/actions/workflows/storybook-deploy.yml)
+
   <a href="https://www.npmjs.com/package/thebadge-ui-library"><img src="https://img.shields.io/npm/v/thebadge-ui-library?style=plastic" alt="Stable Version"></a>
   <a href="https://discord.com/invite/FTxtkgbAC4"><img src="https://img.shields.io/discord/1006480637512917033?style=plastic" alt="Join to Discord"></a>
   <a href="https://twitter.com/intent/user?screen_name=thebadgexyz"><img src="https://img.shields.io/twitter/follow/thebadgexyz?style=social" alt="Follow us on Twitter"></a>
-</p>
+
+
 
 # TheBadge-ui-library
 UI Library with Web components and styling for The Badge project.
