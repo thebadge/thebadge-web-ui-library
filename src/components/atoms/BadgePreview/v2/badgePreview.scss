@@ -152,9 +152,7 @@
 
   &__image {
     border-radius: 16px;
-    height: fit-content;
-    object-fit: cover;
-    min-width: 160px;
+    object-fit: scale-down;
     max-height: 100%;
     max-width: 100%;
     overflow: hidden;
