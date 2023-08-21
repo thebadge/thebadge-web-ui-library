@@ -182,7 +182,7 @@
     flex: 2;
     display: flex;
     position: relative;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
 
     &--small {    }
@@ -204,15 +204,18 @@
 
       &--small {
         margin-top: 0;
+        margin-bottom: 8px;
         font-weight: variables.$font-weight-large;
         font-size: convert-to-rem(12px);
         line-height: convert-to-rem(15px);
       }
       &--medium {
+        margin-bottom: 8px;
         font-size: convert-to-rem(16px);
         line-height: convert-to-rem(19px);
       }
       &--large {
+        margin-bottom: 8px;
         font-size: convert-to-rem(18px);
         line-height: convert-to-rem(21px);
       }
@@ -223,22 +226,24 @@
       font-weight: variables.$font-weight-black;
       font-size: convert-to-rem(20px);
       line-height: convert-to-rem(23px);
-      margin-bottom: 3%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
 
       &--small {
+        margin-bottom: 4px;
         font-size: convert-to-rem(13px);
         line-height: convert-to-rem(17px);
         letter-spacing: 0.6px;
       }
       &--medium {
+        margin-bottom: 12px;
         font-size: convert-to-rem(15px);
         line-height: convert-to-rem(19px);
         letter-spacing: 0.6px;
       }
       &--large {
+        margin-bottom: 12px;
         font-size: convert-to-rem(17px);
         line-height: convert-to-rem(21px);
         letter-spacing: 0.6px;
