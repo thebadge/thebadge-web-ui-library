@@ -1,7 +1,7 @@
 import React from 'react'
 
 export type BadgePreviewEffects = 'wobble' | 'grow' | 'glare'
-export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'
+export type BadgeSize = 'small' | 'medium' | 'large'
 export type BadgeTextContrast = 'light' | 'dark' | 'light-withTextBackground' | 'dark-withTextBackground'
 export interface BadgePreviewProps {
   size: BadgeSize
