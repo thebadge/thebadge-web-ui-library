@@ -149,7 +149,7 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
             alt="Badge Background"
           />
         ) : (
-          <div className={`badge-previewV2__container--backgroundImage`} style={{ background: 'green' }} />
+          <div className={`badge-previewV2__container--backgroundImage`} style={{ border: '1px solid #7e7e7e' }} />
         )}
         <div
           className={[
@@ -181,7 +181,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
             <img
               src={props.imageUrl}
               alt="Badge image"
-              style={{ background: 'grey' }}
               className={[`badge-previewV2__image`, `badge-previewV2__image--${props.size}`].join(' ')}
             />
           ) : (
