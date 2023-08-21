@@ -37,8 +37,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         return { width: 300, height: 504 }
       case 'large':
         return { width: 400, height: 655 }
-      case 'x-large':
-        return { width: 400, height: 655 }
       default:
         return { width: 200, height: 328 }
     }
@@ -52,8 +50,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
       case 'medium':
         return { width: 236, height: 236 }
       case 'large':
-        return { width: 320, height: 320 }
-      case 'x-large':
         return { width: 320, height: 320 }
       default:
         return { width: 160, height: 160 }
@@ -69,8 +65,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         return 110
       case 'large':
         return 150
-      case 'x-large':
-        return 165
     }
   }
 
@@ -97,8 +91,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         return 45
       case 'large':
         return 70
-      case 'x-large':
-        return 85
       default:
         return 45
     }
@@ -113,8 +105,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         return 4
       case 'large':
         return 5
-      case 'x-large':
-        return 7
     }
   }
 

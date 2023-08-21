@@ -25,10 +25,6 @@
       padding: 40px 40px 32px;
       gap: 20px;
     }
-    &--x-large {
-      padding: 40px 40px 32px;
-      gap: 20px;
-    }
 
     &--backgroundImage {
       position: absolute;
@@ -171,11 +167,6 @@
       width: 320px;
       height: 320px;
     }
-
-    &--x-large {
-      width: 320px;
-      height: 320px;
-    }
   } // __Image ends ---
 
   &__content {
@@ -188,9 +179,6 @@
     &--small {    }
     &--medium {   }
     &--large {
-      padding-top: 8px;
-    }
-    &--x-large {
       padding-top: 8px;
     }
 
