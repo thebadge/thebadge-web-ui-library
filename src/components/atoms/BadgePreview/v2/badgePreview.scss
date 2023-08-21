@@ -146,6 +146,13 @@
   }
 
 
+  &__image-placeholder {
+    display: flex;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__image {
     border-radius: 16px;
     object-fit: scale-down;

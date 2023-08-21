@@ -174,7 +174,9 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
               className={[`badge-previewV2__image`, `badge-previewV2__image--${props.size}`].join(' ')}
             />
           ) : (
-            <LogoTheBadgeWithText size={badgeImageSize().width} />
+            <div className={[`badge-previewV2__image-placeholder`, `badge-previewV2__image--${props.size}`].join(' ')}>
+              <LogoTheBadgeWithText size={badgeImageSize().width} style={{ margin: 'auto' }} />
+            </div>
           )}
         </div>
         {/* Badge Content - Tittle - Category - Description */}
