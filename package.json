@@ -1,13 +1,11 @@
 {
   "name": "@thebadge/ui-library",
-  "version": "1.9.0",
+  "version": "1.8.5",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
