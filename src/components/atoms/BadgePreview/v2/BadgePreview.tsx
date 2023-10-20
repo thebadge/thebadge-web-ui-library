@@ -168,11 +168,16 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         </div>
         <div className={`badge-previewV2__image-container badge-previewV2__image-container--${props.size}`}>
           {props.imageUrl ? (
-            <img
-              src={props.imageUrl}
-              alt="Badge image"
-              className={[`badge-previewV2__image`, `badge-previewV2__image--${props.size}`].join(' ')}
-            />
+            <>
+              <div className={`badge-previewV2__image-blur`}>
+                <img src={props.imageUrl} alt="Badge image blur" className={`badge-previewV2__image-bg`} />
+              </div>
+              <img
+                src={props.imageUrl}
+                alt="Badge image"
+                className={[`badge-previewV2__image`, `badge-previewV2__image--${props.size}`].join(' ')}
+              />
+            </>
           ) : (
             <div className={[`badge-previewV2__image-placeholder`, `badge-previewV2__image--${props.size}`].join(' ')}>
               <LogoTheBadgeWithText size={badgeImageSize().width} style={{ margin: 'auto' }} />
