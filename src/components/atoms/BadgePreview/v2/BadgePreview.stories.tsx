@@ -66,7 +66,7 @@ BadgePreviewLongTexts.args = {
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   imageUrl:
-    'https://images.unsplash.com/photo-1564054074885-e5a7c93671d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80',
+    'https://images.unsplash.com/photo-1691246806224-a6e9dde3678d?auto=format&fit=crop&q=80&w=2832&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   badgeUrl: 'https://www.thebadge.xyz',
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
   animationEffects: [] as BadgePreviewEffects[],
