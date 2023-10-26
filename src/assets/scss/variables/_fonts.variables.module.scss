@@ -4,7 +4,7 @@
  Fonts
 */
 $font-fallback: -apple-system, -apple-system-body, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial',
-  sans-serif;
+sans-serif;
 $font-the-badge-web: 'Mulish', $font-fallback;
 
 $font-weight-thin: 100;
@@ -135,6 +135,89 @@ $line-height-dapp-dayshours: 100%;
 $font-size-dapp-button: 11px;
 $line-height-dapp-button: 100%;
 
+// ------------ New Font Types ------------
+
+/* Display Large */
+$font-size-displayLarge: 57px;
+$font-weight-displayLarge: 700;
+$line-height-displayLarge: 112.281%;
+
+/* Display Medium */
+$font-size-displayMedium: 45px;
+$font-weight-displayMedium: 800;
+$line-height-displayMedium: 115.556%;
+
+/* Display Small */
+$font-size-displaySmall: 36px;
+$font-weight-displaySmall: 400;
+$line-height-displaySmall:  122.222%;
+
+/* Headline Large */
+$font-size-headlineLarge: 32px;
+$font-weight-headlineLarge: 400;
+$line-height-headlineLarge: 125%;
+
+/* Headline Medium */
+$font-size-headlineMedium: 28px;
+$font-weight-headlineMedium: 600;
+$line-height-headlineMedium: 128.571%;
+
+/* Headline Small */
+$font-size-headlineSmall: 24px;
+$font-weight-headlineSmall: 400;
+$line-height-headlineSmall: 133.333%;
+
+/* Title Large */
+$font-size-titleLarge: 22px;
+$font-weight-titleLarge: 400;
+$line-height-titleLarge: 127.273%;
+
+/* Title Medium */
+$font-size-titleMedium: 16px;
+$font-weight-titleMedium: 700;
+$line-height-titleMedium: 150%;
+$letter-spacing-titleMedium: 0.15px;
+
+/* Title Small */
+$font-size-titleSmall: 14px;
+$font-weight-titleSmall: 500;
+$line-height-titleSmall: 142.857%;
+$letter-spacing-titleSmall: 0.1px;
+
+/* Label Large */
+$font-size-labelLarge: 14px;
+$font-weight-labelLarge: 500;
+$line-height-labelLarge: 142.857%;
+$letter-spacing-labelLarge: 0.1px;
+
+/* Label Medium */
+$font-size-labelMedium: 12px;
+$font-weight-labelMedium: 700;
+$line-height-labelMedium: 133.333%;
+$letter-spacing-labelMedium: 0.5px;
+
+/* Label Small */
+$font-size-labelSmall: 11px;
+$font-weight-labelSmall: 500;
+$line-height-labelSmall: 145.455%;
+$letter-spacing-labelSmall: 0.5px;
+
+/* Body large */
+$font-size-bodyLarge: 16px;
+$font-weight-bodyLarge: 400;
+$line-height-bodyLarge: 150%;
+$letter-spacing-bodyLarge: 0.5px;
+
+/* Body Medium */
+$font-size-bodyMedium: 14px;
+$font-weight-bodyMedium: 400;
+$line-height-bodyMedium: 142.857%;
+$letter-spacing-bodyMedium: 0.25px;
+
+/* Body Small */
+$font-size-bodySmall: 12px;
+$font-weight-bodySmall: 700;
+$line-height-bodySmall: 133.333%;
 
 // ------------    End        ------------
 
@@ -229,4 +312,73 @@ $default: 1;
   // Button
   fontSizeDAppButton: $font-size-dapp-button;
   lineHeightDAppButton: $line-height-dapp-button;
+  // -------------- New fonts types --------------------
+
+  // Display Large
+  fontSizeDisplayLarge: $font-size-displayLarge;
+  fontWeightDisplayLarge: $font-weight-displayLarge;
+  lineHeightDisplayLarge: $line-height-displayLarge;
+  // Display Medium
+  fontSizeDisplayMedium: $font-size-displayMedium;
+  fontWeightDisplayMedium: $font-weight-displayMedium;
+  lineHeightDisplayMedium: $line-height-displayMedium;
+  // Display Small
+  fontSizeDisplaySmall: $font-size-displaySmall;
+  fontWeightDisplaySmall: $font-weight-displaySmall;
+  lineHeightDisplaySmall: $line-height-displaySmall;
+  // Headline Large
+  fontSizeHeadlineLarge: $font-size-headlineLarge;
+  fontWeightHeadlineLarge: $font-weight-headlineLarge;
+  lineHeightHeadlineLarge: $line-height-headlineLarge;
+  // Headline Medium
+  fontSizeHeadlineMedium: $font-size-headlineMedium;
+  fontWeightHeadlineMedium: $font-weight-headlineMedium;
+  lineHeightHeadlineMedium: $line-height-headlineMedium;
+  // Headline Small
+  fontSizeHeadlineSmall: $font-size-headlineSmall;
+  fontWeightHeadlineSmall: $font-weight-headlineSmall;
+  lineHeightHeadlineSmall: $line-height-headlineSmall;
+  // Title Large
+  fontSizeTitleLarge: $font-size-titleLarge;
+  fontWeightTitleLarge: $font-weight-titleLarge;
+  lineHeightTitleLarge: $line-height-titleLarge;
+  // Title Medium
+  fontSizeTitleMedium: $font-size-titleMedium;
+  fontWeightTitleMedium: $font-weight-titleMedium;
+  lineHeightTitleMedium: $line-height-titleMedium;
+  letterSpacingTitleMedium: $letter-spacing-titleMedium;
+  // Title Small
+  fontSizeTitleSmall: $font-size-titleSmall;
+  fontWeightTitleSmall: $font-weight-titleSmall;
+  lineHeightTitleSmall: $line-height-titleSmall;
+  letterSpacingTitleSmall: $letter-spacing-titleSmall;
+  // Label Large
+  fontSizeLabelLarge: $font-size-labelLarge;
+  fontWeightLabelLarge: $font-weight-labelLarge;
+  lineHeightLabelLarge: $line-height-labelLarge;
+  letterSpacingLabelLarge: $letter-spacing-labelLarge;
+  // Label Medium
+  fontSizeLabelMedium: $font-size-labelMedium;
+  fontWeightLabelMedium: $font-weight-labelMedium;
+  lineHeightLabelMedium: $line-height-labelMedium;
+  letterSpacingLabelMedium: $letter-spacing-labelMedium;
+  // Label Small
+  fontSizeLabelSmall: $font-size-labelSmall;
+  fontWeightLabelSmall: $font-weight-labelSmall;
+  lineHeightLabelSmall: $line-height-labelSmall;
+  letterSpacingLabelSmall: $letter-spacing-labelSmall;
+  // Body Large
+  fontSizeBodyLarge: $font-size-bodyLarge;
+  fontWeightBodyLarge: $font-weight-bodyLarge;
+  lineHeightBodyLarge: $line-height-bodyLarge;
+  letterSpacingBodyLarge: $letter-spacing-bodyLarge;
+  // Body Medium
+  fontSizeBodyMedium: $font-size-bodyMedium;
+  fontWeightBodyMedium: $font-weight-bodyMedium;
+  lineHeightBodyMedium: $line-height-bodyMedium;
+  letterSpacingBodyMedium: $letter-spacing-bodyMedium;
+  // Body Small
+  fontSizeBodySmall: $font-size-bodySmall;
+  fontWeightBodySmall: $font-weight-bodySmall;
+  lineHeightBodySmall: $line-height-bodySmall;
 }

@@ -185,6 +185,90 @@ export const typography: TypographyOptions | ((palette: Palette) => TypographyOp
     lineHeight: `${fonts.lineHeightDAppButton}`,
     fontWeight: fonts.fontWeightBold,
   },
+  // The fonts below are going to be deleted
+  /** ------------ New Font Types - Migration  ------------ **/
+  displayLarge: {
+    fontSize: `${fonts.fontSizeDisplayLarge}`,
+    fontWeight: `${fonts.fontWeightDisplayLarge}`,
+    lineHeight: `${fonts.lineHeightDisplayLarge}`,
+  },
+  displayMedium: {
+    fontSize: `${fonts.fontSizeDisplayMedium}`,
+    fontWeight: `${fonts.fontWeightDisplayMedium}`,
+    lineHeight: `${fonts.lineHeightDisplayMedium}`,
+  },
+  displaySmall: {
+    fontSize: `${fonts.fontSizeDisplaySmall}`,
+    fontWeight: `${fonts.fontWeightDisplaySmall}`,
+    lineHeight: `${fonts.lineHeightDisplaySmall}`,
+  },
+  headlineLarge: {
+    fontSize: `${fonts.fontSizeHeadlineLarge}`,
+    fontWeight: `${fonts.fontWeightHeadlineLarge}`,
+    lineHeight: `${fonts.lineHeightHeadlineLarge}`,
+  },
+  headlineMedium: {
+    fontSize: `${fonts.fontSizeHeadlineMedium}`,
+    fontWeight: `${fonts.fontWeightHeadlineMedium}`,
+    lineHeight: `${fonts.lineHeightHeadlineMedium}`,
+  },
+  headlineSmall: {
+    fontSize: `${fonts.fontSizeHeadlineSmall}`,
+    fontWeight: `${fonts.fontWeightHeadlineSmall}`,
+    lineHeight: `${fonts.lineHeightHeadlineSmall}`,
+  },
+  titleLarge: {
+    fontSize: `${fonts.fontSizeTitleLarge}`,
+    fontWeight: `${fonts.fontWeightTitleLarge}`,
+    lineHeight: `${fonts.lineHeightTitleLarge}`,
+  },
+  titleMedium: {
+    fontSize: `${fonts.fontSizeTitleMedium}`,
+    fontWeight: `${fonts.fontWeightTitleMedium}`,
+    lineHeight: `${fonts.lineHeightTitleMedium}`,
+    letterSpacing: `${fonts.letterSpacingTitleMedium}`,
+  },
+  titleSmall: {
+    fontSize: `${fonts.fontSizeTitleSmall}`,
+    fontWeight: `${fonts.fontWeightTitleSmall}`,
+    lineHeight: `${fonts.lineHeightTitleSmall}`,
+    letterSpacing: `${fonts.letterSpacingTitleSmall}`,
+  },
+  labelLarge: {
+    fontSize: `${fonts.fontSizeLabelLarge}`,
+    fontWeight: `${fonts.fontWeightLabelLarge}`,
+    lineHeight: `${fonts.lineHeightLabelLarge}`,
+    letterSpacing: `${fonts.letterSpacingLabelLarge}`,
+  },
+  labelMedium: {
+    fontSize: `${fonts.fontSizeLabelMedium}`,
+    fontWeight: `${fonts.fontWeightLabelMedium}`,
+    lineHeight: `${fonts.lineHeightLabelMedium}`,
+    letterSpacing: `${fonts.letterSpacingLabelMedium}`,
+  },
+  labelSmall: {
+    fontSize: `${fonts.fontSizeLabelSmall}`,
+    fontWeight: `${fonts.fontWeightLabelSmall}`,
+    lineHeight: `${fonts.lineHeightLabelSmall}`,
+    letterSpacing: `${fonts.letterSpacingLabelSmall}`,
+  },
+  bodyLarge: {
+    fontSize: `${fonts.fontSizeBodyLarge}`,
+    fontWeight: `${fonts.fontWeightBodyLarge}`,
+    lineHeight: `${fonts.lineHeightBodyLarge}`,
+    letterSpacing: `${fonts.letterSpacingBodyLarge}`,
+  },
+  bodyMedium: {
+    fontSize: `${fonts.fontSizeBodyMedium}`,
+    fontWeight: `${fonts.fontWeightBodyMedium}`,
+    lineHeight: `${fonts.lineHeightBodyMedium}`,
+    letterSpacing: `${fonts.letterSpacingBodyMedium}`,
+  },
+  bodySmall: {
+    fontSize: `${fonts.fontSizeBodySmall}`,
+    fontWeight: `${fonts.fontWeightBodySmall}`,
+    lineHeight: `${fonts.lineHeightBodySmall}`,
+  },
 }
 
 // Workaourd to have augmentColor fn
