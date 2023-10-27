@@ -131,7 +131,97 @@ const Template: Story<TypographyStoryProps> = (args) => (
   </Grid>
 )
 
+const TemplateNewFonts: Story<TypographyStoryProps> = (args) => (
+  <Grid item container direction={'column'} spacing={2} sx={{ background: 'black' }}>
+    <Grid item>
+      <Typography variant="displayLarge" component="h1" gutterBottom={args.gutter}>
+        displayLarge. Display
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="displayMedium" gutterBottom={args.gutter} component="h2">
+        displayMedium. Display
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="displaySmall" gutterBottom={args.gutter} component="h3">
+        displaySmall. Display
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="headlineLarge" gutterBottom={args.gutter} component="h4">
+        headlineLarge. Heading
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="headlineMedium" gutterBottom={args.gutter} component="h5">
+        headlineMedium. Heading
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="headlineSmall" gutterBottom={args.gutter} component="h6">
+        headlineSmall. Heading
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="titleLarge" gutterBottom={args.gutter} component="p">
+        titleLarge. Title
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="titleMedium" gutterBottom={args.gutter} component="p">
+        titleMedium. Title
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="titleSmall" gutterBottom={args.gutter} component="p">
+        titleSmall. Title
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="labelLarge" gutterBottom={args.gutter} component="p">
+        labelLarge. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="labelMedium" gutterBottom={args.gutter} component="p">
+        labelMedium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="labelSmall" gutterBottom={args.gutter} component="p">
+        labelSmall. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="bodyLarge" gutterBottom={args.gutter} component="p">
+        bodyLarge. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam
+        beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
+        quasi quidem quibusdam.
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="bodyMedium" gutterBottom={args.gutter}>
+        bodyMedium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit,
+        quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat
+        deleniti? Eum quasi quidem quibusdam.
+      </Typography>
+    </Grid>
+    <Grid item>
+      <Typography variant="bodySmall" gutterBottom={args.gutter}>
+        bodySmall. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam
+        beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
+        quasi quidem quibusdam.
+      </Typography>
+    </Grid>
+  </Grid>
+)
+
 export const Default = Template.bind({})
+export const NewFonts = TemplateNewFonts.bind({})
 Default.args = {
+  gutter: false,
+}
+NewFonts.args = {
   gutter: false,
 }

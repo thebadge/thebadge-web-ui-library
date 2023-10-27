@@ -61,6 +61,23 @@ declare module '@mui/material/Typography' {
     dAppNumber: true
     dAppDaysHours: true
     dAppButton: true
+
+    /** New fonts types **/
+    displayLarge: true
+    displayMedium: true
+    displaySmall: true
+    headlineLarge: true
+    headlineMedium: true
+    headlineSmall: true
+    titleLarge: true
+    titleMedium: true
+    titleSmall: true
+    labelLarge: true
+    labelMedium: true
+    labelSmall: true
+    bodyLarge: true
+    bodyMedium: true
+    bodySmall: true
   }
 }
 
@@ -87,6 +104,23 @@ declare module '@mui/material/styles/createTypography' {
     dAppNumber: TypographyStyleOptions
     dAppDaysHours: TypographyStyleOptions
     dAppButton: TypographyStyleOptions
+
+    /** New fonts types **/
+    displayLarge: TypographyStyleOptions
+    displayMedium: TypographyStyleOptions
+    displaySmall: TypographyStyleOptions
+    headlineLarge: TypographyStyleOptions
+    headlineMedium: TypographyStyleOptions
+    headlineSmall: TypographyStyleOptions
+    titleLarge: TypographyStyleOptions
+    titleMedium: TypographyStyleOptions
+    titleSmall: TypographyStyleOptions
+    labelLarge: TypographyStyleOptions
+    labelMedium: TypographyStyleOptions
+    labelSmall: TypographyStyleOptions
+    bodyLarge: TypographyStyleOptions
+    bodyMedium: TypographyStyleOptions
+    bodySmall: TypographyStyleOptions
   }
 }
 
