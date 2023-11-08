@@ -9,6 +9,8 @@ const OverlayContainer = styled(Box)<{ width: number; height: number; background
     position: 'absolute',
     top: 0,
     left: 0,
+    // z-index is needed bc the badges has up to 2 z-index on image
+    zIndex: 10,
     background: background,
   })
 )
