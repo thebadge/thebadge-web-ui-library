@@ -1,3 +1,5 @@
+'use client'
+
 import { useWindowFocus } from '@hooks'
 import { Box } from '@mui/material'
 import React, { createRef, RefObject, useEffect, useState } from 'react'

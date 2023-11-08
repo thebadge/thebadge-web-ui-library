@@ -1,3 +1,4 @@
+'use client'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import fonts from '@assets/scss/variables/_fonts.variables.module.scss'
 import { createTheme, Palette, ThemeOptions, Typography } from '@mui/material'
@@ -271,7 +272,7 @@ export const typography: TypographyOptions | ((palette: Palette) => TypographyOp
   },
 }
 
-// Workaourd to have augmentColor fn
+// Workaround to have augmentColor fn
 const { palette } = createTheme()
 const { augmentColor } = palette
 

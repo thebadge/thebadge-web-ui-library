@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, styled, SxProps, Theme } from '@mui/material'
 import React from 'react'
 

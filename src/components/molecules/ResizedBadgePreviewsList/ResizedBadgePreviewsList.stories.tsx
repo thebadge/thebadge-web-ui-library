@@ -1,6 +1,5 @@
 import { BadgeCategories, BadgeTypes } from '@businessLogic/badge'
 import { BadgePreviewEffects, BadgeSize, BadgeTextContrast } from '@components/atoms/BadgePreview/BadgePreviewProps'
-import { BadgePreview } from '@components/atoms/BadgePreview/v1/BadgePreview'
 import { BadgePreview as BadgePreviewV2 } from '@components/atoms/BadgePreview/v2/BadgePreview'
 import {
   ResizedBadgePreviewsList,
@@ -36,17 +35,6 @@ const defaultBadgePreviewExampleProps = {
   badgeBackgroundUrl:
     'https://images.unsplash.com/photo-1620421680010-0766ff230392?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80',
   textContrast: 'dark-withTextBackground' as BadgeTextContrast,
-}
-
-export const ResizedBadgePreviewsListTemplate = Template.bind({})
-ResizedBadgePreviewsListTemplate.args = {
-  badges: [
-    <BadgePreview key={0} {...defaultBadgePreviewExampleProps} />,
-    <BadgePreview key={1} {...defaultBadgePreviewExampleProps} />,
-    <BadgePreview key={2} {...defaultBadgePreviewExampleProps} />,
-    <BadgePreview key={3} {...defaultBadgePreviewExampleProps} />,
-    <BadgePreview key={4} {...defaultBadgePreviewExampleProps} />,
-  ],
 }
 
 export const ResizedBadgePreviewsWithV2ListTemplate = Template.bind({})

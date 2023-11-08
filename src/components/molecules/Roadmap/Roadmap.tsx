@@ -1,3 +1,5 @@
+'use client'
+
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline'
 import { BoxGradient } from '@components/layout/BoxGradient/BoxGradient'

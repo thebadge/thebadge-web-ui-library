@@ -1,3 +1,5 @@
+'use client'
+
 import { TBColor } from '@assets/defaultTheme'
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { SpinningArrow } from '@components/atoms/SpinningArrow/SpinningArrow'
