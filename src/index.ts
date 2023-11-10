@@ -53,6 +53,7 @@ import {
   TimeToExpireBadgeOverlayProps,
 } from '@components/overlays/TimeToExpireBadgeOverlay/TimeToExpireBadgeOverlay'
 import { Flipper } from '@components/atoms/Flipper/Flipper'
+import { IconMetamask } from '@components/icons/IconMetamask/IconMetamask'
 
 export {
   lightTheme,
@@ -78,6 +79,7 @@ export {
   IconGithub,
   IconMedium,
   IconTwitter,
+  IconMetamask,
   BackgroundGradient,
   BoxGradient,
   BoxBorderGradient,
