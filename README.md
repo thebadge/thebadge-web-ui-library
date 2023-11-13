@@ -1,4 +1,4 @@
-<div style="text-align: center; background: #272727">
+<div style="text-align: center; background-color: #272727">
   <a href="https://thebadge.xyz">
     <img alt="TheBadge" src="https://www.thebadge.xyz/the_badge.png">
   </a>
