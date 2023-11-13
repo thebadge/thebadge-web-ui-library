@@ -1,6 +1,6 @@
 <div style="text-align: center;">
   <a href="https://thebadge.xyz">
-    <img style="background-color: #272727" alt="TheBadge" src="https://www.thebadge.xyz/the_badge.png">
+    <img style="background-color: #272727;" alt="TheBadge" src="https://www.thebadge.xyz/the_badge.png">
   </a>
 </div>
 
