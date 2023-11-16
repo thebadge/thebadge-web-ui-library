@@ -51,8 +51,8 @@ const Template: Story<DiplomaPreviewProps> = (args) => {
 }
 
 // Reuse that template for creating different stories
-export const BadgePreviewLongTexts = Template.bind({})
-BadgePreviewLongTexts.args = {
+export const DiplomaPreviewWithDefaultBackgrounds = Template.bind({})
+DiplomaPreviewWithDefaultBackgrounds.args = {
   date: 'November 9, 2023',
   studentName: 'Student Name Bla Bla ',
   courseName: 'Name of the course by Coursera',
@@ -65,14 +65,15 @@ BadgePreviewLongTexts.args = {
     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   badgeUrl: 'https://www.thebadge.xyz',
   issuedByLabel: 'Issued By',
-  backgroundUrl: EXAMPLE_URLS.backgroundTwo,
-  decorationBackgroundUrl: EXAMPLE_URLS.backgroundThree,
   animationEffects: [] as BadgePreviewEffects[],
-  textContrast: 'dark-withTextBackground',
+  textContrast: 'light-withTextBackground',
+  signatureImageUrl: 'https://images.unsplash.com/photo-1645484686977-dbddd9e1dc0a?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  signerTitle: 'Max Mustermann',
+  signerSubline: 'CEO of TheGreatestCompany'
 }
 
-export const BadgePreviewWithAnimationOnHover = Template.bind({})
-BadgePreviewWithAnimationOnHover.args = {
+export const DiplomaPreviewWithCustomBackgroundsAndAnimation = Template.bind({})
+DiplomaPreviewWithCustomBackgroundsAndAnimation.args = {
   date: 'November 9, 2023',
   studentName: 'Student Name Bla Bla ',
   courseName: 'Name of the course by Coursera',
@@ -81,7 +82,7 @@ BadgePreviewWithAnimationOnHover.args = {
   animationOnHover: true,
   animationEffects: ['wobble', 'grow', 'glare'],
   issuedByLabel: 'Issued By',
-  backgroundUrl: EXAMPLE_URLS.backgroundTwo,
+  backgroundUrl: EXAMPLE_URLS.backgroundFive,
   decorationBackgroundUrl: EXAMPLE_URLS.backgroundThree,
   textContrast: 'dark-withTextBackground',
 }
