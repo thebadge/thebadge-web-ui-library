@@ -2,7 +2,7 @@ import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
 import { DiplomaPreview, DiplomaPreviewProps } from './DiplomaPreview'
-import { BadgePreviewEffects, BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
+import { BadgePreviewEffects } from '@components/atoms/BadgePreview/BadgePreviewProps'
 
 const EXAMPLE_URLS = {
   backgroundOne:
@@ -56,20 +56,18 @@ DiplomaPreviewWithDefaultBackgrounds.args = {
   date: 'November 9, 2023',
   studentName: 'Student Name Bla Bla ',
   courseName: 'Name of the course by Coursera',
-  description:
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' +
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  completionLabel: 'has successfully completed the course',
   badgeUrl: 'https://www.thebadge.xyz',
   issuedByLabel: 'Issued By',
   animationEffects: [] as BadgePreviewEffects[],
-  textContrast: 'light-withTextBackground',
-  signatureImageUrl: 'https://images.unsplash.com/photo-1645484686977-dbddd9e1dc0a?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  textContrast: 'light',
+  signatureImageUrl:
+    'https://images.unsplash.com/photo-1645484686977-dbddd9e1dc0a?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   signerTitle: 'Max Mustermann',
-  signerSubline: 'CEO of TheGreatestCompany'
+  signerSubline: 'CEO of TheGreatestCompany',
+  identityValidator: 'theaccountantquits.eth',
+  identityValidationLabel: 'has confirmed the identity',
+  identityValidated: 'xxx',
 }
 
 export const DiplomaPreviewWithCustomBackgroundsAndAnimation = Template.bind({})
@@ -77,12 +75,12 @@ DiplomaPreviewWithCustomBackgroundsAndAnimation.args = {
   date: 'November 9, 2023',
   studentName: 'Student Name Bla Bla ',
   courseName: 'Name of the course by Coursera',
-  description: 'User with address: 0xD28....16eC has a degree in intellectual property from Austral University',
+  completionLabel: 'has successfully completed the course',
   badgeUrl: 'https://www.thebadge.xyz',
   animationOnHover: true,
   animationEffects: ['wobble', 'grow', 'glare'],
   issuedByLabel: 'Issued By',
   backgroundUrl: EXAMPLE_URLS.backgroundFive,
   decorationBackgroundUrl: EXAMPLE_URLS.backgroundThree,
-  textContrast: 'dark-withTextBackground',
+  textContrast: 'dark',
 }

@@ -7,7 +7,7 @@ import QRCode from 'react-qr-code'
 import './diplomaPreview.scss'
 import whiteBackground from '@assets/svgs/whiteBackground.svg'
 import blueBackground from '@assets/svgs/blueBackground.svg'
-import { IconCertificate } from '@components/icons/IconCertificate/IconCertificate'
+import { CertificateWaterMark } from '@components/icons/CertificateWaterMark/CertificateWaterMark'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 
 const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName !== 'size' })<{
@@ -21,7 +21,7 @@ const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName 
 
 export interface DiplomaPreviewProps {
   badgeUrl?: string
-  textContrast?: BadgeTextContrast
+  textContrast?: 'light' | 'dark'
 
   // background configs
   backgroundUrl?: string
@@ -34,8 +34,9 @@ export interface DiplomaPreviewProps {
   // certificate info
   date: string
   studentName: string
+  completionLabel: string
   courseName: string
-  description: string | React.ReactNode
+  description?: string | React.ReactNode
 
   // certificate sign
   signatureImageUrl?: string
@@ -44,6 +45,7 @@ export interface DiplomaPreviewProps {
 
   // identity confirmation
   identityValidator?: string
+  identityValidationLabel?: string
   identityValidated?: string
 
   onClick?: () => void // will be shared among the button and the badge
@@ -61,10 +63,8 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
     const { textContrast } = props
     switch (textContrast) {
       case 'light':
-      case 'light-withTextBackground':
         return colors.black
       case 'dark':
-      case 'dark-withTextBackground':
         return colors.white
       default:
         return colors.black
@@ -88,13 +88,9 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
       onClick={props.onClick}
     >
       <div
-        className={[
-          `diploma-preview__content`,
-          // `diploma-preview__content--${props.size}`,
-          `diploma-preview__content--${props.textContrast ?? 'light'}`,
-        ].join(' ')}
+        className={[`diploma-preview__content`, `diploma-preview__content--${props.textContrast ?? 'light'}`].join(' ')}
       >
-        { props.backgroundUrl ? (
+        {props.backgroundUrl ? (
           <img
             className={`diploma-preview__content--backgroundImage`}
             src={`${props.backgroundUrl}`}
@@ -105,7 +101,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
             className={`diploma-preview__content--backgroundImage`}
             src={`${whiteBackground}`}
             alt="Badge Background"
-            style={{'maxWidth': 'none', 'width': 'auto'}}
+            style={{ maxWidth: 'none', width: 'auto' }}
           />
         )}
 
@@ -127,27 +123,38 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
 
         {/* Badge Content - Tittle - Category - Description */}
         <div className={`diploma-preview__body`}>
-          <Box className={[`diploma-preview__body--date`, `text-max-lines--${1}`].join(' ')} color={getLogoFillColor()}>{props.date}</Box>
+          <Box className={[`diploma-preview__body--date`, `text-max-lines--${1}`].join(' ')} color={getLogoFillColor()}>
+            {props.date}
+          </Box>
 
-          <Box className={[`diploma-preview__body--student-name`].join(' ')} color={getLogoFillColor()}>{props.studentName}</Box>
-          <Divider sx={{borderColor: getLogoFillColor()}}/>
-          <Box sx={{fontSize: '12px', marginTop: '8px'}}>has successfully completed the course</Box>
-          <Box className={[`diploma-preview__body--course-name`].join(' ')} color={getLogoFillColor()}>{props.courseName}</Box>
-          {/*<div className={[`diploma-preview__body--description`].join(' ')}>{props.description}</div>*/}
+          <Box className={[`diploma-preview__body--student-name`].join(' ')} color={getLogoFillColor()}>
+            {props.studentName}
+          </Box>
+          <Divider sx={{ borderColor: getLogoFillColor() }} />
+          <Box sx={{ fontSize: '12px', marginTop: '8px' }}>{props.completionLabel}</Box>
+          <Box className={[`diploma-preview__body--course-name`].join(' ')} color={getLogoFillColor()}>
+            {props.courseName}
+          </Box>
+
+          {props.description && (
+            <div className={[`diploma-preview__body--description`].join(' ')}>{props.description}</div>
+          )}
 
           <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}>
-            {
-              props.signatureImageUrl ? (
-                <img
-                  className={`diploma-preview__body--signature-image`}
-                  src={`${props.signatureImageUrl}`}
-                  alt="Badge Background"
-                />
-              ) : null
-            }
+            {props.signatureImageUrl ? (
+              <img
+                className={`diploma-preview__body--signature-image`}
+                src={`${props.signatureImageUrl}`}
+                alt="Badge Background"
+              />
+            ) : null}
 
-            <Box className={`diploma-preview__body--signer-title`} color={getLogoFillColor()}>{props.signerTitle}</Box>
-            <Box className={`diploma-preview__body--signer-subline`} color={getLogoFillColor()}>{props.signerSubline}</Box>
+            <Box className={`diploma-preview__body--signer-title`} color={getLogoFillColor()}>
+              {props.signerTitle}
+            </Box>
+            <Box className={`diploma-preview__body--signer-subline`} color={getLogoFillColor()}>
+              {props.signerSubline}
+            </Box>
           </Box>
         </div>
         {hasGlare && <div className="glare" />}
@@ -164,32 +171,35 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
             className={`diploma-preview__content--backgroundImage`}
             src={`${blueBackground}`}
             alt="Badge Background"
-            style={{'maxWidth': 'none', 'width': 'auto'}}
+            style={{ maxWidth: 'none', width: 'auto' }}
           />
         )}
 
         <div className={[`diploma-preview__decoration--issuedBy`].join(' ')}>
           <span className={`diploma-preview__decoration--issuedByLabel`}>{props.issuedByLabel}</span>
-          { props.issuedByAvatarUrl ? (
+          {props.issuedByAvatarUrl ? (
             <img
               className={`diploma-preview__decoration--issuedByImage`}
               src={props.issuedByAvatarUrl}
               alt="Badge Background"
             />
           ) : (
-            <span className={`diploma-preview__decoration--issuedByImage`}
-                  style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center', }}
-            ><LogoTheBadge size={64} /></span>
+            <span
+              className={`diploma-preview__decoration--issuedByImage`}
+              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+            >
+              <LogoTheBadge size={64} />
+            </span>
           )}
         </div>
       </div>
       <div className={`diploma-preview__footer`}>
-        { props.identityValidator && props.identityValidated ? (
+        {props.identityValidator && props.identityValidated ? (
           <Box className={`diploma-preview__footer--helperText`} color={getLogoFillColor()}>
-            {props.identityValidator} has confirmed the identity {props.identityValidated}
+            {props.identityValidator} {props.identityValidationLabel} {props.identityValidated}
           </Box>
         ) : null}
-        <IconCertificate color={getLogoFillColor()}/>
+        <CertificateWaterMark color={getLogoFillColor()} />
       </div>
     </BadgePreviewBox>
   )
