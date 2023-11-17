@@ -105,7 +105,6 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           />
         )}
 
-        <div className={[].join(' ')} />
         <div className={'diploma-preview__header'}>
           <div className={'diploma-preview__header--logo-qr-container'}>
             <span className={[`diploma-preview__header--tb-logo`].join(' ')}>
