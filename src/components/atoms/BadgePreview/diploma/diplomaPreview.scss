@@ -148,7 +148,7 @@
 
     &--description {
       font-weight: variables.$font-weight-normal;
-
+      margin: convert-to-rem(8px) 0;
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: convert-to-rem(12px);
@@ -210,12 +210,32 @@
       text-transform: uppercase;
     }
 
-    &--issuedByImage {
+    &--issuedByContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
       border-radius: 50%;
       width: 96px;
       height: 96px;
       object-fit: cover;
       background-color: #F8F8F8;
+    }
+
+    &--issuerImage {
+      position: relative;
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      background-color: #F8F8F8;
+    }
+
+    &--iconVerified {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 20px
     }
   }
 

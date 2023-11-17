@@ -1,7 +1,7 @@
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { BadgePreviewEffects, BadgeTextContrast } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
-import { Box, Divider, styled } from '@mui/material'
+import { Box, Divider, styled, Tooltip } from '@mui/material'
 import React from 'react'
 import QRCode from 'react-qr-code'
 import './diplomaPreview.scss'
@@ -9,6 +9,7 @@ import whiteBackground from '@assets/svgs/whiteBackground.svg'
 import blueBackground from '@assets/svgs/blueBackground.svg'
 import { IconCertificate } from '@components/icons/IconCertificate/IconCertificate'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
+import { IconVerified } from '@components/icons/IconVerified/IconVerified'
 
 const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName !== 'size' })<{
   size: { width: number; height: number }
@@ -27,9 +28,12 @@ export interface DiplomaPreviewProps {
   backgroundUrl?: string
   decorationBackgroundUrl?: string
 
-  // issuer Config
+  // issuer
   issuedByLabel: string
-  issuedByAvatarUrl?: string
+  issuerName?: string
+  issuerAvatarUrl?: string
+  issuerProfileUrl?: string
+  issuerIsVerified?: boolean
 
   // certificate info
   date: string
@@ -42,11 +46,10 @@ export interface DiplomaPreviewProps {
   signerTitle?: string
   signerSubline?: string
 
-  // identity confirmation
-  identityValidator?: string
-  identityValidated?: string
+  // footer
+  footerText?: string
 
-  onClick?: () => void // will be shared among the button and the badge
+  onClick?: () => void // will be shared among the button and the diploma
 
   animationOnHover?: boolean
   animationEffects: BadgePreviewEffects[]
@@ -90,7 +93,6 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
       <div
         className={[
           `diploma-preview__content`,
-          // `diploma-preview__content--${props.size}`,
           `diploma-preview__content--${props.textContrast ?? 'light'}`,
         ].join(' ')}
       >
@@ -98,13 +100,13 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           <img
             className={`diploma-preview__content--backgroundImage`}
             src={`${props.backgroundUrl}`}
-            alt="Badge Background"
+            alt="Diploma Background"
           />
         ) : (
           <img
             className={`diploma-preview__content--backgroundImage`}
             src={`${whiteBackground}`}
-            alt="Badge Background"
+            alt="Diploma Background"
             style={{'maxWidth': 'none', 'width': 'auto'}}
           />
         )}
@@ -125,15 +127,14 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           </div>
         </div>
 
-        {/* Badge Content - Tittle - Category - Description */}
+        {/* Diploma Content - Title - Description - Signature */}
         <div className={`diploma-preview__body`}>
           <Box className={[`diploma-preview__body--date`, `text-max-lines--${1}`].join(' ')} color={getLogoFillColor()}>{props.date}</Box>
 
           <Box className={[`diploma-preview__body--student-name`].join(' ')} color={getLogoFillColor()}>{props.studentName}</Box>
           <Divider sx={{borderColor: getLogoFillColor()}}/>
-          <Box sx={{fontSize: '12px', marginTop: '8px'}}>has successfully completed the course</Box>
+          <Box className={[`diploma-preview__body--description`].join(' ')} color={getLogoFillColor()}>{props.description}</Box>
           <Box className={[`diploma-preview__body--course-name`].join(' ')} color={getLogoFillColor()}>{props.courseName}</Box>
-          {/*<div className={[`diploma-preview__body--description`].join(' ')}>{props.description}</div>*/}
 
           <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}>
             {
@@ -141,7 +142,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
                 <img
                   className={`diploma-preview__body--signature-image`}
                   src={`${props.signatureImageUrl}`}
-                  alt="Badge Background"
+                  alt="Diploma signature"
                 />
               ) : null
             }
@@ -157,38 +158,50 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           <img
             className={`diploma-preview__content--backgroundImage`}
             src={`${props.decorationBackgroundUrl}`}
-            alt="Badge Background"
+            alt="Diploma Background"
           />
         ) : (
           <img
             className={`diploma-preview__content--backgroundImage`}
             src={`${blueBackground}`}
-            alt="Badge Background"
+            alt="Diploma Background"
             style={{'maxWidth': 'none', 'width': 'auto'}}
           />
         )}
 
         <div className={[`diploma-preview__decoration--issuedBy`].join(' ')}>
           <span className={`diploma-preview__decoration--issuedByLabel`}>{props.issuedByLabel}</span>
-          { props.issuedByAvatarUrl ? (
-            <img
-              className={`diploma-preview__decoration--issuedByImage`}
-              src={props.issuedByAvatarUrl}
-              alt="Badge Background"
-            />
-          ) : (
-            <span className={`diploma-preview__decoration--issuedByImage`}
-                  style={{'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center', }}
-            ><LogoTheBadge size={64} /></span>
-          )}
+          <a href={props.issuerProfileUrl} target={'_blank'} rel="noreferrer">
+          <Tooltip title={props.issuerName} arrow>
+            { props.issuerAvatarUrl ? (
+              <span className={`diploma-preview__decoration--issuedByContainer`}>
+              <img
+                className={`diploma-preview__decoration--issuerImage`}
+                src={props.issuerAvatarUrl}
+                alt="Diploma issuer"
+              />
+                {props.issuerIsVerified && (
+                  <span className={`diploma-preview__decoration--iconVerified`}><IconVerified color={getLogoFillColor()} /></span>
+                )}
+            </span>
+            ) : (
+              <span className={`diploma-preview__decoration--issuedByContainer`}>
+              <LogoTheBadge className={`diploma-preview__decoration--issuerImage`} size={64} />
+                {props.issuerIsVerified && (
+                  <span className={`diploma-preview__decoration--iconVerified`}><IconVerified color={getLogoFillColor()} /></span>
+                )}
+            </span>
+            )}
+          </Tooltip>
+          </a>
         </div>
       </div>
       <div className={`diploma-preview__footer`}>
-        { props.identityValidator && props.identityValidated ? (
+        { props.footerText && (
           <Box className={`diploma-preview__footer--helperText`} color={getLogoFillColor()}>
-            {props.identityValidator} has confirmed the identity {props.identityValidated}
+            {props.footerText}
           </Box>
-        ) : null}
+        )}
         <IconCertificate color={getLogoFillColor()}/>
       </div>
     </BadgePreviewBox>
