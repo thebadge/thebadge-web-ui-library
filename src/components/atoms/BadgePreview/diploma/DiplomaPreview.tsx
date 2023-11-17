@@ -186,7 +186,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
                   />
                   {props.issuerIsVerified && (
                     <span className={`diploma-preview__decoration--iconVerified`}>
-                      <IconVerified color={getLogoFillColor()} />
+                      <IconVerified />
                     </span>
                   )}
                 </span>
@@ -195,7 +195,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
                   <LogoTheBadge className={`diploma-preview__decoration--issuerImage`} size={64} />
                   {props.issuerIsVerified && (
                     <span className={`diploma-preview__decoration--iconVerified`}>
-                      <IconVerified color={getLogoFillColor()} />
+                      <IconVerified />
                     </span>
                   )}
                 </span>
