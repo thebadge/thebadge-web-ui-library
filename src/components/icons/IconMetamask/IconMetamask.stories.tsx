@@ -10,7 +10,7 @@ export default {
   component: IconMetamask,
 } as Meta
 
-const Template: Story<IconProps> = (args) => <IconMetamask {...args} />
+const Template: Story<IconProps> = (args) => <IconMetamask size={64} {...args} />
 
 // Reuse that template for creating different stories
 
