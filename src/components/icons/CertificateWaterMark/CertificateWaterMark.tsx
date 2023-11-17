@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { IconProps } from '../IconProps'
 
-export const IconCertificate = (props: IconProps) => (
+export const CertificateWaterMark = (props: IconProps) => (
   <a className={'icon ' + (!props.link ? 'icon--disabled' : '')} href={props.link} target={'_blank'} rel="noreferrer">
     <svg xmlns="http://www.w3.org/2000/svg" width="650" height="65" viewBox="0 0 650 65" fill="none">
       <mask
