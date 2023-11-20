@@ -14,6 +14,7 @@ import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
 import { BadgePreview } from '@components/atoms/BadgePreview/v2/BadgePreview'
 import { EmptyBadgePreview } from '@components/atoms/BadgePreview/empty/EmptyBadgePreview'
 import { MiniBadgePreview } from '@components/atoms/BadgePreview/mini/MiniBadgePreview'
+import { DiplomaPreview } from '@components/atoms/BadgePreview/diploma/DiplomaPreview'
 import { BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { Button } from '@components/atoms/Button/v1/Button'
 import { ButtonV2 } from '@components/atoms/Button/v2/Button'
@@ -54,6 +55,7 @@ import {
 } from '@components/overlays/TimeToExpireBadgeOverlay/TimeToExpireBadgeOverlay'
 import { Flipper } from '@components/atoms/Flipper/Flipper'
 import { IconMetamask } from '@components/icons/IconMetamask/IconMetamask'
+import { IconVerified } from '@components/icons/IconVerified/IconVerified'
 
 export {
   lightTheme,
@@ -67,6 +69,7 @@ export {
   BadgePreview,
   EmptyBadgePreview,
   MiniBadgePreview,
+  DiplomaPreview,
   Editor,
   NavigationHeader,
   SpinningArrow,
@@ -80,6 +83,7 @@ export {
   IconMedium,
   IconTwitter,
   IconMetamask,
+  IconVerified,
   BackgroundGradient,
   BoxGradient,
   BoxBorderGradient,

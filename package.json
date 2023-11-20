@@ -1,6 +1,6 @@
 {
   "name": "@thebadge/ui-library",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",

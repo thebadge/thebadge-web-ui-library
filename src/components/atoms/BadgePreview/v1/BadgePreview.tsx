@@ -34,8 +34,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         return 300
       case 'large':
         return 400
-      case 'x-large':
-        return 500
       default:
         return 300
     }
@@ -54,8 +52,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         return 40
       case 'large':
         return 50
-      case 'x-large':
-        return 60
     }
   }
 
@@ -68,8 +64,6 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         return 5
       case 'large':
         return 5
-      case 'x-large':
-        return 7
     }
   }
   const badgeTitleMaxLines = () => {
