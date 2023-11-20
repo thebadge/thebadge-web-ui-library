@@ -186,16 +186,16 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
                   />
                   {props.issuerIsVerified && (
                     <span className={`diploma-preview__decoration--iconVerified`}>
-                      <IconVerified />
+                      <IconVerified size={20} />
                     </span>
                   )}
                 </span>
               ) : (
                 <span className={`diploma-preview__decoration--issuedByContainer`}>
-                  <LogoTheBadge className={`diploma-preview__decoration--issuerImage`} size={64} />
+                  <LogoTheBadge className={`diploma-preview__decoration--issuerImage`} size={90} />
                   {props.issuerIsVerified && (
                     <span className={`diploma-preview__decoration--iconVerified`}>
-                      <IconVerified />
+                      <IconVerified size={20} />
                     </span>
                   )}
                 </span>
