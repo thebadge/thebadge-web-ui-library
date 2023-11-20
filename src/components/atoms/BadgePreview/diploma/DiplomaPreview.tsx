@@ -192,7 +192,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
                 </span>
               ) : (
                 <span className={`diploma-preview__decoration--issuedByContainer`}>
-                  <LogoTheBadge className={`diploma-preview__decoration--issuerImage`} size={90} />
+                  <LogoTheBadge className={`diploma-preview__decoration--issuerImage`} size={94} />
                   {props.issuerIsVerified && (
                     <span className={`diploma-preview__decoration--iconVerified`}>
                       <IconVerified size={20} />
