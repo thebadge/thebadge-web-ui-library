@@ -138,7 +138,14 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
             {props.courseName}
           </Box>
 
-          <Box display={'flex'} justifyContent={'center'} alignItems={'center'} flexDirection={'column'}>
+          <Box
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            flexDirection={'column'}
+            mt="auto"
+            mb={5}
+          >
             {props.signatureImageUrl && (
               <img
                 className={`diploma-preview__body--signature-image`}
