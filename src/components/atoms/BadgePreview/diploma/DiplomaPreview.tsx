@@ -99,7 +99,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           <img
             className={`diploma-preview__content--backgroundImage`}
             src={
-              'https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+              'https://images.unsplash.com/photo-1651527567593-32c04202ed85?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             }
             alt="Diploma Background"
             style={{ maxWidth: 'none', width: 'auto' }}
@@ -175,7 +175,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           <img
             className={`diploma-preview__content--backgroundImage`}
             src={
-              'https://images.unsplash.com/photo-1614850523011-8f49ffc73908?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+              'https://images.unsplash.com/photo-1638272181967-7d3772a91265?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             }
             alt="Diploma Background"
             style={{ maxWidth: 'none', width: 'auto' }}
