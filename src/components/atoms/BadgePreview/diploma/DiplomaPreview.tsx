@@ -111,7 +111,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
         ) : (
           <img
             className={`diploma-preview__content--backgroundImage`}
-            src={'https://dev-app.thebadge.xyz/shareable/diploma-background.webp'}
+            src={'https://dev-app.thebadge.xyz/shareable/diploma-background.png'}
             alt="Diploma Background"
             style={{ maxWidth: 'none', width: 'auto' }}
           />
@@ -188,7 +188,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
         ) : (
           <img
             className={`diploma-preview__content--backgroundImage`}
-            src={'https://dev-app.thebadge.xyz/shareable/diploma-decoration.webp'}
+            src={'https://dev-app.thebadge.xyz/shareable/diploma-decoration.png'}
             alt="Diploma Background"
             style={{ maxWidth: 'none', width: 'auto', objectFit: 'cover' }}
           />
