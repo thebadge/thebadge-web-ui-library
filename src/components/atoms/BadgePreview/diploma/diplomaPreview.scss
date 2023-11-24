@@ -163,6 +163,7 @@
       max-width: 100px;
       max-height: 50px;
       margin-top: convert-to-rem(16px);
+      z-index: 2;
     }
 
     &--signer-title {
