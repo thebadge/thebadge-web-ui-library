@@ -5,8 +5,6 @@ import { Box, Divider, styled, Tooltip } from '@mui/material'
 import React from 'react'
 import QRCode from 'react-qr-code'
 import './diplomaPreview.scss'
-import whiteBackground from '@assets/svgs/whiteBackground.svg'
-import blueBackground from '@assets/svgs/blueBackground.svg'
 import { CertificateWaterMark } from '@components/icons/CertificateWaterMark/CertificateWaterMark'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { IconVerified } from '@components/icons/IconVerified/IconVerified'
@@ -100,7 +98,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
         ) : (
           <img
             className={`diploma-preview__content--backgroundImage`}
-            src={`${whiteBackground}`}
+            src={'https://dev-app.thebadge.xyz/shareable/diploma-background.webp'}
             alt="Diploma Background"
             style={{ maxWidth: 'none', width: 'auto' }}
           />
@@ -174,9 +172,9 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
         ) : (
           <img
             className={`diploma-preview__content--backgroundImage`}
-            src={`${blueBackground}`}
+            src={'https://dev-app.thebadge.xyz/shareable/diploma-decoration.webp'}
             alt="Diploma Background"
-            style={{ maxWidth: 'none', width: 'auto' }}
+            style={{ maxWidth: 'none', width: 'auto', objectFit: 'cover' }}
           />
         )}
 
