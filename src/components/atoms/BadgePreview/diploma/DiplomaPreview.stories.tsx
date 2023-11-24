@@ -60,12 +60,16 @@ DiplomaPreviewWithDefaultBackgrounds.args = {
   badgeUrl: 'https://www.thebadge.xyz',
   issuedByLabel: 'Issued By',
   animationEffects: [] as BadgePreviewEffects[],
-  textContrast: 'light',
+  textContrastLeft: 'light',
+  textContrastRight: 'dark',
   signatureImageUrl:
     'https://images.unsplash.com/photo-1645484686977-dbddd9e1dc0a?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   signerTitle: 'Max Mustermann',
   signerSubline: 'CEO of TheGreatestCompany',
   footerText: 'account.eth hast confirmed the identity xxx',
+  issuerTitle: 'Course instructors',
+  issuerDescription:
+    '- Max Muster \n\n- Maxi Terman \n- Musi Maxtermann \n- Muxi Master \n- Maxi Mussiterman \n- Mux Maxirmann ',
 }
 
 export const DiplomaPreviewWithCustomBackgroundsAndAnimation = Template.bind({})
@@ -85,5 +89,5 @@ DiplomaPreviewWithCustomBackgroundsAndAnimation.args = {
   issuerProfileUrl: 'https://www.thebadge.xyz',
   backgroundUrl: EXAMPLE_URLS.backgroundFive,
   decorationBackgroundUrl: EXAMPLE_URLS.backgroundThree,
-  textContrast: 'dark',
+  textContrastLeft: 'dark',
 }
