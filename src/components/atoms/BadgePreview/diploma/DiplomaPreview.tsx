@@ -114,20 +114,11 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           ' '
         )}
       >
-        {props.backgroundUrl ? (
-          <img
-            className={`diploma-preview__content--backgroundImage`}
-            src={`${props.backgroundUrl}`}
-            alt="Diploma Background"
-          />
-        ) : (
-          <img
-            className={`diploma-preview__content--backgroundImage`}
-            src={'https://dev-app.thebadge.xyz/shareable/diploma-background.png'}
-            alt="Diploma Background"
-            style={{ maxWidth: 'none', width: 'auto' }}
-          />
-        )}
+        <img
+          className={`diploma-preview__content--backgroundImage`}
+          src={`${props.backgroundUrl || 'https://dev-app.thebadge.xyz/shareable/diploma-background.png'}`}
+          alt="Diploma Background"
+        />
 
         <div className={'diploma-preview__header'}>
           <div className={'diploma-preview__header--logo-qr-container'}>
@@ -188,20 +179,11 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
         {hasGlare && <div className="glare" />}
       </div>
       <div className={[`diploma-preview__decoration`].join(' ')}>
-        {props.decorationBackgroundUrl ? (
-          <img
-            className={`diploma-preview__content--backgroundImage`}
-            src={`${props.decorationBackgroundUrl}`}
-            alt="Diploma Background"
-          />
-        ) : (
-          <img
-            className={`diploma-preview__content--backgroundImage`}
-            src={'https://dev-app.thebadge.xyz/shareable/diploma-decoration.png'}
-            alt="Diploma Background"
-            style={{ maxWidth: 'none', width: 'auto', objectFit: 'cover' }}
-          />
-        )}
+        <img
+          className={`diploma-preview__content--backgroundImage`}
+          src={`${props.decorationBackgroundUrl || 'https://dev-app.thebadge.xyz/shareable/diploma-decoration.png'}`}
+          alt="Diploma Background"
+        />
 
         <div className={[`diploma-preview__decoration--issuer`].join(' ')}>
           <Box className={`diploma-preview__decoration--issuedBy`}>
