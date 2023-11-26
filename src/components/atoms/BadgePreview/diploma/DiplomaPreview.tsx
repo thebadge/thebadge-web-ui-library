@@ -72,13 +72,25 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
     }
   }
 
-  const getLogoFillColorLeft = () => {
+  const getTextColorLeft = () => {
     const { textContrastLeft } = props
     return getLogoFillColor(textContrastLeft)
   }
-  const getLogoFillColorRight = () => {
+
+  const getTextColorRight = () => {
     const { textContrastRight } = props
     return getLogoFillColor(textContrastRight)
+  }
+
+  const getBackgroundColorRight = () => {
+    const { textContrastRight } = props
+    switch (textContrastRight) {
+      case 'light':
+        return 'rgba(245,245,245,0.5)'
+      case 'dark':
+      default:
+        return 'rgba(35,35,35,0.5)'
+    }
   }
 
   const badgeQRSize = (): number => {
@@ -120,7 +132,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
         <div className={'diploma-preview__header'}>
           <div className={'diploma-preview__header--logo-qr-container'}>
             <span className={[`diploma-preview__header--tb-logo`].join(' ')}>
-              <LogoTheBadgeWithText fill={getLogoFillColorLeft()} size={badgeLogoSize()} />
+              <LogoTheBadgeWithText fill={getTextColorLeft()} size={badgeLogoSize()} />
             </span>
             {props.badgeUrl ? (
               <div className={`diploma-preview__header--qr-code`}>
@@ -134,21 +146,18 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
 
         {/* Diploma Content - Title - Description - Signature */}
         <div className={`diploma-preview__body`}>
-          <Box
-            className={[`diploma-preview__body--date`, `text-max-lines--${1}`].join(' ')}
-            color={getLogoFillColorLeft()}
-          >
+          <Box className={[`diploma-preview__body--date`, `text-max-lines--${1}`].join(' ')} color={getTextColorLeft()}>
             {props.date}
           </Box>
 
-          <Box className={[`diploma-preview__body--student-name`].join(' ')} color={getLogoFillColorLeft()}>
+          <Box className={[`diploma-preview__body--student-name`].join(' ')} color={getTextColorLeft()}>
             {props.studentName}
           </Box>
-          <Divider sx={{ borderColor: getLogoFillColorLeft() }} />
-          <Box className={[`diploma-preview__body--description`].join(' ')} color={getLogoFillColorLeft()}>
+          <Divider sx={{ borderColor: getTextColorLeft() }} />
+          <Box className={[`diploma-preview__body--description`].join(' ')} color={getTextColorLeft()}>
             {props.description}
           </Box>
-          <Box className={[`diploma-preview__body--course-name`].join(' ')} color={getLogoFillColorLeft()}>
+          <Box className={[`diploma-preview__body--course-name`].join(' ')} color={getTextColorLeft()}>
             {props.courseName}
           </Box>
 
@@ -168,10 +177,10 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
               />
             )}
 
-            <Box className={`diploma-preview__body--signer-title`} color={getLogoFillColorLeft()}>
+            <Box className={`diploma-preview__body--signer-title`} color={getTextColorLeft()}>
               {props.signerTitle}
             </Box>
-            <Box className={`diploma-preview__body--signer-subline`} color={getLogoFillColorLeft()}>
+            <Box className={`diploma-preview__body--signer-subline`} color={getTextColorLeft()}>
               {props.signerSubline}
             </Box>
           </Box>
@@ -227,24 +236,24 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           </Box>
 
           {(props.issuerTitle || props.issuerDescription) && (
-            <div className={`diploma-preview__decoration--issuer-container`}>
-              <Box className={`diploma-preview__decoration--issuer-title`} color={getLogoFillColorRight()}>
+            <Box className={`diploma-preview__decoration--issuer-container`} bgcolor={getBackgroundColorRight()}>
+              <Box className={`diploma-preview__decoration--issuer-title`} color={getTextColorRight()}>
                 {props.issuerTitle}
               </Box>
-              <Box className={`diploma-preview__decoration--issuer-description`} color={getLogoFillColorRight()}>
+              <Box className={`diploma-preview__decoration--issuer-description`} color={getTextColorRight()}>
                 {props.issuerDescription}
               </Box>
-            </div>
+            </Box>
           )}
         </div>
       </div>
       <div className={`diploma-preview__footer`}>
         {props.footerText && (
-          <Box className={`diploma-preview__footer--helperText`} color={getLogoFillColorLeft()}>
+          <Box className={`diploma-preview__footer--helperText`} color={getTextColorLeft()}>
             {props.footerText}
           </Box>
         )}
-        <CertificateWaterMark color={getLogoFillColorLeft()} />
+        <CertificateWaterMark color={getTextColorLeft()} />
       </div>
     </BadgePreviewBox>
   )
