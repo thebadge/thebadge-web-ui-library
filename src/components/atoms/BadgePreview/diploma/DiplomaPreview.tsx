@@ -109,8 +109,8 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
 
   const hasGlare = props.animationEffects.includes('glare')
 
-  let diplomaWidth = props.size || 655;
-  if(diplomaWidth < 360) {
+  let diplomaWidth = props.size || 655
+  if (diplomaWidth < 360) {
     diplomaWidth = 360
   }
 
@@ -121,7 +121,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
       size={{ width: diplomaWidth, height: diplomaWidth * 0.61 }}
       className={'diploma-preview ' + (props.animationOnHover ? animationEffectClasses() : '')}
       onClick={props.onClick}
-      sx={{...props.sx}}
+      sx={{ ...props.sx }}
     >
       <div
         className={[`diploma-preview__content`, `diploma-preview__content--${props.textContrastLeft ?? 'light'}`].join(
@@ -243,14 +243,14 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           )}
         </div>
       </div>
-      { showFooter && (
+      {showFooter && (
         <div className={`diploma-preview__footer`}>
           {props.footerText && (
             <Box className={`diploma-preview__footer--helperText`} color={getTextColorLeft()}>
               {props.footerText}
             </Box>
           )}
-          <CertificateWaterMark width={diplomaWidth} height={diplomaWidth*0.1} color={getTextColorLeft()} />
+          <CertificateWaterMark width={diplomaWidth} height={diplomaWidth * 0.1} color={getTextColorLeft()} />
         </div>
       )}
     </BadgePreviewBox>

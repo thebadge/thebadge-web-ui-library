@@ -3,7 +3,13 @@ import { IconProps } from '../IconProps'
 
 export const CertificateWaterMark = (props: IconProps) => (
   <a className={'icon ' + (!props.link ? 'icon--disabled' : '')} href={props.link} target={'_blank'} rel="noreferrer">
-    <svg xmlns="http://www.w3.org/2000/svg" width={props.width || 655} height="65" viewBox={`0 0 ${props.width || 655} 65`} fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={props.width || 655}
+      height="65"
+      viewBox={`0 0 ${props.width || 655} 65`}
+      fill="none"
+    >
       <mask
         id="path-1-outside-1_7949_11921"
         maskUnits="userSpaceOnUse"

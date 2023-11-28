@@ -92,5 +92,5 @@ DiplomaPreviewWithCustomBackgroundsAndAnimation.args = {
   decorationBackgroundUrl: EXAMPLE_URLS.backgroundThree,
   textContrastLeft: 'dark',
   footerText: 'account.eth hast confirmed the identity xxx',
-  sx: { scale: '0.8' }
+  sx: { scale: '0.8' },
 }
