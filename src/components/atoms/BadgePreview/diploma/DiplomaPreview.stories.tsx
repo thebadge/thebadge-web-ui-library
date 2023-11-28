@@ -74,6 +74,7 @@ DiplomaPreviewWithDefaultBackgrounds.args = {
 
 export const DiplomaPreviewWithCustomBackgroundsAndAnimation = Template.bind({})
 DiplomaPreviewWithCustomBackgroundsAndAnimation.args = {
+  size: 560,
   date: 'November 9, 2023',
   studentName: 'Student Name Bla Bla ',
   courseName: 'Name of the course by Coursera',
@@ -90,4 +91,6 @@ DiplomaPreviewWithCustomBackgroundsAndAnimation.args = {
   backgroundUrl: EXAMPLE_URLS.backgroundFive,
   decorationBackgroundUrl: EXAMPLE_URLS.backgroundThree,
   textContrastLeft: 'dark',
+  footerText: 'account.eth hast confirmed the identity xxx',
+  sx: { scale: '0.8' }
 }

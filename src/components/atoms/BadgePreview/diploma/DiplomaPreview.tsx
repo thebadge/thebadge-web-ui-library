@@ -8,6 +8,8 @@ import './diplomaPreview.scss'
 import { CertificateWaterMark } from '@components/icons/CertificateWaterMark/CertificateWaterMark'
 import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 import { IconVerified } from '@components/icons/IconVerified/IconVerified'
+import { SxProps } from '@mui/system'
+import { Theme } from '@mui/material/styles'
 
 const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName !== 'size' })<{
   size: { width: number; height: number }
@@ -19,6 +21,7 @@ const BadgePreviewBox = styled(Box, { shouldForwardProp: (propName) => propName 
 }))
 
 export interface DiplomaPreviewProps {
+  size?: number
   badgeUrl?: string
   textContrastLeft?: 'light' | 'dark'
   textContrastRight?: 'light' | 'dark'
@@ -54,6 +57,9 @@ export interface DiplomaPreviewProps {
 
   animationOnHover?: boolean
   animationEffects: BadgePreviewEffects[]
+
+  // custom styling
+  sx?: SxProps<Theme>
 }
 
 export const DiplomaPreview = (props: DiplomaPreviewProps) => {
@@ -103,11 +109,19 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
 
   const hasGlare = props.animationEffects.includes('glare')
 
+  let diplomaWidth = props.size || 655;
+  if(diplomaWidth < 360) {
+    diplomaWidth = 360
+  }
+
+  const showFooter = diplomaWidth >= 655
+
   return (
     <BadgePreviewBox
-      size={{ width: 655, height: 400 }}
+      size={{ width: diplomaWidth, height: diplomaWidth * 0.61 }}
       className={'diploma-preview ' + (props.animationOnHover ? animationEffectClasses() : '')}
       onClick={props.onClick}
+      sx={{...props.sx}}
     >
       <div
         className={[`diploma-preview__content`, `diploma-preview__content--${props.textContrastLeft ?? 'light'}`].join(
@@ -229,14 +243,16 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           )}
         </div>
       </div>
-      <div className={`diploma-preview__footer`}>
-        {props.footerText && (
-          <Box className={`diploma-preview__footer--helperText`} color={getTextColorLeft()}>
-            {props.footerText}
-          </Box>
-        )}
-        <CertificateWaterMark color={getTextColorLeft()} />
-      </div>
+      { showFooter && (
+        <div className={`diploma-preview__footer`}>
+          {props.footerText && (
+            <Box className={`diploma-preview__footer--helperText`} color={getTextColorLeft()}>
+              {props.footerText}
+            </Box>
+          )}
+          <CertificateWaterMark width={diplomaWidth} height={diplomaWidth*0.1} color={getTextColorLeft()} />
+        </div>
+      )}
     </BadgePreviewBox>
   )
 }
