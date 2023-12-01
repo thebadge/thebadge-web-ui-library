@@ -1,3 +1,5 @@
+'use client'
+
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { BadgePreviewEffects } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
