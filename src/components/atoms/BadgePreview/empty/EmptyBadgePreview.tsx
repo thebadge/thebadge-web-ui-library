@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 export type BadgeSize = 'small' | 'medium' | 'large' | 'x-large'

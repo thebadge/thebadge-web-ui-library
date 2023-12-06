@@ -1,3 +1,5 @@
+'use client'
+
 import { BadgePreviewEffects, MiniBadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
 import { LogoTheBadgeWithText } from '@components/logos/LogoTheBadgeWithText/LogoTheBadgeWithText'
 import { alpha, Box, Stack, styled, Typography, useTheme } from '@mui/material'

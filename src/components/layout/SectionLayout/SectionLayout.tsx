@@ -1,3 +1,5 @@
+'use client'
+
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { Box } from '@mui/material'
 import React from 'react'

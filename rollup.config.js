@@ -9,6 +9,7 @@ import external from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import { terser } from 'rollup-plugin-terser'
 import { fileURLToPath } from 'url'
+import preserveDirectives from 'rollup-plugin-preserve-directives'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -22,7 +23,7 @@ export default [
         format: 'es',
         exports: 'named',
         preserveModules: true,
-        sourcemap: false,
+        sourcemap: true,
       },
     ],
     plugins: [
@@ -71,7 +72,8 @@ export default [
       }),
       resolve(),
       external(),
-      terser(),
+      preserveDirectives.default(),
+      terser({ compress: { directives: false } }),
       babel({
         exclude: 'node_modules/**',
         presets: ['@babel/preset-react'],
@@ -81,5 +83,11 @@ export default [
       }),
     ],
     external: [/node_modules/],
+    onwarn(warning, warn) {
+      if (warning.code === 'MODULE_LEVEL_DIRECTIVE' && warning.message.includes(`"use client"`)) {
+        return
+      }
+      warn(warning)
+    },
   },
 ]

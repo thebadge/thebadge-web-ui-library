@@ -1,3 +1,5 @@
+'use client'
+
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import React, { useEffect, useRef, useState } from 'react'
 import { Box, styled, Typography } from '@mui/material'

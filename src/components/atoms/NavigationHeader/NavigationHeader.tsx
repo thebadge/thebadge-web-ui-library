@@ -1,3 +1,5 @@
+'use client'
+
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import gradients from '@assets/scss/variables/_gradient.variables.module.scss'
 import {
