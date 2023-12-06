@@ -2,7 +2,6 @@
 
 import colors from '@assets/scss/variables/_color.variables.module.scss'
 import { Button, ButtonProps, styled } from '@mui/material'
-import React from 'react'
 
 export type ButtonV2Props = ButtonProps & {
   width?: string
@@ -12,7 +11,7 @@ export type ButtonV2Props = ButtonProps & {
   height?: string
 }
 
-const StyledButton = styled(Button, {
+export const ButtonV2 = styled(Button, {
   shouldForwardProp: (propName) => propName !== 'fontColor' && propName !== 'backgroundColor',
 })<ButtonV2Props>(({ theme, width, fontColor, backgroundColor, height }) => ({
   height,
@@ -37,7 +36,3 @@ const StyledButton = styled(Button, {
     backgroundColor: (backgroundColor || colors.blue) + 'A6',
   },
 }))
-
-export const ButtonV2 = (props: ButtonV2Props) => {
-  return <StyledButton {...props} />
-}

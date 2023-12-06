@@ -1,6 +1,6 @@
 {
   "name": "@thebadge/ui-library",
-  "version": "1.9.11",
+  "version": "2.0.6",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -24,10 +24,10 @@
     "release-major": "npm version major && git push"
   },
   "peerDependencies": {
-    "@emotion/react": ">=11.10.5",
+    "@emotion/react": ">=11.11.1",
+    "@mui/icons-material": ">=5.14.19",
     "@mui/material": ">=5.11.0",
     "highlight.js": ">=11.8.0",
-    "next": ">=13.0.0",
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0",
     "react-quill": ">=2.0.0"
@@ -36,10 +36,9 @@
     "@emotion/react": "^11.11.1",
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.16",
-    "@mui/material": "^5.14.16",
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.19",
     "highlight.js": "^11.8.0",
-    "next": "^13.4.4",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-qr-code": "^2.0.8",

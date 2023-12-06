@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react'
 import { Twitter as TwitterMUIIcon } from '@mui/icons-material'
 import { IconProps } from '../IconProps'

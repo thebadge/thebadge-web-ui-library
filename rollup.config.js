@@ -23,7 +23,7 @@ export default [
         format: 'es',
         exports: 'named',
         preserveModules: true,
-        sourcemap: false,
+        sourcemap: true,
       },
     ],
     plugins: [

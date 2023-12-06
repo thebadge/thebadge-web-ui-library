@@ -1,3 +1,4 @@
+'use client'
 import * as React from 'react'
 import { MailOutline as MailOutlineIcon } from '@mui/icons-material'
 import { IconProps } from '../IconProps'
