@@ -190,7 +190,11 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
             </Box>
           </Box>
         </div>
-        {hasGlare && <div className="glare" />}
+        {showFooter && props.footerText && (
+          <Box className={`diploma-preview__footer--helperText`} color={getTextColorLeft()}>
+            {props.footerText}
+          </Box>
+        )}
       </div>
       <div className={[`diploma-preview__decoration`].join(' ')}>
         <img
@@ -245,14 +249,10 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
       </div>
       {showFooter && (
         <div className={`diploma-preview__footer`}>
-          {props.footerText && (
-            <Box className={`diploma-preview__footer--helperText`} color={getTextColorLeft()}>
-              {props.footerText}
-            </Box>
-          )}
           <CertificateWaterMark width={diplomaWidth} height={diplomaWidth * 0.1} color={getTextColorLeft()} />
         </div>
       )}
+      {hasGlare && <div className="glare" />}
     </BadgePreviewBox>
   )
 }
