@@ -303,7 +303,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       margin: auto;
-      width: fit-content;
+      width: 100%;
+      text-align: center;
       font-size: convert-to-rem(10px);
       line-height: convert-to-rem(16px);
       font-weight: variables.$font-weight-bold;
