@@ -228,10 +228,9 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
   )
 }
 
-type MiniLogoWithTitle = { size: BadgeSize; title?: string; subtitle?: string }
-type MiniLogoWithImg = { size: BadgeSize; logoUrl?: string }
+type MiniLogoProps = { size: BadgeSize; title?: string; subtitle?: string; logoUrl?: string }
 
-function getMiniLogoSVG(props: MiniLogoWithTitle | MiniLogoWithImg) {
+function getMiniLogoSVG(props: MiniLogoProps) {
   /**
    * @param length (max length is 4)
    * @param size
@@ -285,7 +284,7 @@ function getMiniLogoSVG(props: MiniLogoWithTitle | MiniLogoWithImg) {
           </linearGradient>
         </defs>
       </svg>
-      {'title' in props && (
+      {props.title && (
         <div
           className={`badge-previewV2__miniLogo-titleContainer badge-previewV2__miniLogo-titleContainer--${props.size}`}
         >
@@ -295,12 +294,14 @@ function getMiniLogoSVG(props: MiniLogoWithTitle | MiniLogoWithImg) {
           >
             {props.title}
           </p>
-          <span className={`badge-previewV2__miniLogo-subTitle  badge-previewV2__miniLogo-subTitle--${props.size}`}>
-            {props.subtitle}
-          </span>
+          {props.subtitle && (
+            <span className={`badge-previewV2__miniLogo-subTitle  badge-previewV2__miniLogo-subTitle--${props.size}`}>
+              {props.subtitle}
+            </span>
+          )}
         </div>
       )}
-      {'logoUrl' in props && (
+      {props.logoUrl && (
         <div
           className={`badge-previewV2__miniLogo-titleContainer badge-previewV2__miniLogo-titleContainer--${props.size}`}
         >
