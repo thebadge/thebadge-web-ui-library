@@ -119,7 +119,7 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
   }
 
   const hasGlare = props.animationEffects.includes('glare')
-
+  const hasMiniLogo = props.miniLogoTitle || props.miniLogoUrl
   return (
     <BadgePreviewBox
       size={badgeSize()}
@@ -184,17 +184,13 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
               <LogoTheBadgeWithText size={badgeImageSize().width} style={{ margin: 'auto' }} />
             </div>
           )}
-          {getMiniLogoSVG(
-            <div
-              className={`badge-previewV2__miniLogo-titleContainer badge-previewV2__miniLogo-titleContainer--${props.size}`}
-            >
-              <p className={`badge-previewV2__miniLogo-title  badge-previewV2__miniLogo-title--${props.size}`}>#1</p>
-              <span className={`badge-previewV2__miniLogo-subTitle  badge-previewV2__miniLogo-subTitle--${props.size}`}>
-                user
-              </span>
-            </div>,
-            { size: props.size }
-          )}
+          {hasMiniLogo &&
+            getMiniLogoSVG({
+              size: props.size,
+              title: props.miniLogoTitle,
+              logoUrl: props.miniLogoUrl,
+              subtitle: props.miniLogoSubTitle,
+            })}
         </div>
         {/* Badge Content - Tittle - Category - Description */}
         <Typography component={'div'} className={`badge-previewV2__content badge-previewV2__content--${props.size}`}>
@@ -232,7 +228,43 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
   )
 }
 
-function getMiniLogoSVG(element: React.ReactNode, props: { size: string }) {
+type MiniLogoWithTitle = { size: BadgeSize; title?: string; subtitle?: string }
+type MiniLogoWithImg = { size: BadgeSize; logoUrl?: string }
+
+function getMiniLogoSVG(props: MiniLogoWithTitle | MiniLogoWithImg) {
+  /**
+   * @param length (max length is 4)
+   * @param size
+   */
+  const getFontSize = (length = 0, size: BadgeSize) => {
+    // 24px = 2chars
+    // 20px = 3chars
+    // 15px = 4chars
+    let fontSize
+
+    switch (size) {
+      case 'small':
+        fontSize = 14
+        break
+      case 'medium':
+        fontSize = 18
+        break
+      default:
+        fontSize = 22
+    }
+
+    // Common adjustments based on length
+    switch (length) {
+      case 3:
+        fontSize -= size === 'small' ? 2 : 3
+        break
+      case 4:
+        fontSize -= 5
+        break
+    }
+    return `${fontSize}px`
+  }
+
   return (
     <div className={`badge-previewV2__miniLogo-container  badge-previewV2__miniLogo-container--${props.size}`}>
       <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -253,7 +285,28 @@ function getMiniLogoSVG(element: React.ReactNode, props: { size: string }) {
           </linearGradient>
         </defs>
       </svg>
-      {element}
+      {'title' in props && (
+        <div
+          className={`badge-previewV2__miniLogo-titleContainer badge-previewV2__miniLogo-titleContainer--${props.size}`}
+        >
+          <p
+            className={`badge-previewV2__miniLogo-title  badge-previewV2__miniLogo-title--${props.size}`}
+            style={{ fontSize: getFontSize(props.title?.length, props.size) }}
+          >
+            {props.title}
+          </p>
+          <span className={`badge-previewV2__miniLogo-subTitle  badge-previewV2__miniLogo-subTitle--${props.size}`}>
+            {props.subtitle}
+          </span>
+        </div>
+      )}
+      {'logoUrl' in props && (
+        <div
+          className={`badge-previewV2__miniLogo-titleContainer badge-previewV2__miniLogo-titleContainer--${props.size}`}
+        >
+          <img src={props.logoUrl} alt="Badge mini logo" />
+        </div>
+      )}
     </div>
   )
 }

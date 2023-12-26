@@ -21,5 +21,8 @@ export interface BadgePreviewProps {
   buttonTitle?: string // Text that will be used on the button
   miniIcon?: React.ReactNode // Icon above the title
   selected?: boolean // Marks the badge as selected
+  miniLogoTitle?: string
+  miniLogoSubTitle?: string
+  miniLogoUrl?: string
 }
 export type MiniBadgePreviewProps = Omit<BadgePreviewProps, 'size' | 'badgeUrl' | 'iconUrl'>
