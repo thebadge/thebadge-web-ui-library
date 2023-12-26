@@ -6,7 +6,6 @@ import React from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
 import defaultBackground from '@assets/svgs/badgeBackground.svg'
-import miniLogo from '@assets/svgs/badgeMiniLogoContainer.svg'
 
 const defaultBackgroundUrl =
   'https://images.unsplash.com/photo-1566041510639-8d95a2490bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80'

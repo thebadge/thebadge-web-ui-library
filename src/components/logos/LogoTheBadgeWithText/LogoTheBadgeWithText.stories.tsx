@@ -3,7 +3,6 @@ import { Story } from '@storybook/react'
 import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
 import { LogoTheBadgeWithText } from './LogoTheBadgeWithText'
-import { LogoTheBadge } from '@components/logos/LogoTheBadge/LogoTheBadge'
 
 export default {
   title: 'Components/Logos/LogoTheBadgeWithText',
