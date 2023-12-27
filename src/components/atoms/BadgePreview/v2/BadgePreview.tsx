@@ -6,6 +6,7 @@ import React from 'react'
 import QRCode from 'react-qr-code'
 import './badgePreview.scss'
 import defaultBackground from '@assets/svgs/badgeBackground.svg'
+
 const defaultBackgroundUrl =
   'https://images.unsplash.com/photo-1566041510639-8d95a2490bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=678&q=80'
 
@@ -118,7 +119,7 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
   }
 
   const hasGlare = props.animationEffects.includes('glare')
-
+  const hasMiniLogo = props.miniLogoTitle || props.miniLogoUrl
   return (
     <BadgePreviewBox
       size={badgeSize()}
@@ -183,6 +184,13 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
               <LogoTheBadgeWithText size={badgeImageSize().width} style={{ margin: 'auto' }} />
             </div>
           )}
+          {hasMiniLogo &&
+            getMiniLogoSVG({
+              size: props.size,
+              title: props.miniLogoTitle,
+              logoUrl: props.miniLogoUrl,
+              subtitle: props.miniLogoSubTitle,
+            })}
         </div>
         {/* Badge Content - Tittle - Category - Description */}
         <Typography component={'div'} className={`badge-previewV2__content badge-previewV2__content--${props.size}`}>
@@ -217,5 +225,126 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
         {hasGlare && <div className="glare" />}
       </div>
     </BadgePreviewBox>
+  )
+}
+
+type MiniLogoProps = { size: BadgeSize; title?: string; subtitle?: string; logoUrl?: string }
+
+function getMiniLogoSVG(props: MiniLogoProps) {
+  /**
+   * @param length (max length is 4)
+   * @param size
+   */
+  const getTitleFontSize = (length = 0, size: BadgeSize) => {
+    // 24px = 2chars
+    // 20px = 3chars
+    // 15px = 4chars
+    let fontSize
+
+    switch (size) {
+      case 'small':
+        fontSize = 14
+        break
+      case 'medium':
+        fontSize = 18
+        break
+      default:
+        fontSize = 22
+    }
+
+    // Common adjustments based on length
+    switch (length) {
+      case 3:
+        fontSize -= 2
+        break
+      case 4:
+        fontSize -= size === 'small' ? 2 : 3
+        break
+    }
+    return `${fontSize}px`
+  }
+
+  /**
+   * @param length (max length is 4)
+   * @param size
+   */
+  const getSubTitleFontSize = (length = 0, size: BadgeSize) => {
+    // 14px = 4 chars = "user"
+    // 10px = 10 chars = "in rewards"
+    let fontSize
+
+    switch (size) {
+      case 'small':
+        fontSize = 10
+        break
+      case 'medium':
+        fontSize = 12
+        break
+      default:
+        fontSize = 14
+    }
+
+    if (length > 4 && length <= 6) {
+      fontSize -= size === 'small' ? 1 : length * 0.4
+    }
+    if (length > 6 && length <= 8) {
+      fontSize -= size === 'small' ? 2 : length * 0.4
+    }
+    if (length > 8) {
+      fontSize -= size === 'small' ? 3 : length * 0.4
+    }
+    return `${fontSize}px`
+  }
+
+  return (
+    <div className={`badge-previewV2__miniLogo-container  badge-previewV2__miniLogo-container--${props.size}`}>
+      <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/*<!-- Complex shape with gradient fill -->*/}
+        <path
+          d="M48.655 66.002c-.952-.166-2.636-.456-4.292-.787-.842-.166-1.574-.028-2.223.538-.993.856-1.96 1.726-2.981 2.554-1.408 1.132-2.968 1.823-4.845 1.616-1.325-.152-2.443-.773-3.45-1.574-.801-.635-1.602-1.298-2.32-2.03-1.076-1.09-2.277-1.339-3.768-.994a23.655 23.655 0 0 1-4.417.635c-2.305.125-3.989-1.021-5.038-3.023-.552-1.063-1.035-2.209-1.311-3.383-.456-1.974-1.56-3.12-3.534-3.561-1.007-.221-2.001-.635-2.94-1.077-3.23-1.533-3.81-3.921-3.423-6.779.166-1.242.428-2.471.69-3.7.193-.897 0-1.656-.607-2.333-.828-.953-1.684-1.877-2.47-2.871-2.265-2.858-2.265-5.523 0-8.408.634-.801 1.297-1.602 2.028-2.32 1.035-1.035 1.256-2.18.925-3.59-.318-1.38-.566-2.788-.676-4.196-.18-2.527 1.007-4.363 3.243-5.48.856-.429 1.767-.719 2.664-1.064.456-.18.925-.331 1.394-.456 1.243-.33 2.002-1.09 2.36-2.333a31.085 31.085 0 0 1 1.146-3.3c1.34-3.257 3.741-4.569 7.206-3.975 1.214.207 2.429.428 3.644.69.883.193 1.6-.041 2.263-.621.925-.815 1.836-1.657 2.816-2.43 2.94-2.333 5.576-2.333 8.516 0 .953.745 1.85 1.574 2.761 2.388.677.594 1.408.829 2.319.65 1.532-.305 3.064-.608 4.624-.774 2.678-.276 4.762.897 5.894 3.341.58 1.27 1.035 2.595 1.45 3.935.386 1.256 1.117 2.03 2.387 2.402a31.9 31.9 0 0 1 3.175 1.09c3.368 1.367 4.68 3.77 4.044 7.359-.22 1.243-.47 2.471-.704 3.714-.138.69 0 1.297.456 1.836.883 1.035 1.794 2.03 2.622 3.092 2.292 2.913 2.292 5.55-.014 8.463-.731.94-1.546 1.823-2.332 2.706-.649.732-.911 1.519-.718 2.513.304 1.477.607 2.982.745 4.487.249 2.858-.883 4.804-3.506 6.005-1.31.594-2.691 1.036-4.072 1.491-1.02.332-1.642.953-1.987 1.974-.497 1.478-.98 2.983-1.643 4.377-1.076 2.181-2.898 3.286-6.1 3.203Zm-13.65-9.209C47.04 56.78 56.757 47.02 56.73 34.967c-.027-11.998-9.772-21.717-21.78-21.717-12.036.014-21.754 9.774-21.74 21.8.014 12.052 9.745 21.757 21.795 21.743Z"
+          fill="url(#a)"
+        />
+
+        {/*<!-- White circle with center at (35, 35) and radius of 27 units -->*/}
+        <circle cx="35" cy="35" r="27" fill="#fff" />
+
+        {/*<!-- Gradient definition -->*/}
+        <defs>
+          <linearGradient id="a" x1=".027" y1="34.979" x2="69.973" y2="34.979" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#EA15FF" />
+            <stop offset=".132" stopColor="#CD36F8" />
+            <stop offset=".691" stopColor="#54BDDD" />
+            <stop offset=".936" stopColor="#24F3D2" />
+          </linearGradient>
+        </defs>
+      </svg>
+      {props.title && (
+        <div
+          className={`badge-previewV2__miniLogo-titleContainer badge-previewV2__miniLogo-titleContainer--${props.size}`}
+        >
+          <p
+            className={`badge-previewV2__miniLogo-title  badge-previewV2__miniLogo-title--${props.size}`}
+            style={{ fontSize: getTitleFontSize(props.title?.length, props.size) }}
+          >
+            {props.title}
+          </p>
+          {props.subtitle && (
+            <span
+              className={`badge-previewV2__miniLogo-subTitle  badge-previewV2__miniLogo-subTitle--${props.size}`}
+              style={{ fontSize: getSubTitleFontSize(props.subtitle?.length, props.size) }}
+            >
+              {props.subtitle}
+            </span>
+          )}
+        </div>
+      )}
+      {props.logoUrl && (
+        <div
+          className={`badge-previewV2__miniLogo-titleContainer badge-previewV2__miniLogo-titleContainer--${props.size}`}
+        >
+          <img src={props.logoUrl} alt="Badge mini logo" />
+        </div>
+      )}
+    </div>
   )
 }

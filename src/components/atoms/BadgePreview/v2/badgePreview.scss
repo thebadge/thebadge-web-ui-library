@@ -145,6 +145,78 @@
     position: relative;
   }
 
+  &__miniLogo-container {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    transform: translate(25%,20%);
+
+    &--small {
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &--medium {
+      svg {
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    &--large {
+      svg {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+
+  &__miniLogo-titleContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 0;
+    line-height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--small {
+      line-height: 10px;
+    }
+
+    &--medium {
+      line-height: 12px;
+    }
+  }
+
+  &__miniLogo-title {
+    margin:0;
+    color: black;
+    font-weight: 900;
+    font-size: x-large;
+
+    &--small {
+      font-weight: 800;
+    }
+  }
+
+  &__miniLogo-subTitle {
+    color: black;
+    font-size: small;
+    font-weight: 400;
+
+    &--small {
+      font-size: x-small;
+    }
+  }
 
   &__image-placeholder {
     display: flex;
