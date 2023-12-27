@@ -255,10 +255,10 @@ function getMiniLogoSVG(props: MiniLogoProps) {
     // Common adjustments based on length
     switch (length) {
       case 3:
-        fontSize -= size === 'small' ? 2 : 3
+        fontSize -= 2
         break
       case 4:
-        fontSize -= size === 'small' ? 2 : 5
+        fontSize -= size === 'small' ? 2 : 3
         break
     }
     return `${fontSize}px`
