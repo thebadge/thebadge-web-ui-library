@@ -13,7 +13,7 @@
     flex-flow: column;
     width: 70%;
     height: 100%;
-    padding: 32px 40px;
+    padding: 28px 32px;
     overflow: hidden;
 
     &--backgroundImage {
@@ -299,7 +299,7 @@
 
     &--helperText {
       position: absolute;
-      bottom: 20px;
+      bottom: 35px;
       left: 50%;
       transform: translate(-50%, -50%);
       margin: auto;
@@ -309,6 +309,18 @@
       line-height: convert-to-rem(16px);
       font-weight: variables.$font-weight-bold;
     }
+
+    &--poweredBy {
+      display: flex;
+      align-items: center;
+      opacity: 0.6;
+      gap: 4px;
+      margin-left: auto;
+
+      span {
+        font-size: xx-small;
+      }
+    }
   }
 
   &__header {
@@ -317,6 +329,10 @@
     flex-direction: column;
     justify-content: space-between;
 
+    &--logo-image {
+      max-height: 56px;
+      padding: 4px
+    }
     &--logo-qr-container {
       display: flex;
       justify-content: space-between;

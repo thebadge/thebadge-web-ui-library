@@ -5,4 +5,5 @@ export type LogoProps = React.SVGProps<SVGSVGElement> & {
   width?: number
   height?: number
   color?: string
+  solidColor?: string
 }

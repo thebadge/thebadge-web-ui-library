@@ -26,6 +26,10 @@ export interface DiplomaPreviewProps {
   textContrastLeft?: 'light' | 'dark'
   textContrastRight?: 'light' | 'dark'
 
+  // header configs
+  headerLogoUrl?: string
+  hiddeDefaultLogo?: boolean
+
   // background configs
   backgroundUrl?: string
   decorationBackgroundUrl?: string
@@ -52,6 +56,7 @@ export interface DiplomaPreviewProps {
 
   // footer
   footerText?: string
+  showFooterDecoration?: boolean
 
   onClick?: () => void // will be shared among the button and the diploma
 
@@ -114,7 +119,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
     diplomaWidth = 360
   }
 
-  const showFooter = diplomaWidth >= 655
+  const showFooterDecoration = diplomaWidth >= 655 && props.showFooterDecoration
 
   return (
     <BadgePreviewBox
@@ -137,7 +142,16 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
         <div className={'diploma-preview__header'}>
           <div className={'diploma-preview__header--logo-qr-container'}>
             <span className={[`diploma-preview__header--tb-logo`].join(' ')}>
-              <LogoTheBadgeWithText fill={getTextColorLeft()} size={badgeLogoSize()} />
+              {props.headerLogoUrl && (
+                <img
+                  className={`diploma-preview__header--logo-image`}
+                  src={`${props.headerLogoUrl}`}
+                  alt="Issuer logo with name"
+                />
+              )}
+              {!props.hiddeDefaultLogo && !props.headerLogoUrl && (
+                <LogoTheBadgeWithText color={getTextColorLeft()} size={badgeLogoSize()} />
+              )}
             </span>
             {props.badgeUrl ? (
               <div className={`diploma-preview__header--qr-code`}>
@@ -172,7 +186,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
             alignItems={'center'}
             flexDirection={'column'}
             mt="auto"
-            mb={5}
+            mb={6}
           >
             {props.signatureImageUrl && (
               <img
@@ -190,11 +204,15 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
             </Box>
           </Box>
         </div>
-        {showFooter && props.footerText && (
+        {props.footerText && (
           <Box className={`diploma-preview__footer--helperText`} color={getTextColorLeft()}>
             {props.footerText}
           </Box>
         )}
+        <div className={`diploma-preview__footer--poweredBy`}>
+          <span>POWERED BY</span>
+          <LogoTheBadgeWithText solidColor={getTextColorLeft()} size={90} />
+        </div>
       </div>
       <div className={[`diploma-preview__decoration`].join(' ')}>
         <img
@@ -247,11 +265,11 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
           )}
         </div>
       </div>
-      {showFooter && (
-        <div className={`diploma-preview__footer`}>
+      <div className={`diploma-preview__footer`}>
+        {showFooterDecoration && (
           <CertificateWaterMark width={diplomaWidth} height={diplomaWidth * 0.1} color={getTextColorLeft()} />
-        </div>
-      )}
+        )}
+      </div>
       {hasGlare && <div className="glare" />}
     </BadgePreviewBox>
   )
