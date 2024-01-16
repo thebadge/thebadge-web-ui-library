@@ -340,9 +340,9 @@ function getMiniLogoSVG(props: MiniLogoProps) {
       )}
       {props.logoUrl && (
         <div
-          className={`badge-previewV2__miniLogo-titleContainer badge-previewV2__miniLogo-titleContainer--${props.size}`}
+          className={`badge-previewV2__miniLogo-imageContainer badge-previewV2__miniLogo-imageContainer--${props.size}`}
         >
-          <img src={props.logoUrl} alt="Badge mini logo" />
+          <img className={`badge-previewV2__miniLogo-image`} src={props.logoUrl} alt="Badge mini logo" />
         </div>
       )}
     </div>
