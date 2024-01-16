@@ -186,7 +186,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
             alignItems={'center'}
             flexDirection={'column'}
             mt="auto"
-            mb={6}
+            mb={5}
           >
             {props.signatureImageUrl && (
               <img

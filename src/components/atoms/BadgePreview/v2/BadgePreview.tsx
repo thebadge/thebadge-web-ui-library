@@ -156,7 +156,7 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
                 ' '
               )}
             >
-              <LogoTheBadgeWithText fill={getLogoFillColor()} size={badgeLogoSize()} />
+              <LogoTheBadgeWithText color={getLogoFillColor()} size={badgeLogoSize()} />
             </span>
             {props.badgeUrl ? (
               <div className={`badge-previewV2__header--qr-code badge-previewV2__header--qr-code--${props.size}`}>
