@@ -7,6 +7,7 @@ export interface BadgePreviewProps {
   size: BadgeSize
   badgeUrl?: string
   badgeBackgroundUrl?: string
+  badgeNetworkUrl?: string // Used on models to show what's the native networks of it
   textContrast?: BadgeTextContrast
   title: string
   category: string
