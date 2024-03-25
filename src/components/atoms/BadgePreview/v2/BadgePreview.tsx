@@ -162,6 +162,12 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
               <div className={`badge-previewV2__header--qr-code badge-previewV2__header--qr-code--${props.size}`}>
                 <QRCode size={badgeQRSize()} value={props.badgeUrl} viewBox={`0 0 ${badgeQRSize()} ${badgeQRSize()}`} />
               </div>
+            ) : props.badgeNetworkUrl ? (
+              <img
+                src={props.badgeNetworkUrl}
+                alt="Badge network img"
+                style={{ height: `${badgeQRSize()}px`, width: `${badgeQRSize()}px` }}
+              />
             ) : (
               <div id="qr-placeholder" style={{ height: `${badgeQRSize()}px`, width: `${badgeQRSize()}px` }} />
             )}
