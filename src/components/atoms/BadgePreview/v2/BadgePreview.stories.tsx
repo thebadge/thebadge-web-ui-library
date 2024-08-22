@@ -87,3 +87,18 @@ BadgePreviewWithAnimationOnHover.args = {
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
   textContrast: 'dark-withTextBackground',
 }
+
+/**
+ * To be used as renderer
+ */
+export const BadgePreviewWithNoDefaults = Template.bind({})
+BadgePreviewWithNoDefaults.args = {
+  size: 'large',
+  title: 'TITLE xxx',
+  category: 'Subline xxx',
+  description:
+    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  badgeUrl: 'https://www.thebadge.xyz',
+  animationEffects: [] as BadgePreviewEffects[],
+  textContrast: 'dark-withTextBackground',
+}

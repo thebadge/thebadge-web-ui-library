@@ -123,6 +123,7 @@ export const DiplomaPreview = (props: DiplomaPreviewProps) => {
 
   return (
     <BadgePreviewBox
+      id="diplomaView"
       size={{ width: diplomaWidth, height: diplomaWidth * 0.61 }}
       className={'diploma-preview ' + (props.animationOnHover ? animationEffectClasses() : '')}
       onClick={props.onClick}
