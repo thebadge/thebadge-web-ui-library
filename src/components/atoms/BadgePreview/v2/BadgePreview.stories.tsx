@@ -3,7 +3,6 @@ import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
 import { BadgePreview } from './BadgePreview'
 import { BadgePreviewEffects, BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
-import { DiplomaPreviewWithNoDefaults } from '@components/atoms/BadgePreview/diploma/DiplomaPreview.stories'
 
 const EXAMPLE_URLS = {
   backgroundOne:
