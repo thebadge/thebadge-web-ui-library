@@ -3,6 +3,7 @@ import { Meta } from '@storybook/react/types-6-0'
 import React from 'react'
 import { BadgePreview } from './BadgePreview'
 import { BadgePreviewEffects, BadgePreviewProps } from '@components/atoms/BadgePreview/BadgePreviewProps'
+import { DiplomaPreviewWithNoDefaults } from '@components/atoms/BadgePreview/diploma/DiplomaPreview.stories'
 
 const EXAMPLE_URLS = {
   backgroundOne:
@@ -85,5 +86,20 @@ BadgePreviewWithAnimationOnHover.args = {
   animationOnHover: true,
   animationEffects: ['wobble', 'grow', 'glare'],
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
+  textContrast: 'dark-withTextBackground',
+}
+
+/**
+ * To be used as renderer
+ */
+export const BadgePreviewWithNoDefaults = Template.bind({})
+BadgePreviewWithNoDefaults.args = {
+  size: 'large',
+  title: 'TITLE xxx',
+  category: 'Subline xxx',
+  description:
+    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  badgeUrl: 'https://www.thebadge.xyz',
+  animationEffects: [] as BadgePreviewEffects[],
   textContrast: 'dark-withTextBackground',
 }

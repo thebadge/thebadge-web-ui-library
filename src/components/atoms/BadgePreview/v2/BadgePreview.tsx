@@ -122,6 +122,7 @@ export const BadgePreview = (props: BadgePreviewProps = defaultValuesForBadgePre
   const hasMiniLogo = props.miniLogoTitle || props.miniLogoUrl
   return (
     <BadgePreviewBox
+      id="badgeView"
       size={badgeSize()}
       className={'badge-previewV2 ' + (props.animationOnHover ? animationEffectClasses() : '')}
       onClick={props.onClick}
