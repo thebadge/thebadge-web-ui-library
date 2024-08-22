@@ -42,7 +42,11 @@ export default {
   },
 } as Meta
 
-const Template: Story<BadgePreviewProps> = (args) => {
+const Template: Story<BadgePreviewProps & { descp: string }> = (args) => {
+  if ('descp' in args) {
+    // Workaround to fix an issue where storybook ignore the url argument called description
+    args.description = args.descp
+  }
   return (
     <div style={{ background: 'gray', padding: '32px', display: 'flex', justifyContent: 'center', height: '80vh' }}>
       <BadgePreview {...args} />
@@ -96,9 +100,9 @@ BadgePreviewWithNoDefaults.args = {
   size: 'large',
   title: 'TITLE xxx',
   category: 'Subline xxx',
-  description:
-    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  descp: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   badgeUrl: 'https://www.thebadge.xyz',
   animationEffects: [] as BadgePreviewEffects[],
+  badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
   textContrast: 'dark-withTextBackground',
 }
