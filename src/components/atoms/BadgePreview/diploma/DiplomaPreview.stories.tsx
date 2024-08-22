@@ -42,7 +42,11 @@ export default {
   },
 } as Meta
 
-const Template: Story<DiplomaPreviewProps> = (args) => {
+const Template: Story<DiplomaPreviewProps & { descp: string }> = (args) => {
+  if ('descp' in args) {
+    // Workaround to fix an issue where storybook ignore the url argument called description
+    args.description = args.descp
+  }
   return (
     <div style={{ background: 'gray', padding: '32px', display: 'flex', justifyContent: 'center', height: '80vh' }}>
       <DiplomaPreview {...args} />
@@ -103,7 +107,7 @@ DiplomaPreviewWithNoDefaults.args = {
   date: 'November 9, 2023',
   studentName: 'Student Name',
   courseName: 'Name of the course',
-  description: 'has successfully completed the course',
+  descp: 'has successfully completed the course',
   badgeUrl: 'https://www.thebadge.xyz',
   issuedByLabel: 'Issued By',
   animationEffects: [] as BadgePreviewEffects[],
