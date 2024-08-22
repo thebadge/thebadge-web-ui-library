@@ -98,7 +98,6 @@ BadgePreviewWithAnimationOnHover.args = {
 export const BadgePreviewWithNoDefaults = Template.bind({})
 BadgePreviewWithNoDefaults.args = {
   size: 'large',
-  badgeUrl: 'https://www.thebadge.xyz',
   animationEffects: [] as BadgePreviewEffects[],
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
   textContrast: 'dark-withTextBackground',

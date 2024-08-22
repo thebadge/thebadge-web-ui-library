@@ -104,7 +104,6 @@ DiplomaPreviewWithCustomBackgroundsAndAnimation.args = {
  */
 export const DiplomaPreviewWithNoDefaults = Template.bind({})
 DiplomaPreviewWithNoDefaults.args = {
-  badgeUrl: 'https://www.thebadge.xyz',
   animationEffects: [] as BadgePreviewEffects[],
   textContrastLeft: 'light',
   textContrastRight: 'dark',
