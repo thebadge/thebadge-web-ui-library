@@ -104,12 +104,7 @@ DiplomaPreviewWithCustomBackgroundsAndAnimation.args = {
  */
 export const DiplomaPreviewWithNoDefaults = Template.bind({})
 DiplomaPreviewWithNoDefaults.args = {
-  date: 'November 9, 2023',
-  studentName: 'Student Name',
-  courseName: 'Name of the course',
-  descp: 'has successfully completed the course',
   badgeUrl: 'https://www.thebadge.xyz',
-  issuedByLabel: 'Issued By',
   animationEffects: [] as BadgePreviewEffects[],
   textContrastLeft: 'light',
   textContrastRight: 'dark',

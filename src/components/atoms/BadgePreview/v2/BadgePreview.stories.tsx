@@ -98,9 +98,6 @@ BadgePreviewWithAnimationOnHover.args = {
 export const BadgePreviewWithNoDefaults = Template.bind({})
 BadgePreviewWithNoDefaults.args = {
   size: 'large',
-  title: 'TITLE xxx',
-  category: 'Subline xxx',
-  descp: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   badgeUrl: 'https://www.thebadge.xyz',
   animationEffects: [] as BadgePreviewEffects[],
   badgeBackgroundUrl: EXAMPLE_URLS.backgroundOne,
