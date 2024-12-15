@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/preset-scss',
+    '@storybook/storybook-addon-designs',
   ],
   framework: '@storybook/react',
   webpackFinal: (config) => {

@@ -10,6 +10,12 @@ import { IconDiscord } from '@components/icons/IconDiscord/IconDiscord'
 export default {
   title: 'Components/Atoms/Button/v2',
   component: ButtonV2,
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/OreesPbFuBZAyneAgQ61XV/The-Badge?node-id=3474-4425&t=FyGUSZ6GHV9ueLg7-4',
+    },
+  },
 } as Meta
 
 // Create a master template for mapping args to render the Button component
